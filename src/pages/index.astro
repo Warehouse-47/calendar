@@ -1,0 +1,122 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { MONTHS, getEvents, getUniqueLocations } from '../lib/events';
+
+const events = await getEvents();
+const uniqueLocations = getUniqueLocations(events);
+---
+
+<Layout title="Manifest">
+	<header class="p-8 border-b brutalist-border flex flex-col md:flex-row md:justify-between md:items-end gap-4">
+		<h1 class="text-6xl font-black tracking-tighter uppercase">Warehouse47</h1>
+		<div class="text-left md:text-right mono text-[10px] opacity-50 tracking-[0.2em] uppercase">
+			[ SYSTEM_VERSION_2.07 ]<br />
+			[ STATUS: ACTIVE ]
+		</div>
+	</header>
+
+	<section class="border-b brutalist-border bg-white/5 p-4 px-8 flex flex-col md:flex-row gap-8 mono text-xs uppercase">
+		<div class="flex items-center gap-4 w-full md:w-auto">
+			<span class="opacity-50 tracking-widest">[LOC]</span>
+			<select id="filter-location" class="bg-black text-white border border-white/20 p-2 w-full md:w-48 outline-none hover:bg-white hover:text-black transition-none cursor-pointer appearance-none rounded-none">
+				<option value="ALL">ALL_ZONES</option>
+				{uniqueLocations.map((loc) => (
+					<option value={loc}>{loc}</option>
+				))}
+			</select>
+		</div>
+
+		<div class="flex items-center gap-4 w-full md:w-auto">
+			<span class="opacity-50 tracking-widest">[MTH]</span>
+			<select id="filter-month" class="bg-black text-white border border-white/20 p-2 w-full md:w-48 outline-none hover:bg-white hover:text-black transition-none cursor-pointer appearance-none rounded-none">
+				<option value="ALL">ALL_CYCLES</option>
+				{MONTHS.map((month) => (
+					<option value={month}>{month}</option>
+				))}
+			</select>
+		</div>
+		<div class="flex-grow flex items-center justify-end opacity-30 text-[10px] tracking-widest hidden md:flex">
+			// FILTER_PROTOCOL_ENGAGED
+		</div>
+	</section>
+
+	<section class="min-h-screen">
+		<div class="grid grid-cols-12 px-8 py-4 mono text-[10px] opacity-40 uppercase border-b brutalist-border hidden md:grid">
+			<div class="col-span-2">Date</div>
+			<div class="col-span-2">Status</div>
+			<div class="col-span-5">Identity</div>
+			<div class="col-span-3 text-right">Protocol</div>
+		</div>
+
+		<div id="events-container">
+			{events.map((event) => (
+				<a
+					href={`/events/${event.slug}`}
+					class="event-row group block border-b brutalist-border hover:bg-white transition-none"
+					data-location={event.locationUpper}
+					data-date={event.dateUpper}
+				>
+					<div class="grid grid-cols-1 md:grid-cols-12 px-8 py-8 md:py-12 items-center group-hover:text-black transition-none uppercase gap-4 md:gap-0">
+						<div class="md:col-span-2 mono text-sm opacity-60 md:opacity-100">{event.dateDisplay}</div>
+						<div class="md:col-span-2 mono text-xs">
+							{event.status === 'open' ? '[ + ] ACCESS' : '[ X ] CLOSED'}
+						</div>
+						<div class={`md:col-span-5 text-4xl md:text-5xl font-black tracking-tighter ${event.status === 'sold_out' ? 'line-through decoration-4' : ''}`} transition:name={`title-${event.slug}`}>
+							{event.title}
+						</div>
+						<div class="md:col-span-3 text-left md:text-right mono text-xs italic opacity-40 group-hover:opacity-100">
+							//{event.category}
+						</div>
+					</div>
+				</a>
+			))}
+		</div>
+		<div id="no-results" class="hidden p-16 text-center mono uppercase text-sm opacity-40 tracking-widest">
+			[ ERROR: NO_MATCHING_RECORDS_FOUND ]
+		</div>
+	</section>
+</Layout>
+
+<script>
+	document.addEventListener('astro:page-load', () => {
+		const locationFilter = document.getElementById('filter-location');
+		const monthFilter = document.getElementById('filter-month');
+		const rows = document.querySelectorAll('.event-row');
+		const noResults = document.getElementById('no-results');
+
+		function filterEvents() {
+			if (!locationFilter || !monthFilter) return;
+
+			// @ts-ignore
+			const selectedLocation = locationFilter.value;
+			// @ts-ignore
+			const selectedMonth = monthFilter.value;
+			let visibleCount = 0;
+
+			rows.forEach((row) => {
+				const rowLocation = row.getAttribute('data-location') || '';
+				const rowDate = row.getAttribute('data-date') || '';
+
+				const matchesLocation = selectedLocation === 'ALL' || rowLocation.includes(selectedLocation);
+				const matchesMonth = selectedMonth === 'ALL' || rowDate.includes(selectedMonth);
+
+				if (matchesLocation && matchesMonth) {
+					row.classList.remove('hidden');
+					visibleCount += 1;
+				} else {
+					row.classList.add('hidden');
+				}
+			});
+
+			if (visibleCount === 0) {
+				noResults?.classList.remove('hidden');
+			} else {
+				noResults?.classList.add('hidden');
+			}
+		}
+
+		locationFilter?.addEventListener('change', filterEvents);
+		monthFilter?.addEventListener('change', filterEvents);
+		filterEvents();
+	});
+</script>

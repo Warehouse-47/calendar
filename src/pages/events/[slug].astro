@@ -1,0 +1,58 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getEvents } from '../../lib/events';
+
+export async function getStaticPaths() {
+  const events = await getEvents();
+
+  return events.map((event) => ({ params: { slug: event.slug } }));
+}
+
+const allEvents = await getEvents();
+const eventData = allEvents.find((event) => event.slug === Astro.params.slug);
+
+if (!eventData) {
+  throw new Error(`Event not found for slug: ${Astro.params.slug}`);
+}
+---
+
+<Layout title={eventData.title}>
+  <header class="p-8 border-b brutalist-border flex flex-col md:flex-row md:justify-between md:items-end gap-4">
+    <a href="/" class="mono text-xs opacity-60 hover:opacity-100">[ ← BACK_TO_MANIFEST ]</a>
+    <div class="text-left md:text-right mono text-[10px] opacity-50 tracking-[0.2em] uppercase">
+      [ EVENT_PROTOCOL ]<br />
+      [ SLUG: {eventData.slug} ]
+    </div>
+  </header>
+
+  <section class="border-b brutalist-border px-8 py-10 uppercase">
+    <p class="mono text-xs opacity-60 mb-3">{eventData.dateDisplay} // {eventData.locationDisplay}</p>
+    <h1 class="text-5xl md:text-7xl font-black tracking-tighter leading-none" transition:name={`title-${eventData.slug}`}>
+      {eventData.title}
+    </h1>
+    <p class="mono text-xs mt-4 opacity-70">// {eventData.category}</p>
+  </section>
+
+  <section class="grid grid-cols-1 md:grid-cols-12 gap-0 min-h-[40vh]">
+    <div class="md:col-span-4 border-b md:border-b-0 md:border-r brutalist-border p-8 mono text-xs uppercase space-y-4">
+      <p><span class="opacity-50">[Status]</span><br />{eventData.status === 'open' ? 'ACCESS OPEN' : 'CLOSED / SOLD OUT'}</p>
+      <p><span class="opacity-50">[Venue]</span><br />{eventData.venue || 'TBA'}</p>
+      <p><span class="opacity-50">[Footfall]</span><br />{eventData.footfall || 'TBA'}</p>
+      <p><span class="opacity-50">[Format]</span><br />{eventData.format || 'TBA'}</p>
+      <p><span class="opacity-50">[Brand Partnerships]</span><br />{eventData.partnershipCategories || 'TBA'}</p>
+    </div>
+
+    <div class="md:col-span-8 p-8 border-b brutalist-border">
+      <h2 class="mono text-xs opacity-50 uppercase mb-4">[ About the event ]</h2>
+      <p class="text-base leading-relaxed whitespace-pre-wrap">{eventData.about || 'No event brief shared yet.'}</p>
+      {eventData.remark && (
+        <p class="mono text-xs uppercase mt-8 opacity-70">[ Remark ] {eventData.remark}</p>
+      )}
+      {eventData.eventFlyer && (
+        <a href={eventData.eventFlyer} target="_blank" rel="noreferrer" class="inline-block mt-8 mono text-xs border border-white px-3 py-2 uppercase hover:bg-white hover:text-black">
+          Open Event Flyer
+        </a>
+      )}
+    </div>
+  </section>
+</Layout>
