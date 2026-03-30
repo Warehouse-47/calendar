@@ -9,6 +9,7 @@ const RawEventSchema = z.object({
   Date: z.any().optional(),
   Location: z.any().optional(),
   Venue: z.any().optional(),
+  'Audience Scale': z.any().optional(),
   Footfall: z.any().optional(),
   Format: z.any().optional(),
   'Relevant Brand Partnership Categories': z.any().optional(),
@@ -33,6 +34,15 @@ const NormalizedEventSchema = z.object({
   about: z.any().optional(),
   remark: z.any().optional(),
   eventFlyer: z.any().optional(),
+  _normalized: z
+    .object({
+      dateStatus: z.any().optional(),
+      cleanType: z.any().optional(),
+      scaleTier: z.any().optional(),
+      city: z.any().optional(),
+      venue: z.any().optional(),
+    })
+    .optional(),
 });
 
 function text(value) {
@@ -57,6 +67,52 @@ function normalizeStatus(remark) {
   return 'open';
 }
 
+function isTbcOrTbd(value) {
+  const upper = text(value).toUpperCase();
+  return upper === 'TBC' || upper === 'TBD';
+}
+
+function normalizeDateStatus(dateValue, remark) {
+  const dateText = text(dateValue);
+  const remarkUpper = text(remark).toUpperCase();
+
+  if (dateText.length === 0 || isTbcOrTbd(dateText) || remarkUpper.includes('TBC')) {
+    return 'Not Confirmed';
+  }
+
+  return 'Confirmed';
+}
+
+function normalizeCity(locationValue) {
+  const location = text(locationValue);
+  if (location.length === 0 || isTbcOrTbd(location)) {
+    return 'Location TBA';
+  }
+
+  const [city] = location.split(',');
+  const cleanCity = text(city);
+  return cleanCity.length > 0 ? cleanCity : 'Location TBA';
+}
+
+function normalizeVenue(venueValue) {
+  const venue = text(venueValue);
+  if (venue.length === 0 || venue.toUpperCase() === 'TBC') {
+    return 'Venue TBA';
+  }
+
+  return venue;
+}
+
+function buildNormalizedFields({ date, type, scale, location, venue, remark }) {
+  return {
+    dateStatus: normalizeDateStatus(date, remark),
+    cleanType: textOrFallback(type, 'Uncategorized'),
+    scaleTier: textOrFallback(scale, 'Scale TBA'),
+    city: normalizeCity(location),
+    venue: normalizeVenue(venue),
+  };
+}
+
 function makeSlug(title, date, index) {
   const seed = `${title}-${date}`;
   const slug = slugify(seed, { lower: true, strict: true, trim: true });
@@ -76,6 +132,14 @@ export function normalizeEventRow(rawRow, index) {
     const category = textOrFallback(row.category, 'GENERAL');
     const remark = text(row.remark);
     const status = text(row.status).toLowerCase() === 'sold_out' ? 'sold_out' : normalizeStatus(remark);
+    const normalized = buildNormalizedFields({
+      date: dateDisplay,
+      type: row._normalized?.cleanType ?? category,
+      scale: row._normalized?.scaleTier,
+      location: locationDisplay,
+      venue: row._normalized?.venue ?? row.venue,
+      remark,
+    });
 
     return {
       slug: textOrFallback(row.slug, makeSlug(title, dateDisplay, index)),
@@ -93,6 +157,7 @@ export function normalizeEventRow(rawRow, index) {
       about: text(row.about),
       remark,
       eventFlyer: text(row.eventFlyer),
+      _normalized: normalized,
     };
   }
 
@@ -103,6 +168,14 @@ export function normalizeEventRow(rawRow, index) {
   const locationDisplay = textOrFallback(row.Location, 'TBC');
   const category = textOrFallback(row.Type, 'GENERAL');
   const remark = text(row.Remark);
+  const normalized = buildNormalizedFields({
+    date: row.Date,
+    type: row.Type,
+    scale: row['Audience Scale'],
+    location: row.Location,
+    venue: row.Venue,
+    remark,
+  });
 
   return {
     slug: makeSlug(title, dateDisplay, index),
@@ -120,6 +193,7 @@ export function normalizeEventRow(rawRow, index) {
     about: text(row['About the event']),
     remark,
     eventFlyer: text(row['Event Flyer']),
+    _normalized: normalized,
   };
 }
 

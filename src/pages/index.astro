@@ -1,9 +1,34 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { MONTHS, getEvents, getUniqueLocations } from '../lib/events';
+import { MONTHS, getEvents } from '../lib/events';
 
-const events = await getEvents();
-const uniqueLocations = getUniqueLocations(events);
+type EventViewModel = {
+	slug: string;
+	title: string;
+	status: string;
+	dateDisplay: string;
+	category: string;
+	_normalized?: {
+		dateStatus?: string;
+		cleanType?: string;
+		scaleTier?: string;
+		city?: string;
+		venue?: string;
+	};
+};
+
+const events = (await getEvents()) as EventViewModel[];
+const dateFilterOptions = [...MONTHS, 'Not Confirmed'];
+
+function uniqueSorted(values: string[]) {
+	return [...new Set(values)]
+		.filter((value) => value.length > 0)
+		.sort((a, b) => a.localeCompare(b));
+}
+
+const typeOptions = uniqueSorted(events.map((event) => String(event._normalized?.cleanType || 'Uncategorized').trim()));
+const scaleOptions = uniqueSorted(events.map((event) => String(event._normalized?.scaleTier || 'Scale TBA').trim()));
+const cityOptions = uniqueSorted(events.map((event) => String(event._normalized?.city || 'Location TBA').trim()));
 ---
 
 <Layout title="Manifest">
@@ -15,28 +40,52 @@ const uniqueLocations = getUniqueLocations(events);
 		</div>
 	</header>
 
-	<section class="border-b brutalist-border bg-white/5 p-4 px-8 flex flex-col md:flex-row gap-8 mono text-xs uppercase">
+	<section class="border-b brutalist-border bg-white/5 p-4 px-8 grid grid-cols-1 md:grid-cols-5 gap-4 mono text-xs uppercase">
 		<div class="flex items-center gap-4 w-full md:w-auto">
-			<span class="opacity-50 tracking-widest">[LOC]</span>
-			<select id="filter-location" class="bg-black text-white border border-white/20 p-2 w-full md:w-48 outline-none hover:bg-white hover:text-black transition-none cursor-pointer appearance-none rounded-none">
-				<option value="ALL">ALL_ZONES</option>
-				{uniqueLocations.map((loc) => (
-					<option value={loc}>{loc}</option>
+			<span class="opacity-50 tracking-widest">[DATE]</span>
+			<select id="filter-date" class="bg-black text-white border border-white/20 p-2 w-full outline-none hover:bg-white hover:text-black transition-none cursor-pointer appearance-none rounded-none">
+				<option value="ALL">ALL_DATES</option>
+				{dateFilterOptions.map((dateOption) => (
+					<option value={dateOption}>{dateOption.toUpperCase()}</option>
 				))}
 			</select>
 		</div>
 
 		<div class="flex items-center gap-4 w-full md:w-auto">
-			<span class="opacity-50 tracking-widest">[MTH]</span>
-			<select id="filter-month" class="bg-black text-white border border-white/20 p-2 w-full md:w-48 outline-none hover:bg-white hover:text-black transition-none cursor-pointer appearance-none rounded-none">
-				<option value="ALL">ALL_CYCLES</option>
-				{MONTHS.map((month) => (
-					<option value={month}>{month}</option>
+			<span class="opacity-50 tracking-widest">[TYPE]</span>
+			<select id="filter-type" class="bg-black text-white border border-white/20 p-2 w-full outline-none hover:bg-white hover:text-black transition-none cursor-pointer appearance-none rounded-none">
+				<option value="ALL">ALL_TYPES</option>
+				{typeOptions.map((typeValue) => (
+					<option value={typeValue}>{typeValue.toUpperCase()}</option>
 				))}
 			</select>
 		</div>
-		<div class="flex-grow flex items-center justify-end opacity-30 text-[10px] tracking-widest hidden md:flex">
-			// FILTER_PROTOCOL_ENGAGED
+
+		<div class="flex items-center gap-4 w-full md:w-auto">
+			<span class="opacity-50 tracking-widest">[SCALE]</span>
+			<select id="filter-scale" class="bg-black text-white border border-white/20 p-2 w-full outline-none hover:bg-white hover:text-black transition-none cursor-pointer appearance-none rounded-none">
+				<option value="ALL">ALL_SCALES</option>
+				{scaleOptions.map((scale) => (
+					<option value={scale}>{scale.toUpperCase()}</option>
+				))}
+			</select>
+		</div>
+
+		<div class="flex items-center gap-4 w-full md:w-auto">
+			<span class="opacity-50 tracking-widest">[CITY]</span>
+			<select id="filter-city" class="bg-black text-white border border-white/20 p-2 w-full outline-none hover:bg-white hover:text-black transition-none cursor-pointer appearance-none rounded-none">
+				<option value="ALL">ALL_CITIES</option>
+				{cityOptions.map((city) => (
+					<option value={city}>{city.toUpperCase()}</option>
+				))}
+			</select>
+		</div>
+
+		<div class="flex items-center gap-4 w-full md:w-auto">
+			<span class="opacity-50 tracking-widest">[VENUE]</span>
+			<select id="filter-venue" disabled class="bg-black text-white border border-white/20 p-2 w-full outline-none hover:bg-white hover:text-black transition-none cursor-pointer appearance-none rounded-none disabled:opacity-40">
+				<option value="ALL">SELECT_CITY_FIRST</option>
+			</select>
 		</div>
 	</section>
 
@@ -49,12 +98,16 @@ const uniqueLocations = getUniqueLocations(events);
 		</div>
 
 		<div id="events-container">
-			{events.map((event) => (
+			{events.map((event: EventViewModel) => (
 				<a
 					href={`/events/${event.slug}`}
 					class="event-row group block border-b brutalist-border hover:bg-white transition-none"
-					data-location={event.locationUpper}
-					data-date={event.dateUpper}
+					data-date-status={event._normalized?.dateStatus || 'Confirmed'}
+					data-date={event.dateDisplay.toUpperCase()}
+					data-type={event._normalized?.cleanType || 'Uncategorized'}
+					data-scale={event._normalized?.scaleTier || 'Scale TBA'}
+					data-city={event._normalized?.city || 'Location TBA'}
+					data-venue={event._normalized?.venue || 'Venue TBA'}
 				>
 					<div class="grid grid-cols-1 md:grid-cols-12 px-8 py-8 md:py-12 items-center group-hover:text-black transition-none uppercase gap-4 md:gap-0">
 						<div class="md:col-span-2 mono text-sm opacity-60 md:opacity-100">{event.dateDisplay}</div>
@@ -79,28 +132,78 @@ const uniqueLocations = getUniqueLocations(events);
 
 <script>
 	document.addEventListener('astro:page-load', () => {
-		const locationFilter = document.getElementById('filter-location');
-		const monthFilter = document.getElementById('filter-month');
+		const dateFilter = document.getElementById('filter-date') as HTMLSelectElement | null;
+		const typeFilter = document.getElementById('filter-type') as HTMLSelectElement | null;
+		const scaleFilter = document.getElementById('filter-scale') as HTMLSelectElement | null;
+		const cityFilter = document.getElementById('filter-city') as HTMLSelectElement | null;
+		const venueFilter = document.getElementById('filter-venue') as HTMLSelectElement | null;
 		const rows = document.querySelectorAll('.event-row');
 		const noResults = document.getElementById('no-results');
+		/** @type {Map<string, Set<string>>} */
+		const cityToVenues = new Map();
+
+		rows.forEach((row) => {
+			const city = row.getAttribute('data-city') || 'Location TBA';
+			const venue = row.getAttribute('data-venue') || 'Venue TBA';
+			if (!cityToVenues.has(city)) {
+				cityToVenues.set(city, new Set());
+			}
+			cityToVenues.get(city).add(venue);
+		});
+
+		function updateVenueOptions() {
+			if (!cityFilter || !venueFilter) return;
+
+			const selectedCity = cityFilter.value;
+			const isCitySelected = selectedCity !== 'ALL';
+			venueFilter.innerHTML = '';
+			venueFilter.disabled = !isCitySelected;
+
+			const defaultOption = document.createElement('option');
+			defaultOption.value = 'ALL';
+			defaultOption.textContent = isCitySelected ? 'ALL_VENUES' : 'SELECT_CITY_FIRST';
+			venueFilter.append(defaultOption);
+
+			if (!isCitySelected) {
+				return;
+			}
+
+			const venues = [...(cityToVenues.get(selectedCity) || new Set())].sort((a, b) => a.localeCompare(b));
+			venues.forEach((venue) => {
+				const option = document.createElement('option');
+				option.value = venue;
+				option.textContent = venue.toUpperCase();
+				venueFilter.append(option);
+			});
+		}
 
 		function filterEvents() {
-			if (!locationFilter || !monthFilter) return;
+			if (!dateFilter || !typeFilter || !scaleFilter || !cityFilter || !venueFilter) return;
 
-			// @ts-ignore
-			const selectedLocation = locationFilter.value;
-			// @ts-ignore
-			const selectedMonth = monthFilter.value;
+			const selectedDate = dateFilter.value;
+			const selectedType = typeFilter.value;
+			const selectedScale = scaleFilter.value;
+			const selectedCity = cityFilter.value;
+			const selectedVenue = venueFilter.value;
 			let visibleCount = 0;
 
 			rows.forEach((row) => {
-				const rowLocation = row.getAttribute('data-location') || '';
+				const rowDateStatus = row.getAttribute('data-date-status') || 'Confirmed';
 				const rowDate = row.getAttribute('data-date') || '';
+				const rowType = row.getAttribute('data-type') || 'Uncategorized';
+				const rowScale = row.getAttribute('data-scale') || 'Scale TBA';
+				const rowCity = row.getAttribute('data-city') || 'Location TBA';
+				const rowVenue = row.getAttribute('data-venue') || 'Venue TBA';
 
-				const matchesLocation = selectedLocation === 'ALL' || rowLocation.includes(selectedLocation);
-				const matchesMonth = selectedMonth === 'ALL' || rowDate.includes(selectedMonth);
+				const matchesDate =
+					selectedDate === 'ALL' ||
+					(selectedDate === 'Not Confirmed' ? rowDateStatus === 'Not Confirmed' : rowDate.includes(selectedDate));
+				const matchesType = selectedType === 'ALL' || rowType === selectedType;
+				const matchesScale = selectedScale === 'ALL' || rowScale === selectedScale;
+				const matchesCity = selectedCity === 'ALL' || rowCity === selectedCity;
+				const matchesVenue = selectedCity === 'ALL' || selectedVenue === 'ALL' || rowVenue === selectedVenue;
 
-				if (matchesLocation && matchesMonth) {
+				if (matchesDate && matchesType && matchesScale && matchesCity && matchesVenue) {
 					row.classList.remove('hidden');
 					visibleCount += 1;
 				} else {
@@ -115,8 +218,15 @@ const uniqueLocations = getUniqueLocations(events);
 			}
 		}
 
-		locationFilter?.addEventListener('change', filterEvents);
-		monthFilter?.addEventListener('change', filterEvents);
+		cityFilter?.addEventListener('change', () => {
+			updateVenueOptions();
+			filterEvents();
+		});
+		dateFilter?.addEventListener('change', filterEvents);
+		typeFilter?.addEventListener('change', filterEvents);
+		scaleFilter?.addEventListener('change', filterEvents);
+		venueFilter?.addEventListener('change', filterEvents);
+		updateVenueOptions();
 		filterEvents();
 	});
 </script>

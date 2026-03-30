@@ -2,7 +2,7 @@
   {
     "slug": "hilton-tayles-execution-1-wednesday-22-april-2026",
     "title": "Hilton - Tayles (Execution - 1)",
-    "category": "Music/ Brand Advocacy/ Networking/ Entertainment",
+    "category": "Music/ Brand Advocacy/ Networking",
     "status": "open",
     "dateDisplay": "Wednesday, 22 April 2026",
     "dateUpper": "WEDNESDAY, 22 APRIL 2026",
@@ -14,7 +14,14 @@
     "partnershipCategories": "Networking Apps, Co-Working, Productivity Software, Business News, Mobility, Fintech.",
     "about": "Tales for Tayles March presents a mid-week platform for brands to anchor in Gurugram's professional and community networks. More than a hotel bar activation, it offers strategic access to bleisure elites through \"The Cabinet of Tayles\"—Wednesday networking where NFC coasters unlock stories and business development happens without conference rooms. Through curated integrations and invisible-layer access, brands can drive engagement with traveling decision-makers who own Wednesday night. The format supports premium spirits, business networking platforms, and NFC tech seeking professional-audience relevance. Partnering here positions brands as enabling the connections that close deals.",
     "remark": "",
-    "eventFlyer": "N/A"
+    "eventFlyer": "N/A",
+    "_normalized": {
+      "dateStatus": "Confirmed",
+      "cleanType": "Music/ Brand Advocacy/ Networking",
+      "scaleTier": "Intimate",
+      "city": "Gurugram",
+      "venue": "Hilton Baani City Centre"
+    }
   },
   {
     "slug": "black-coffee-gurgaon-wednesday-1-april-2026",
@@ -31,7 +38,14 @@
     "partnershipCategories": "Neo-Banking, Global Spirits, Watches, Concierge Apps, Premium Apparel.",
     "about": "Black Coffee at A.Dot presents a peak-industrial platform for NCR’s Power Elite. This isn't a club gig; it's a high-production takeover in a space that mirrors the scale of the capital’s ambitions. Brands can engage with a mix of C-suite 'bleisure' travelers and the city's highest-spending socialites in a setting designed for massive visual impact",
     "remark": "",
-    "eventFlyer": "N/A"
+    "eventFlyer": "N/A",
+    "_normalized": {
+      "dateStatus": "Confirmed",
+      "cleanType": "Music Concert",
+      "scaleTier": "Community",
+      "city": "Gurugram",
+      "venue": "A.Dot"
+    }
   },
   {
     "slug": "black-coffee-hyderabad-thursday-2-april-2026",
@@ -48,7 +62,14 @@
     "partnershipCategories": "Credit Cards, Premium Vodka, Ride-Hailing, Luxury Fashion, Smartphones, Automotive.",
     "about": "Black Coffee in Hyderabad presents a high-intent platform for brands to access India’s fastest-growing premium nightlife market. More than a tour stop, it offers strategic entry into a globally respected Afro-house ecosystem with strong aspirational pull. Through curated integrations across a large-format venue, brands can drive visibility among high-spend, travel-ready consumers. The format supports fintech, luxury lifestyle, and mobility seeking regional cultural leadership.",
     "remark": "",
-    "eventFlyer": "N/A"
+    "eventFlyer": "N/A",
+    "_normalized": {
+      "dateStatus": "Confirmed",
+      "cleanType": "Music Concert",
+      "scaleTier": "Community",
+      "city": "Hyderabad",
+      "venue": "Quake Arena"
+    }
   },
   {
     "slug": "black-coffee-goa-friday-3-april-2026",
@@ -65,7 +86,14 @@
     "partnershipCategories": "Credit Cards, Premium Vodka, Ride-Hailing, Luxury Fashion, Smartphones, Automotive.",
     "about": "Black Coffee in Goa shifts the narrative from corporate power to 'Luxury Leisure.' At RROV, brands access a curated 'vacationing elite'—the global Indian diaspora and Tier-1 city HNWIs on holiday. Integration focuses on sundowner aesthetics, premium lifestyle, and the high-intent 'Destination Experience' consumer.",
     "remark": "",
-    "eventFlyer": "N/A"
+    "eventFlyer": "N/A",
+    "_normalized": {
+      "dateStatus": "Confirmed",
+      "cleanType": "Music Concert",
+      "scaleTier": "Community",
+      "city": "Goa",
+      "venue": "RROV"
+    }
   },
   {
     "slug": "9x9-delhi-friday-10-april-2026",
@@ -82,7 +110,14 @@
     "partnershipCategories": "Energy Drinks, Streetwear, Gaming, Telecom, QSR, Sneakers.",
     "about": "9x9 presents a youth-volume platform for brands to access high-frequency electronic music consumers at industrial scale. More than a tour date, it offers strategic entry into a fast-growing hard-techno ecosystem where identity is built through attendance. Through curated experiential and digital integrations, brands can drive mass youth adoption and high-content output.",
     "remark": "",
-    "eventFlyer": ""
+    "eventFlyer": "",
+    "_normalized": {
+      "dateStatus": "Confirmed",
+      "cleanType": "Music Concert",
+      "scaleTier": "Community",
+      "city": "Delhi",
+      "venue": "Room XO"
+    }
   },
   {
     "slug": "9x9-mumbai-saturday-11-april-2026",
@@ -99,7 +134,14 @@
     "partnershipCategories": "Energy Drinks, Streetwear, Gaming, Telecom, QSR, Sneakers.",
     "about": "9x9 at Nesco transforms an industrial landmark into a high-stamina hard-techno sanctuary. This is for the 'No-Nonsense' rave culture. Brands should focus on techwear, energy, and hardware, aligning with an audience that values endurance and raw, unfiltered experiences over mainstream aesthetics.",
     "remark": "",
-    "eventFlyer": "N/A"
+    "eventFlyer": "N/A",
+    "_normalized": {
+      "dateStatus": "Confirmed",
+      "cleanType": "Music Concert",
+      "scaleTier": "Community",
+      "city": "Mumbai",
+      "venue": "Nesco"
+    }
   },
   {
     "slug": "9x9-bangalore-sunday-12-april-2026",
@@ -116,12 +158,19 @@
     "partnershipCategories": "Energy Drinks, Streetwear, Gaming, Telecom, QSR, Sneakers.",
     "about": "9x9 presents a youth-volume platform for brands to access high-frequency electronic music consumers at industrial scale. More than a tour date, it offers strategic entry into a fast-growing hard-techno ecosystem where identity is built through attendance. Through curated experiential and digital integrations, brands can drive mass youth adoption and high-content output.",
     "remark": "",
-    "eventFlyer": ""
+    "eventFlyer": "",
+    "_normalized": {
+      "dateStatus": "Confirmed",
+      "cleanType": "Music Concert",
+      "scaleTier": "Community",
+      "city": "Bangalore",
+      "venue": "Sunburn Union"
+    }
   },
   {
     "slug": "retreat-farmhouse-hotsheets-wednesday-15-april-2026",
     "title": "Retreat - Farmhouse (HotSheets)",
-    "category": "Wellness Retreat",
+    "category": "Warehouse 47 - IP",
     "status": "open",
     "dateDisplay": "Wednesday, 15 April 2026",
     "dateUpper": "WEDNESDAY, 15 APRIL 2026",
@@ -133,7 +182,14 @@
     "partnershipCategories": "Wellness, Yoga Apparel, Sleep Tech, Nutraceuticals, EVs, Meditation Apps.",
     "about": "Retreat Farmhouse presents a wellness platform for brands to engage with the portfolio class seeking burnout prevention. More than a countryside escape, it offers strategic access to 20 digitally exhausted, high-net-worth individuals through EV drives, clean nutrition, and organic beauty rituals. Through curated intentional-slowness programming, brands can drive trial among those who treat wellness as productivity hack. The format supports athleisure, clean nutrition, EVs, and sustainable travel seeking luxury-wellness positioning. Partnering here positions brands as enabling the silence that restores the capacity to earn.",
     "remark": "",
-    "eventFlyer": "N/A"
+    "eventFlyer": "N/A",
+    "_normalized": {
+      "dateStatus": "Confirmed",
+      "cleanType": "Warehouse 47 - IP",
+      "scaleTier": "Intimate",
+      "city": "Fawkham",
+      "venue": "Farmhouse"
+    }
   },
   {
     "slug": "circoloco-sunday-19-april-2026",
@@ -150,12 +206,19 @@
     "partnershipCategories": "Real Estate Projects, Neo-Banking & Travel Cards, Fashion Houses, Automotive (SUV/Sedan), Beer Brands.",
     "about": "Circoloco at Jio World Garden presents a validation platform for brands to align with the most respected name in global underground electronic music. More than a festival stage, it offers strategic entry into 25 years of Ibiza heritage translated to Indian scale—8,000 capacity with zero commercial compromise. Through curated integrations with Marco Carola, Michael Bibi, and Mau P, brands can drive visibility among audiences who travel for lineups and dress for the culture. The format supports luxury streetwear, gaming, and global spirits seeking authentic underground credibility. Partnering here positions brands as certified by the red hat itself.",
     "remark": "",
-    "eventFlyer": "N/A"
+    "eventFlyer": "N/A",
+    "_normalized": {
+      "dateStatus": "Confirmed",
+      "cleanType": "Music Festival - Global IP",
+      "scaleTier": "Mass Culturual",
+      "city": "Mumbai",
+      "venue": "Jio World Garden"
+    }
   },
   {
     "slug": "hilton-tayles-execution-2-thursday-23-april-2026",
     "title": "Hilton - Tayles (Execution - 2)",
-    "category": "Music/ Brand Advocacy/ Networking/ Entertainment",
+    "category": "Music/ Brand Advocacy/ Networking",
     "status": "open",
     "dateDisplay": "Thursday, 23 April 2026",
     "dateUpper": "THURSDAY, 23 APRIL 2026",
@@ -167,7 +230,14 @@
     "partnershipCategories": "Airlines, Global Spirits, Luggage, Neo-Banking & Cards, Instant Cameras, Watches, Fragrance.",
     "about": "Tales for Tayles April presents an international platform for brands to bring global serving rituals to Gurugram's cosmopolitan audience. More than a quarterly takeover, it offers strategic entry through \"The Passport Bar\"—discover-only pricing, access windows that close, and Advocate's layer for table hosts. Through curated international mixology and customized memory takeaways, brands can drive cultural education for expense-account connoisseurs. The format supports international spirits, travel/tourism, and limited-edition collaborations seeking business-traveler penetration. Partnering here positions brands as the stamp in the quarterly passport.",
     "remark": "",
-    "eventFlyer": "N/A"
+    "eventFlyer": "N/A",
+    "_normalized": {
+      "dateStatus": "Confirmed",
+      "cleanType": "Music/ Brand Advocacy/ Networking",
+      "scaleTier": "Intimate",
+      "city": "Gurugram",
+      "venue": "Hilton Baani City Centre"
+    }
   },
   {
     "slug": "harris-jayaraj-sunday-26-april-2026",
@@ -184,7 +254,14 @@
     "partnershipCategories": "Telecom, Family Automotive, Consumer Electronics, BFSI, OTT Platforms.",
     "about": "Harris Jayaraj presents a cross-generational platform for brands to access one of India’s most emotionally connected music audiences. More than a concert, it offers strategic entry into a nostalgia-driven, high-volume ecosystem with strong family and NRI pull. Through curated integrations, brands can drive both mass recall and regional depth.",
     "remark": "City – TBC",
-    "eventFlyer": "N/A"
+    "eventFlyer": "N/A",
+    "_normalized": {
+      "dateStatus": "Not Confirmed",
+      "cleanType": "Music Concert",
+      "scaleTier": "Mass Culturual",
+      "city": "Hyderabad",
+      "venue": "Boulder Hills Golf & Country Club"
+    }
   },
   {
     "slug": "rex-rooms-event-friday-1-may-2026",
@@ -201,7 +278,14 @@
     "partnershipCategories": "Haute Couture, Private Banking, Fine Art, Rare Spirits, Classic Cars",
     "about": "Rex Rooms presents an influence platform for brands to navigate London's most clandestine cultural salon. More than a private party, it offers strategic access to 100 stakeholders conducting due diligence on creative economy in real-time among couture, capital, and canvas. Through curated no-public-recaps environment, brands can drive relationships with those who influence the influencers. The format supports haute couture, private banking, fine art, and rare spirits seeking invisible-network penetration. Partnering here positions brands as credential itself—if you're here, you've arrived.",
     "remark": "May to December",
-    "eventFlyer": "N/A"
+    "eventFlyer": "N/A",
+    "_normalized": {
+      "dateStatus": "Confirmed",
+      "cleanType": "Nightlife",
+      "scaleTier": "Intimate",
+      "city": "Chelsea",
+      "venue": "Rex Rooms"
+    }
   },
   {
     "slug": "mochakk-hyderabad-thursday-7-may-2026",
@@ -218,7 +302,14 @@
     "partnershipCategories": "Streetwear, Energy Drinks, Tequila, Sneakers, Dating Apps, Audio Tech.",
     "about": "Mochakk presents a high-virality platform for brands to access Gen-Z and young millennial electronic audiences. More than a tour stop, it offers strategic entry into a personality-driven global house music movement. Through curated content-first integrations, brands can drive digital amplification and cultural relevance.",
     "remark": "",
-    "eventFlyer": "N/A"
+    "eventFlyer": "N/A",
+    "_normalized": {
+      "dateStatus": "Confirmed",
+      "cleanType": "Music Concert",
+      "scaleTier": "City Takeover",
+      "city": "Hyderabad",
+      "venue": "Quake Arena"
+    }
   },
   {
     "slug": "mochakk-mumbai-friday-8-may-2026",
@@ -235,7 +326,14 @@
     "partnershipCategories": "Streetwear, Energy Drinks, Tequila, Sneakers, Dating Apps, Audio Tech.",
     "about": "Mochakk at Bay View leverages Mumbai’s iconic skyline to create the ultimate 'social currency' moment. Designed for the city’s trendsetters and Gen-Z creators, this show prioritizes sunset-to-night transitions, offering brands a high-aesthetic backdrop for content-driven partnerships and luxury streetwear showcases.",
     "remark": "",
-    "eventFlyer": "N/A"
+    "eventFlyer": "N/A",
+    "_normalized": {
+      "dateStatus": "Confirmed",
+      "cleanType": "Music Concert",
+      "scaleTier": "City Takeover",
+      "city": "Mumbai",
+      "venue": "Bay View"
+    }
   },
   {
     "slug": "mochakk-delhi-saturday-9-may-2026",
@@ -252,7 +350,14 @@
     "partnershipCategories": "Streetwear, Energy Drinks, Tequila, Sneakers, Dating Apps, Audio Tech.",
     "about": "Mochakk in Delhi brings global house energy to the capital's massive warehouse culture. This leg focuses on 'The Drop'—targeting the city's sneakerheads, hypebeasts, and digital-first youth. It is the highest-capacity stop on the tour, offering brands maximum reach within the North Indian youth market",
     "remark": "",
-    "eventFlyer": "N/A"
+    "eventFlyer": "N/A",
+    "_normalized": {
+      "dateStatus": "Confirmed",
+      "cleanType": "Music Concert",
+      "scaleTier": "City Takeover",
+      "city": "Delhi",
+      "venue": "A Dot"
+    }
   },
   {
     "slug": "mochakk-bangalore-sunday-10-may-2026",
@@ -269,7 +374,14 @@
     "partnershipCategories": "Streetwear, Energy Drinks, Tequila, Sneakers, Dating Apps, Audio Tech.",
     "about": "Mochakk presents a high-virality platform for brands to access Gen-Z and young millennial electronic audiences. More than a tour stop, it offers strategic entry into a personality-driven global house music movement. Through curated content-first integrations, brands can drive digital amplification and cultural relevance.",
     "remark": "",
-    "eventFlyer": "N/A"
+    "eventFlyer": "N/A",
+    "_normalized": {
+      "dateStatus": "Confirmed",
+      "cleanType": "Music Concert",
+      "scaleTier": "City Takeover",
+      "city": "Bangalore",
+      "venue": "District Area"
+    }
   },
   {
     "slug": "hilton-tayles-execution-3-friday-15-may-2026",
@@ -286,12 +398,19 @@
     "partnershipCategories": "Music Streaming, Energy Drinks, Dining Apps, Streetwear, Audio Hardware, Dating Apps.",
     "about": "Tales for Tayles May presents a weekend-release platform for brands to capture Gurugram's consultants, founders, and dealmakers un-tethered from structure. More than a Friday night party, it offers strategic access through \"Tayles & Tempo\"—Rave Kitchen, Uni-Beats, Living Canvas kinetic back-bar. Through curated high-octane comfort food and genre-bending sound, brands can drive engagement with audiences who work hard and spend accordingly. The format supports premium alcohol, audio-visual tech, and weekend entertainment seeking bleisure-capture. Partnering here positions brands as the release valve for India's most driven professionals.",
     "remark": "",
-    "eventFlyer": "N/A"
+    "eventFlyer": "N/A",
+    "_normalized": {
+      "dateStatus": "Confirmed",
+      "cleanType": "Music/ Brand Advocacy/ Networking",
+      "scaleTier": "Intimate",
+      "city": "Gurugram",
+      "venue": "Hilton Baani City Centre"
+    }
   },
   {
     "slug": "chelsea-flower-show-wednesday-20-may-2026",
     "title": "Chelsea Flower Show",
-    "category": "Lifestyle Exhibition",
+    "category": "Community Festival",
     "status": "open",
     "dateDisplay": "Wednesday, 20 May 2026",
     "dateUpper": "WEDNESDAY, 20 MAY 2026",
@@ -303,7 +422,14 @@
     "partnershipCategories": "Heritage Clothing, Banking, Skincare, Sparkling Wine.",
     "about": "Chelsea Flower Show presents a heritage platform for brands to anchor in 114 years of British horticultural prestige. More than a garden exhibition, it offers strategic entry into global soft power where home and garden, sparkling wine, and British fashion converge in world's most prestigious landscape moment. Through curated integrations in Royal Hospital Chelsea grounds, brands can drive visibility among legacy-wealth and aspiration-wealth simultaneously. The format supports luxury home, heritage tourism, and English sparkling wine seeking international credibility. Partnering here positions brands as part of Britain's ongoing narrative of cultivated beauty.",
     "remark": "19 May 2026 - 23 May 2026 | Chelsea in Bloom",
-    "eventFlyer": "N/A"
+    "eventFlyer": "N/A",
+    "_normalized": {
+      "dateStatus": "Confirmed",
+      "cleanType": "Community Festival",
+      "scaleTier": "Intimate",
+      "city": "Chelsea",
+      "venue": "Royal Hospital Grounds (TBC)"
+    }
   },
   {
     "slug": "nico-moreno-friday-29-may-2026",
@@ -320,7 +446,14 @@
     "partnershipCategories": "Techwear, Energy Drinks, Gaming Hardware, Motorcycles, Audio Streaming.",
     "about": "Nico Moreno at Nesco presents a peak-intensity platform for brands to align with India’s fastest-growing hard-techno movement. More than a headline show, it offers strategic entry into a high-stamina, identity-led audience that treats events as subcultural gatherings. Through curated industrial-scale integrations, brands can drive deep loyalty and high repeat visibility.",
     "remark": "",
-    "eventFlyer": "N/A"
+    "eventFlyer": "N/A",
+    "_normalized": {
+      "dateStatus": "Confirmed",
+      "cleanType": "Music Concert",
+      "scaleTier": "City Takeover",
+      "city": "Mumbai",
+      "venue": "Nesco"
+    }
   },
   {
     "slug": "the-knox-wednesday-17-june-2026",
@@ -337,12 +470,19 @@
     "partnershipCategories": "AR/VR Tech, Interior Design, Spirits (Dark).",
     "about": "The Knox presents an exclusivity platform for brands to access Chelsea's most seductive, undocumented social scene. More than a basement bar, it offers strategic entry into 100-capacity intimate decadence where disco-ball elevators and '70s Miami cocktails create nostalgia-curated experience. Through curated integrations in no-listings, no-tags environment, brands can drive relevance among Sloane Square set playing at underground. The format supports champagne, prime real estate, and private concierge seeking old-money credibility. Partnering here positions brands as the secret worth keeping.",
     "remark": "",
-    "eventFlyer": "N/A"
+    "eventFlyer": "N/A",
+    "_normalized": {
+      "dateStatus": "Confirmed",
+      "cleanType": "Nightlife",
+      "scaleTier": "Intimate",
+      "city": "Chelsea",
+      "venue": "The Knox"
+    }
   },
   {
     "slug": "medicine-festival-friday-14-august-2026",
     "title": "Medicine Festival",
-    "category": "Wellness Festival",
+    "category": "Community Festival",
     "status": "open",
     "dateDisplay": "Friday, 14 August 2026",
     "dateUpper": "FRIDAY, 14 AUGUST 2026",
@@ -354,7 +494,14 @@
     "partnershipCategories": "Eco-Housing, Outdoor Apparel, Functional Drinks, Ethical Banking, Charities.",
     "about": "Medicine Festival presents a purpose platform for brands to align with alcohol-free, phone-free, profit-for-purpose radicalism. More than a wellness event, it offers strategic entry into five-day temporary community where functional beverages, outdoor gear, and mental health apps serve genuine transformation narrative. Through curated integrations in Berkshire's open-air setting, brands can drive engagement with conscious consumers committed to ecosystem repair. The format supports ethical fashion, plant medicine, and functional wellness seeking authenticity-proof credibility. Partnering here positions brands as part of the solution, not the consumption.",
     "remark": "",
-    "eventFlyer": "N/A"
+    "eventFlyer": "N/A",
+    "_normalized": {
+      "dateStatus": "Confirmed",
+      "cleanType": "Community Festival",
+      "scaleTier": "Community",
+      "city": "Berkshire",
+      "venue": "Venue TBA"
+    }
   },
   {
     "slug": "no-art-festival-sunday-15-november-2026",
@@ -371,12 +518,19 @@
     "partnershipCategories": "Housing & Co-Living, Vintage Fashion, Music Streaming, Audio Tech, Rideshare, Publishing.",
     "about": "No Arts Festival Mumbai presents an uncompromising platform for brands to align with underground electronic music's purest ethos. More than a large-scale event, it offers strategic entry into Amsterdam-born warehouse culture translated to 15,000-capacity Indian scale. Through curated integrations in strictly no-compromise environment, brands can drive relevance with genre-literate, anti-EDM audiences who research before they rave. The format supports global spirits, underground fashion, and independent publishing seeking authentic subcultural credibility. Partnering here positions brands as understanding that \"No\" is actually an invitation.",
     "remark": "Venue - TBC",
-    "eventFlyer": "N/A"
+    "eventFlyer": "N/A",
+    "_normalized": {
+      "dateStatus": "Not Confirmed",
+      "cleanType": "Music Festival - Global IP",
+      "scaleTier": "Mass Culturual",
+      "city": "Mumbai",
+      "venue": "TBD"
+    }
   },
   {
     "slug": "hotsheets-tba",
     "title": "HotSheets",
-    "category": "Warehouse 47 - IP \n(Female Wellness Retreat)",
+    "category": "Warehouse 47 - IP",
     "status": "open",
     "dateDisplay": "TBA",
     "dateUpper": "TBA",
@@ -388,12 +542,19 @@
     "partnershipCategories": "Beauty & Skincare (Sheet Masks/Glow), Sleepwear & Lingerie, RTD Cocktails/Seltzers, FemTech & Period Care, Luxury Chocolate/Snacking, Hair Tools.",
     "about": "India's first luxury slumber party retreat. A 20-hour \"hotel takeover\" dedicated to beauty, bonding, and the \"soft life\" aesthetic. This is a hyper-targeted environment for brands to engage with women in their most relaxed, unguarded state—pajamas on, guards down. Perfect for beauty, sleepwear, and wellness brands seeking deep emotional connection and \"girl gang\" virality.",
     "remark": "Venue - TBC",
-    "eventFlyer": "N/A"
+    "eventFlyer": "N/A",
+    "_normalized": {
+      "dateStatus": "Not Confirmed",
+      "cleanType": "Warehouse 47 - IP",
+      "scaleTier": "Intimate",
+      "city": "Mumbai",
+      "venue": "Venue TBA"
+    }
   },
   {
     "slug": "cercle-tba",
     "title": "Cercle",
-    "category": "Music Experience / Electronic Showcase",
+    "category": "Music Festival - Global IP",
     "status": "open",
     "dateDisplay": "TBA",
     "dateUpper": "TBA",
@@ -405,12 +566,19 @@
     "partnershipCategories": "Luxury Travel Cards, Premium Spirits, Audio Hardware, Luxury Fashion, Smartphones, Automotive, Hospitality",
     "about": "Cercle in Mumbai presents a cinematic platform for brands to align with one of the world’s most visually iconic electronic music movements. Known for staging performances in extraordinary locations and broadcasting them globally, Cercle blends music, heritage, and visual storytelling into a singular cultural moment. Through immersive staging and globally distributed content, partner brands gain access to a highly international, culturally literate audience that values aesthetics as much as sound. The format supports premium lifestyle, travel, and technology brands seeking high-credibility cultural placement. Partnering here positions brands inside a globally documented music experience rather than a traditional concert.",
     "remark": "Tentative - November 2026",
-    "eventFlyer": "N/A"
+    "eventFlyer": "N/A",
+    "_normalized": {
+      "dateStatus": "Not Confirmed",
+      "cleanType": "Music Festival - Global IP",
+      "scaleTier": "Mass Culturual",
+      "city": "Mumbai",
+      "venue": "Venue TBA"
+    }
   },
   {
     "slug": "circus-tba",
     "title": "Circus",
-    "category": "Electronic Music Festival",
+    "category": "Music Festival - Global IP",
     "status": "open",
     "dateDisplay": "TBA",
     "dateUpper": "TBA",
@@ -422,12 +590,19 @@
     "partnershipCategories": "Global Spirits, Streetwear, Sneakers, Energy Drinks, Gaming, Neo-Banking, Ride-Hailing, Audio Streaming",
     "about": "Circus presents a large-format electronic music festival platform bringing together global house and techno headliners with India’s most progressive dance audience. More than a festival lineup, it creates an immersive production environment where stage design, lighting, and sound scale elevate the experience into a destination event. Through curated brand integrations across stages, lounges, and digital amplification, partners gain access to high-spend electronic music consumers who travel for lineups and document every moment. The format supports lifestyle, beverage, and youth culture brands seeking deep nightlife relevance. Partnering here positions brands within one of India’s fastest-growing electronic music festival circuits.",
     "remark": "Tentative - December 2026",
-    "eventFlyer": "N/A"
+    "eventFlyer": "N/A",
+    "_normalized": {
+      "dateStatus": "Not Confirmed",
+      "cleanType": "Music Festival - Global IP",
+      "scaleTier": "Mass Culturual",
+      "city": "Location TBA",
+      "venue": "Venue TBA"
+    }
   },
   {
     "slug": "queermade-tinder-tba",
     "title": "QueerMade - Tinder",
-    "category": "Social Festival",
+    "category": "Community Festival",
     "status": "open",
     "dateDisplay": "TBA",
     "dateUpper": "TBA",
@@ -439,12 +614,19 @@
     "partnershipCategories": "Dating Apps, Beauty & Grooming, Fashion & Streetwear, Beverage Brands, LGBTQ+ Advocacy Organizations, Ride-Hailing, Payment Wallets, Lifestyle Retai",
     "about": "QueerMade by Tinder presents a community-first cultural platform celebrating identity, creativity, and connection within India’s LGBTQ+ ecosystem. More than a festival, it is a safe-space environment where music, art, conversation, and self-expression converge into a high-engagement social experience. Through curated performances, creator programming, and community-led storytelling, partner brands can demonstrate authentic support while building trust with a digitally connected, culturally influential audience. The format supports lifestyle, beauty, and fintech brands seeking meaningful community engagement and inclusive brand positioning. Partnering here positions brands as active allies in one of India’s most progressive cultural movements",
     "remark": "",
-    "eventFlyer": ""
+    "eventFlyer": "",
+    "_normalized": {
+      "dateStatus": "Not Confirmed",
+      "cleanType": "Community Festival",
+      "scaleTier": "Mass Culturual",
+      "city": "Bangalore",
+      "venue": "Venue TBA"
+    }
   },
   {
     "slug": "anyma-tba",
     "title": "Anyma",
-    "category": "Electronic Music Festival",
+    "category": "Music Festival - Global IP",
     "status": "open",
     "dateDisplay": "TBA",
     "dateUpper": "TBA",
@@ -456,12 +638,19 @@
     "partnershipCategories": "Smartphones, Gaming Hardware, Audio Technology, Luxury Fashion, Automotive, Visual Technology, Premium Spirits, Wearable Tech",
     "about": "Anyma presents a next-generation electronic music platform where immersive visuals, AI-driven storytelling, and melodic techno converge into a cinematic performance experience. More than a concert, it is a sensory spectacle where music, technology, and digital art operate as a single narrative system. Through large-scale visual production and globally shared content moments, partner brands gain access to a highly engaged, tech-forward audience drawn to innovation and futurism. The format supports technology, automotive, and lifestyle brands seeking association with cutting-edge cultural experiences. Partnering here positions brands at the intersection of music, technology, and digital culture.",
     "remark": "",
-    "eventFlyer": ""
+    "eventFlyer": "",
+    "_normalized": {
+      "dateStatus": "Not Confirmed",
+      "cleanType": "Music Festival - Global IP",
+      "scaleTier": "Mass Culturual",
+      "city": "Location TBA",
+      "venue": "Venue TBA"
+    }
   },
   {
     "slug": "awakenings-tba",
     "title": "Awakenings",
-    "category": "Electronic Music Festival",
+    "category": "Music Festival - Global IP",
     "status": "open",
     "dateDisplay": "TBA",
     "dateUpper": "TBA",
@@ -473,12 +662,19 @@
     "partnershipCategories": "Global Spirits, Streetwear, Audio Streaming, Travel Cards, Sneakers, Energy Drinks, Telecommunications, Premium Apparel",
     "about": "Awakenings presents a world-class techno festival platform recognized globally for its scale, production quality, and genre authority. More than a lineup, it is a flagship gathering for techno loyalists and international festival travelers who treat attendance as cultural identity. Through multi-stage programming and large-format experiential builds, partner brands gain sustained visibility among high-frequency nightlife consumers and globally connected music audiences. The format supports beverage, fashion, and fintech brands seeking strong festival presence and repeat engagement. Partnering here positions brands inside one of the most respected names in global techno culture",
     "remark": "",
-    "eventFlyer": ""
+    "eventFlyer": "",
+    "_normalized": {
+      "dateStatus": "Not Confirmed",
+      "cleanType": "Music Festival - Global IP",
+      "scaleTier": "Mass Culturual",
+      "city": "Location TBA",
+      "venue": "Venue TBA"
+    }
   },
   {
     "slug": "rolling-loud-tba",
     "title": "Rolling Loud",
-    "category": "Electronic Music Festival",
+    "category": "Music Festival - Global IP",
     "status": "open",
     "dateDisplay": "TBA",
     "dateUpper": "TBA",
@@ -490,12 +686,19 @@
     "partnershipCategories": "Sneakers, Streetwear, Smartphones, Quick Commerce, Energy Drinks, Gaming, Telecom, QSR, Financial Services",
     "about": "Rolling Loud presents a mass-culture platform for brands to access one of the world’s most influential youth music audiences. More than a festival, it is a global hip-hop and pop-culture phenomenon where music, fashion, and internet culture intersect at industrial scale. Through multi-day programming, merchandise drops, and creator-driven amplification, partner brands can drive national visibility and strong digital engagement among Gen-Z and young millennial consumers. The format supports consumer tech, streetwear, and beverage brands seeking high-volume reach and cultural relevance. Partnering here positions brands inside a globally recognized youth culture ecosystem.",
     "remark": "",
-    "eventFlyer": ""
+    "eventFlyer": "",
+    "_normalized": {
+      "dateStatus": "Not Confirmed",
+      "cleanType": "Music Festival - Global IP",
+      "scaleTier": "Mass Culturual",
+      "city": "Location TBA",
+      "venue": "Venue TBA"
+    }
   },
   {
     "slug": "time-and-tequila-charlie-jeer-tba",
     "title": "Time & Tequila + Charlie Jeer",
-    "category": "Warehouse 47 - IP \n( Luxury Watch x Tastemaker x Collectors)",
+    "category": "Warehouse 47 - IP",
     "status": "open",
     "dateDisplay": "TBA",
     "dateUpper": "TBA",
@@ -507,12 +710,19 @@
     "partnershipCategories": "Wealth Management, Apparel, Aviation, Golf Clubs, High-End Audio.",
     "about": "Time & Tequila Delhi presents a power platform for brands to access Lutyens' established, inheritance-based elite. More than a spirits event, it offers strategic entry into Delhi's ceremony-appreciating, ritual-oriented wealth through private, conversation-driven gatherings. Through curated agave education and unhurried luxury, brands can drive status-signaling adoption among those who've seen funded noise and prefer old-money quiet. The format supports super-premium tequila, cigars, and luxury tourism seeking genuine high-net-worth penetration. Partnering here positions brands as shared language among those who don't need to prove anything.",
     "remark": "May to June or October to December",
-    "eventFlyer": "N/A"
+    "eventFlyer": "N/A",
+    "_normalized": {
+      "dateStatus": "Not Confirmed",
+      "cleanType": "Warehouse 47 - IP",
+      "scaleTier": "Intimate",
+      "city": "Delhi",
+      "venue": "Venue TBA"
+    }
   },
   {
     "slug": "time-and-tequila-charlie-jeer-tba",
     "title": "Time & Tequila + Charlie Jeer",
-    "category": "Warehouse 47 - IP \n( Luxury Watch x Tastemaker x Collectors)",
+    "category": "Warehouse 47 - IP",
     "status": "open",
     "dateDisplay": "TBA",
     "dateUpper": "TBA",
@@ -524,12 +734,19 @@
     "partnershipCategories": "Wealth Management, Apparel, Aviation, Golf Clubs, High-End Audio.",
     "about": "Time & Tequila Mumbai presents a connoisseur platform for brands to engage with the city's most concentrated HNI gathering. More than a tequila tasting, it offers strategic access to 200 collectors who speak calibre references and agave terroir with equal fluency. Through curated vertical flights, cigar terraces, and password-protected intimacy, brands can drive relevance among portfolios, not just purchases. The format supports haute horlogerie, agave spirits, private banking, and bespoke leather seeking ultra-premium credibility. Partnering here positions brands as earned, not bought—accessible only to those who understand the ceremony.",
     "remark": "May to June or October to December",
-    "eventFlyer": "N/A"
+    "eventFlyer": "N/A",
+    "_normalized": {
+      "dateStatus": "Not Confirmed",
+      "cleanType": "Warehouse 47 - IP",
+      "scaleTier": "Intimate",
+      "city": "Mumbai",
+      "venue": "Venue TBA"
+    }
   },
   {
     "slug": "uc47-tba",
     "title": "UC47",
-    "category": "Warehouse 47 - IP \n(Cars x Fashion x Music x Tech)",
+    "category": "Warehouse 47 - IP",
     "status": "open",
     "dateDisplay": "TBA",
     "dateUpper": "TBA",
@@ -541,12 +758,19 @@
     "partnershipCategories": "Crypto & Web3, Sneaker Apparel, Auto Clubs, Gaming & Esports, Energy Drinks, Grooming.",
     "about": "UC47 presents a movement platform for brands to engage with Mumbai's experience-collecting, drop-chasing generation. More than an underground event, it offers strategic entry through three-tier membership—Ignition, Turbo, Nitro—where supercar showcases, sneaker auctions, and no-rules music create password-protected culture. Through curated tiered integrations and Warehouse47 ecosystem access, brands can drive adoption among those who trade in limited releases and unforgettable nights. The format supports performance vehicles, streetwear, energy drinks, and membership platforms seeking subcultural ownership. Partnering here positions brands as the key to the basement everyone wants to access.",
     "remark": "Venue & Date - TBC",
-    "eventFlyer": "N/A"
+    "eventFlyer": "N/A",
+    "_normalized": {
+      "dateStatus": "Not Confirmed",
+      "cleanType": "Warehouse 47 - IP",
+      "scaleTier": "Community",
+      "city": "Mumbai",
+      "venue": "Venue TBA"
+    }
   },
   {
     "slug": "house-47-immersive-dining-tba",
     "title": "House 47 - Immersive Dining",
-    "category": "Warehouse 47 - IP \n(Immersive Dining)",
+    "category": "Warehouse 47 - IP",
     "status": "open",
     "dateDisplay": "TBA",
     "dateUpper": "TBA",
@@ -558,12 +782,19 @@
     "partnershipCategories": "Dining Credit Cards, Smart Kitchen Tech, Homeware, AR/VR, Interior Design.",
     "about": "House 47 presents a spectacle platform for brands to access Mumbai's most FOMO-generating dining experience. More than a restaurant, it offers strategic entry into 40-seat, 90-minute, ₹20,000 cinematic performance where projection mapping and dry-ice theatrics transform cuisine into flex. Through curated immersive technology and surprise architecture, brands can drive visibility among crypto-affluent, culturally omnivorous audiences who pay for documentation-worthy moments. The format supports luxury spirits, tech/AV innovation, and experiential design seeking waitlist-creating credibility. Partnering here positions brands as the password and the patience required to access tomorrow's dinner conversation.",
     "remark": "Date - TBC",
-    "eventFlyer": "N/A"
+    "eventFlyer": "N/A",
+    "_normalized": {
+      "dateStatus": "Not Confirmed",
+      "cleanType": "Warehouse 47 - IP",
+      "scaleTier": "Intimate",
+      "city": "Mumbai",
+      "venue": "Venue TBA"
+    }
   },
   {
-    "slug": "restaurant-for-immersive-dining-and-speakeasy-bar-tba",
-    "title": "Restaurant for Immersive Dining & Speakeasy Bar",
-    "category": "Warehouse 47 - IP\n(Tri-Brid Communal Destination)",
+    "slug": "third-space-sanctuary-tba",
+    "title": "Third Space Sanctuary",
+    "category": "Warehouse 47 - IP",
     "status": "open",
     "dateDisplay": "TBA",
     "dateUpper": "TBA",
@@ -575,6 +806,13 @@
     "partnershipCategories": "Men’s Grooming, Premium Mixers, Leather Goods, Watches, Neo-Banking, Ride-Hailing.",
     "about": "An immersive dining sanctuary designed for genuine connection. We provide a high-engagement, conversation-first alternative to the club scene, specifically engineered for community building. By blending atmosphere with organic content creation, we offer partners a captive audience where the \"night out\" narrative serves as a powerful engine for brand advocacy. This format allows brands to bypass the noise and build lasting consumer loyalty through meaningful, uninterrupted interaction.",
     "remark": "Venue & Date - TBC",
-    "eventFlyer": "N/A"
+    "eventFlyer": "N/A",
+    "_normalized": {
+      "dateStatus": "Not Confirmed",
+      "cleanType": "Warehouse 47 - IP",
+      "scaleTier": "Intimate",
+      "city": "Mumbai",
+      "venue": "Venue TBA"
+    }
   }
 ]
