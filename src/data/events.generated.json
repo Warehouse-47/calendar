@@ -24,78 +24,6 @@
     }
   },
   {
-    "slug": "black-coffee-gurgaon-wednesday-1-april-2026",
-    "title": "Black Coffee – Gurgaon",
-    "category": "Music Concert",
-    "status": "open",
-    "dateDisplay": "Wednesday, 1 April 2026",
-    "dateUpper": "WEDNESDAY, 1 APRIL 2026",
-    "locationDisplay": "Gurugram, India",
-    "locationUpper": "GURUGRAM, INDIA",
-    "venue": "A.Dot",
-    "footfall": "2500",
-    "format": "Arena / Hall",
-    "partnershipCategories": "Neo-Banking, Global Spirits, Watches, Concierge Apps, Premium Apparel.",
-    "about": "Black Coffee at A.Dot presents a peak-industrial platform for NCR’s Power Elite. This isn't a club gig; it's a high-production takeover in a space that mirrors the scale of the capital’s ambitions. Brands can engage with a mix of C-suite 'bleisure' travelers and the city's highest-spending socialites in a setting designed for massive visual impact",
-    "remark": "",
-    "eventFlyer": "N/A",
-    "_normalized": {
-      "dateStatus": "Confirmed",
-      "cleanType": "Music Concert",
-      "scaleTier": "Community",
-      "city": "Gurugram",
-      "venue": "A.Dot"
-    }
-  },
-  {
-    "slug": "black-coffee-hyderabad-thursday-2-april-2026",
-    "title": "Black Coffee – Hyderabad",
-    "category": "Music Concert",
-    "status": "open",
-    "dateDisplay": "Thursday, 2 April 2026",
-    "dateUpper": "THURSDAY, 2 APRIL 2026",
-    "locationDisplay": "Hyderabad, India",
-    "locationUpper": "HYDERABAD, INDIA",
-    "venue": "Quake Arena",
-    "footfall": "3000",
-    "format": "Arena / Club",
-    "partnershipCategories": "Credit Cards, Premium Vodka, Ride-Hailing, Luxury Fashion, Smartphones, Automotive.",
-    "about": "Black Coffee in Hyderabad presents a high-intent platform for brands to access India’s fastest-growing premium nightlife market. More than a tour stop, it offers strategic entry into a globally respected Afro-house ecosystem with strong aspirational pull. Through curated integrations across a large-format venue, brands can drive visibility among high-spend, travel-ready consumers. The format supports fintech, luxury lifestyle, and mobility seeking regional cultural leadership.",
-    "remark": "",
-    "eventFlyer": "N/A",
-    "_normalized": {
-      "dateStatus": "Confirmed",
-      "cleanType": "Music Concert",
-      "scaleTier": "Community",
-      "city": "Hyderabad",
-      "venue": "Quake Arena"
-    }
-  },
-  {
-    "slug": "black-coffee-goa-friday-3-april-2026",
-    "title": "Black Coffee – Goa",
-    "category": "Music Concert",
-    "status": "open",
-    "dateDisplay": "Friday, 3 April 2026",
-    "dateUpper": "FRIDAY, 3 APRIL 2026",
-    "locationDisplay": "Goa, India",
-    "locationUpper": "GOA, INDIA",
-    "venue": "RROV",
-    "footfall": "1500",
-    "format": "Arena / Club",
-    "partnershipCategories": "Credit Cards, Premium Vodka, Ride-Hailing, Luxury Fashion, Smartphones, Automotive.",
-    "about": "Black Coffee in Goa shifts the narrative from corporate power to 'Luxury Leisure.' At RROV, brands access a curated 'vacationing elite'—the global Indian diaspora and Tier-1 city HNWIs on holiday. Integration focuses on sundowner aesthetics, premium lifestyle, and the high-intent 'Destination Experience' consumer.",
-    "remark": "",
-    "eventFlyer": "N/A",
-    "_normalized": {
-      "dateStatus": "Confirmed",
-      "cleanType": "Music Concert",
-      "scaleTier": "Community",
-      "city": "Goa",
-      "venue": "RROV"
-    }
-  },
-  {
     "slug": "9x9-delhi-friday-10-april-2026",
     "title": "9x9 – Delhi",
     "category": "Music Concert",
@@ -600,12 +528,12 @@
     }
   },
   {
-    "slug": "queermade-tinder-tba",
+    "slug": "queermade-tinder-june-2026",
     "title": "QueerMade - Tinder",
     "category": "Community Festival",
     "status": "open",
-    "dateDisplay": "TBA",
-    "dateUpper": "TBA",
+    "dateDisplay": "June 2026",
+    "dateUpper": "JUNE 2026",
     "locationDisplay": "Bangalore, India",
     "locationUpper": "BANGALORE, INDIA",
     "venue": "TBC",
@@ -616,7 +544,7 @@
     "remark": "",
     "eventFlyer": "",
     "_normalized": {
-      "dateStatus": "Not Confirmed",
+      "dateStatus": "Confirmed",
       "cleanType": "Community Festival",
       "scaleTier": "Mass Culturual",
       "city": "Bangalore",
@@ -672,12 +600,12 @@
     }
   },
   {
-    "slug": "rolling-loud-tba",
+    "slug": "rolling-loud-november-2026",
     "title": "Rolling Loud",
     "category": "Music Festival - Global IP",
     "status": "open",
-    "dateDisplay": "TBA",
-    "dateUpper": "TBA",
+    "dateDisplay": "November 2026",
+    "dateUpper": "NOVEMBER 2026",
     "locationDisplay": "TBC",
     "locationUpper": "TBC",
     "venue": "TBC",
@@ -688,7 +616,7 @@
     "remark": "",
     "eventFlyer": "",
     "_normalized": {
-      "dateStatus": "Not Confirmed",
+      "dateStatus": "Confirmed",
       "cleanType": "Music Festival - Global IP",
       "scaleTier": "Mass Culturual",
       "city": "Location TBA",
