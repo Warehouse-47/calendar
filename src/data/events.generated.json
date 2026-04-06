@@ -480,12 +480,12 @@
     }
   },
   {
-    "slug": "cercle-tba",
+    "slug": "cercle-sunday-29-november-2026",
     "title": "Cercle",
     "category": "Music Festival - Global IP",
     "status": "open",
-    "dateDisplay": "TBA",
-    "dateUpper": "TBA",
+    "dateDisplay": "Sunday, 29 November 2026",
+    "dateUpper": "SUNDAY, 29 NOVEMBER 2026",
     "locationDisplay": "Mumbai, India",
     "locationUpper": "MUMBAI, INDIA",
     "venue": "TBC",
@@ -496,7 +496,7 @@
     "remark": "Tentative - November 2026",
     "eventFlyer": "N/A",
     "_normalized": {
-      "dateStatus": "Not Confirmed",
+      "dateStatus": "Confirmed",
       "cleanType": "Music Festival - Global IP",
       "scaleTier": "Mass Culturual",
       "city": "Mumbai",
@@ -504,12 +504,12 @@
     }
   },
   {
-    "slug": "circus-tba",
+    "slug": "circus-december-2026",
     "title": "Circus",
     "category": "Music Festival - Global IP",
     "status": "open",
-    "dateDisplay": "TBA",
-    "dateUpper": "TBA",
+    "dateDisplay": "December 2026",
+    "dateUpper": "DECEMBER 2026",
     "locationDisplay": "TBC",
     "locationUpper": "TBC",
     "venue": "TBC",
@@ -520,7 +520,7 @@
     "remark": "Tentative - December 2026",
     "eventFlyer": "N/A",
     "_normalized": {
-      "dateStatus": "Not Confirmed",
+      "dateStatus": "Confirmed",
       "cleanType": "Music Festival - Global IP",
       "scaleTier": "Mass Culturual",
       "city": "Location TBA",
@@ -552,12 +552,12 @@
     }
   },
   {
-    "slug": "anyma-tba",
+    "slug": "anyma-november-2026",
     "title": "Anyma",
     "category": "Music Festival - Global IP",
     "status": "open",
-    "dateDisplay": "TBA",
-    "dateUpper": "TBA",
+    "dateDisplay": "November 2026",
+    "dateUpper": "NOVEMBER 2026",
     "locationDisplay": "TBC",
     "locationUpper": "TBC",
     "venue": "TBC",
@@ -568,7 +568,7 @@
     "remark": "",
     "eventFlyer": "",
     "_normalized": {
-      "dateStatus": "Not Confirmed",
+      "dateStatus": "Confirmed",
       "cleanType": "Music Festival - Global IP",
       "scaleTier": "Mass Culturual",
       "city": "Location TBA",
