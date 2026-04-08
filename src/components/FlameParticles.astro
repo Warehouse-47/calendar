@@ -1,0 +1,265 @@
+---
+interface Props {
+  className?: string;
+}
+
+const { className = '' } = Astro.props;
+---
+
+<div class={`flame-particles ${className}`.trim()} data-flame-particles>
+  <canvas class="flame-particles-canvas" aria-hidden="true"></canvas>
+</div>
+
+<script>
+  function initializeFlameParticles() {
+    const containers = document.querySelectorAll('[data-flame-particles]');
+    const root = document.documentElement;
+
+    containers.forEach((container) => {
+      if (!(container instanceof HTMLElement)) return;
+      if (container.dataset.initialized === 'true') return;
+      container.dataset.initialized = 'true';
+
+      const canvas = container.querySelector('canvas');
+      if (!(canvas instanceof HTMLCanvasElement)) return;
+
+      const ctx = canvas.getContext('2d', { alpha: true });
+      if (!ctx) return;
+
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const finePointer = window.matchMedia('(pointer:fine)').matches;
+
+      let width = 0;
+      let height = 0;
+      let dpr = 1;
+      let rafId = 0;
+      let tick = 0;
+
+      let targetX = 0.5;
+      let targetY = 0.58;
+      let currentX = 0.5;
+      let currentY = 0.58;
+      let pointerActiveUntil = 0;
+      let lastPointerX = window.innerWidth * 0.5;
+      let lastPointerY = window.innerHeight * 0.58;
+      let pointerSpeed = 0;
+
+      const particles = [];
+      const baseCount = finePointer ? 120 : 74;
+
+      function setRootVars() {
+        const driftX = (currentX - 0.5) * 2;
+        const driftY = (currentY - 0.5) * 2;
+        root.style.setProperty('--pointer-x', `${(currentX * 100).toFixed(2)}%`);
+        root.style.setProperty('--pointer-y', `${(currentY * 100).toFixed(2)}%`);
+        root.style.setProperty('--drift-x', driftX.toFixed(3));
+        root.style.setProperty('--drift-y', driftY.toFixed(3));
+      }
+
+      function resize() {
+        const rect = container.getBoundingClientRect();
+        width = Math.max(1, Math.floor(rect.width));
+        height = Math.max(1, Math.floor(rect.height));
+        dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+
+        canvas.width = Math.max(1, Math.floor(width * dpr));
+        canvas.height = Math.max(1, Math.floor(height * dpr));
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+
+      function randomBetween(min, max) {
+        return Math.random() * (max - min) + min;
+      }
+
+      function spawnParticle() {
+        const emitterFocusX = width * currentX;
+        const spread = Math.max(width * 0.28, 140);
+        const spawnMode = Math.random();
+
+        let x = randomBetween(emitterFocusX - spread, emitterFocusX + spread);
+        let y = height + randomBetween(4, 36);
+        let vx = randomBetween(-0.35, 0.35);
+        let vy = randomBetween(-2.6, -1.15);
+
+        if (spawnMode < 0.18) {
+          x = randomBetween(-12, 14);
+          y = randomBetween(height * 0.45, height + 22);
+          vx = randomBetween(0.35, 1.25);
+          vy = randomBetween(-1.7, -0.65);
+        } else if (spawnMode > 0.82) {
+          x = randomBetween(width - 14, width + 12);
+          y = randomBetween(height * 0.45, height + 22);
+          vx = randomBetween(-1.25, -0.35);
+          vy = randomBetween(-1.7, -0.65);
+        }
+
+        const maxLife = randomBetween(44, 106);
+        const size = randomBetween(1.4, 4.6);
+        const heat = randomBetween(0, 1);
+
+        particles.push({
+          x,
+          y,
+          vx,
+          vy,
+          life: 0,
+          maxLife,
+          size,
+          heat,
+          wiggle: randomBetween(0, Math.PI * 2),
+        });
+      }
+
+      function spawnTrailParticle(screenX, screenY, velocity = 0.5) {
+        const localX = (screenX / Math.max(1, window.innerWidth)) * width;
+        const localY = (screenY / Math.max(1, window.innerHeight)) * height;
+
+        const spread = 18 + velocity * 20;
+        const life = randomBetween(24, 56 + velocity * 24);
+        const baseVY = randomBetween(-1.9 - velocity * 1.4, -0.7 - velocity * 0.5);
+
+        particles.push({
+          x: localX + randomBetween(-spread, spread),
+          y: localY + randomBetween(-8, 10),
+          vx: randomBetween(-0.6, 0.6) + (currentX - 0.5) * 0.8,
+          vy: baseVY,
+          life: 0,
+          maxLife: life,
+          size: randomBetween(1.8, 5.4 + velocity * 2.2),
+          heat: randomBetween(0.35, 1),
+          wiggle: randomBetween(0, Math.PI * 2),
+        });
+      }
+
+      function drawParticle(particle, turbulence) {
+        const lifeRatio = particle.life / particle.maxLife;
+        const fade = 1 - lifeRatio;
+        const radius = particle.size * (0.5 + fade);
+        const alpha = 0.1 + fade * 0.5;
+        const green = Math.floor(84 + particle.heat * 82);
+
+        ctx.beginPath();
+        ctx.fillStyle = `rgba(255, ${green}, 38, ${alpha.toFixed(3)})`;
+        ctx.arc(particle.x, particle.y, radius, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.fillStyle = `rgba(255, 223, 166, ${(alpha * 0.28).toFixed(3)})`;
+        ctx.arc(particle.x, particle.y, radius * 0.45, 0, Math.PI * 2);
+        ctx.fill();
+
+        particle.wiggle += 0.07 + particle.heat * 0.06;
+        particle.vx += Math.sin(particle.wiggle + turbulence) * 0.007;
+        particle.x += particle.vx + (currentX - 0.5) * 0.42;
+        particle.y += particle.vy + (0.5 - currentY) * 0.35;
+        particle.life += 1;
+      }
+
+      function updatePointer(clientX, clientY) {
+        const dx = clientX - lastPointerX;
+        const dy = clientY - lastPointerY;
+        const distance = Math.hypot(dx, dy);
+        pointerSpeed = Math.min(1, distance / 42);
+        pointerActiveUntil = performance.now() + 220;
+
+        const trailBursts = 1 + Math.floor(pointerSpeed * (finePointer ? 4 : 2));
+        for (let i = 0; i < trailBursts; i += 1) {
+          spawnTrailParticle(clientX, clientY, pointerSpeed);
+        }
+
+        lastPointerX = clientX;
+        lastPointerY = clientY;
+        targetX = Math.min(1, Math.max(0, clientX / Math.max(1, window.innerWidth)));
+        targetY = Math.min(1, Math.max(0, clientY / Math.max(1, window.innerHeight)));
+      }
+
+      function handlePointerMove(event) {
+        updatePointer(event.clientX, event.clientY);
+      }
+
+      function handleTouchMove(event) {
+        const touch = event.touches[0];
+        if (!touch) return;
+        updatePointer(touch.clientX, touch.clientY);
+      }
+
+      function loop() {
+        tick += 1;
+
+        currentX += (targetX - currentX) * 0.08;
+        currentY += (targetY - currentY) * 0.08;
+        setRootVars();
+
+        const volatility = 0.55 + Math.abs(currentX - 0.5) * 1.7 + Math.abs(currentY - 0.58) * 1.35;
+        const emissionRate = finePointer ? 2.6 : 1.7;
+        const trailBoost = performance.now() < pointerActiveUntil ? pointerSpeed * 58 : 0;
+        const dynamicCount = Math.floor(baseCount + volatility * 30 + trailBoost);
+
+        ctx.clearRect(0, 0, width, height);
+        ctx.globalCompositeOperation = 'lighter';
+
+        const spawnBudget = Math.max(1, Math.floor(emissionRate + Math.random() * volatility));
+        for (let i = 0; i < spawnBudget; i += 1) {
+          if (particles.length < dynamicCount) spawnParticle();
+        }
+
+        if (performance.now() < pointerActiveUntil && particles.length < dynamicCount) {
+          spawnTrailParticle(lastPointerX, lastPointerY, pointerSpeed);
+        }
+
+        const turbulence = Math.sin(tick * 0.02) * 0.9;
+
+        for (let i = particles.length - 1; i >= 0; i -= 1) {
+          const particle = particles[i];
+          drawParticle(particle, turbulence);
+
+          if (
+            particle.life >= particle.maxLife ||
+            particle.y < -20 ||
+            particle.x < -28 ||
+            particle.x > width + 28
+          ) {
+            particles.splice(i, 1);
+          }
+        }
+
+        rafId = window.requestAnimationFrame(loop);
+      }
+
+      resize();
+
+      if (!finePointer) {
+        targetX = 0.5;
+        targetY = 0.62;
+      }
+
+      currentX = targetX;
+      currentY = targetY;
+      setRootVars();
+
+      if (!prefersReducedMotion) {
+        window.addEventListener('pointermove', handlePointerMove, { passive: true });
+        window.addEventListener('touchmove', handleTouchMove, { passive: true });
+        window.addEventListener('resize', resize, { passive: true });
+        loop();
+      }
+
+      function cleanup() {
+        if (rafId) window.cancelAnimationFrame(rafId);
+        window.removeEventListener('pointermove', handlePointerMove);
+        window.removeEventListener('touchmove', handleTouchMove);
+        window.removeEventListener('resize', resize);
+      }
+
+      window.addEventListener('pagehide', cleanup, { once: true });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeFlameParticles, { once: true });
+  } else {
+    initializeFlameParticles();
+  }
+
+  document.addEventListener('astro:page-load', initializeFlameParticles);
+</script>

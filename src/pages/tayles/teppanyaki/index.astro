@@ -1,0 +1,138 @@
+---
+import FireEventLayout from '../../../layouts/FireEventLayout.astro';
+import ImagePlaceholder from '../../../components/ImagePlaceholder.astro';
+import VideoPlaceholder from '../../../components/VideoPlaceholder.astro';
+import FlameParticles from '../../../components/FlameParticles.astro';
+
+const timelineStages = ['Arrival', 'Ignition', 'Performance', 'Interaction', 'Finale'];
+---
+
+<FireEventLayout title="A Sizzling Teppanyaki Affair">
+  <div class="fire-scene" aria-hidden="true">
+    <div class="pointer-heat"></div>
+    <div class="flame-layer flame-layer-1"></div>
+    <div class="flame-layer flame-layer-2"></div>
+    <div class="flame-layer flame-layer-3"></div>
+    <div class="flame-aura flame-aura-left"></div>
+    <div class="flame-aura flame-aura-right"></div>
+    <div class="flame-aura flame-aura-top"></div>
+    <FlameParticles />
+    <div class="ember-field"></div>
+    <div class="heat-vignette"></div>
+  </div>
+
+  <main class="fire-page">
+    <section class="section hero" id="hero">
+      <div class="section-shell hero-content">
+        <p class="eyebrow">Exclusive Culinary Night</p>
+        <h1>A Sizzling Teppanyaki Affair</h1>
+        <p class="subtitle">An intimate flame-led dining performance inspired by Japanese teppan artistry.</p>
+        <div class="hero-meta">
+          <p><span>Date:</span> 13th May - 17th May</p>
+          <p><span>Location:</span> Tayles Bar, Hilton Gurugram Baani Ctiy Centre</p>
+        </div>
+        <a class="btn btn-primary" href="#booking">Reserve Your Seat</a>
+      </div>
+    </section>
+
+    <section class="section" id="experience-overview">
+      <div class="section-shell split-intro">
+        <h2>What This Experience Is</h2>
+        <div>
+          <p>
+            Crafted as a cinematic dining ritual, this event blends controlled fire, chef choreography,
+            and elevated omakase-inspired courses for a night built around precision and spectacle.
+          </p>
+          <ul class="bullet-list">
+            <li>Multi-course teppanyaki tasting with premium seasonal produce</li>
+            <li>Live flame choreography synchronized with ambient sound design</li>
+            <li>Intimate seating arranged for direct chef-to-guest storytelling</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="flow">
+      <div class="section-shell">
+        <h2>Experience Flow</h2>
+        <div class="timeline" role="list" aria-label="Event timeline">
+          {timelineStages.map((stage, index) => (
+            <div class="timeline-item" role="listitem">
+              <span class="timeline-index">{String(index + 1).padStart(2, '0')}</span>
+              <h3>{stage}</h3>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="details">
+      <div class="section-shell">
+        <h2>Event Details</h2>
+        <div class="details-grid">
+          <article>
+            <h3>Dates</h3>
+            <p>13th May - 17th May</p>
+          </article>
+          <article>
+            <h3>Time Slots</h3>
+            <p>01:00 PM, 04:00 PM, 07:00 PM</p>
+          </article>
+          <article>
+            <h3>Guests per Session</h3>
+            <p>14 guests maximum</p>
+          </article>
+          <article>
+            <h3>Location</h3>
+            <p>Tayles Bar, Hilton Gurugram Baani Ctiy Centre</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="gallery">
+      <div class="section-shell">
+        <h2>Visual Gallery</h2>
+        <div class="gallery-grid">
+          <ImagePlaceholder />
+          <VideoPlaceholder />
+          <ImagePlaceholder />
+          <VideoPlaceholder />
+          <ImagePlaceholder />
+          <VideoPlaceholder />
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="unique">
+      <div class="section-shell">
+        <h2>Why This Experience Is Unique</h2>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h3>Limited Seats</h3>
+            <p>Carefully capped capacity ensures every guest has a front-row perspective.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Live Performance</h3>
+            <p>Every course is introduced through controlled flame, rhythm, and precision.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Chef Interaction</h3>
+            <p>Guests engage directly with chefs during each stage of preparation.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Premium Dining</h3>
+            <p>Signature ingredients and plated finishing create an elevated tasting arc.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta" id="booking">
+      <div class="section-shell cta-shell">
+        <h2>Secure Your Place By The Fire</h2>
+        <a class="btn btn-primary" href="#">Book Now</a>
+      </div>
+    </section>
+  </main>
+</FireEventLayout>

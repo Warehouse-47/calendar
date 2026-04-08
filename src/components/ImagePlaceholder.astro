@@ -1,0 +1,11 @@
+---
+interface Props {
+  label?: string;
+}
+
+const { label = 'Image Placeholder' } = Astro.props;
+---
+
+<div class="media-placeholder image-placeholder" role="img" aria-label={label}>
+  <span>{label}</span>
+</div>
