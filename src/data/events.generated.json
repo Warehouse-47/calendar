@@ -20,6 +20,7 @@
       "cleanType": "Music/ Brand Advocacy/ Networking",
       "scaleTier": "Intimate",
       "city": "Gurugram",
+      "country": "India",
       "venue": "Hilton Baani City Centre"
     }
   },
@@ -44,6 +45,7 @@
       "cleanType": "Music Concert",
       "scaleTier": "Community",
       "city": "Delhi",
+      "country": "India",
       "venue": "Room XO"
     }
   },
@@ -68,6 +70,7 @@
       "cleanType": "Music Concert",
       "scaleTier": "Community",
       "city": "Mumbai",
+      "country": "India",
       "venue": "Nesco"
     }
   },
@@ -92,6 +95,7 @@
       "cleanType": "Music Concert",
       "scaleTier": "Community",
       "city": "Bangalore",
+      "country": "India",
       "venue": "Sunburn Union"
     }
   },
@@ -116,6 +120,7 @@
       "cleanType": "Warehouse 47 - IP",
       "scaleTier": "Intimate",
       "city": "Fawkham",
+      "country": "UK",
       "venue": "Farmhouse"
     }
   },
@@ -140,6 +145,7 @@
       "cleanType": "Music Festival - Global IP",
       "scaleTier": "Mass Culturual",
       "city": "Mumbai",
+      "country": "India",
       "venue": "Jio World Garden"
     }
   },
@@ -164,6 +170,7 @@
       "cleanType": "Music/ Brand Advocacy/ Networking",
       "scaleTier": "Intimate",
       "city": "Gurugram",
+      "country": "India",
       "venue": "Hilton Baani City Centre"
     }
   },
@@ -188,31 +195,33 @@
       "cleanType": "Nightlife",
       "scaleTier": "Intimate",
       "city": "Chelsea",
+      "country": "UK",
       "venue": "Rex Rooms"
     }
   },
   {
-    "slug": "mochakk-hyderabad-thursday-7-may-2026",
-    "title": "Mochakk – Hyderabad",
+    "slug": "mochakk-goa-thursday-7-may-2026",
+    "title": "Mochakk – Goa",
     "category": "Music Concert",
     "status": "open",
     "dateDisplay": "Thursday, 7 May 2026",
     "dateUpper": "THURSDAY, 7 MAY 2026",
-    "locationDisplay": "Hyderabad, India",
-    "locationUpper": "HYDERABAD, INDIA",
-    "venue": "Quake Arena",
+    "locationDisplay": "Goa, India",
+    "locationUpper": "GOA, INDIA",
+    "venue": "RROV",
     "footfall": "4000",
     "format": "Club / Festival",
     "partnershipCategories": "Streetwear, Energy Drinks, Tequila, Sneakers, Dating Apps, Audio Tech.",
     "about": "Mochakk presents a high-virality platform for brands to access Gen-Z and young millennial electronic audiences. More than a tour stop, it offers strategic entry into a personality-driven global house music movement. Through curated content-first integrations, brands can drive digital amplification and cultural relevance.",
     "remark": "",
-    "eventFlyer": "hub.warehouse47.com/mochakk",
+    "eventFlyer": "https://hub.warehouse47.com/mochakk",
     "_normalized": {
       "dateStatus": "Confirmed",
       "cleanType": "Music Concert",
       "scaleTier": "City Takeover",
-      "city": "Hyderabad",
-      "venue": "Quake Arena"
+      "city": "Goa",
+      "country": "India",
+      "venue": "RROV"
     }
   },
   {
@@ -230,12 +239,13 @@
     "partnershipCategories": "Streetwear, Energy Drinks, Tequila, Sneakers, Dating Apps, Audio Tech.",
     "about": "Mochakk at Bay View leverages Mumbai’s iconic skyline to create the ultimate 'social currency' moment. Designed for the city’s trendsetters and Gen-Z creators, this show prioritizes sunset-to-night transitions, offering brands a high-aesthetic backdrop for content-driven partnerships and luxury streetwear showcases.",
     "remark": "",
-    "eventFlyer": "hub.warehouse47.com/mochakk",
+    "eventFlyer": "https://hub.warehouse47.com/mochakk",
     "_normalized": {
       "dateStatus": "Confirmed",
       "cleanType": "Music Concert",
       "scaleTier": "City Takeover",
       "city": "Mumbai",
+      "country": "India",
       "venue": "Bay View"
     }
   },
@@ -254,12 +264,13 @@
     "partnershipCategories": "Streetwear, Energy Drinks, Tequila, Sneakers, Dating Apps, Audio Tech.",
     "about": "Mochakk in Delhi brings global house energy to the capital's massive warehouse culture. This leg focuses on 'The Drop'—targeting the city's sneakerheads, hypebeasts, and digital-first youth. It is the highest-capacity stop on the tour, offering brands maximum reach within the North Indian youth market",
     "remark": "",
-    "eventFlyer": "hub.warehouse47.com/mochakk",
+    "eventFlyer": "https://hub.warehouse47.com/mochakk",
     "_normalized": {
       "dateStatus": "Confirmed",
       "cleanType": "Music Concert",
       "scaleTier": "City Takeover",
       "city": "Delhi",
+      "country": "India",
       "venue": "A Dot"
     }
   },
@@ -278,12 +289,13 @@
     "partnershipCategories": "Streetwear, Energy Drinks, Tequila, Sneakers, Dating Apps, Audio Tech.",
     "about": "Mochakk presents a high-virality platform for brands to access Gen-Z and young millennial electronic audiences. More than a tour stop, it offers strategic entry into a personality-driven global house music movement. Through curated content-first integrations, brands can drive digital amplification and cultural relevance.",
     "remark": "",
-    "eventFlyer": "hub.warehouse47.com/mochakk",
+    "eventFlyer": "https://hub.warehouse47.com/mochakk",
     "_normalized": {
       "dateStatus": "Confirmed",
       "cleanType": "Music Concert",
       "scaleTier": "City Takeover",
       "city": "Bangalore",
+      "country": "India",
       "venue": "District Area"
     }
   },
@@ -308,6 +320,7 @@
       "cleanType": "Music/ Brand Advocacy/ Networking",
       "scaleTier": "Intimate",
       "city": "Gurugram",
+      "country": "India",
       "venue": "Hilton Baani City Centre"
     }
   },
@@ -332,6 +345,7 @@
       "cleanType": "Community Festival",
       "scaleTier": "Intimate",
       "city": "Chelsea",
+      "country": "UK",
       "venue": "Royal Hospital Grounds (TBC)"
     }
   },
@@ -350,12 +364,13 @@
     "partnershipCategories": "Techwear, Energy Drinks, Gaming Hardware, Motorcycles, Audio Streaming.",
     "about": "Nico Moreno at Nesco presents a peak-intensity platform for brands to align with India’s fastest-growing hard-techno movement. More than a headline show, it offers strategic entry into a high-stamina, identity-led audience that treats events as subcultural gatherings. Through curated industrial-scale integrations, brands can drive deep loyalty and high repeat visibility.",
     "remark": "",
-    "eventFlyer": "hub.warehouse47.com/nico-moreno",
+    "eventFlyer": "https://hub.warehouse47.com/nico-moreno",
     "_normalized": {
       "dateStatus": "Confirmed",
       "cleanType": "Music Concert",
       "scaleTier": "City Takeover",
       "city": "Mumbai",
+      "country": "India",
       "venue": "Nesco"
     }
   },
@@ -380,6 +395,7 @@
       "cleanType": "Nightlife",
       "scaleTier": "Intimate",
       "city": "Chelsea",
+      "country": "UK",
       "venue": "The Knox"
     }
   },
@@ -404,6 +420,7 @@
       "cleanType": "Community Festival",
       "scaleTier": "Community",
       "city": "Berkshire",
+      "country": "UK",
       "venue": "Venue TBA"
     }
   },
@@ -428,6 +445,7 @@
       "cleanType": "Music Festival - Global IP",
       "scaleTier": "Mass Culturual",
       "city": "Mumbai",
+      "country": "India",
       "venue": "TBD"
     }
   },
@@ -452,6 +470,7 @@
       "cleanType": "Warehouse 47 - IP",
       "scaleTier": "Intimate",
       "city": "Mumbai",
+      "country": "India",
       "venue": "Venue TBA"
     }
   },
@@ -476,6 +495,7 @@
       "cleanType": "Music Festival - Global IP",
       "scaleTier": "Mass Culturual",
       "city": "Mumbai",
+      "country": "India",
       "venue": "Venue TBA"
     }
   },
@@ -500,6 +520,7 @@
       "cleanType": "Music Festival - Global IP",
       "scaleTier": "Mass Culturual",
       "city": "Location TBA",
+      "country": "",
       "venue": "Venue TBA"
     }
   },
@@ -524,6 +545,7 @@
       "cleanType": "Community Festival",
       "scaleTier": "Mass Culturual",
       "city": "Bangalore",
+      "country": "India",
       "venue": "Venue TBA"
     }
   },
@@ -548,6 +570,7 @@
       "cleanType": "Music Festival - Global IP",
       "scaleTier": "Mass Culturual",
       "city": "Location TBA",
+      "country": "",
       "venue": "Venue TBA"
     }
   },
@@ -572,6 +595,7 @@
       "cleanType": "Music Festival - Global IP",
       "scaleTier": "Mass Culturual",
       "city": "Location TBA",
+      "country": "",
       "venue": "Venue TBA"
     }
   },
@@ -596,6 +620,7 @@
       "cleanType": "Music Festival - Global IP",
       "scaleTier": "Mass Culturual",
       "city": "Location TBA",
+      "country": "",
       "venue": "Venue TBA"
     }
   },
@@ -620,6 +645,7 @@
       "cleanType": "Warehouse 47 - IP",
       "scaleTier": "Intimate",
       "city": "Delhi",
+      "country": "India",
       "venue": "Venue TBA"
     }
   },
@@ -644,6 +670,7 @@
       "cleanType": "Warehouse 47 - IP",
       "scaleTier": "Intimate",
       "city": "Mumbai",
+      "country": "India",
       "venue": "Venue TBA"
     }
   },
@@ -668,6 +695,7 @@
       "cleanType": "Warehouse 47 - IP",
       "scaleTier": "Community",
       "city": "Mumbai",
+      "country": "India",
       "venue": "Venue TBA"
     }
   },
@@ -692,6 +720,7 @@
       "cleanType": "Warehouse 47 - IP",
       "scaleTier": "Intimate",
       "city": "Mumbai",
+      "country": "India",
       "venue": "Venue TBA"
     }
   },
@@ -716,6 +745,7 @@
       "cleanType": "Warehouse 47 - IP",
       "scaleTier": "Intimate",
       "city": "Mumbai",
+      "country": "India",
       "venue": "Venue TBA"
     }
   }
