@@ -1,0 +1,61 @@
+---
+import '../styles/tayles.css';
+
+interface Props {
+  title: string;
+  tone?: 'editorial' | 'quiet' | 'cultural' | 'energetic' | 'warm' | 'fire';
+}
+
+const { title, tone = 'editorial' } = Astro.props;
+const navItems = [
+  { href: '/tayles', label: 'Calendar' },
+  { href: '/tayles/cabinet-of-tayles', label: 'Cabinet' },
+  { href: '/tayles/advocate-tayles', label: 'Advocate' },
+  { href: '/tayles/tayles-and-tempo', label: 'Tempo' },
+  { href: '/tayles/once-upon-a-tayles', label: 'Once Upon' },
+  { href: '/tayles/teppanyaki', label: 'Teppanyaki' },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#0c0b0a" />
+    <title>Tayles // {title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class={`tayles-page tayles-tone--${tone}`}>
+    <div class="tayles-scene" aria-hidden="true">
+      <div class="tayles-scene__orbit tayles-scene__orbit--one"></div>
+      <div class="tayles-scene__orbit tayles-scene__orbit--two"></div>
+      <div class="tayles-scene__orbit tayles-scene__orbit--three"></div>
+      <div class="tayles-scene__mesh"></div>
+      <div class="tayles-scene__grain"></div>
+    </div>
+
+    <header class="tayles-shell tayles-header">
+      <a class="tayles-brand" href="/tayles" aria-label="Tayles home">
+        <span>Tayles</span>
+        <small>A Calendar of Rituals</small>
+      </a>
+
+      <nav class="tayles-nav" aria-label="Tayles pages">
+        {navItems.map((item) => (
+          <a href={item.href}>{item.label}</a>
+        ))}
+      </nav>
+    </header>
+
+    <main class="tayles-shell tayles-main">
+      <slot />
+    </main>
+  </body>
+</html>

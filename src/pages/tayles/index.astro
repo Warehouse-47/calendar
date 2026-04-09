@@ -1,0 +1,116 @@
+---
+import TaylesLayout from '../../layouts/TaylesLayout.astro';
+
+const calendarCards = [
+	{
+		day: 'Wednesday',
+		title: 'Cabinet of Tayles',
+		description: 'Industry Forums & Conversations',
+		copy: 'A structured midweek room for founders, operators, and thoughtful exchange.',
+		href: '/tayles/cabinet-of-tayles',
+	},
+	{
+		day: 'Thursday',
+		title: 'Advocate Tayles',
+		description: 'Brand Stories & Cultural Partnerships',
+		copy: 'A cultural stage for collaborations, launches, and authored brand experiences.',
+		href: '/tayles/advocate-tayles',
+	},
+	{
+		day: 'Friday',
+		title: 'Tayles and Tempo',
+		description: 'Music, Movement, Energy',
+		copy: 'A high-energy Friday rhythm built for music communities and late-night momentum.',
+		href: '/tayles/tayles-and-tempo',
+	},
+	{
+		day: 'Sunday',
+		title: 'Once Upon a Tayles',
+		description: 'Food, Film, Conversation',
+		copy: 'A slower cultural close to the week with shared meals and long-form social time.',
+		href: '/tayles/once-upon-a-tayles',
+	},
+	{
+		day: 'Special',
+		title: 'Teppanyaki',
+		description: 'Fire-led Dining Experience',
+		copy: 'A live culinary spectacle where precision, theatre, and flame define the night.',
+		href: '/tayles/teppanyaki',
+	},
+];
+---
+
+<TaylesLayout title="Tayles" tone="editorial">
+	<section class="tayles-hero">
+		<p class="tayles-kicker">A Calendar of Rituals</p>
+		<h1 class="tayles-title">Tayles</h1>
+		<p class="tayles-subtitle">
+			Not every night is the same. Each day has a purpose. Each experience has a rhythm.
+		</p>
+	</section>
+
+	<section class="tayles-section">
+		<div class="tayles-section__heading">
+			<p class="tayles-section__eyebrow">What Is Tayles</p>
+			<h2>A modern third space for recurring rituals.</h2>
+		</div>
+		<p class="tayles-section__copy">
+			Tayles is designed as a modern third space, a place that sits between work and home, structure and spontaneity.
+			It is not defined by events. It is defined by recurring rituals. Each day of the week introduces a distinct social
+			behavior, carefully programmed to create community, culture, and consistency.
+		</p>
+	</section>
+
+	<section class="tayles-section tayles-section--split">
+		<div>
+			<div class="tayles-section__heading">
+				<p class="tayles-section__eyebrow">Why We Built This</p>
+				<h2>How do you make every day meaningful?</h2>
+			</div>
+			<p class="tayles-section__copy">
+				We built Tayles to solve a simple operational challenge: how do you make every day meaningful? Instead of
+				chasing one-off events, we created a weekly rhythm, a system where each day attracts a different audience,
+				drives a different mood, and generates predictable energy.
+			</p>
+		</div>
+
+		<div>
+			<div class="tayles-section__heading">
+				<p class="tayles-section__eyebrow">Behavior</p>
+				<h2>What the calendar creates</h2>
+			</div>
+			<div class="tayles-card-grid tayles-card-grid--two">
+				<article class="tayles-card">
+					<p>Anchor slow days with communities.</p>
+				</article>
+				<article class="tayles-card">
+					<p>Create repeatable weekly formats.</p>
+				</article>
+				<article class="tayles-card">
+					<p>Predict inventory and staffing needs.</p>
+				</article>
+				<article class="tayles-card">
+					<p>Turn rhythm into a business system.</p>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<section class="tayles-section">
+		<div class="tayles-section__heading">
+			<p class="tayles-section__eyebrow">The Calendar</p>
+			<h2>Each card is a permanent IP.</h2>
+		</div>
+
+		<div class="tayles-card-grid">
+			{calendarCards.map((card) => (
+				<a class="tayles-card tayles-calendar-card" href={card.href}>
+					<span class="tayles-card__meta">{card.day}</span>
+					<strong>{card.title}</strong>
+					<p>{card.description}</p>
+					<small>{card.copy}</small>
+				</a>
+			))}
+		</div>
+	</section>
+</TaylesLayout>

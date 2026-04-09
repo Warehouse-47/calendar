@@ -1,0 +1,143 @@
+---
+import TaylesLayout from '../layouts/TaylesLayout.astro';
+
+type CTA = {
+  label: string;
+  href: string;
+  variant?: 'primary' | 'secondary';
+};
+
+type RhythmItem = {
+  label: string;
+  value: string;
+};
+
+interface Props {
+  title: string;
+  tone: 'quiet' | 'cultural' | 'energetic' | 'warm' | 'fire';
+  heroKicker: string;
+  heroTitle: string;
+  heroSubtitle: string;
+  conceptTitle: string;
+  conceptBody: string;
+  ritualItems: string[];
+  audienceItems: string[];
+  happenings: string[];
+  whyTitle: string;
+  whyBody: string;
+  rhythm: RhythmItem[];
+  ctas: CTA[];
+}
+
+const {
+  title,
+  tone,
+  heroKicker,
+  heroTitle,
+  heroSubtitle,
+  conceptTitle,
+  conceptBody,
+  ritualItems,
+  audienceItems,
+  happenings,
+  whyTitle,
+  whyBody,
+  rhythm,
+  ctas,
+} = Astro.props;
+---
+
+<TaylesLayout title={title} tone={tone}>
+  <section class="tayles-hero">
+    <p class="tayles-kicker">{heroKicker}</p>
+    <h1 class="tayles-title">{heroTitle}</h1>
+    <p class="tayles-subtitle">{heroSubtitle}</p>
+  </section>
+
+  <section class="tayles-section">
+    <div class="tayles-section__heading">
+      <p class="tayles-section__eyebrow">Concept Statement</p>
+      <h2>{conceptTitle}</h2>
+    </div>
+    <p class="tayles-section__copy">{conceptBody}</p>
+  </section>
+
+  <section class="tayles-section">
+    <div class="tayles-section__heading">
+      <p class="tayles-section__eyebrow">The Ritual</p>
+      <h2>How the night is structured</h2>
+    </div>
+    <div class="tayles-card-grid tayles-card-grid--two">
+      {ritualItems.map((item) => (
+        <article class="tayles-card tayles-card--quiet">
+          <p>{item}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="tayles-section">
+    <div class="tayles-section__heading">
+      <p class="tayles-section__eyebrow">Audience</p>
+      <h2>Who it is for</h2>
+    </div>
+    <div class="tayles-pill-list">
+      {audienceItems.map((item) => (
+        <span>{item}</span>
+      ))}
+    </div>
+  </section>
+
+  <section class="tayles-section">
+    <div class="tayles-section__heading">
+      <p class="tayles-section__eyebrow">What Happens</p>
+      <h2>Behavior, format, and output</h2>
+    </div>
+    <div class="tayles-card-grid">
+      {happenings.map((item) => (
+        <article class="tayles-card">
+          <p>{item}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="tayles-section tayles-section--split">
+    <div>
+      <div class="tayles-section__heading">
+        <p class="tayles-section__eyebrow">Why It Exists</p>
+        <h2>{whyTitle}</h2>
+      </div>
+      <p class="tayles-section__copy">{whyBody}</p>
+    </div>
+
+    <div>
+      <div class="tayles-section__heading">
+        <p class="tayles-section__eyebrow">Operational Rhythm</p>
+        <h2>Predictable cadence</h2>
+      </div>
+      <div class="tayles-rhythm-grid">
+        {rhythm.map((item) => (
+          <article class="tayles-rhythm-card">
+            <p>{item.label}</p>
+            <strong>{item.value}</strong>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="tayles-section tayles-cta">
+    <div class="tayles-section__heading">
+      <p class="tayles-section__eyebrow">Call to Action</p>
+      <h2>Make the ritual happen</h2>
+    </div>
+    <div class="tayles-cta-row">
+      {ctas.map((cta) => (
+        <a class={`tayles-button ${cta.variant === 'secondary' ? 'tayles-button--secondary' : 'tayles-button--primary'}`} href={cta.href}>
+          {cta.label}
+        </a>
+      ))}
+    </div>
+  </section>
+</TaylesLayout>
