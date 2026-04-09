@@ -40,6 +40,7 @@ const NormalizedEventSchema = z.object({
       cleanType: z.any().optional(),
       scaleTier: z.any().optional(),
       city: z.any().optional(),
+      country: z.any().optional(),
       venue: z.any().optional(),
     })
     .optional(),
@@ -94,6 +95,25 @@ function normalizeCity(locationValue) {
   return cleanCity.length > 0 ? cleanCity : 'Location TBA';
 }
 
+function normalizeCountry(locationValue) {
+  const location = text(locationValue);
+  if (location.length === 0 || isTbcOrTbd(location)) {
+    return '';
+  }
+
+  const parts = location
+    .split(',')
+    .map((part) => text(part))
+    .filter((part) => part.length > 0);
+
+  if (parts.length < 2) {
+    return '';
+  }
+
+  const country = parts[parts.length - 1];
+  return isTbcOrTbd(country) ? '' : country;
+}
+
 function normalizeVenue(venueValue) {
   const venue = text(venueValue);
   if (venue.length === 0 || venue.toUpperCase() === 'TBC') {
@@ -109,6 +129,7 @@ function buildNormalizedFields({ date, type, scale, location, venue, remark }) {
     cleanType: textOrFallback(type, 'Uncategorized'),
     scaleTier: textOrFallback(scale, 'Scale TBA'),
     city: normalizeCity(location),
+    country: normalizeCountry(location),
     venue: normalizeVenue(venue),
   };
 }

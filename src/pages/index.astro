@@ -13,6 +13,7 @@ type EventViewModel = {
 		cleanType?: string;
 		scaleTier?: string;
 		city?: string;
+		country?: string;
 		venue?: string;
 	};
 };
@@ -112,7 +113,9 @@ const cityOptions = uniqueSorted(events.map((event) => String(event._normalized?
 					<div class="grid grid-cols-1 md:grid-cols-12 px-8 py-8 md:py-12 items-center group-hover:text-black transition-none uppercase gap-4 md:gap-0">
 						<div class="md:col-span-2 mono text-sm opacity-60 md:opacity-100">{event.dateDisplay}</div>
 						<div class="md:col-span-2 mono text-xs">
-							{event._normalized?.city || 'Location TBA'}
+							{event._normalized?.country
+								? `${event._normalized?.city || 'Location TBA'}, ${event._normalized.country}`
+								: event._normalized?.city || 'Location TBA'}
 						</div>
 						<div class={`md:col-span-5 text-4xl md:text-5xl font-black tracking-tighter ${event.status === 'sold_out' ? 'line-through decoration-4' : ''}`} transition:name={`title-${event.slug}`}>
 							{event.title}
