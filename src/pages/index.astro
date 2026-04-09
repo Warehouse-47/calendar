@@ -92,7 +92,7 @@ const cityOptions = uniqueSorted(events.map((event) => String(event._normalized?
 	<section class="min-h-screen">
 		<div class="grid grid-cols-12 px-8 py-4 mono text-[10px] opacity-40 uppercase border-b brutalist-border hidden md:grid">
 			<div class="col-span-2">Date</div>
-			<div class="col-span-2">Status</div>
+			<div class="col-span-2">Location</div>
 			<div class="col-span-5">Identity</div>
 			<div class="col-span-3 text-right">Protocol</div>
 		</div>
@@ -112,7 +112,7 @@ const cityOptions = uniqueSorted(events.map((event) => String(event._normalized?
 					<div class="grid grid-cols-1 md:grid-cols-12 px-8 py-8 md:py-12 items-center group-hover:text-black transition-none uppercase gap-4 md:gap-0">
 						<div class="md:col-span-2 mono text-sm opacity-60 md:opacity-100">{event.dateDisplay}</div>
 						<div class="md:col-span-2 mono text-xs">
-							{event.status === 'open' ? '[ + ] ACCESS' : '[ X ] CLOSED'}
+							{event._normalized?.city || 'Location TBA'}
 						</div>
 						<div class={`md:col-span-5 text-4xl md:text-5xl font-black tracking-tighter ${event.status === 'sold_out' ? 'line-through decoration-4' : ''}`} transition:name={`title-${event.slug}`}>
 							{event.title}
