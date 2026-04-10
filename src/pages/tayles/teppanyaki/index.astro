@@ -5,9 +5,19 @@ import VideoPlaceholder from '../../../components/VideoPlaceholder.astro';
 import FlameParticles from '../../../components/FlameParticles.astro';
 
 const timelineStages = ['Arrival', 'Ignition', 'Performance', 'Interaction', 'Finale'];
+
+const sectionMap = [
+  { href: '#hero', label: 'Hero' },
+  { href: '#experience-overview', label: 'Concept' },
+  { href: '#flow', label: 'Ritual' },
+  { href: '#details', label: 'Audience' },
+  { href: '#gallery', label: 'Pictures / References' },
+  { href: '#unique', label: 'Why' },
+  { href: '#booking', label: 'CTA' },
+];
 ---
 
-<FireEventLayout title="A Sizzling Teppanyaki Affair">
+<FireEventLayout title="A Sizzling Teppanyaki Affair" sectionMap={sectionMap}>
   <div class="fire-scene" aria-hidden="true">
     <div class="pointer-heat"></div>
     <div class="flame-layer flame-layer-1"></div>
@@ -22,6 +32,8 @@ const timelineStages = ['Arrival', 'Ignition', 'Performance', 'Interaction', 'Fi
   </div>
 
   <main class="fire-page">
+    <a class="teppanyaki-back" href="/tayles">Back to Tayles Calendar</a>
+
     <section class="section hero" id="hero">
       <div class="section-shell hero-content">
         <p class="eyebrow">Exclusive Culinary Night</p>

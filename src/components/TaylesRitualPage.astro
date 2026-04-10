@@ -12,6 +12,16 @@ type RhythmItem = {
   value: string;
 };
 
+type ReferenceItem = {
+  title: string;
+  caption: string;
+};
+
+type TestimonialItem = {
+  quote: string;
+  byline: string;
+};
+
 interface Props {
   title: string;
   tone: 'quiet' | 'cultural' | 'energetic' | 'warm' | 'fire';
@@ -27,6 +37,9 @@ interface Props {
   whyBody: string;
   rhythm: RhythmItem[];
   ctas: CTA[];
+  references?: ReferenceItem[];
+  testimonials?: TestimonialItem[];
+  activations?: string[];
 }
 
 const {
@@ -44,40 +57,75 @@ const {
   whyBody,
   rhythm,
   ctas,
+  references = [
+    { title: `${title} Gallery`, caption: 'Space for photos, stills, and mood documentation.' },
+    { title: `${title} Reference Deck`, caption: 'Space for briefing links, recaps, and hosted formats.' },
+    { title: `${title} Highlights`, caption: 'Space for editorial selects and social-proof moments.' },
+  ],
+  testimonials = [
+    { quote: 'The ritual format makes it easier to return and bring others.', byline: 'Returning Community Guest' },
+    { quote: 'The room feels intentionally designed, not scheduled.', byline: 'Partner Team' },
+    { quote: 'Each week has a clear identity, and that builds trust fast.', byline: 'Programming Collaborator' },
+  ],
+  activations = ['Hilton', 'Red Bull', 'Bacardi', 'Diageo', 'Johnnie Walker', 'Patron', 'Absolut', 'Spotify'],
 } = Astro.props;
+
+const activationRail = [...activations, ...activations];
+
+const sectionMap = [
+  { href: '#hero', label: 'Hero' },
+  { href: '#concept', label: 'Season Brief' },
+  { href: '#ritual', label: 'Chapter Flow' },
+  { href: '#audience', label: 'Audience' },
+  { href: '#happens', label: 'Chapter Outcomes' },
+  { href: '#why', label: 'Why' },
+  { href: '#rhythm', label: 'Rhythm' },
+  { href: '#cta', label: 'CTA' },
+  { href: '#references', label: 'Pictures / References' },
+  { href: '#testimonials', label: 'Testimonials' },
+  { href: '#activations', label: 'Previous Activations' },
+];
 ---
 
-<TaylesLayout title={title} tone={tone}>
-  <section class="tayles-hero">
-    <p class="tayles-kicker">{heroKicker}</p>
-    <h1 class="tayles-title">{heroTitle}</h1>
-    <p class="tayles-subtitle">{heroSubtitle}</p>
+<TaylesLayout title={title} tone={tone} sectionMap={sectionMap}>
+  <section class="tayles-cover" id="hero">
+    <div class="tayles-cover__body">
+      <p class="tayles-kicker">{heroKicker}</p>
+      <h1 class="tayles-title">{heroTitle}</h1>
+      <p class="tayles-subtitle">{heroSubtitle}</p>
+    </div>
+    <aside class="tayles-cover__asset" aria-label="Hero visual placeholder">
+      <span>Cover Story Visual</span>
+      <small>Reserved for campaign image, short film still, or featured portrait.</small>
+    </aside>
   </section>
 
-  <section class="tayles-section">
-    <div class="tayles-section__heading">
-      <p class="tayles-section__eyebrow">Concept Statement</p>
+  <section class="tayles-spread tayles-spread--story" id="concept">
+    <div class="tayles-spread__header">
+      <p class="tayles-section__eyebrow">Season Brief</p>
       <h2>{conceptTitle}</h2>
     </div>
-    <p class="tayles-section__copy">{conceptBody}</p>
+    <p class="tayles-lede">{conceptBody}</p>
+    <p class="tayles-inline-note">Edited for room mood, partner context, and recurrence behavior.</p>
   </section>
 
-  <section class="tayles-section">
-    <div class="tayles-section__heading">
-      <p class="tayles-section__eyebrow">The Ritual</p>
-      <h2>How the night is structured</h2>
+  <section class="tayles-spread tayles-spread--sequence" id="ritual">
+    <div class="tayles-spread__header">
+      <p class="tayles-section__eyebrow">Chapter Flow</p>
+      <h2>How weekly chapters unfold</h2>
     </div>
-    <div class="tayles-card-grid tayles-card-grid--two">
-      {ritualItems.map((item) => (
-        <article class="tayles-card tayles-card--quiet">
+    <ol class="tayles-sequence" aria-label="Ritual sequence">
+      {ritualItems.map((item, index) => (
+        <li>
+          <span>{String(index + 1).padStart(2, '0')}</span>
           <p>{item}</p>
-        </article>
+        </li>
       ))}
-    </div>
+    </ol>
   </section>
 
-  <section class="tayles-section">
-    <div class="tayles-section__heading">
+  <section class="tayles-spread tayles-spread--chips" id="audience">
+    <div class="tayles-spread__header">
       <p class="tayles-section__eyebrow">Audience</p>
       <h2>Who it is for</h2>
     </div>
@@ -88,31 +136,31 @@ const {
     </div>
   </section>
 
-  <section class="tayles-section">
-    <div class="tayles-section__heading">
-      <p class="tayles-section__eyebrow">What Happens</p>
-      <h2>Behavior, format, and output</h2>
+  <section class="tayles-spread tayles-spread--ledger" id="happens">
+    <div class="tayles-spread__header">
+      <p class="tayles-section__eyebrow">Chapter Outcomes</p>
+      <h2>Behavior, format, and weekly output</h2>
     </div>
-    <div class="tayles-card-grid">
+    <div class="tayles-ledger-grid">
       {happenings.map((item) => (
-        <article class="tayles-card">
+        <article class="tayles-ledger-item">
           <p>{item}</p>
         </article>
       ))}
     </div>
   </section>
 
-  <section class="tayles-section tayles-section--split">
+  <section class="tayles-spread tayles-spread--duet" id="why">
     <div>
-      <div class="tayles-section__heading">
+      <div class="tayles-spread__header">
         <p class="tayles-section__eyebrow">Why It Exists</p>
         <h2>{whyTitle}</h2>
       </div>
-      <p class="tayles-section__copy">{whyBody}</p>
+      <p class="tayles-lede">{whyBody}</p>
     </div>
 
     <div>
-      <div class="tayles-section__heading">
+      <div class="tayles-spread__header" id="rhythm">
         <p class="tayles-section__eyebrow">Operational Rhythm</p>
         <h2>Predictable cadence</h2>
       </div>
@@ -127,8 +175,8 @@ const {
     </div>
   </section>
 
-  <section class="tayles-section tayles-cta">
-    <div class="tayles-section__heading">
+  <section class="tayles-spread tayles-spread--cta" id="cta">
+    <div class="tayles-spread__header">
       <p class="tayles-section__eyebrow">Call to Action</p>
       <h2>Make the ritual happen</h2>
     </div>
@@ -138,6 +186,52 @@ const {
           {cta.label}
         </a>
       ))}
+    </div>
+  </section>
+
+  <section class="tayles-spread tayles-spread--gallery" id="references">
+    <div class="tayles-spread__header">
+      <p class="tayles-section__eyebrow">Pictures / References</p>
+      <h2>Visual memory and operational references</h2>
+    </div>
+    <div class="tayles-photo-grid">
+      {references.map((item, index) => (
+        <article class={`tayles-photo-card ${index === 0 ? 'tayles-photo-card--wide' : 'tayles-photo-card--mid'}`}>
+          <div>
+            <b>{item.title}</b>
+            <span>{item.caption}</span>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="tayles-spread tayles-spread--quotes" id="testimonials">
+    <div class="tayles-spread__header">
+      <p class="tayles-section__eyebrow">Testimonials</p>
+      <h2>Community voices</h2>
+    </div>
+    <div class="tayles-testimonial-grid">
+      {testimonials.map((item) => (
+        <article class="tayles-testimonial-card">
+          <blockquote>{item.quote}</blockquote>
+          <cite>{item.byline}</cite>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="tayles-spread tayles-spread--rail" id="activations">
+    <div class="tayles-spread__header">
+      <p class="tayles-section__eyebrow">Previous Activations</p>
+      <h2>Brands and collaborators</h2>
+    </div>
+    <div class="tayles-client-rail" aria-label="Previous activations">
+      <div class="tayles-client-track">
+        {activationRail.map((name) => (
+          <span class="tayles-client-pill">{name}</span>
+        ))}
+      </div>
     </div>
   </section>
 </TaylesLayout>

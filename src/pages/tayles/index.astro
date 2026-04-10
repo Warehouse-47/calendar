@@ -1,35 +1,42 @@
 ---
 import TaylesLayout from '../../layouts/TaylesLayout.astro';
 
-const calendarCards = [
+const weeklyRitualCards = [
 	{
 		day: 'Wednesday',
-		title: 'Cabinet of Tayles',
+		title: 'Season 01: Cabinet of Tayles',
 		description: 'Industry Forums & Conversations',
 		copy: 'A structured midweek room for founders, operators, and thoughtful exchange.',
+		chapter: 'Weekly Chapter: Founder systems, operator exchange, and problem-solving circles.',
 		href: '/tayles/cabinet-of-tayles',
 	},
 	{
 		day: 'Thursday',
-		title: 'Advocate Tayles',
+		title: 'Season 02: Advocate Tayles',
 		description: 'Brand Stories & Cultural Partnerships',
 		copy: 'A cultural stage for collaborations, launches, and authored brand experiences.',
+		chapter: 'Weekly Chapter: Brand narratives, creator communities, and partner showcases.',
 		href: '/tayles/advocate-tayles',
 	},
 	{
 		day: 'Friday',
-		title: 'Tayles and Tempo',
+		title: 'Season 03: Tayles and Tempo',
 		description: 'Music, Movement, Energy',
 		copy: 'A high-energy Friday rhythm built for music communities and late-night momentum.',
+		chapter: 'Weekly Chapter: Music-led communities, movement rituals, and night-energy arcs.',
 		href: '/tayles/tayles-and-tempo',
 	},
 	{
 		day: 'Sunday',
-		title: 'Once Upon a Tayles',
+		title: 'Season 04: Once Upon a Tayles',
 		description: 'Food, Film, Conversation',
 		copy: 'A slower cultural close to the week with shared meals and long-form social time.',
+		chapter: 'Weekly Chapter: Food and film circles, reflective communities, and slower dialogue.',
 		href: '/tayles/once-upon-a-tayles',
 	},
+];
+
+const specialEventCards = [
 	{
 		day: 'Special',
 		title: 'Teppanyaki',
@@ -38,79 +45,260 @@ const calendarCards = [
 		href: '/tayles/teppanyaki',
 	},
 ];
+
+const activationRail = [
+	'Hilton',
+	'Johnnie Walker',
+	'Bacardi',
+	'Patron',
+	'Absolut',
+	'Spotify',
+	'Red Bull',
+	'Diageo',
+	'Hilton',
+	'Johnnie Walker',
+	'Bacardi',
+	'Patron',
+	'Absolut',
+	'Spotify',
+	'Red Bull',
+	'Diageo',
+];
+
+const sectionMap = [
+	{ href: '#hero', label: 'Hero' },
+	{ href: '#cover-story', label: 'Show Format' },
+	{ href: '#what-is-tayles', label: 'Season Logic' },
+	{ href: '#weekly-calendar', label: 'Seasons' },
+	{ href: '#special-events', label: 'Spotlight Event' },
+	{ href: '#community-moments', label: 'Chapter Notes' },
+	{ href: '#photo-reference', label: 'Pictures / References' },
+	{ href: '#testimonials', label: 'Testimonials' },
+	{ href: '#activations', label: 'Previous Activations' },
+];
 ---
 
-<TaylesLayout title="Tayles" tone="editorial">
-	<section class="tayles-hero">
-		<p class="tayles-kicker">A Calendar of Rituals</p>
-		<h1 class="tayles-title">Tayles</h1>
-		<p class="tayles-subtitle">
-			Not every night is the same. Each day has a purpose. Each experience has a rhythm.
-		</p>
-	</section>
-
-	<section class="tayles-section">
-		<div class="tayles-section__heading">
-			<p class="tayles-section__eyebrow">What Is Tayles</p>
-			<h2>A modern third space for recurring rituals.</h2>
+<TaylesLayout title="Tayles" tone="editorial" sectionMap={sectionMap}>
+	<section class="tayles-cover" id="hero">
+		<div class="tayles-cover__body">
+			<p class="tayles-kicker">The Show</p>
+			<h1 class="tayles-title">Tayles</h1>
+			<p class="tayles-subtitle">
+				A show built on recurring social formats. The show is Tayles, the seasons are recurring properties, and
+				the chapters shift weekly through communities and brands.
+			</p>
 		</div>
-		<p class="tayles-section__copy">
-			Tayles is designed as a modern third space, a place that sits between work and home, structure and spontaneity.
-			It is not defined by events. It is defined by recurring rituals. Each day of the week introduces a distinct social
-			behavior, carefully programmed to create community, culture, and consistency.
-		</p>
+		<aside class="tayles-cover__asset" aria-label="Cover visual placeholder">
+			<span>Cover Feature</span>
+			<small>Use for season trailer art, show stills, or chapter campaign imagery.</small>
+		</aside>
 	</section>
 
-	<section class="tayles-section tayles-section--split">
+	<section class="tayles-spread tayles-spread--story" id="cover-story">
+		<div class="tayles-spread__header">
+			<p class="tayles-section__eyebrow">Show Format</p>
+			<h2>How Tayles runs as one show with multiple seasons.</h2>
+		</div>
+		<p class="tayles-lede">
+			Tayles sits between work and home, structure and spontaneity. Instead of one-off events, it programs recurring
+			seasons that audiences can track, return to, and identify with.
+		</p>
+		<p class="tayles-inline-note">Editorial note: build audience memory through seasons and chapters, not isolated nights.</p>
+	</section>
+
+	<section class="tayles-spread tayles-spread--duet" id="what-is-tayles">
 		<div>
-			<div class="tayles-section__heading">
-				<p class="tayles-section__eyebrow">Why We Built This</p>
-				<h2>How do you make every day meaningful?</h2>
+			<div class="tayles-spread__header">
+				<p class="tayles-section__eyebrow">Season Logic</p>
+				<h2>Seasons hold the structure. Chapters keep it alive.</h2>
 			</div>
-			<p class="tayles-section__copy">
-				We built Tayles to solve a simple operational challenge: how do you make every day meaningful? Instead of
-				chasing one-off events, we created a weekly rhythm, a system where each day attracts a different audience,
-				drives a different mood, and generates predictable energy.
+			<p class="tayles-lede">
+				Each season has a distinct format and audience promise. Each week introduces a chapter through a theme,
+				community, or partner story that gives the season fresh context.
 			</p>
 		</div>
 
 		<div>
-			<div class="tayles-section__heading">
-				<p class="tayles-section__eyebrow">Behavior</p>
-				<h2>What the calendar creates</h2>
+			<div class="tayles-spread__header">
+				<p class="tayles-section__eyebrow">House Rules</p>
+				<h2>What this show architecture produces</h2>
 			</div>
-			<div class="tayles-card-grid tayles-card-grid--two">
-				<article class="tayles-card">
+			<div class="tayles-ledger-grid">
+				<article class="tayles-ledger-item">
 					<p>Anchor slow days with communities.</p>
 				</article>
-				<article class="tayles-card">
+				<article class="tayles-ledger-item">
 					<p>Create repeatable weekly formats.</p>
 				</article>
-				<article class="tayles-card">
+				<article class="tayles-ledger-item">
 					<p>Predict inventory and staffing needs.</p>
 				</article>
-				<article class="tayles-card">
+				<article class="tayles-ledger-item">
 					<p>Turn rhythm into a business system.</p>
 				</article>
 			</div>
 		</div>
 	</section>
 
-	<section class="tayles-section">
-		<div class="tayles-section__heading">
-			<p class="tayles-section__eyebrow">The Calendar</p>
-			<h2>Each card is a permanent IP.</h2>
+	<section class="tayles-spread tayles-spread--sequence" id="weekly-calendar">
+		<div class="tayles-spread__header">
+			<p class="tayles-section__eyebrow">Seasons</p>
+			<h2>Recurring properties that anchor the week.</h2>
 		</div>
 
-		<div class="tayles-card-grid">
-			{calendarCards.map((card) => (
-				<a class="tayles-card tayles-calendar-card" href={card.href}>
+		<div class="tayles-editorial-grid">
+			{weeklyRitualCards.map((card) => (
+				<a class="tayles-editorial-card" href={card.href}>
+					<span class="tayles-card__meta">{card.day}</span>
+					<strong>{card.title}</strong>
+					<p>{card.description}</p>
+					<small>{card.copy}</small>
+					<small>{card.chapter}</small>
+				</a>
+			))}
+		</div>
+	</section>
+
+	<section class="tayles-spread tayles-spread--story" id="special-events">
+		<div class="tayles-spread__header">
+			<p class="tayles-section__eyebrow">Special Events</p>
+			<h2>Standalone spectacles beyond the weekly cadence.</h2>
+		</div>
+
+		<div class="tayles-ledger-grid">
+			{specialEventCards.map((card) => (
+				<a class="tayles-editorial-card tayles-editorial-card--spotlight" href={card.href}>
 					<span class="tayles-card__meta">{card.day}</span>
 					<strong>{card.title}</strong>
 					<p>{card.description}</p>
 					<small>{card.copy}</small>
 				</a>
 			))}
+		</div>
+	</section>
+
+	<section class="tayles-pullquote" id="community-moments">
+		<p>
+			"Chapters are where the show breathes: a weekly theme, a community host, or a brand that adds a new layer."
+		</p>
+		<span>Chapter principle, Tayles</span>
+	</section>
+
+	<section class="tayles-spread tayles-spread--quotes">
+		<div class="tayles-spread__header">
+			<p class="tayles-section__eyebrow">Chapter Notes</p>
+			<h2>How weekly chapter changes should feel</h2>
+		</div>
+		<div class="tayles-moment-grid">
+			<article class="tayles-moment-card">
+				<h3>Belonging</h3>
+				<p>People recognize faces, not flyers. The room becomes familiar by design.</p>
+			</article>
+			<article class="tayles-moment-card">
+				<h3>Conversation</h3>
+				<p>Programming is built to trigger meaningful exchange, not passive attendance.</p>
+			</article>
+			<article class="tayles-moment-card">
+				<h3>Continuity</h3>
+				<p>Recurring rhythms create trust for guests, partners, and venue operations.</p>
+			</article>
+		</div>
+	</section>
+
+	<section class="tayles-spread tayles-spread--duet" id="photo-reference">
+		<div>
+			<div class="tayles-spread__header">
+				<p class="tayles-section__eyebrow">Photo & Reference Space</p>
+				<h2>Where to place visual proof</h2>
+			</div>
+			<div class="tayles-photo-grid">
+				<article class="tayles-photo-card tayles-photo-card--wide">
+					<div>
+						<b>Community Table</b>
+						<span>Founders and creators in long-form conversation</span>
+					</div>
+				</article>
+				<article class="tayles-photo-card tayles-photo-card--tall">
+					<div>
+						<b>Bar Ritual</b>
+						<span>Signature service moments that repeat each week</span>
+					</div>
+				</article>
+				<article class="tayles-photo-card tayles-photo-card--mid">
+					<div>
+						<b>Music Corner</b>
+						<span>Tempo-led transitions into late-night energy</span>
+					</div>
+				</article>
+				<article class="tayles-photo-card tayles-photo-card--mid">
+					<div>
+						<b>Sunday Table</b>
+						<span>Food, film, and reflective end-of-week atmosphere</span>
+					</div>
+				</article>
+			</div>
+		</div>
+
+		<div>
+			<div class="tayles-spread__header">
+				<p class="tayles-section__eyebrow">References</p>
+				<h2>Signals that build trust</h2>
+			</div>
+			<div class="tayles-reference-list">
+				<article>
+					<p>Weekly partner briefs and post-ritual recap decks.</p>
+					<small>For brands, collaborators, and community hosts</small>
+				</article>
+				<article>
+					<p>Archived menus, conversation topics, and hosted formats.</p>
+					<small>For repeat guests and new community members</small>
+				</article>
+				<article>
+					<p>Photo and video documentation by ritual, not by one-off event.</p>
+					<small>For editorial storytelling and long-term brand memory</small>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<section class="tayles-spread tayles-spread--quotes" id="testimonials">
+		<div class="tayles-spread__header">
+			<p class="tayles-section__eyebrow">Testimonials</p>
+			<h2>Voices from the room</h2>
+		</div>
+		<div class="tayles-testimonial-grid">
+			<article class="tayles-testimonial-card">
+				<blockquote>
+					"Cabinet of Tayles gave us the kind of midweek forum where partnerships move from intent to action."
+				</blockquote>
+				<cite>Founder, consumer-tech collective</cite>
+			</article>
+			<article class="tayles-testimonial-card">
+				<blockquote>
+					"The Thursday format feels editorial. It lets our brand be experienced as a story, not a promotion."
+				</blockquote>
+				<cite>Partnership Lead, lifestyle label</cite>
+			</article>
+			<article class="tayles-testimonial-card">
+				<blockquote>
+					"By Sunday, the venue becomes a real third space. People stay longer and return with friends."
+				</blockquote>
+				<cite>Community Member</cite>
+			</article>
+		</div>
+	</section>
+
+	<section class="tayles-spread tayles-spread--rail" id="activations">
+		<div class="tayles-spread__header">
+			<p class="tayles-section__eyebrow">Previous Activations</p>
+			<h2>Brands and collaborators</h2>
+		</div>
+		<div class="tayles-client-rail" aria-label="Previous activations">
+			<div class="tayles-client-track">
+				{activationRail.map((name) => (
+					<span class="tayles-client-pill">{name}</span>
+				))}
+			</div>
 		</div>
 	</section>
 </TaylesLayout>

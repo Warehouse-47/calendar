@@ -3,9 +3,10 @@ import '../styles/fire-theme.css';
 
 interface Props {
   title?: string;
+  sectionMap?: Array<{ href: string; label: string }>;
 }
 
-const { title = 'A Sizzling Teppanyaki Affair' } = Astro.props;
+const { title = 'A Sizzling Teppanyaki Affair', sectionMap = [] } = Astro.props;
 ---
 
 <!doctype html>
@@ -24,6 +25,21 @@ const { title = 'A Sizzling Teppanyaki Affair' } = Astro.props;
     <title>{title}</title>
   </head>
   <body class="fire-theme">
-    <slot />
+    <div class="fire-layout-grid">
+      {sectionMap.length > 0 && (
+        <aside class="fire-sectionmap" aria-label="Page sections">
+          <p class="fire-sectionmap__label">On this page</p>
+          <nav>
+            {sectionMap.map((item) => (
+              <a href={item.href}>{item.label}</a>
+            ))}
+          </nav>
+        </aside>
+      )}
+
+      <div class="fire-layout-content">
+        <slot />
+      </div>
+    </div>
   </body>
 </html>

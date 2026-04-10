@@ -4,9 +4,11 @@ import '../styles/tayles.css';
 interface Props {
   title: string;
   tone?: 'editorial' | 'quiet' | 'cultural' | 'energetic' | 'warm' | 'fire';
+  sectionMap?: Array<{ href: string; label: string }>;
 }
 
-const { title, tone = 'editorial' } = Astro.props;
+const { title, tone = 'editorial', sectionMap = [] } = Astro.props;
+const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
 const navItems = [
   { href: '/tayles', label: 'Calendar' },
   { href: '/tayles/cabinet-of-tayles', label: 'Cabinet' },
@@ -15,6 +17,14 @@ const navItems = [
   { href: '/tayles/once-upon-a-tayles', label: 'Once Upon' },
   { href: '/tayles/teppanyaki', label: 'Teppanyaki' },
 ];
+
+function isActiveLink(href: string) {
+  if (href === '/tayles') {
+    return pathname === '/tayles';
+  }
+
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
 ---
 
 <!doctype html>
@@ -42,20 +52,46 @@ const navItems = [
     </div>
 
     <header class="tayles-shell tayles-header">
-      <a class="tayles-brand" href="/tayles" aria-label="Tayles home">
-        <span>Tayles</span>
-        <small>A Calendar of Rituals</small>
-      </a>
+      <div class="tayles-masthead">
+        <a class="tayles-brand" href="/tayles" aria-label="Tayles home">
+          <span>Tayles</span>
+          <small>The Social Edition</small>
+        </a>
 
-      <nav class="tayles-nav" aria-label="Tayles pages">
-        {navItems.map((item) => (
-          <a href={item.href}>{item.label}</a>
-        ))}
-      </nav>
+        <div class="tayles-edition" aria-label="Edition metadata">
+          <span>Edition 04</span>
+          <time datetime="2026-04">April 2026</time>
+        </div>
+
+        <p class="tayles-header__note">Editorial programming for a recurring third-space culture.</p>
+
+        <nav class="tayles-nav" aria-label="Tayles pages">
+          {navItems.map((item) => (
+            <a href={item.href} class={isActiveLink(item.href) ? 'is-active' : undefined} aria-current={isActiveLink(item.href) ? 'page' : undefined}>
+              {item.label}
+            </a>
+          ))}
+        </nav>
+      </div>
     </header>
 
     <main class="tayles-shell tayles-main">
-      <slot />
+      <div class="tayles-layout-grid">
+        {sectionMap.length > 0 && (
+          <aside class="tayles-sectionmap" aria-label="Page sections">
+            <p class="tayles-sectionmap__label">On this page</p>
+            <nav>
+              {sectionMap.map((item) => (
+                <a href={item.href}>{item.label}</a>
+              ))}
+            </nav>
+          </aside>
+        )}
+
+        <div class="tayles-layout-content">
+          <slot />
+        </div>
+      </div>
     </main>
   </body>
 </html>
