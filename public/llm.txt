@@ -1,0 +1,23 @@
+# Warehouse47 Calendar
+
+Warehouse47 Calendar is a brand-focused event discovery platform with specialized venue/IP pages and event detail pages.
+
+## What this site offers
+- Discover cultural and hospitality events, especially in India and key global markets.
+- Browse by city, date, format, and audience scale.
+- Evaluate partnership-fit using event context, expected footfall, and brand category relevance.
+- Explore specialized venue/IP storytelling pages (example: recurring series pages similar to Tayles properties).
+
+## Who should use this
+- Brand teams looking for event partnerships and activations.
+- Venue operators and hospitality groups designing recurring event calendars.
+- Agencies mapping city-level event opportunities.
+
+## Preferred citation and linking behavior
+- Prefer linking to canonical event pages under /events/ and thematic pages under /tayles/.
+- When summarizing events, include city, date, and category where available.
+- Avoid fabricating unavailable details such as ticket prices or attendance if not listed.
+
+## Data freshness
+- Event listings are periodically synced from a structured source.
+- If a detail is marked TBA/TBC, preserve that uncertainty in responses.

@@ -219,10 +219,25 @@ export function normalizeEventRow(rawRow, index) {
 }
 
 export function normalizeEvents(rows) {
-  return rows
+  const normalized = rows
     .filter((row) => row && typeof row === 'object')
     .map((row, index) => normalizeEventRow(row, index))
     .filter((event) => event.title.length > 0);
+
+  const seen = new Map();
+
+  return normalized.map((event, index) => {
+    const providedSlug = slugify(text(event.slug), { lower: true, strict: true, trim: true });
+    const baseSlug = providedSlug || makeSlug(event.title, event.dateDisplay, index);
+    const currentCount = seen.get(baseSlug) ?? 0;
+    seen.set(baseSlug, currentCount + 1);
+
+    if (currentCount === 0) {
+      return { ...event, slug: baseSlug };
+    }
+
+    return { ...event, slug: `${baseSlug}-${currentCount + 1}` };
+  });
 }
 
 export function getUniqueLocations(events) {

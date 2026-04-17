@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { MONTHS, getEvents } from '../lib/events';
+import { getCityLandingGroups } from '../lib/cities';
+import { buildCollectionPageStructuredData, buildItemListStructuredData } from '../lib/seo';
 
 type EventViewModel = {
 	slug: string;
@@ -30,9 +32,30 @@ function uniqueSorted(values: string[]) {
 const typeOptions = uniqueSorted(events.map((event) => String(event._normalized?.cleanType || 'Uncategorized').trim()));
 const scaleOptions = uniqueSorted(events.map((event) => String(event._normalized?.scaleTier || 'Scale TBA').trim()));
 const cityOptions = uniqueSorted(events.map((event) => String(event._normalized?.city || 'Location TBA').trim()));
+const cityLandingGroups = getCityLandingGroups(events, { countryFilter: 'India' }).slice(0, 6);
+const homepageStructuredData = [
+	buildCollectionPageStructuredData({
+		path: '/',
+		name: 'Warehouse47 Event Calendar',
+		description:
+			'Brand-focused event calendar for discovering activations, venue formats, and partnership opportunities across India.',
+	}),
+	buildItemListStructuredData({
+		path: '/',
+		name: 'Featured event opportunities',
+		items: events.slice(0, 20).map((event) => ({
+			name: event.title,
+			url: `/events/${event.slug}`,
+		})),
+	}),
+];
 ---
 
-<Layout title="Manifest">
+<Layout
+	title="Manifest"
+	description="Discover brand and venue event opportunities across India with filters for city, format, date, and scale."
+	structuredData={homepageStructuredData}
+>
 	<header class="p-8 border-b brutalist-border flex flex-col md:flex-row md:justify-between md:items-end gap-4">
 		<h1 class="text-6xl font-black tracking-tighter uppercase">Warehouse47</h1>
 		<div class="text-left md:text-right mono text-[10px] opacity-50 tracking-[0.2em] uppercase">
@@ -89,6 +112,27 @@ const cityOptions = uniqueSorted(events.map((event) => String(event._normalized?
 			</select>
 		</div>
 	</section>
+
+	{cityLandingGroups.length > 0 && (
+		<section class="border-b brutalist-border px-8 py-6">
+			<div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-5">
+				<p class="mono text-[10px] opacity-50 tracking-[0.2em] uppercase">[ City Landing Pages ]</p>
+				<p class="mono text-[10px] opacity-50 uppercase">Brand-focused event hubs across India</p>
+			</div>
+			<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3">
+				{cityLandingGroups.map((group) => (
+					<a
+						href={`/cities/${group.slug}`}
+						class="border brutalist-border px-4 py-4 uppercase hover:bg-white hover:text-black transition-none"
+					>
+						<p class="mono text-[10px] opacity-60">{group.country}</p>
+						<p class="text-2xl font-black tracking-tight">{group.city}</p>
+						<p class="mono text-[11px] opacity-70 mt-2">{group.eventCount} listings</p>
+					</a>
+				))}
+			</div>
+		</section>
+	)}
 
 	<section class="min-h-screen">
 		<div class="grid grid-cols-12 px-8 py-4 mono text-[10px] opacity-40 uppercase border-b brutalist-border hidden md:grid">

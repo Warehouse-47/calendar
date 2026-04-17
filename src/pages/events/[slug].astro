@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getEvents } from '../../lib/events';
+import { buildEventStructuredData } from '../../lib/seo';
 
 export async function getStaticPaths() {
   const events = await getEvents();
@@ -14,9 +15,21 @@ const eventData = allEvents.find((event) => event.slug === Astro.params.slug);
 if (!eventData) {
   throw new Error(`Event not found for slug: ${Astro.params.slug}`);
 }
+
+const eventPath = `/events/${eventData.slug}`;
+const eventStructuredData = [
+  buildEventStructuredData({
+    path: eventPath,
+    event: eventData,
+  }),
+];
 ---
 
-<Layout title={eventData.title}>
+<Layout
+  title={eventData.title}
+  description={eventData.about || `Discover ${eventData.title} on Warehouse47 Calendar.`}
+  structuredData={eventStructuredData}
+>
   <header class="p-8 border-b brutalist-border flex flex-col md:flex-row md:justify-between md:items-end gap-4">
     <a href="/" class="mono text-xs opacity-60 hover:opacity-100">[ ← BACK_TO_MANIFEST ]</a>
     <div class="text-left md:text-right mono text-[10px] opacity-50 tracking-[0.2em] uppercase">

@@ -1,5 +1,6 @@
 ---
 import TaylesLayout from '../../layouts/TaylesLayout.astro';
+import { buildCollectionPageStructuredData, buildItemListStructuredData } from '../../lib/seo';
 
 const weeklyRitualCards = [
 	{
@@ -76,9 +77,32 @@ const sectionMap = [
 	{ href: '#testimonials', label: 'Testimonials' },
 	{ href: '#activations', label: 'Previous Activations' },
 ];
+
+const taylesStructuredData = [
+	buildCollectionPageStructuredData({
+		path: '/tayles',
+		name: 'Tayles Event Properties',
+		description:
+			'Recurring venue/IP event properties designed for communities, culture programming, and brand collaborations.',
+	}),
+	buildItemListStructuredData({
+		path: '/tayles',
+		name: 'Tayles recurring seasons',
+		items: [...weeklyRitualCards, ...specialEventCards].map((card) => ({
+			name: card.title,
+			url: card.href,
+		})),
+	}),
+];
 ---
 
-<TaylesLayout title="Tayles" tone="editorial" sectionMap={sectionMap}>
+<TaylesLayout
+	title="Tayles"
+	description="Recurring venue/IP show format with specialized weekly properties and brand collaboration opportunities."
+	tone="editorial"
+	sectionMap={sectionMap}
+	structuredData={taylesStructuredData}
+>
 	<section class="tayles-cover" id="hero">
 		<div class="tayles-cover__body">
 			<p class="tayles-kicker">The Show</p>

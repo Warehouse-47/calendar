@@ -1,5 +1,6 @@
 ---
 import TaylesLayout from '../layouts/TaylesLayout.astro';
+import { buildCollectionPageStructuredData, buildItemListStructuredData } from '../lib/seo';
 
 type CTA = {
   label: string;
@@ -85,9 +86,26 @@ const sectionMap = [
   { href: '#testimonials', label: 'Testimonials' },
   { href: '#activations', label: 'Previous Activations' },
 ];
+
+const pagePath = Astro.url.pathname;
+const ritualStructuredData = [
+  buildCollectionPageStructuredData({
+    path: pagePath,
+    name: `${title} Event Property`,
+    description: conceptBody,
+  }),
+  buildItemListStructuredData({
+    path: pagePath,
+    name: `${title} chapter outcomes`,
+    items: happenings.map((item) => ({
+      name: item,
+      url: pagePath,
+    })),
+  }),
+];
 ---
 
-<TaylesLayout title={title} tone={tone} sectionMap={sectionMap}>
+<TaylesLayout title={title} description={conceptBody} tone={tone} sectionMap={sectionMap} structuredData={ritualStructuredData}>
   <section class="tayles-cover" id="hero">
     <div class="tayles-cover__body">
       <p class="tayles-kicker">{heroKicker}</p>

@@ -3,6 +3,7 @@ import FireEventLayout from '../../../layouts/FireEventLayout.astro';
 import ImagePlaceholder from '../../../components/ImagePlaceholder.astro';
 import VideoPlaceholder from '../../../components/VideoPlaceholder.astro';
 import FlameParticles from '../../../components/FlameParticles.astro';
+import { buildEventStructuredData } from '../../../lib/seo';
 
 const timelineStages = ['Arrival', 'Ignition', 'Performance', 'Interaction', 'Finale'];
 
@@ -15,9 +16,34 @@ const sectionMap = [
   { href: '#unique', label: 'Why' },
   { href: '#booking', label: 'CTA' },
 ];
+
+const teppanyakiStructuredData = [
+  buildEventStructuredData({
+    path: '/tayles/teppanyaki',
+    event: {
+      title: 'A Sizzling Teppanyaki Affair',
+      dateDisplay: '13 May 2026',
+      locationDisplay: 'Gurugram, India',
+      venue: 'Tayles Bar, Hilton Gurugram Baani City Centre',
+      status: 'open',
+      category: 'Dining Experience',
+      about: 'An intimate flame-led dining performance inspired by Japanese teppan artistry.',
+      _normalized: {
+        city: 'Gurugram',
+        country: 'India',
+        venue: 'Tayles Bar, Hilton Gurugram Baani City Centre',
+      },
+    },
+  }),
+];
 ---
 
-<FireEventLayout title="A Sizzling Teppanyaki Affair" sectionMap={sectionMap}>
+<FireEventLayout
+  title="A Sizzling Teppanyaki Affair"
+  description="Premium fire-led dining event format for hospitality activations and brand collaborations."
+  sectionMap={sectionMap}
+  structuredData={teppanyakiStructuredData}
+>
   <div class="fire-scene" aria-hidden="true">
     <div class="pointer-heat"></div>
     <div class="flame-layer flame-layer-1"></div>

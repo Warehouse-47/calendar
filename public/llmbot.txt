@@ -1,0 +1,20 @@
+# LLM Bot Access Policy
+
+This website allows AI and search crawlers to index publicly available pages for discovery and summarization.
+
+## Allowed
+- Index event pages and venue/IP pages.
+- Summarize event metadata (title, date, city, category, format, footfall ranges when present).
+- Use page URLs as citations in search or assistant responses.
+
+## Disallowed
+- Inventing unpublished details.
+- Presenting uncertain details (TBA/TBC) as confirmed.
+- Rehosting media assets as originals without attribution.
+
+## Priority discovery sections
+- /events/
+- /tayles/
+
+## Audience intent
+This site is optimized for users searching event partnership opportunities in India, with relevance for brand collaborations and venue programming.

@@ -1,12 +1,26 @@
 ---
 import { ClientRouter } from 'astro:transitions';
+import { buildOrganizationStructuredData, buildWebsiteStructuredData, serializeJsonLd } from '../lib/seo';
 import '../styles/global.css';
 
 interface Props {
   title: string;
+  description?: string;
+  structuredData?: Record<string, unknown> | Array<Record<string, unknown>>;
 }
 
-const { title } = Astro.props;
+const {
+  title,
+  description = 'Warehouse47 calendar for discovering event opportunities, venue programs, and brand partnership activations across India and global cultural markets.',
+  structuredData,
+} = Astro.props;
+const siteUrl = String(import.meta.env.PUBLIC_SITE_URL ?? '').trim();
+const canonical = siteUrl ? new URL(Astro.url.pathname, siteUrl).toString() : '';
+const customStructuredData = Array.isArray(structuredData) ? structuredData : structuredData ? [structuredData] : [];
+const baseStructuredData = siteUrl
+  ? [buildOrganizationStructuredData(siteUrl), buildWebsiteStructuredData(siteUrl)]
+  : [];
+const structuredDataList = [...baseStructuredData, ...customStructuredData];
 ---
 
 <!doctype html>
@@ -15,6 +29,19 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+    {canonical && <link rel="canonical" href={canonical} />}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={`W47 // ${title}`} />
+    <meta property="og:description" content={description} />
+    {canonical && <meta property="og:url" content={canonical} />}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={`W47 // ${title}`} />
+    <meta name="twitter:description" content={description} />
+    {structuredDataList.map((entry) => (
+      <script type="application/ld+json" set:html={serializeJsonLd(entry)}></script>
+    ))}
     <title>W47 // {title}</title>
     <ClientRouter />
   </head>

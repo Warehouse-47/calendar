@@ -1,12 +1,27 @@
 ---
 import '../styles/fire-theme.css';
+import { buildOrganizationStructuredData, buildWebsiteStructuredData, serializeJsonLd } from '../lib/seo';
 
 interface Props {
   title?: string;
+  description?: string;
+  structuredData?: Record<string, unknown> | Array<Record<string, unknown>>;
   sectionMap?: Array<{ href: string; label: string }>;
 }
 
-const { title = 'A Sizzling Teppanyaki Affair', sectionMap = [] } = Astro.props;
+const {
+  title = 'A Sizzling Teppanyaki Affair',
+  description = 'A cinematic teppanyaki event experience for premium venue programming and branded hospitality collaborations.',
+  structuredData,
+  sectionMap = [],
+} = Astro.props;
+const siteUrl = String(import.meta.env.PUBLIC_SITE_URL ?? '').trim();
+const canonical = siteUrl ? new URL(Astro.url.pathname, siteUrl).toString() : '';
+const customStructuredData = Array.isArray(structuredData) ? structuredData : structuredData ? [structuredData] : [];
+const baseStructuredData = siteUrl
+  ? [buildOrganizationStructuredData(siteUrl), buildWebsiteStructuredData(siteUrl)]
+  : [];
+const structuredDataList = [...baseStructuredData, ...customStructuredData];
 ---
 
 <!doctype html>
@@ -15,7 +30,19 @@ const { title = 'A Sizzling Teppanyaki Affair', sectionMap = [] } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="description" content="A cinematic teppanyaki event experience." />
+    <meta name="description" content={description} />
+    <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+    {canonical && <link rel="canonical" href={canonical} />}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {canonical && <meta property="og:url" content={canonical} />}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {structuredDataList.map((entry) => (
+      <script type="application/ld+json" set:html={serializeJsonLd(entry)}></script>
+    ))}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

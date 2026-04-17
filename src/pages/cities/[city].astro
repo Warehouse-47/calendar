@@ -1,0 +1,126 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getEvents } from '../../lib/events';
+import { getCityLandingGroups } from '../../lib/cities';
+import {
+  buildCollectionPageStructuredData,
+  buildEventStructuredData,
+  buildItemListStructuredData,
+} from '../../lib/seo';
+
+type EventViewModel = {
+  slug: string;
+  title: string;
+  status: string;
+  dateDisplay: string;
+  category: string;
+  venue?: string;
+  locationDisplay?: string;
+  partnershipCategories?: string;
+  about?: string;
+  remark?: string;
+  _normalized?: {
+    city?: string;
+    country?: string;
+    venue?: string;
+  };
+};
+
+export async function getStaticPaths() {
+  const events = (await getEvents()) as EventViewModel[];
+  const cityGroups = getCityLandingGroups(events, { countryFilter: 'India' });
+
+  return cityGroups.map((group) => ({
+    params: { city: group.slug },
+    props: {
+      city: group.city,
+      country: group.country,
+      events: group.events,
+      eventCount: group.eventCount,
+      slug: group.slug,
+    },
+  }));
+}
+
+const {
+  city,
+  country,
+  events,
+  eventCount,
+  slug,
+} = Astro.props as {
+  city: string;
+  country: string;
+  events: EventViewModel[];
+  eventCount: number;
+  slug: string;
+};
+
+const pagePath = `/cities/${slug}`;
+const title = `${city} Events`;
+const description = `Discover ${eventCount} brand-relevant events in ${city}, ${country} with venue formats, footfall context, and partnership-fit details.`;
+
+const structuredData = [
+  buildCollectionPageStructuredData(
+    {
+      path: pagePath,
+      name: `Events in ${city}, ${country}`,
+      description,
+    },
+  ),
+  buildItemListStructuredData(
+    {
+      path: pagePath,
+      name: `${city} event opportunities`,
+      items: events.map((event) => ({
+        name: event.title,
+        url: `/events/${event.slug}`,
+      })),
+    },
+  ),
+  ...events.slice(0, 12).map((event) =>
+    buildEventStructuredData({
+      path: `/events/${event.slug}`,
+      event,
+    }),
+  ),
+];
+---
+
+<Layout title={title} description={description} structuredData={structuredData}>
+  <header class="p-8 border-b brutalist-border flex flex-col md:flex-row md:justify-between md:items-end gap-4">
+    <a href="/" class="mono text-xs opacity-60 hover:opacity-100">[ ← BACK_TO_MANIFEST ]</a>
+    <div class="text-left md:text-right mono text-[10px] opacity-50 tracking-[0.2em] uppercase">
+      [ CITY_INDEX ]<br />
+      [ {city.toUpperCase()}, {country.toUpperCase()} ]
+    </div>
+  </header>
+
+  <section class="border-b brutalist-border px-8 py-10 uppercase">
+    <p class="mono text-xs opacity-60 mb-3">Brand opportunity radar</p>
+    <h1 class="text-5xl md:text-7xl font-black tracking-tighter leading-none">Events In {city}</h1>
+    <p class="mono text-xs mt-4 opacity-70">// {eventCount} listings for partnerships, activations, and venue programming</p>
+  </section>
+
+  <section class="min-h-screen">
+    <div class="grid grid-cols-12 px-8 py-4 mono text-[10px] opacity-40 uppercase border-b brutalist-border hidden md:grid">
+      <div class="col-span-2">Date</div>
+      <div class="col-span-2">Location</div>
+      <div class="col-span-5">Event</div>
+      <div class="col-span-3 text-right">Category</div>
+    </div>
+
+    <div>
+      {events.map((event) => (
+        <a href={`/events/${event.slug}`} class="block border-b brutalist-border hover:bg-white hover:text-black transition-none">
+          <div class="grid grid-cols-1 md:grid-cols-12 px-8 py-8 md:py-10 items-center uppercase gap-4 md:gap-0">
+            <div class="md:col-span-2 mono text-sm opacity-70 md:opacity-100">{event.dateDisplay}</div>
+            <div class="md:col-span-2 mono text-xs">{event.locationDisplay || `${city}, ${country}`}</div>
+            <div class="md:col-span-5 text-3xl md:text-4xl font-black tracking-tighter">{event.title}</div>
+            <div class="md:col-span-3 text-left md:text-right mono text-xs italic opacity-60">//{event.category}</div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+</Layout>
