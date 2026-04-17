@@ -3,20 +3,39 @@ import Layout from '../../layouts/Layout.astro';
 import { getEvents } from '../../lib/events';
 import { buildEventStructuredData } from '../../lib/seo';
 
-export async function getStaticPaths() {
-  const events = await getEvents();
+type EventViewModel = {
+  slug: string;
+  title: string;
+  status: string;
+  dateDisplay: string;
+  category: string;
+  eventFlyer?: string;
+  about?: string;
+  remark?: string;
+  venue?: string;
+  footfall?: string;
+  format?: string;
+  partnershipCategories?: string;
+  locationDisplay?: string;
+};
 
-  return events.map((event) => ({ params: { slug: event.slug } }));
+export async function getStaticPaths() {
+  const events = (await getEvents()) as EventViewModel[];
+
+  return events.map((event: EventViewModel) => ({ params: { slug: event.slug } }));
 }
 
-const allEvents = await getEvents();
-const eventData = allEvents.find((event) => event.slug === Astro.params.slug);
+const allEvents = (await getEvents()) as EventViewModel[];
+const eventData = allEvents.find((event: EventViewModel) => event.slug === Astro.params.slug);
 
 if (!eventData) {
   throw new Error(`Event not found for slug: ${Astro.params.slug}`);
 }
 
 const eventPath = `/events/${eventData.slug}`;
+const interestWebhookUrl = String(import.meta.env.PUBLIC_INTEREST_APPS_SCRIPT_URL ?? '').trim();
+const eventFlyerUrlRaw = String(eventData.eventFlyer ?? '').trim();
+const eventFlyerUrl = eventFlyerUrlRaw && !/^n\/?a$/i.test(eventFlyerUrlRaw) ? eventFlyerUrlRaw : '';
 const eventStructuredData = [
   buildEventStructuredData({
     path: eventPath,
@@ -61,11 +80,759 @@ const eventStructuredData = [
       {eventData.remark && (
         <p class="mono text-xs uppercase mt-8 opacity-70">[ Remark ] {eventData.remark}</p>
       )}
-      {eventData.eventFlyer && (
-        <a href={eventData.eventFlyer} target="_blank" rel="noreferrer" class="inline-block mt-8 mono text-xs border border-white px-3 py-2 uppercase hover:bg-white hover:text-black">
-          Open Event Flyer
-        </a>
-      )}
+      <div class="mt-8 flex flex-wrap items-center gap-3">
+        {eventFlyerUrl && (
+          <a href={eventFlyerUrl} target="_blank" rel="noreferrer" class="inline-block mono text-xs border border-white px-3 py-2 uppercase hover:bg-white hover:text-black">
+            Open Event Flyer
+          </a>
+        )}
+        <button
+          type="button"
+          class="inline-block mono text-xs border border-white px-3 py-2 uppercase hover:bg-white hover:text-black"
+          data-open-interest-modal
+          data-event-title={eventData.title}
+          data-event-date={eventData.dateDisplay || ''}
+          data-event-location={eventData.locationDisplay || ''}
+          data-submit-endpoint={interestWebhookUrl}
+        >
+          Register Interest
+        </button>
+      </div>
+      <p class="mono text-[10px] uppercase opacity-55 mt-3">
+        [ Interest options: Attend or Associate ]
+      </p>
     </div>
   </section>
+
+  <dialog class="interest-dialog" id="event-interest-dialog" aria-labelledby="interest-title">
+    <button type="button" class="interest-dialog__scrim" aria-label="Close interest panel" data-close-interest-modal></button>
+
+    <div class="interest-dialog__panel">
+      <button type="button" class="interest-dialog__close" aria-label="Close" data-close-interest-modal>
+        x
+      </button>
+
+      <div class="interest-dialog__header">
+        <p class="mono text-[10px] uppercase opacity-60">[ Event Interest ]</p>
+        <h2 id="interest-title" class="text-2xl md:text-3xl font-black tracking-tight uppercase">Register Interest</h2>
+        <p class="mono text-xs uppercase opacity-75" data-interest-event-label></p>
+      </div>
+
+      <form class="interest-form" data-interest-form>
+        <div class="interest-form__scroll">
+          <div class="interest-type-toggle">
+            <label>
+              <input type="radio" name="interestType" value="attend" checked />
+              Attend
+            </label>
+            <label>
+              <input type="radio" name="interestType" value="associate" />
+              Associate
+            </label>
+          </div>
+
+          <div class="interest-field-grid" data-interest-section="attend">
+            <label>
+              Your Name
+              <input type="text" name="attendeeName" autocomplete="name" required />
+            </label>
+            <label>
+              Number Of People
+              <input type="number" name="attendeeCount" min="1" max="100" value="1" required />
+            </label>
+            <label>
+              Traveling From
+              <input type="text" name="travelFrom" required />
+            </label>
+            <label>
+              How Should We Inform You?
+              <select name="informedVia" required>
+                <option value="">Select option</option>
+                <option value="WhatsApp">WhatsApp</option>
+                <option value="Email">Email</option>
+                <option value="Phone Call">Phone Call</option>
+                <option value="Instagram DM">Instagram DM</option>
+                <option value="Other">Other</option>
+              </select>
+            </label>
+            <label>
+              Contact Detail
+              <input type="text" name="attendeeContact" placeholder="Phone, email, or handle" required />
+            </label>
+          </div>
+
+          <div class="interest-field-grid hidden" data-interest-section="associate">
+            <label>
+              Brand Name
+              <input type="text" name="brandName" />
+            </label>
+            <label>
+              Brand Category
+              <input type="text" name="brandCategory" placeholder="Fashion, F&B, Beverage, Tech, etc." />
+            </label>
+            <label class="interest-field-grid__full">
+              Brand Details
+              <textarea name="brandDetails" rows="3" placeholder="What does your brand do, and why this event?"></textarea>
+            </label>
+            <label>
+              Contact Person
+              <input type="text" name="contactName" autocomplete="name" />
+            </label>
+            <label>
+              Contact Email
+              <input type="email" name="contactEmail" autocomplete="email" />
+            </label>
+            <label>
+              Contact Phone
+              <input type="tel" name="contactPhone" autocomplete="tel" />
+            </label>
+            <label class="interest-field-grid__full">
+              Deliverable Mandate
+              <textarea name="deliverableMandate" rows="3" placeholder="Collab format, goals, expected outcomes"></textarea>
+            </label>
+            <label>
+              Approximate Budget Range
+              <select name="budgetRange">
+                <option value="">Select budget range</option>
+                <option value="Under INR 50K">Under INR 50K</option>
+                <option value="INR 50K - 2L">INR 50K - 2L</option>
+                <option value="INR 2L - 5L">INR 2L - 5L</option>
+                <option value="INR 5L - 10L">INR 5L - 10L</option>
+                <option value="INR 10L+">INR 10L+</option>
+              </select>
+            </label>
+            <label class="interest-field-grid__full">
+              Notes
+              <textarea name="associateNotes" rows="3" placeholder="Share context. For exact budget, please mention it here."></textarea>
+            </label>
+          </div>
+        </div>
+
+        <input type="hidden" name="eventTitle" />
+        <input type="hidden" name="eventDate" />
+        <input type="hidden" name="eventLocation" />
+
+        <div class="interest-form__footer">
+          <p class="interest-form__status mono text-[11px] uppercase" role="status" aria-live="polite" data-interest-status></p>
+
+          <div class="interest-form__actions">
+            <button type="submit" class="interest-submit-button" data-interest-submit>Submit Interest</button>
+            <button type="button" class="interest-cancel-button" data-close-interest-modal>Cancel</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </dialog>
 </Layout>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const dialog = document.getElementById('event-interest-dialog') as HTMLDialogElement | null;
+    const openButton = document.querySelector('[data-open-interest-modal]') as HTMLButtonElement | null;
+    const closeButtons = document.querySelectorAll('[data-close-interest-modal]');
+    const interestForm = dialog?.querySelector('[data-interest-form]') as HTMLFormElement | null;
+    const eventLabel = dialog?.querySelector('[data-interest-event-label]') as HTMLParagraphElement | null;
+    const statusNode = dialog?.querySelector('[data-interest-status]') as HTMLParagraphElement | null;
+    const submitButton = dialog?.querySelector('[data-interest-submit]') as HTMLButtonElement | null;
+    const typeInputs = dialog?.querySelectorAll<HTMLInputElement>('input[name="interestType"]');
+    const attendSection = dialog?.querySelector('[data-interest-section="attend"]') as HTMLDivElement | null;
+    const associateSection = dialog?.querySelector('[data-interest-section="associate"]') as HTMLDivElement | null;
+
+    if (
+      !(dialog instanceof HTMLDialogElement) ||
+      !(openButton instanceof HTMLButtonElement) ||
+      !(interestForm instanceof HTMLFormElement) ||
+      !(statusNode instanceof HTMLParagraphElement) ||
+      !(submitButton instanceof HTMLButtonElement)
+    ) {
+      return;
+    }
+
+    const modalDialog = dialog;
+    const modalOpenButton = openButton;
+    const modalInterestForm = interestForm;
+    const modalEventLabel = eventLabel;
+    const modalStatusNode = statusNode!;
+    const modalSubmitButton = submitButton!;
+    const modalAttendSection = attendSection;
+    const modalAssociateSection = associateSection;
+
+    const closeDelay = 180;
+
+    dialog.addEventListener('cancel', (event) => {
+      event.preventDefault();
+      closeModal();
+    });
+
+    function openModal() {
+      modalDialog.dataset.state = 'open';
+      modalDialog.dataset.mode = 'attend';
+      modalDialog.showModal();
+    }
+
+    function closeModal() {
+      if (!modalDialog.open || modalDialog.dataset.state === 'closing') {
+        return;
+      }
+
+      modalDialog.dataset.state = 'closing';
+      window.setTimeout(() => {
+        modalDialog.close();
+        delete modalDialog.dataset.state;
+      }, closeDelay);
+    }
+
+    function toggleMode(mode: 'attend' | 'associate') {
+      if (!modalAttendSection || !modalAssociateSection) return;
+      modalDialog.dataset.mode = mode;
+      const isAttend = mode === 'attend';
+      modalAttendSection.classList.toggle('hidden', !isAttend);
+      modalAssociateSection.classList.toggle('hidden', isAttend);
+
+      const allFields = modalDialog.querySelectorAll<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>(
+        '[data-interest-section] input, [data-interest-section] select, [data-interest-section] textarea',
+      );
+      allFields.forEach((field) => {
+        field.required = false;
+      });
+
+      const requiredFields = isAttend
+        ? ['attendeeName', 'attendeeCount', 'travelFrom', 'informedVia', 'attendeeContact']
+        : ['brandName', 'brandCategory', 'brandDetails', 'contactName', 'deliverableMandate', 'budgetRange'];
+
+      requiredFields.forEach((fieldName) => {
+        const field = modalInterestForm.elements.namedItem(fieldName);
+        if (field instanceof HTMLInputElement || field instanceof HTMLTextAreaElement || field instanceof HTMLSelectElement) {
+          field.required = true;
+        }
+      });
+    }
+
+    function fillEventMeta() {
+      const eventTitle = modalOpenButton.dataset.eventTitle || '';
+      const eventDate = modalOpenButton.dataset.eventDate || '';
+      const eventLocation = modalOpenButton.dataset.eventLocation || '';
+
+      if (modalEventLabel) {
+        modalEventLabel.textContent = `${eventTitle} // ${eventDate} // ${eventLocation}`;
+      }
+
+      const hidden = {
+        eventTitle,
+        eventDate,
+        eventLocation,
+      };
+
+      Object.entries(hidden).forEach(([key, value]) => {
+        const field = modalInterestForm.elements.namedItem(key);
+        if (field instanceof HTMLInputElement) {
+          field.value = value;
+        }
+      });
+    }
+
+    modalOpenButton.addEventListener('click', () => {
+      fillEventMeta();
+      modalStatusNode.textContent = '';
+      modalInterestForm.reset();
+      const defaultMode = modalInterestForm.elements.namedItem('interestType');
+      if (defaultMode instanceof RadioNodeList) {
+        const attendOption = defaultMode[0];
+        if (attendOption instanceof HTMLInputElement) {
+          attendOption.checked = true;
+        }
+      }
+      toggleMode('attend');
+      fillEventMeta();
+      openModal();
+    });
+
+    closeButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        closeModal();
+      });
+    });
+
+    typeInputs?.forEach((input: HTMLInputElement) => {
+      input.addEventListener('change', (event) => {
+        const target = event.target as HTMLInputElement | null;
+        if (target instanceof HTMLInputElement) {
+          toggleMode(target.value as 'attend' | 'associate');
+          modalStatusNode.textContent = '';
+        }
+      });
+    });
+
+    modalInterestForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      const endpoint = modalOpenButton.dataset.submitEndpoint || '';
+      if (!endpoint) {
+        modalStatusNode.textContent = 'Submission endpoint is not configured yet.';
+        modalStatusNode.classList.add('interest-form__status--error');
+        return;
+      }
+
+      modalSubmitButton.disabled = true;
+      modalStatusNode.classList.remove('interest-form__status--error');
+      modalStatusNode.textContent = 'Submitting...';
+
+      const formData = new FormData(modalInterestForm);
+      const payload = {
+        interestType: String(formData.get('interestType') || ''),
+        eventTitle: String(formData.get('eventTitle') || ''),
+        eventDate: String(formData.get('eventDate') || ''),
+        eventLocation: String(formData.get('eventLocation') || ''),
+        attendeeName: String(formData.get('attendeeName') || ''),
+        attendeeCount: String(formData.get('attendeeCount') || ''),
+        travelFrom: String(formData.get('travelFrom') || ''),
+        informedVia: String(formData.get('informedVia') || ''),
+        attendeeContact: String(formData.get('attendeeContact') || ''),
+        brandName: String(formData.get('brandName') || ''),
+        brandCategory: String(formData.get('brandCategory') || ''),
+        brandDetails: String(formData.get('brandDetails') || ''),
+        contactName: String(formData.get('contactName') || ''),
+        contactEmail: String(formData.get('contactEmail') || ''),
+        contactPhone: String(formData.get('contactPhone') || ''),
+        deliverableMandate: String(formData.get('deliverableMandate') || ''),
+        budgetRange: String(formData.get('budgetRange') || ''),
+        notes: String(formData.get('associateNotes') || ''),
+      };
+
+      if (payload.interestType === 'associate' && !payload.contactEmail && !payload.contactPhone) {
+        modalSubmitButton.disabled = false;
+        modalStatusNode.textContent = 'For associate, add at least one contact detail: email or phone.';
+        modalStatusNode.classList.add('interest-form__status--error');
+        return;
+      }
+
+      try {
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'text/plain;charset=utf-8',
+          },
+          body: JSON.stringify(payload),
+        });
+
+        const rawResponse = await response.text();
+        let parsedResponse = null;
+        try {
+          parsedResponse = rawResponse ? JSON.parse(rawResponse) : null;
+        } catch {
+          parsedResponse = null;
+        }
+
+        const appScriptError = parsedResponse && typeof parsedResponse === 'object' && parsedResponse.ok === false
+          ? String(parsedResponse.error || 'Submission rejected by Apps Script.')
+          : '';
+
+        if (!response.ok || appScriptError) {
+          const fallback = `Request failed with status ${response.status}`;
+          throw new Error(appScriptError || fallback);
+        }
+
+        modalStatusNode.textContent = 'Interest submitted. Team will contact you soon.';
+        modalInterestForm.reset();
+        toggleMode('attend');
+        fillEventMeta();
+        window.setTimeout(() => {
+          closeModal();
+        }, 600);
+      } catch (error) {
+        console.error('Interest submission failed', error);
+        const message = error instanceof Error ? error.message : 'Could not submit right now. Please try again.';
+        modalStatusNode.textContent = message || 'Could not submit right now. Please try again.';
+        modalStatusNode.classList.add('interest-form__status--error');
+      } finally {
+        modalSubmitButton.disabled = false;
+      }
+    });
+  });
+</script>
+
+<style>
+  .interest-dialog {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    margin: 0;
+    height: 100dvh;
+    max-height: none;
+    margin: 0;
+    z-index: 0;
+    border: 0;
+    background: transparent;
+    color: #fff;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .interest-dialog::backdrop {
+    z-index: 2;
+    pointer-events: auto;
+    backdrop-filter: blur(4px);
+  }
+
+  .interest-dialog__scrim {
+    position: fixed;
+    inset: 0;
+    border: 0;
+    width: 100%;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.38);
+    cursor: pointer;
+    z-index: 0;
+  }
+
+  .interest-dialog__panel {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: min(760px, calc(100vw - 2rem));
+    max-width: min(760px, calc(100vw - 2rem));
+    height: auto;
+    max-height: min(70dvh, 680px);
+    z-index: 2;
+    pointer-events: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    padding: 1.35rem 1.2rem 1.2rem;
+    background: #040404;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    border-radius: 1.1rem;
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.55);
+    overflow: auto;
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    will-change: transform, opacity;
+  }
+
+  .interest-dialog__close {
+    position: absolute;
+    top: 0.9rem;
+    right: 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.02);
+    color: #fff;
+    width: 2.25rem;
+    height: 2.25rem;
+    text-transform: uppercase;
+    font-family: inherit;
+    line-height: 1;
+  }
+
+  .interest-dialog[open] .interest-dialog__panel {
+    animation: interest-modal-in 220ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  .interest-dialog[data-state="closing"] .interest-dialog__panel {
+    animation: interest-modal-out 160ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .interest-dialog__header {
+    display: grid;
+    gap: 0.35rem;
+    padding-right: 2.8rem;
+  }
+
+  .interest-form {
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) auto;
+    flex: 1 1 auto;
+    min-height: 0;
+    gap: 0.9rem;
+  }
+
+  .interest-form__scroll {
+    display: grid;
+    gap: 0.9rem;
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: visible;
+    padding-right: 0.5rem;
+    padding-bottom: 0.25rem;
+    scrollbar-gutter: stable;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.38) transparent;
+  }
+
+  .interest-form__scroll::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .interest-form__scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .interest-form__scroll::-webkit-scrollbar-thumb {
+    border: 3px solid transparent;
+    background-clip: padding-box;
+    border-radius: 9999px;
+    background-color: rgba(255, 255, 255, 0.28);
+  }
+
+  .interest-form__scroll:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.48);
+  }
+
+  .interest-type-toggle {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .interest-type-toggle label {
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    padding: 0.5rem 0.75rem;
+    border-radius: 9999px;
+    text-transform: uppercase;
+    font-family: 'Space Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+  }
+
+  .interest-type-toggle label:has(input:checked) {
+    background: #fff;
+    color: #000;
+    border-color: #fff;
+  }
+
+  .interest-type-toggle label:hover {
+    border-color: rgba(255, 255, 255, 0.75);
+  }
+
+  .interest-field-grid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 0.8rem;
+  }
+
+  .interest-dialog[data-mode="attend"] .interest-dialog__panel {
+    width: min(720px, calc(100vw - 2rem));
+    max-width: min(720px, calc(100vw - 2rem));
+    max-height: min(62dvh, 600px);
+  }
+
+  .interest-dialog[data-mode="associate"] .interest-dialog__panel {
+    width: min(980px, calc(100vw - 2rem));
+    max-width: min(980px, calc(100vw - 2rem));
+    max-height: min(88dvh, 900px);
+  }
+
+  .interest-dialog[data-mode="attend"] .interest-field-grid[data-interest-section="attend"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.7rem;
+  }
+
+  .interest-dialog[data-mode="attend"] .interest-field-grid[data-interest-section="attend"] label:nth-child(1),
+  .interest-dialog[data-mode="attend"] .interest-field-grid[data-interest-section="attend"] label:nth-child(2),
+  .interest-dialog[data-mode="attend"] .interest-field-grid[data-interest-section="attend"] label:nth-child(3),
+  .interest-dialog[data-mode="attend"] .interest-field-grid[data-interest-section="attend"] label:nth-child(4) {
+    min-width: 0;
+  }
+
+  .interest-dialog[data-mode="attend"] .interest-field-grid[data-interest-section="attend"] label:nth-child(1),
+  .interest-dialog[data-mode="attend"] .interest-field-grid[data-interest-section="attend"] label:nth-child(2) {
+    grid-column: span 1;
+  }
+
+  .interest-dialog[data-mode="attend"] .interest-field-grid[data-interest-section="attend"] label:nth-child(5) {
+    grid-column: 1 / -1;
+  }
+
+  .interest-dialog[data-mode="associate"] .interest-field-grid[data-interest-section="associate"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.8rem;
+  }
+
+  .interest-dialog[data-mode="associate"] .interest-form {
+    gap: 0.95rem;
+  }
+
+  .interest-dialog[data-mode="attend"] .interest-form {
+    gap: 0.8rem;
+  }
+
+  .interest-dialog[data-mode="attend"] .interest-dialog__panel {
+    overflow: visible;
+  }
+
+  .interest-dialog[data-mode="associate"] .interest-dialog__panel {
+    overflow: visible;
+  }
+
+  .interest-dialog[data-mode="associate"] .interest-field-grid[data-interest-section="associate"] label:nth-child(3),
+  .interest-dialog[data-mode="associate"] .interest-field-grid[data-interest-section="associate"] label:nth-child(7),
+  .interest-dialog[data-mode="associate"] .interest-field-grid[data-interest-section="associate"] label:nth-child(8) {
+    grid-column: 1 / -1;
+  }
+
+  .interest-field-grid label {
+    display: grid;
+    gap: 0.4rem;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-family: 'Space Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+  }
+
+  .interest-field-grid input,
+  .interest-field-grid select,
+  .interest-field-grid textarea {
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.03);
+    color: #fff;
+    font-size: 0.86rem;
+    font-family: 'Manrope', system-ui, sans-serif;
+    padding: 0.76rem 0.82rem;
+    outline: none;
+  }
+
+  .interest-field-grid select {
+    appearance: none;
+    background-image:
+      linear-gradient(45deg, transparent 50%, rgba(255, 255, 255, 0.9) 50%),
+      linear-gradient(135deg, rgba(255, 255, 255, 0.9) 50%, transparent 50%);
+    background-position:
+      calc(100% - 14px) calc(50% - 2px),
+      calc(100% - 9px) calc(50% - 2px);
+    background-size: 5px 5px, 5px 5px;
+    background-repeat: no-repeat;
+    padding-right: 2rem;
+    color-scheme: dark;
+  }
+
+  .interest-field-grid select option {
+    background: #0b0b0b;
+    color: #ffffff;
+  }
+
+  .interest-field-grid select:invalid {
+    color: rgba(255, 255, 255, 0.58);
+  }
+
+  .interest-field-grid input:focus,
+  .interest-field-grid select:focus,
+  .interest-field-grid textarea:focus {
+    border-color: rgba(255, 255, 255, 0.8);
+  }
+
+  .interest-field-grid textarea {
+    resize: vertical;
+    min-height: 92px;
+  }
+
+  .interest-field-grid__full {
+    grid-column: 1 / -1;
+  }
+
+  .interest-form__status {
+    min-height: 1.2rem;
+    opacity: 0.85;
+  }
+
+  .interest-form__footer {
+    display: grid;
+    gap: 0.7rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(4, 4, 4, 0.96);
+  }
+
+  .interest-form__status--error {
+    color: #fca5a5;
+    opacity: 1;
+  }
+
+  .interest-form__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    padding-bottom: 0.05rem;
+  }
+
+  .interest-submit-button,
+  .interest-cancel-button {
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    background: transparent;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    padding: 0.58rem 0.82rem;
+    font-family: 'Space Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+  }
+
+  .interest-submit-button:hover,
+  .interest-cancel-button:hover,
+  .interest-dialog__close:hover {
+    background: #fff;
+    color: #000;
+  }
+
+  .interest-submit-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  @keyframes interest-panel-in {
+    from {
+      transform: translate(-50%, -50%) scale(0.96);
+      opacity: 0;
+    }
+
+    to {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes interest-panel-out {
+    from {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+
+    to {
+      transform: translate(-50%, -50%) scale(0.96);
+      opacity: 0;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .interest-dialog::backdrop {
+      background: rgba(0, 0, 0, 0.58);
+      backdrop-filter: blur(3px);
+    }
+
+    .interest-dialog__panel {
+      padding: 1.55rem 1.55rem 1.35rem;
+      width: min(980px, calc(100vw - 2.5rem));
+    }
+
+    .interest-dialog[data-mode="attend"] .interest-field-grid[data-interest-section="attend"] {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .interest-dialog[data-mode="associate"] .interest-field-grid[data-interest-section="associate"] {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .interest-form__scroll {
+      padding-right: 0.6rem;
+    }
+  }
+</style>
