@@ -7,7 +7,12 @@ Astro app for browsing experiential events with brutalist monochrome styling and
 - Copy `.env.example` to `.env`.
 - Set `PUBLIC_GOOGLE_SHEET_CSV_URL` for runtime sheet fetch.
 - Set `PUBLIC_INTEREST_APPS_SCRIPT_URL` to your Google Apps Script Web App URL for interest form submissions.
-- Optional: set `PUBLIC_ROCKAGE_DECK_URL` and `PUBLIC_BARCODE_DECK_URL` for partner deck links on the Seeding page.
+- Optional partner links for Seeding page:
+	- `PUBLIC_BARCODE_DECK_URL`
+	- `PUBLIC_BARCODE_WEBSITE_URL`
+	- `PUBLIC_RARE_CLUB_DECK_URL`
+	- `PUBLIC_RARE_CLUB_WEBSITE_URL`
+- Each link button is shown only when that specific URL is set.
 - You can use either a normal Google Sheets viewer/edit link or a direct CSV link.
 - Run `npm run dev`.
 

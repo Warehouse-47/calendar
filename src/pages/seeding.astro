@@ -3,8 +3,12 @@ import Layout from '../layouts/Layout.astro';
 import { buildCollectionPageStructuredData } from '../lib/seo';
 
 const interestWebhookUrl = String(import.meta.env.PUBLIC_INTEREST_APPS_SCRIPT_URL ?? '').trim();
-const rockageDeckUrl = String(import.meta.env.PUBLIC_ROCKAGE_DECK_URL ?? '').trim();
 const barcodeDeckUrl = String(import.meta.env.PUBLIC_BARCODE_DECK_URL ?? '').trim();
+const barcodeWebsiteUrl = String(import.meta.env.PUBLIC_BARCODE_WEBSITE_URL ?? '').trim();
+const rareClubDeckUrl = String(
+  import.meta.env.PUBLIC_RARE_CLUB_DECK_URL ?? '',
+).trim();
+const rareClubWebsiteUrl = String(import.meta.env.PUBLIC_RARE_CLUB_WEBSITE_URL ?? '').trim();
 
 const pageStructuredData = [
   buildCollectionPageStructuredData({
@@ -42,37 +46,65 @@ const pageStructuredData = [
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto">
       <article class="border brutalist-border p-6 text-center">
         <p class="mono text-[10px] uppercase opacity-55">Partner</p>
-        <h2 class="text-3xl font-black tracking-tight uppercase mt-2">Rockage</h2>
+        <h2 class="text-3xl font-black tracking-tight uppercase mt-2">Barcode</h2>
         <p class="mono text-xs uppercase opacity-70 mt-3">Seeding and amplification support</p>
-        {rockageDeckUrl ? (
-          <a
-            href={rockageDeckUrl}
-            target="_blank"
-            rel="noreferrer"
-            class="inline-flex items-center justify-center mt-5 border brutalist-border px-5 py-2.5 mono text-xs uppercase hover:bg-white hover:text-black"
-          >
-            Open Partner Deck
-          </a>
+        {barcodeDeckUrl || barcodeWebsiteUrl ? (
+          <div class="partner-link-row mt-5">
+            {barcodeDeckUrl && (
+              <a
+                href={barcodeDeckUrl}
+                target="_blank"
+                rel="noreferrer"
+                class="inline-flex items-center justify-center border brutalist-border px-5 py-2.5 mono text-xs uppercase hover:bg-white hover:text-black"
+              >
+                Open Deck
+              </a>
+            )}
+            {barcodeWebsiteUrl && (
+              <a
+                href={barcodeWebsiteUrl}
+                target="_blank"
+                rel="noreferrer"
+                class="inline-flex items-center justify-center border brutalist-border px-5 py-2.5 mono text-xs uppercase hover:bg-white hover:text-black"
+              >
+                Open Website
+              </a>
+            )}
+          </div>
         ) : (
-          <p class="mono text-xs uppercase opacity-50 mt-5">Deck URL not set yet.</p>
+          <p class="mono text-xs uppercase opacity-50 mt-5">Links not set yet.</p>
         )}
       </article>
 
-      <article class="border brutalist-border p-6 text-center">
+        <article class="border brutalist-border p-6 text-center">
         <p class="mono text-[10px] uppercase opacity-55">Partner</p>
-        <h2 class="text-3xl font-black tracking-tight uppercase mt-2">Barcode</h2>
+          <h2 class="text-3xl font-black tracking-tight uppercase mt-2">Rare Club</h2>
         <p class="mono text-xs uppercase opacity-70 mt-3">Influencer and creator-led campaign support</p>
-        {barcodeDeckUrl ? (
-          <a
-            href={barcodeDeckUrl}
-            target="_blank"
-            rel="noreferrer"
-            class="inline-flex items-center justify-center mt-5 border brutalist-border px-5 py-2.5 mono text-xs uppercase hover:bg-white hover:text-black"
-          >
-            Open Partner Deck
-          </a>
+          {rareClubDeckUrl || rareClubWebsiteUrl ? (
+          <div class="partner-link-row mt-5">
+            {rareClubDeckUrl && (
+              <a
+                href={rareClubDeckUrl}
+                target="_blank"
+                rel="noreferrer"
+                class="inline-flex items-center justify-center border brutalist-border px-5 py-2.5 mono text-xs uppercase hover:bg-white hover:text-black"
+              >
+                Open Deck
+              </a>
+            )}
+            {rareClubWebsiteUrl && (
+              <a
+                href={rareClubWebsiteUrl}
+                target="_blank"
+                rel="noreferrer"
+                class="inline-flex items-center justify-center border brutalist-border px-5 py-2.5 mono text-xs uppercase hover:bg-white hover:text-black"
+              >
+                Open Website
+              </a>
+            )}
+          </div>
         ) : (
-          <p class="mono text-xs uppercase opacity-50 mt-5">Deck URL not set yet.</p>
+          <p class="mono text-xs uppercase opacity-50 mt-5">Links not set yet.</p>
         )}
       </article>
     </div>
@@ -130,8 +162,8 @@ const pageStructuredData = [
           Preferred Partner
           <select name="seedingPartnerPreference">
             <option value="">No preference</option>
-            <option value="Rockage">Rockage</option>
             <option value="Barcode">Barcode</option>
+            <option value="Rare Club">Rare Club</option>
             <option value="Open To Recommendation">Open To Recommendation</option>
           </select>
         </label>
@@ -378,6 +410,14 @@ const pageStructuredData = [
 
   .seeding-status-error {
     color: #ff8f8f;
+  }
+
+  .partner-link-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.6rem;
   }
 
   #seeding-submit {
