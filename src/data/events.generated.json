@@ -1,11 +1,11 @@
 [
   {
-    "slug": "hilton-tayles-execution-1-wednesday-22-april-2026",
+    "slug": "hilton-tayles-execution-1-wednesday-20-may-2026",
     "title": "Hilton - Tayles (Execution - 1)",
     "category": "Music/ Brand Advocacy/ Networking",
     "status": "open",
-    "dateDisplay": "Wednesday, 22 April 2026",
-    "dateUpper": "WEDNESDAY, 22 APRIL 2026",
+    "dateDisplay": "Wednesday, 20 May 2026",
+    "dateUpper": "WEDNESDAY, 20 MAY 2026",
     "locationDisplay": "Gurugram, India",
     "locationUpper": "GURUGRAM, INDIA",
     "venue": "Hilton Baani City Centre",
@@ -50,37 +50,12 @@
     }
   },
   {
-    "slug": "circoloco-sunday-19-april-2026",
-    "title": "Circoloco",
-    "category": "Music Festival - Global IP",
-    "status": "open",
-    "dateDisplay": "Sunday, 19 April 2026",
-    "dateUpper": "SUNDAY, 19 APRIL 2026",
-    "locationDisplay": "Mumbai, India",
-    "locationUpper": "MUMBAI, INDIA",
-    "venue": "Jio World Garden",
-    "footfall": "8000",
-    "format": "Large Formal Music Festival",
-    "partnershipCategories": "Real Estate Projects, Neo-Banking & Travel Cards, Fashion Houses, Automotive (SUV/Sedan), Beer Brands.",
-    "about": "Circoloco at Jio World Garden presents a validation platform for brands to align with the most respected name in global underground electronic music. More than a festival stage, it offers strategic entry into 25 years of Ibiza heritage translated to Indian scale—8,000 capacity with zero commercial compromise. Through curated integrations with Marco Carola, Michael Bibi, and Mau P, brands can drive visibility among audiences who travel for lineups and dress for the culture. The format supports luxury streetwear, gaming, and global spirits seeking authentic underground credibility. Partnering here positions brands as certified by the red hat itself.",
-    "remark": "",
-    "eventFlyer": "https://hub.warehouse47.com/circoloco",
-    "_normalized": {
-      "dateStatus": "Confirmed",
-      "cleanType": "Music Festival - Global IP",
-      "scaleTier": "Mass Culturual",
-      "city": "Mumbai",
-      "country": "India",
-      "venue": "Jio World Garden"
-    }
-  },
-  {
-    "slug": "hilton-tayles-execution-2-thursday-23-april-2026",
+    "slug": "hilton-tayles-execution-2-friday-22-may-2026",
     "title": "Hilton - Tayles (Execution - 2)",
     "category": "Music/ Brand Advocacy/ Networking",
     "status": "open",
-    "dateDisplay": "Thursday, 23 April 2026",
-    "dateUpper": "THURSDAY, 23 APRIL 2026",
+    "dateDisplay": "Friday, 22 May 2026",
+    "dateUpper": "FRIDAY, 22 MAY 2026",
     "locationDisplay": "Gurugram, India",
     "locationUpper": "GURUGRAM, INDIA",
     "venue": "Hilton Baani City Centre",
@@ -100,12 +75,12 @@
     }
   },
   {
-    "slug": "rex-rooms-event-friday-1-may-2026",
+    "slug": "rex-rooms-event-thursday-20-august-2026",
     "title": "Rex Rooms Event",
     "category": "Nightlife",
     "status": "open",
-    "dateDisplay": "Friday, 1 May 2026",
-    "dateUpper": "FRIDAY, 1 MAY 2026",
+    "dateDisplay": "Thursday, 20 August 2026",
+    "dateUpper": "THURSDAY, 20 AUGUST 2026",
     "locationDisplay": "Chelsea, UK",
     "locationUpper": "CHELSEA, UK",
     "venue": "Rex Rooms",
@@ -575,7 +550,7 @@
     }
   },
   {
-    "slug": "time-and-tequila-charlie-jeer-tba",
+    "slug": "time-and-tequila-charlie-jeer-tba-2",
     "title": "Time & Tequila + Charlie Jeer",
     "category": "Warehouse 47 - IP",
     "status": "open",
@@ -739,7 +714,7 @@
     "partnershipCategories": "Luxury Brands, Heritage Travellers , Media and Magazines, Chef led brands, Alcohol , Cars, Community Led Brands,",
     "about": "Farm Is Table elevates Mewari cuisine through authentic wartime meals, post-war recovery dishes, seasonal harvests, and ancient recipes sourced directly from Udaipur's organic farms. Guests experience hyper-local ingredients—millets, heirloom grains, native greens—prepared using traditional techniques like matka clay pot cooking, wood-fired tandoor, and dum pukht slow-cooking. Each 8-course tasting menu narrates Rajasthan's resilient culinary history, from warrior sustenance to celebratory recovery feasts, served in historic haveli settings with cultural storytelling and folk music.This premium experience targets discerning travelers seeking cultural depth, priced at ₹25,000-50,000 per guest for private events and ₹15,000-25,000 for groups. Its unique proposition: authentic multi-generational Mewari recipes tied to wartime/post-war heritage and farm partnerships, forging profound connections to Udaipur's gastronomic legacy",
     "remark": "Castle Oodeypore Farm- September",
-    "eventFlyer": "",
+    "eventFlyer": "https://castleoodeypore.in/",
     "_normalized": {
       "dateStatus": "Not Confirmed",
       "cleanType": "HOS IP",

@@ -36,8 +36,10 @@ function doPost(e) {
       validateAttend(record);
     } else if (record.interestType === 'associate') {
       validateAssociate(record);
+    } else if (record.interestType === 'seeding') {
+      validateSeeding(record);
     } else {
-      throw new Error('Invalid interestType. Expected attend or associate.');
+      throw new Error('Invalid interestType. Expected attend, associate, or seeding.');
     }
 
     var spreadsheet = getSpreadsheet_();
@@ -118,10 +120,26 @@ function normalizePayload(input) {
     deliverableMandate: toText_(input.deliverableMandate),
     budgetRange: toText_(input.budgetRange),
     notes: toText_(input.notes),
+
+    seedingBrandType: toText_(input.seedingBrandType),
+    seedingBrandName: toText_(input.seedingBrandName),
+    seedingPocName: toText_(input.seedingPocName),
+    seedingPocEmail: toText_(input.seedingPocEmail),
+    seedingPocPhone: toText_(input.seedingPocPhone),
+    seedingServiceNeeds: toText_(input.seedingServiceNeeds),
+    seedingPartnerPreference: toText_(input.seedingPartnerPreference),
+    seedingEventContext: toText_(input.seedingEventContext),
+    seedingTentativeDates: toText_(input.seedingTentativeDates),
+    seedingMarket: toText_(input.seedingMarket),
+    seedingNotes: toText_(input.seedingNotes),
   };
 }
 
 function validateCommon(row) {
+  if (row.interestType === 'seeding') {
+    return;
+  }
+
   if (!row.eventTitle) {
     throw new Error('eventTitle is required.');
   }
@@ -166,6 +184,30 @@ function validateAssociate(row) {
   }
 }
 
+function validateSeeding(row) {
+  if (!row.seedingBrandType) {
+    throw new Error('seedingBrandType is required for seeding.');
+  }
+  if (!row.seedingBrandName) {
+    throw new Error('seedingBrandName is required for seeding.');
+  }
+  if (!row.seedingPocName) {
+    throw new Error('seedingPocName is required for seeding.');
+  }
+  if (!row.seedingPocEmail && !row.seedingPocPhone) {
+    throw new Error('Provide at least one contact detail: seedingPocEmail or seedingPocPhone.');
+  }
+  if (!row.seedingServiceNeeds) {
+    throw new Error('seedingServiceNeeds is required for seeding.');
+  }
+  if (!row.seedingEventContext) {
+    throw new Error('seedingEventContext is required for seeding.');
+  }
+  if (!row.seedingTentativeDates) {
+    throw new Error('seedingTentativeDates is required for seeding.');
+  }
+}
+
 function getHeadersForType_(interestType) {
   if (interestType === 'attend') {
     return [
@@ -180,6 +222,25 @@ function getHeadersForType_(interestType) {
       'travelFrom',
       'informedVia',
       'attendeeContact',
+    ];
+  }
+
+  if (interestType === 'seeding') {
+    return [
+      'submittedDate',
+      'submittedTime',
+      'interestType',
+      'seedingBrandType',
+      'seedingBrandName',
+      'seedingPocName',
+      'seedingPocEmail',
+      'seedingPocPhone',
+      'seedingServiceNeeds',
+      'seedingPartnerPreference',
+      'seedingEventContext',
+      'seedingTentativeDates',
+      'seedingMarket',
+      'seedingNotes',
     ];
   }
 
@@ -236,9 +297,21 @@ function getAssociateSheetName_() {
   return PropertiesService.getScriptProperties().getProperty('ASSOCIATE_SHEET_NAME') || 'Interest - Associate';
 }
 
+function getSeedingSheetName_() {
+  return PropertiesService.getScriptProperties().getProperty('SEEDING_SHEET_NAME') || 'Interest - Seeding';
+}
+
 function getTargetSheetName_(interestType) {
   var attendName = getAttendSheetName_();
   var associateName = getAssociateSheetName_();
+  var seedingName = getSeedingSheetName_();
+
+  if (interestType === 'seeding') {
+    if (seedingName === attendName || seedingName === associateName) {
+      return seedingName + ' (Seeding)';
+    }
+    return seedingName;
+  }
 
   if (attendName === associateName) {
     return interestType === 'attend' ? attendName + ' (Attend)' : associateName + ' (Associate)';
@@ -278,8 +351,13 @@ function sendNotificationEmail_(record) {
     return;
   }
 
-  var formTypeLabel = record.interestType === 'attend' ? 'Attend' : 'Associate';
-  var subject = 'New Interest: ' + formTypeLabel + ' for ' + record.eventTitle;
+  var formTypeLabel = record.interestType === 'attend'
+    ? 'Attend'
+    : record.interestType === 'associate'
+      ? 'Associate'
+      : 'Seeding';
+  var referenceLabel = record.eventTitle || record.seedingBrandName || 'N/A';
+  var subject = 'New Interest: ' + formTypeLabel + ' for ' + referenceLabel;
 
   var keys = getHeadersForType_(record.interestType);
   var bodyLines = [];

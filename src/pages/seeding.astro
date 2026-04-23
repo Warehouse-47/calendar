@@ -1,0 +1,391 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { buildCollectionPageStructuredData } from '../lib/seo';
+
+const interestWebhookUrl = String(import.meta.env.PUBLIC_INTEREST_APPS_SCRIPT_URL ?? '').trim();
+const rockageDeckUrl = String(import.meta.env.PUBLIC_ROCKAGE_DECK_URL ?? '').trim();
+const barcodeDeckUrl = String(import.meta.env.PUBLIC_BARCODE_DECK_URL ?? '').trim();
+
+const pageStructuredData = [
+  buildCollectionPageStructuredData({
+    path: '/seeding',
+    name: 'Warehouse47 Seeding Desk',
+    description:
+      'Share your seeding, amplification, and influencer marketing brief. Warehouse47 routes the mandate through partner distribution teams.',
+  }),
+];
+---
+
+<Layout
+  title="Seeding Desk"
+  description="Submit brand seeding and amplification briefs to Warehouse47 partner network."
+  structuredData={pageStructuredData}
+>
+  <header class="p-8 border-b brutalist-border flex flex-col md:flex-row md:justify-between md:items-end gap-4">
+    <a href="/" class="mono text-xs opacity-60 hover:opacity-100">[ <- BACK_TO_MANIFEST ]</a>
+    <div class="text-left md:text-right mono text-[10px] opacity-50 tracking-[0.2em] uppercase">
+      [ SEEDING_DESK ]<br />
+      [ STATUS: OPEN ]
+    </div>
+  </header>
+
+  <section class="border-b brutalist-border px-8 py-12 uppercase text-center">
+    <p class="mono text-xs opacity-60 mb-3 tracking-[0.18em]">Partner-Led Distribution Desk</p>
+    <h1 class="text-5xl md:text-7xl font-black tracking-tighter leading-none">Seeding</h1>
+    <p class="mono text-xs mt-4 opacity-70 max-w-3xl mx-auto leading-relaxed">
+      // Launch stronger with calibrated seeding, sharper amplification, and influencer marketing through trusted partner networks.
+      Share your brief once, and we route it to the team that best matches your mandate.
+    </p>
+  </section>
+
+  <section class="border-b brutalist-border px-8 py-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto">
+      <article class="border brutalist-border p-6 text-center">
+        <p class="mono text-[10px] uppercase opacity-55">Partner</p>
+        <h2 class="text-3xl font-black tracking-tight uppercase mt-2">Rockage</h2>
+        <p class="mono text-xs uppercase opacity-70 mt-3">Seeding and amplification support</p>
+        {rockageDeckUrl ? (
+          <a
+            href={rockageDeckUrl}
+            target="_blank"
+            rel="noreferrer"
+            class="inline-flex items-center justify-center mt-5 border brutalist-border px-5 py-2.5 mono text-xs uppercase hover:bg-white hover:text-black"
+          >
+            Open Partner Deck
+          </a>
+        ) : (
+          <p class="mono text-xs uppercase opacity-50 mt-5">Deck URL not set yet.</p>
+        )}
+      </article>
+
+      <article class="border brutalist-border p-6 text-center">
+        <p class="mono text-[10px] uppercase opacity-55">Partner</p>
+        <h2 class="text-3xl font-black tracking-tight uppercase mt-2">Barcode</h2>
+        <p class="mono text-xs uppercase opacity-70 mt-3">Influencer and creator-led campaign support</p>
+        {barcodeDeckUrl ? (
+          <a
+            href={barcodeDeckUrl}
+            target="_blank"
+            rel="noreferrer"
+            class="inline-flex items-center justify-center mt-5 border brutalist-border px-5 py-2.5 mono text-xs uppercase hover:bg-white hover:text-black"
+          >
+            Open Partner Deck
+          </a>
+        ) : (
+          <p class="mono text-xs uppercase opacity-50 mt-5">Deck URL not set yet.</p>
+        )}
+      </article>
+    </div>
+  </section>
+
+  <section class="px-8 py-10">
+    <div class="max-w-5xl border brutalist-border p-6 md:p-8 mx-auto">
+      <div class="mb-7 uppercase text-center max-w-3xl mx-auto">
+        <p class="mono text-[10px] opacity-55 tracking-[0.2em]">[ Brief Intake ]</p>
+        <h2 class="text-3xl md:text-4xl font-black tracking-tighter mt-2">Share Your Requirement Brief</h2>
+        <p class="mono text-xs opacity-70 mt-3 leading-relaxed">
+          Give us your campaign context, timeline, and contact details. Fields marked with * are required.
+        </p>
+      </div>
+
+      <form id="seeding-form" class="seeding-form-grid" data-submit-endpoint={interestWebhookUrl}>
+        <input type="hidden" name="interestType" value="seeding" />
+
+        <label>
+          Brand Type *
+          <select name="seedingBrandType" required>
+            <option value="">Select brand type</option>
+            <option value="D2C">D2C</option>
+            <option value="F&B">F&B</option>
+            <option value="Fashion / Beauty">Fashion / Beauty</option>
+            <option value="Beverage">Beverage</option>
+            <option value="Consumer Tech">Consumer Tech</option>
+            <option value="Media / Entertainment">Media / Entertainment</option>
+            <option value="B2B / Services">B2B / Services</option>
+            <option value="Other">Other</option>
+          </select>
+        </label>
+
+        <label>
+          Brand Name *
+          <input type="text" name="seedingBrandName" required />
+        </label>
+
+        <label>
+          POC Name *
+          <input type="text" name="seedingPocName" autocomplete="name" required />
+        </label>
+
+        <label>
+          POC Email
+          <input type="email" name="seedingPocEmail" autocomplete="email" />
+        </label>
+
+        <label>
+          POC Phone
+          <input type="tel" name="seedingPocPhone" autocomplete="tel" />
+        </label>
+
+        <label>
+          Preferred Partner
+          <select name="seedingPartnerPreference">
+            <option value="">No preference</option>
+            <option value="Rockage">Rockage</option>
+            <option value="Barcode">Barcode</option>
+            <option value="Open To Recommendation">Open To Recommendation</option>
+          </select>
+        </label>
+
+        <label class="seeding-form-grid__full">
+          Service Requirement *
+          <div class="seeding-checkbox-grid" role="group" aria-label="Service requirement">
+            <label><input type="checkbox" name="seedingServiceNeed" value="Seeding" /> Seeding</label>
+            <label><input type="checkbox" name="seedingServiceNeed" value="Amplification" /> Amplification</label>
+            <label><input type="checkbox" name="seedingServiceNeed" value="Influencer Marketing" /> Influencer Marketing</label>
+            <label><input type="checkbox" name="seedingServiceNeed" value="Creator Collaborations" /> Creator Collaborations</label>
+          </div>
+        </label>
+
+        <label class="seeding-form-grid__full">
+          Event / Campaign Context *
+          <textarea
+            name="seedingEventContext"
+            rows="4"
+            required
+            placeholder="Tell us about the event, launch, campaign objective, and target audience."
+          ></textarea>
+        </label>
+
+        <label>
+          Tentative Dates *
+          <input type="text" name="seedingTentativeDates" required placeholder="Example: 10-20 May 2026" />
+        </label>
+
+        <label>
+          Market / City Focus
+          <input type="text" name="seedingMarket" placeholder="Example: Mumbai, Delhi NCR" />
+        </label>
+
+        <label class="seeding-form-grid__full">
+          Additional Notes
+          <textarea name="seedingNotes" rows="3"></textarea>
+        </label>
+
+        <div class="seeding-form-grid__full seeding-actions">
+          <p class="mono text-[11px] uppercase" id="seeding-form-status" role="status" aria-live="polite"></p>
+          <button type="submit" id="seeding-submit" class="border brutalist-border px-6 py-3 mono text-xs uppercase hover:bg-white hover:text-black">
+            Submit Seeding Brief
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const form = document.getElementById('seeding-form') as HTMLFormElement | null;
+    const submit = document.getElementById('seeding-submit') as HTMLButtonElement | null;
+    const status = document.getElementById('seeding-form-status') as HTMLParagraphElement | null;
+
+    if (!(form instanceof HTMLFormElement) || !(submit instanceof HTMLButtonElement) || !(status instanceof HTMLParagraphElement)) {
+      return;
+    }
+
+    const endpoint = String(form.dataset.submitEndpoint || '').trim();
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      if (!endpoint) {
+        status.textContent = 'Submission endpoint is not configured yet.';
+        status.classList.add('seeding-status-error');
+        return;
+      }
+
+      const selectedNeeds = Array.from(
+        form.querySelectorAll<HTMLInputElement>('input[name="seedingServiceNeed"]:checked'),
+      )
+        .map((input) => input.value.trim())
+        .filter(Boolean);
+
+      if (selectedNeeds.length === 0) {
+        status.textContent = 'Select at least one service requirement.';
+        status.classList.add('seeding-status-error');
+        return;
+      }
+
+      const formData = new FormData(form);
+      const payload = {
+        interestType: 'seeding',
+        seedingBrandType: String(formData.get('seedingBrandType') || '').trim(),
+        seedingBrandName: String(formData.get('seedingBrandName') || '').trim(),
+        seedingPocName: String(formData.get('seedingPocName') || '').trim(),
+        seedingPocEmail: String(formData.get('seedingPocEmail') || '').trim(),
+        seedingPocPhone: String(formData.get('seedingPocPhone') || '').trim(),
+        seedingServiceNeeds: selectedNeeds.join(', '),
+        seedingPartnerPreference: String(formData.get('seedingPartnerPreference') || '').trim(),
+        seedingEventContext: String(formData.get('seedingEventContext') || '').trim(),
+        seedingTentativeDates: String(formData.get('seedingTentativeDates') || '').trim(),
+        seedingMarket: String(formData.get('seedingMarket') || '').trim(),
+        seedingNotes: String(formData.get('seedingNotes') || '').trim(),
+      };
+
+      if (!payload.seedingPocEmail && !payload.seedingPocPhone) {
+        status.textContent = 'Add at least one contact detail: email or phone.';
+        status.classList.add('seeding-status-error');
+        return;
+      }
+
+      submit.disabled = true;
+      status.classList.remove('seeding-status-error');
+      status.textContent = 'Submitting...';
+
+      try {
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'text/plain;charset=utf-8',
+          },
+          body: JSON.stringify(payload),
+        });
+
+        const raw = await response.text();
+        let parsed = null;
+
+        try {
+          parsed = raw ? JSON.parse(raw) : null;
+        } catch {
+          parsed = null;
+        }
+
+        const appScriptError = parsed && typeof parsed === 'object' && parsed.ok === false
+          ? String(parsed.error || 'Submission rejected by Apps Script.')
+          : '';
+
+        if (!response.ok || appScriptError) {
+          throw new Error(appScriptError || `Request failed with status ${response.status}`);
+        }
+
+        status.textContent = 'Brief submitted. Team will reach out shortly.';
+        form.reset();
+      } catch (error) {
+        const message = error instanceof Error ? error.message : 'Could not submit right now. Please try again.';
+        status.textContent = message;
+        status.classList.add('seeding-status-error');
+      } finally {
+        submit.disabled = false;
+      }
+    });
+  });
+</script>
+
+<style>
+  .seeding-form-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  @media (min-width: 840px) {
+    .seeding-form-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.1rem;
+    }
+  }
+
+  .seeding-form-grid label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    font-family: var(--font-mono, 'Space Mono', ui-monospace, monospace);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .seeding-form-grid input,
+  .seeding-form-grid textarea,
+  .seeding-form-grid select {
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: #050505;
+    color: #fff;
+    padding: 0.7rem 0.75rem;
+    border-radius: 0;
+    outline: none;
+    font-family: inherit;
+    font-size: 0.78rem;
+    text-transform: none;
+  }
+
+  .seeding-form-grid input:focus,
+  .seeding-form-grid textarea:focus,
+  .seeding-form-grid select:focus {
+    border-color: rgba(255, 255, 255, 0.65);
+  }
+
+  .seeding-form-grid__full {
+    grid-column: 1 / -1;
+  }
+
+  .seeding-checkbox-grid {
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 0.65rem;
+    display: grid;
+    gap: 0.55rem;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  @media (min-width: 840px) {
+    .seeding-checkbox-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  .seeding-checkbox-grid label {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+  }
+
+  .seeding-checkbox-grid input[type='checkbox'] {
+    width: 0.95rem;
+    height: 0.95rem;
+    margin: 0;
+    padding: 0;
+    accent-color: #fff;
+  }
+
+  .seeding-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 0.3rem;
+    padding-top: 1rem;
+  }
+
+  #seeding-form-status {
+    min-height: 1rem;
+    width: 100%;
+  }
+
+  .seeding-status-error {
+    color: #ff8f8f;
+  }
+
+  #seeding-submit {
+    min-width: 220px;
+  }
+
+  #seeding-submit:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
+</style>

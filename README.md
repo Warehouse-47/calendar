@@ -7,19 +7,22 @@ Astro app for browsing experiential events with brutalist monochrome styling and
 - Copy `.env.example` to `.env`.
 - Set `PUBLIC_GOOGLE_SHEET_CSV_URL` for runtime sheet fetch.
 - Set `PUBLIC_INTEREST_APPS_SCRIPT_URL` to your Google Apps Script Web App URL for interest form submissions.
+- Optional: set `PUBLIC_ROCKAGE_DECK_URL` and `PUBLIC_BARCODE_DECK_URL` for partner deck links on the Seeding page.
 - You can use either a normal Google Sheets viewer/edit link or a direct CSV link.
 - Run `npm run dev`.
 
-## Interest capture (Attend / Associate)
+## Interest capture (Attend / Associate / Seeding)
 
 - Event detail pages include a popup `Register Interest` form with two flows:
 	- `Attend`: attendee name, people count, travel origin, preferred update channel, contact detail.
 	- `Associate`: brand details, brand category, contact details, deliverable mandate, approximate budget range, and notes.
+- `/seeding` includes a dedicated lead form for seeding, amplification, and influencer marketing briefs.
 - Forms submit JSON via `POST` to `PUBLIC_INTEREST_APPS_SCRIPT_URL`.
 - Recommended Apps Script setup:
 	- Publish as Web App with access allowed for anonymous submissions (or your desired auth model).
 	- In `doPost(e)`, parse JSON and append rows to the target Google Sheet.
-	- Use separate tabs or an `interestType` column to split Attend vs Associate entries.
+	- Use separate tabs or an `interestType` column to split Attend vs Associate vs Seeding entries.
+	- Optional Script Property: `SEEDING_SHEET_NAME` (defaults to `Interest - Seeding`).
 - Ready template is available at `scripts/interest-webhook.gs`.
 
 ## Data source

@@ -1,6 +1,5 @@
 import type { APIRoute } from 'astro';
 import { getEvents } from '../lib/events';
-import { getCityLandingGroups } from '../lib/cities';
 
 function getBaseUrl() {
   const configured = String(import.meta.env.PUBLIC_SITE_URL ?? '').trim();
@@ -26,6 +25,7 @@ export const GET: APIRoute = async () => {
 
   const staticPaths = [
     '/',
+    '/seeding',
     '/tayles',
     '/tayles/cabinet-of-tayles',
     '/tayles/advocate-tayles',
@@ -36,8 +36,7 @@ export const GET: APIRoute = async () => {
 
   const events = await getEvents();
   const eventPaths = events.map((event) => `/events/${event.slug}`);
-  const cityPaths = getCityLandingGroups(events, { countryFilter: 'India' }).map((group) => `/cities/${group.slug}`);
-  const allPaths = [...new Set([...staticPaths, ...cityPaths, ...eventPaths])];
+  const allPaths = [...new Set([...staticPaths, ...eventPaths])];
 
   const urls = allPaths
     .map((path) => {
