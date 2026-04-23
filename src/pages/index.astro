@@ -111,23 +111,6 @@ const homepageStructuredData = [
 		</div>
 	</section>
 
-	<section class="border-b brutalist-border px-8 py-8">
-		<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-			<div class="lg:col-span-8 uppercase">
-				<p class="mono text-[10px] opacity-50 tracking-[0.2em]">[ Seeding & Amplification ]</p>
-				<h2 class="text-3xl md:text-4xl font-black tracking-tighter mt-2">Need Distribution Through The Right Partner Network?</h2>
-				<p class="mono text-xs opacity-70 mt-3">
-					Share your brief for seeding, amplification, or influencer marketing and we will match your mandate with partner teams.
-				</p>
-			</div>
-			<div class="lg:col-span-4 flex lg:justify-end">
-				<a href="/seeding" class="w-full lg:w-auto text-center border brutalist-border px-6 py-4 mono text-xs uppercase hover:bg-white hover:text-black transition-none">
-					Open Seeding Desk
-				</a>
-			</div>
-		</div>
-	</section>
-
 	<section class="min-h-screen">
 		<div class="grid grid-cols-12 px-8 py-4 mono text-[10px] opacity-40 uppercase border-b brutalist-border hidden md:grid">
 			<div class="col-span-2">Date</div>
@@ -137,6 +120,22 @@ const homepageStructuredData = [
 		</div>
 
 		<div id="events-container">
+			<a
+				href="/seeding"
+				class="group block border-b brutalist-border hover:bg-white transition-none"
+			>
+				<div class="grid grid-cols-1 md:grid-cols-12 px-8 py-8 md:py-12 items-center group-hover:text-black transition-none uppercase gap-4 md:gap-0">
+					<div class="md:col-span-2 mono text-sm opacity-60 md:opacity-100">Always Open</div>
+					<div class="md:col-span-2 mono text-xs">Multi-City / Remote</div>
+					<div class="md:col-span-5 text-4xl md:text-5xl font-black tracking-tighter" transition:name="title-seeding-desk">
+						Seeding Desk
+					</div>
+					<div class="md:col-span-3 text-left md:text-right mono text-xs italic opacity-40 group-hover:opacity-100">
+						//Seeding + Amplification + Influencer
+					</div>
+				</div>
+			</a>
+
 			{events.map((event: EventViewModel) => (
 				<a
 					href={`/events/${event.slug}`}
