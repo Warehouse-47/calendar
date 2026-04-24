@@ -1,30 +1,5 @@
 [
   {
-    "slug": "hilton-tayles-execution-1-wednesday-20-may-2026",
-    "title": "Hilton - Tayles (Execution - 1)",
-    "category": "Music/ Brand Advocacy/ Networking",
-    "status": "open",
-    "dateDisplay": "Wednesday, 20 May 2026",
-    "dateUpper": "WEDNESDAY, 20 MAY 2026",
-    "locationDisplay": "Gurugram, India",
-    "locationUpper": "GURUGRAM, INDIA",
-    "venue": "Hilton Baani City Centre",
-    "footfall": "200",
-    "format": "Hotel / Lounge",
-    "partnershipCategories": "Networking Apps, Co-Working, Productivity Software, Business News, Mobility, Fintech.",
-    "about": "Tales for Tayles March presents a mid-week platform for brands to anchor in Gurugram's professional and community networks. More than a hotel bar activation, it offers strategic access to bleisure elites through \"The Cabinet of Tayles\"—Wednesday networking where NFC coasters unlock stories and business development happens without conference rooms. Through curated integrations and invisible-layer access, brands can drive engagement with traveling decision-makers who own Wednesday night. The format supports premium spirits, business networking platforms, and NFC tech seeking professional-audience relevance. Partnering here positions brands as enabling the connections that close deals.",
-    "remark": "",
-    "eventFlyer": "N/A",
-    "_normalized": {
-      "dateStatus": "Confirmed",
-      "cleanType": "Music/ Brand Advocacy/ Networking",
-      "scaleTier": "Intimate",
-      "city": "Gurugram",
-      "country": "India",
-      "venue": "Hilton Baani City Centre"
-    }
-  },
-  {
     "slug": "retreat-farmhouse-hotsheets-friday-19-june-2026",
     "title": "Retreat - Farmhouse (HotSheets)",
     "category": "Warehouse 47 - IP",
@@ -47,31 +22,6 @@
       "city": "Fawkham",
       "country": "UK",
       "venue": "Farmhouse"
-    }
-  },
-  {
-    "slug": "hilton-tayles-execution-2-friday-22-may-2026",
-    "title": "Hilton - Tayles (Execution - 2)",
-    "category": "Music/ Brand Advocacy/ Networking",
-    "status": "open",
-    "dateDisplay": "Friday, 22 May 2026",
-    "dateUpper": "FRIDAY, 22 MAY 2026",
-    "locationDisplay": "Gurugram, India",
-    "locationUpper": "GURUGRAM, INDIA",
-    "venue": "Hilton Baani City Centre",
-    "footfall": "200",
-    "format": "Hotel / Lounge",
-    "partnershipCategories": "Airlines, Global Spirits, Luggage, Neo-Banking & Cards, Instant Cameras, Watches, Fragrance.",
-    "about": "Tales for Tayles April presents an international platform for brands to bring global serving rituals to Gurugram's cosmopolitan audience. More than a quarterly takeover, it offers strategic entry through \"The Passport Bar\"—discover-only pricing, access windows that close, and Advocate's layer for table hosts. Through curated international mixology and customized memory takeaways, brands can drive cultural education for expense-account connoisseurs. The format supports international spirits, travel/tourism, and limited-edition collaborations seeking business-traveler penetration. Partnering here positions brands as the stamp in the quarterly passport.",
-    "remark": "",
-    "eventFlyer": "N/A",
-    "_normalized": {
-      "dateStatus": "Confirmed",
-      "cleanType": "Music/ Brand Advocacy/ Networking",
-      "scaleTier": "Intimate",
-      "city": "Gurugram",
-      "country": "India",
-      "venue": "Hilton Baani City Centre"
     }
   },
   {
@@ -100,131 +50,6 @@
     }
   },
   {
-    "slug": "mochakk-goa-thursday-7-may-2026",
-    "title": "Mochakk – Goa",
-    "category": "Music Concert",
-    "status": "open",
-    "dateDisplay": "Thursday, 7 May 2026",
-    "dateUpper": "THURSDAY, 7 MAY 2026",
-    "locationDisplay": "Goa, India",
-    "locationUpper": "GOA, INDIA",
-    "venue": "RROV",
-    "footfall": "4000",
-    "format": "Club / Festival",
-    "partnershipCategories": "Streetwear, Energy Drinks, Tequila, Sneakers, Dating Apps, Audio Tech.",
-    "about": "Mochakk presents a high-virality platform for brands to access Gen-Z and young millennial electronic audiences. More than a tour stop, it offers strategic entry into a personality-driven global house music movement. Through curated content-first integrations, brands can drive digital amplification and cultural relevance.",
-    "remark": "",
-    "eventFlyer": "https://hub.warehouse47.com/mochakk",
-    "_normalized": {
-      "dateStatus": "Confirmed",
-      "cleanType": "Music Concert",
-      "scaleTier": "City Takeover",
-      "city": "Goa",
-      "country": "India",
-      "venue": "RROV"
-    }
-  },
-  {
-    "slug": "mochakk-mumbai-friday-8-may-2026",
-    "title": "Mochakk – Mumbai",
-    "category": "Music Concert",
-    "status": "open",
-    "dateDisplay": "Friday, 8 May 2026",
-    "dateUpper": "FRIDAY, 8 MAY 2026",
-    "locationDisplay": "Mumbai, India",
-    "locationUpper": "MUMBAI, INDIA",
-    "venue": "Bay View",
-    "footfall": "5000",
-    "format": "Club / Festival",
-    "partnershipCategories": "Streetwear, Energy Drinks, Tequila, Sneakers, Dating Apps, Audio Tech.",
-    "about": "Mochakk at Bay View leverages Mumbai’s iconic skyline to create the ultimate 'social currency' moment. Designed for the city’s trendsetters and Gen-Z creators, this show prioritizes sunset-to-night transitions, offering brands a high-aesthetic backdrop for content-driven partnerships and luxury streetwear showcases.",
-    "remark": "",
-    "eventFlyer": "https://hub.warehouse47.com/mochakk",
-    "_normalized": {
-      "dateStatus": "Confirmed",
-      "cleanType": "Music Concert",
-      "scaleTier": "City Takeover",
-      "city": "Mumbai",
-      "country": "India",
-      "venue": "Bay View"
-    }
-  },
-  {
-    "slug": "mochakk-delhi-saturday-9-may-2026",
-    "title": "Mochakk – Delhi",
-    "category": "Music Concert",
-    "status": "open",
-    "dateDisplay": "Saturday, 9 May 2026",
-    "dateUpper": "SATURDAY, 9 MAY 2026",
-    "locationDisplay": "Delhi, India",
-    "locationUpper": "DELHI, INDIA",
-    "venue": "A Dot",
-    "footfall": "6000",
-    "format": "Club / Festival",
-    "partnershipCategories": "Streetwear, Energy Drinks, Tequila, Sneakers, Dating Apps, Audio Tech.",
-    "about": "Mochakk in Delhi brings global house energy to the capital's massive warehouse culture. This leg focuses on 'The Drop'—targeting the city's sneakerheads, hypebeasts, and digital-first youth. It is the highest-capacity stop on the tour, offering brands maximum reach within the North Indian youth market",
-    "remark": "",
-    "eventFlyer": "https://hub.warehouse47.com/mochakk",
-    "_normalized": {
-      "dateStatus": "Confirmed",
-      "cleanType": "Music Concert",
-      "scaleTier": "City Takeover",
-      "city": "Delhi",
-      "country": "India",
-      "venue": "A Dot"
-    }
-  },
-  {
-    "slug": "mochakk-bangalore-sunday-10-may-2026",
-    "title": "Mochakk – Bangalore",
-    "category": "Music Concert",
-    "status": "open",
-    "dateDisplay": "Sunday, 10 May 2026",
-    "dateUpper": "SUNDAY, 10 MAY 2026",
-    "locationDisplay": "Bangalore, India",
-    "locationUpper": "BANGALORE, INDIA",
-    "venue": "District Area",
-    "footfall": "6000",
-    "format": "Club / Festival",
-    "partnershipCategories": "Streetwear, Energy Drinks, Tequila, Sneakers, Dating Apps, Audio Tech.",
-    "about": "Mochakk presents a high-virality platform for brands to access Gen-Z and young millennial electronic audiences. More than a tour stop, it offers strategic entry into a personality-driven global house music movement. Through curated content-first integrations, brands can drive digital amplification and cultural relevance.",
-    "remark": "",
-    "eventFlyer": "https://hub.warehouse47.com/mochakk",
-    "_normalized": {
-      "dateStatus": "Confirmed",
-      "cleanType": "Music Concert",
-      "scaleTier": "City Takeover",
-      "city": "Bangalore",
-      "country": "India",
-      "venue": "District Area"
-    }
-  },
-  {
-    "slug": "hilton-tayles-execution-3-friday-15-may-2026",
-    "title": "Hilton - Tayles (Execution - 3)",
-    "category": "Music/ Brand Advocacy/ Networking",
-    "status": "open",
-    "dateDisplay": "Friday, 15 May 2026",
-    "dateUpper": "FRIDAY, 15 MAY 2026",
-    "locationDisplay": "Gurugram, India",
-    "locationUpper": "GURUGRAM, INDIA",
-    "venue": "Hilton Baani City Centre",
-    "footfall": "200",
-    "format": "Hotel / Lounge",
-    "partnershipCategories": "Music Streaming, Energy Drinks, Dining Apps, Streetwear, Audio Hardware, Dating Apps.",
-    "about": "Tales for Tayles May presents a weekend-release platform for brands to capture Gurugram's consultants, founders, and dealmakers un-tethered from structure. More than a Friday night party, it offers strategic access through \"Tayles & Tempo\"—Rave Kitchen, Uni-Beats, Living Canvas kinetic back-bar. Through curated high-octane comfort food and genre-bending sound, brands can drive engagement with audiences who work hard and spend accordingly. The format supports premium alcohol, audio-visual tech, and weekend entertainment seeking bleisure-capture. Partnering here positions brands as the release valve for India's most driven professionals.",
-    "remark": "",
-    "eventFlyer": "N/A",
-    "_normalized": {
-      "dateStatus": "Confirmed",
-      "cleanType": "Music/ Brand Advocacy/ Networking",
-      "scaleTier": "Intimate",
-      "city": "Gurugram",
-      "country": "India",
-      "venue": "Hilton Baani City Centre"
-    }
-  },
-  {
     "slug": "chelsea-flower-show-wednesday-20-may-2026",
     "title": "Chelsea Flower Show",
     "category": "Community Festival",
@@ -247,31 +72,6 @@
       "city": "Chelsea",
       "country": "UK",
       "venue": "Royal Hospital Grounds (TBC)"
-    }
-  },
-  {
-    "slug": "nico-moreno-friday-29-may-2026",
-    "title": "Nico Moreno",
-    "category": "Music Concert",
-    "status": "open",
-    "dateDisplay": "Friday, 29 May 2026",
-    "dateUpper": "FRIDAY, 29 MAY 2026",
-    "locationDisplay": "Mumbai, India",
-    "locationUpper": "MUMBAI, INDIA",
-    "venue": "Nesco",
-    "footfall": "3000",
-    "format": "Arena / Club",
-    "partnershipCategories": "Techwear, Energy Drinks, Gaming Hardware, Motorcycles, Audio Streaming.",
-    "about": "Nico Moreno at Nesco presents a peak-intensity platform for brands to align with India’s fastest-growing hard-techno movement. More than a headline show, it offers strategic entry into a high-stamina, identity-led audience that treats events as subcultural gatherings. Through curated industrial-scale integrations, brands can drive deep loyalty and high repeat visibility.",
-    "remark": "",
-    "eventFlyer": "https://hub.warehouse47.com/nico-moreno",
-    "_normalized": {
-      "dateStatus": "Confirmed",
-      "cleanType": "Music Concert",
-      "scaleTier": "City Takeover",
-      "city": "Mumbai",
-      "country": "India",
-      "venue": "Nesco"
     }
   },
   {
