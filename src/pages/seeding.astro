@@ -9,24 +9,27 @@ const rareClubDeckUrl = String(
   import.meta.env.PUBLIC_RARE_CLUB_DECK_URL ?? '',
 ).trim();
 const rareClubWebsiteUrl = String(import.meta.env.PUBLIC_RARE_CLUB_WEBSITE_URL ?? '').trim();
+const strategicCollaborationDeckUrl = String(
+  import.meta.env.PUBLIC_STRATEGIC_COLLABORATION_DECK_URL ?? '',
+).trim();
 
 const pageStructuredData = [
   buildCollectionPageStructuredData({
     path: '/seeding',
     name: 'Warehouse47 Seeding Desk',
     description:
-      'Share your seeding, amplification, and influencer marketing brief. Warehouse47 routes the mandate through partner distribution teams.',
+      'Share your seeding, creator collaboration, and amplification brief. Warehouse47 routes the mandate through partner distribution teams.',
   }),
 ];
 ---
 
 <Layout
   title="Seeding Desk"
-  description="Submit brand seeding and amplification briefs to Warehouse47 partner network."
+  description="Submit seeding, creator collaboration, and amplification briefs to the Warehouse47 partner network."
   structuredData={pageStructuredData}
 >
   <header class="p-8 border-b brutalist-border flex flex-col md:flex-row md:justify-between md:items-end gap-4">
-    <a href="/" class="mono text-xs opacity-60 hover:opacity-100">[ <- BACK_TO_MANIFEST ]</a>
+    <a href="/" class="mono text-xs opacity-60 hover:opacity-100">[ &lt;- BACK_TO_MANIFEST ]</a>
     <div class="text-left md:text-right mono text-[10px] opacity-50 tracking-[0.2em] uppercase">
       [ SEEDING_DESK ]<br />
       [ STATUS: OPEN ]
@@ -37,17 +40,20 @@ const pageStructuredData = [
     <p class="mono text-xs opacity-60 mb-3 tracking-[0.18em]">Partner-Led Distribution Desk</p>
     <h1 class="text-5xl md:text-7xl font-black tracking-tighter leading-none">Seeding</h1>
     <p class="mono text-xs mt-4 opacity-70 max-w-3xl mx-auto leading-relaxed">
-      // Launch stronger with calibrated seeding, sharper amplification, and influencer marketing through trusted partner networks.
+      // Launch stronger with calibrated seeding, sharper amplification, and creator collaboration through trusted partner networks.
       Share your brief once, and we route it to the team that best matches your mandate.
     </p>
   </section>
 
   <section class="border-b brutalist-border px-8 py-8">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl mx-auto">
       <article class="border brutalist-border p-6 text-center">
         <p class="mono text-[10px] uppercase opacity-55">Partner</p>
         <h2 class="text-3xl font-black tracking-tight uppercase mt-2">Barcode</h2>
         <p class="mono text-xs uppercase opacity-70 mt-3">Seeding and amplification support</p>
+        <p class="mono text-[10px] uppercase opacity-55 mt-4 leading-relaxed max-w-sm mx-auto">
+          Built for brand launches, creator outreach, and distribution-led amplification that needs a sharper partner network.
+        </p>
         {barcodeDeckUrl || barcodeWebsiteUrl ? (
           <div class="partner-link-row mt-5">
             {barcodeDeckUrl && (
@@ -76,11 +82,11 @@ const pageStructuredData = [
         )}
       </article>
 
-        <article class="border brutalist-border p-6 text-center">
+      <article class="border brutalist-border p-6 text-center">
         <p class="mono text-[10px] uppercase opacity-55">Partner</p>
-          <h2 class="text-3xl font-black tracking-tight uppercase mt-2">Rare Club</h2>
-        <p class="mono text-xs uppercase opacity-70 mt-3">Influencer and creator-led campaign support</p>
-          {rareClubDeckUrl || rareClubWebsiteUrl ? (
+        <h2 class="text-3xl font-black tracking-tight uppercase mt-2">Rare Club</h2>
+        <p class="mono text-xs uppercase opacity-70 mt-3">Seeding and amplification support</p>
+        {rareClubDeckUrl || rareClubWebsiteUrl ? (
           <div class="partner-link-row mt-5">
             {rareClubDeckUrl && (
               <a
@@ -89,7 +95,7 @@ const pageStructuredData = [
                 rel="noreferrer"
                 class="inline-flex items-center justify-center border brutalist-border px-5 py-2.5 mono text-xs uppercase hover:bg-white hover:text-black"
               >
-                Open Deck
+                Open Collaboration Deck
               </a>
             )}
             {rareClubWebsiteUrl && (
@@ -106,6 +112,32 @@ const pageStructuredData = [
         ) : (
           <p class="mono text-xs uppercase opacity-50 mt-5">Links not set yet.</p>
         )}
+        <p class="mono text-[10px] uppercase opacity-55 mt-4 leading-relaxed max-w-sm mx-auto">
+          Long-term creator and influencer partnership profiles for brands that want a repeatable collaboration system.
+        </p>
+      </article>
+
+      <article class="border brutalist-border p-6 text-center">
+        <p class="mono text-[10px] uppercase opacity-55">Partner</p>
+        <h2 class="text-3xl font-black tracking-tight uppercase mt-2">Strategic Collaboration</h2>
+        <p class="mono text-xs uppercase opacity-70 mt-3">Deck-only collaboration profile</p>
+        {strategicCollaborationDeckUrl ? (
+          <div class="partner-link-row mt-5">
+            <a
+              href={strategicCollaborationDeckUrl}
+              target="_blank"
+              rel="noreferrer"
+              class="inline-flex items-center justify-center border brutalist-border px-5 py-2.5 mono text-xs uppercase hover:bg-white hover:text-black"
+            >
+              Open Collaboration Deck
+            </a>
+          </div>
+        ) : (
+          <p class="mono text-xs uppercase opacity-50 mt-5">Deck link not set yet.</p>
+        )}
+        <p class="mono text-[10px] uppercase opacity-55 mt-4 leading-relaxed max-w-sm mx-auto">
+          A deck-only entry for brands looking at structured, long-term creator or artist collaboration.
+        </p>
       </article>
     </div>
   </section>
@@ -114,7 +146,7 @@ const pageStructuredData = [
     <div class="max-w-5xl border brutalist-border p-6 md:p-8 mx-auto">
       <div class="mb-7 uppercase text-center max-w-3xl mx-auto">
         <p class="mono text-[10px] opacity-55 tracking-[0.2em]">[ Brief Intake ]</p>
-        <h2 class="text-3xl md:text-4xl font-black tracking-tighter mt-2">Share Your Requirement Brief</h2>
+        <h2 class="text-3xl md:text-4xl font-black tracking-tighter mt-2">Share Your Seeding Or Collaboration Brief</h2>
         <p class="mono text-xs opacity-70 mt-3 leading-relaxed">
           Give us your campaign context, timeline, and contact details. Fields marked with * are required.
         </p>
@@ -164,6 +196,7 @@ const pageStructuredData = [
             <option value="">No preference</option>
             <option value="Barcode">Barcode</option>
             <option value="Rare Club">Rare Club</option>
+            <option value="Strategic Collaboration">Strategic Collaboration</option>
             <option value="Open To Recommendation">Open To Recommendation</option>
           </select>
         </label>
@@ -173,8 +206,8 @@ const pageStructuredData = [
           <div class="seeding-checkbox-grid" role="group" aria-label="Service requirement">
             <label><input type="checkbox" name="seedingServiceNeed" value="Seeding" /> Seeding</label>
             <label><input type="checkbox" name="seedingServiceNeed" value="Amplification" /> Amplification</label>
+            <label><input type="checkbox" name="seedingServiceNeed" value="Creator Collaboration" /> Creator Collaboration</label>
             <label><input type="checkbox" name="seedingServiceNeed" value="Influencer Marketing" /> Influencer Marketing</label>
-            <label><input type="checkbox" name="seedingServiceNeed" value="Creator Collaborations" /> Creator Collaborations</label>
           </div>
         </label>
 

@@ -31,6 +31,7 @@ function uniqueSorted(values: string[]) {
 const typeOptions = uniqueSorted(events.map((event) => String(event._normalized?.cleanType || 'Uncategorized').trim()));
 const scaleOptions = uniqueSorted(events.map((event) => String(event._normalized?.scaleTier || 'Scale TBA').trim()));
 const cityOptions = uniqueSorted(events.map((event) => String(event._normalized?.city || 'Location TBA').trim()));
+const typeFilterOptions = ['ALL', ...typeOptions];
 const homepageStructuredData = [
 	buildCollectionPageStructuredData({
 		path: '/',
@@ -62,23 +63,13 @@ const homepageStructuredData = [
 		</div>
 	</header>
 
-	<section class="border-b brutalist-border bg-white/5 p-4 px-8 grid grid-cols-1 md:grid-cols-5 gap-4 mono text-xs uppercase">
+	<section class="border-b brutalist-border bg-white/5 p-4 px-8 grid grid-cols-1 md:grid-cols-4 gap-4 mono text-xs uppercase">
 		<div class="flex items-center gap-4 w-full md:w-auto">
 			<span class="opacity-50 tracking-widest">[DATE]</span>
 			<select id="filter-date" class="bg-black text-white border border-white/20 p-2 w-full outline-none hover:bg-white hover:text-black transition-none cursor-pointer appearance-none rounded-none">
 				<option value="ALL">ALL_DATES</option>
 				{dateFilterOptions.map((dateOption) => (
 					<option value={dateOption}>{dateOption.toUpperCase()}</option>
-				))}
-			</select>
-		</div>
-
-		<div class="flex items-center gap-4 w-full md:w-auto">
-			<span class="opacity-50 tracking-widest">[TYPE]</span>
-			<select id="filter-type" class="bg-black text-white border border-white/20 p-2 w-full outline-none hover:bg-white hover:text-black transition-none cursor-pointer appearance-none rounded-none">
-				<option value="ALL">ALL_TYPES</option>
-				{typeOptions.map((typeValue) => (
-					<option value={typeValue}>{typeValue.toUpperCase()}</option>
 				))}
 			</select>
 		</div>
@@ -111,6 +102,25 @@ const homepageStructuredData = [
 		</div>
 	</section>
 
+	<section class="border-b brutalist-border bg-white/5 px-8 pb-4 mono text-xs uppercase">
+		<div class="type-filter-row w-full pt-4">
+			<span class="type-filter-label opacity-50 tracking-widest">[TYPE]</span>
+			<div class="type-filter-bar" role="group" aria-label="Event type filters">
+				{typeFilterOptions.map((typeValue) => (
+					<button
+						type="button"
+						class="type-filter-button"
+						data-type-filter={typeValue}
+						data-active={typeValue === 'ALL' ? 'true' : 'false'}
+						aria-pressed={typeValue === 'ALL' ? 'true' : 'false'}
+					>
+						{typeValue === 'ALL' ? 'ALL_TYPES' : typeValue.toUpperCase()}
+					</button>
+				))}
+			</div>
+		</div>
+	</section>
+
 	<section class="min-h-screen">
 		<div class="grid grid-cols-12 px-8 py-4 mono text-[10px] opacity-40 uppercase border-b brutalist-border hidden md:grid">
 			<div class="col-span-2">Date</div>
@@ -132,6 +142,22 @@ const homepageStructuredData = [
 					</div>
 					<div class="md:col-span-3 text-left md:text-right mono text-xs italic opacity-40 group-hover:opacity-100">
 						//Seeding + Amplification + Influencer
+					</div>
+				</div>
+			</a>
+
+			<a
+				href="/in-store-activation"
+				class="group block border-b brutalist-border hover:bg-white transition-none"
+			>
+				<div class="grid grid-cols-1 md:grid-cols-12 px-8 py-8 md:py-12 items-center group-hover:text-black transition-none uppercase gap-4 md:gap-0">
+					<div class="md:col-span-2 mono text-sm opacity-60 md:opacity-100">Always Open</div>
+					<div class="md:col-span-2 mono text-xs">Retail / Flagship</div>
+					<div class="md:col-span-5 text-4xl md:text-5xl font-black tracking-tighter" transition:name="title-in-store-activation">
+						In-Store Activation
+					</div>
+					<div class="md:col-span-3 text-left md:text-right mono text-xs italic opacity-40 group-hover:opacity-100">
+						//Retail takeovers + brand decks + store moments
 					</div>
 				</div>
 			</a>
@@ -173,14 +199,23 @@ const homepageStructuredData = [
 <script>
 	document.addEventListener('astro:page-load', () => {
 		const dateFilter = document.getElementById('filter-date') as HTMLSelectElement | null;
-		const typeFilter = document.getElementById('filter-type') as HTMLSelectElement | null;
 		const scaleFilter = document.getElementById('filter-scale') as HTMLSelectElement | null;
 		const cityFilter = document.getElementById('filter-city') as HTMLSelectElement | null;
 		const venueFilter = document.getElementById('filter-venue') as HTMLSelectElement | null;
+		const typeButtons = document.querySelectorAll<HTMLButtonElement>('[data-type-filter]');
 		const rows = document.querySelectorAll('.event-row');
 		const noResults = document.getElementById('no-results');
+		let selectedType = 'ALL';
 		/** @type {Map<string, Set<string>>} */
 		const cityToVenues = new Map();
+
+		function updateTypeButtons(activeType: string) {
+			typeButtons.forEach((button) => {
+				const isActive = button.getAttribute('data-type-filter') === activeType;
+				button.dataset.active = String(isActive);
+				button.setAttribute('aria-pressed', String(isActive));
+			});
+		}
 
 		rows.forEach((row) => {
 			const city = row.getAttribute('data-city') || 'Location TBA';
@@ -218,10 +253,9 @@ const homepageStructuredData = [
 		}
 
 		function filterEvents() {
-			if (!dateFilter || !typeFilter || !scaleFilter || !cityFilter || !venueFilter) return;
+			if (!dateFilter || !scaleFilter || !cityFilter || !venueFilter) return;
 
 			const selectedDate = dateFilter.value;
-			const selectedType = typeFilter.value;
 			const selectedScale = scaleFilter.value;
 			const selectedCity = cityFilter.value;
 			const selectedVenue = venueFilter.value;
@@ -258,15 +292,91 @@ const homepageStructuredData = [
 			}
 		}
 
+		function setTypeFilter(typeValue: string) {
+			selectedType = typeValue;
+			updateTypeButtons(typeValue);
+			filterEvents();
+		}
+
 		cityFilter?.addEventListener('change', () => {
 			updateVenueOptions();
 			filterEvents();
 		});
 		dateFilter?.addEventListener('change', filterEvents);
-		typeFilter?.addEventListener('change', filterEvents);
 		scaleFilter?.addEventListener('change', filterEvents);
 		venueFilter?.addEventListener('change', filterEvents);
+		typeButtons.forEach((button) => {
+			button.addEventListener('click', () => {
+				setTypeFilter(button.getAttribute('data-type-filter') || 'ALL');
+			});
+		});
 		updateVenueOptions();
+		updateTypeButtons(selectedType);
 		filterEvents();
 	});
 </script>
+
+<style>
+	.type-filter-bar {
+		display: flex;
+		align-items: stretch;
+		gap: 0.25rem;
+		flex: 1;
+		overflow-x: auto;
+		padding: 0.25rem;
+		border: 1px solid rgba(255, 255, 255, 0.2);
+		background: rgba(0, 0, 0, 0.95);
+	}
+
+	.type-filter-row {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		width: 100%;
+	}
+
+	.type-filter-label {
+		flex: 0 0 auto;
+		min-width: 4rem;
+	}
+
+	.type-filter-button {
+		flex: 0 0 auto;
+		border: 0;
+		background: transparent;
+		color: rgba(255, 255, 255, 0.6);
+		cursor: pointer;
+		padding: 0.7rem 1rem;
+		font: inherit;
+		text-transform: uppercase;
+		letter-spacing: 0.18em;
+		white-space: nowrap;
+		transition: none;
+	}
+
+	.type-filter-button[data-active='true'] {
+		background: #ffffff;
+		color: #000000;
+	}
+
+	.type-filter-button:hover {
+		background: rgba(255, 255, 255, 0.12);
+		color: #ffffff;
+	}
+
+	.type-filter-button[data-active='true']:hover {
+		background: #ffffff;
+		color: #000000;
+	}
+
+	@media (max-width: 767px) {
+		.type-filter-row {
+			align-items: flex-start;
+			flex-direction: column;
+		}
+
+		.type-filter-bar {
+			width: 100%;
+		}
+	}
+</style>

@@ -1,0 +1,158 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { buildCollectionPageStructuredData } from '../../lib/seo';
+
+const fashionLifestyleDeckUrl = String(import.meta.env.PUBLIC_IN_STORE_FASHION_LIFESTYLE_DECK_URL ?? '').trim();
+const automobileDeckUrl = String(import.meta.env.PUBLIC_IN_STORE_AUTOMOBILE_DECK_URL ?? '').trim();
+const luxuryJewelryDeckUrl = String(import.meta.env.PUBLIC_IN_STORE_LUXURY_JEWELRY_DECK_URL ?? '').trim();
+
+const activationCategories = [
+  {
+    category: 'Fashion & Lifestyle',
+    summary: 'High-traffic retail moments, styling-led discovery, and premium in-store energy.',
+    focus: ['Launch weekends', 'Styling moments', 'Store traffic'],
+    deckLabel: 'Category Playbook',
+    href: fashionLifestyleDeckUrl,
+  },
+  {
+    category: 'Automobile',
+    summary: 'Launch displays, test-drive theater, and premium showroom storytelling.',
+    focus: ['Launch events', 'Showroom theater', 'Lead capture'],
+    deckLabel: 'Category Playbook',
+    href: automobileDeckUrl,
+  },
+  {
+    category: 'Luxury & Jewelry',
+    summary: 'Appointment-led exclusivity, premium presentation, and high-value clienteling.',
+    focus: ['Private previews', 'Concierge moments', 'High-touch service'],
+    deckLabel: 'Category Playbook',
+    href: luxuryJewelryDeckUrl,
+  },
+];
+
+const pageStructuredData = [
+  buildCollectionPageStructuredData({
+    path: '/in-store-activation',
+    name: 'Warehouse47 In-Store Activation',
+    description:
+      'In-store activation showcase for category-led retail programs, store takeovers, and premium shopping floor experiences.',
+  }),
+];
+---
+
+<Layout
+  title="In-Store Activation"
+  description="Showcase in-store activation concepts, deck-ready retail moments, and category-led store takeovers."
+  structuredData={pageStructuredData}
+>
+  <header class="p-8 border-b brutalist-border flex flex-col md:flex-row md:justify-between md:items-end gap-4">
+    <a href="/" class="mono text-xs opacity-60 hover:opacity-100">[ &lt;- BACK_TO_MANIFEST ]</a>
+    <div class="text-left md:text-right mono text-[10px] opacity-50 tracking-[0.2em] uppercase">
+      [ IN_STORE_ACTIVATION ]<br />
+      [ STATUS: BUILDING ]
+    </div>
+  </header>
+
+  <section class="border-b brutalist-border px-8 py-12 uppercase text-center">
+    <p class="mono text-xs opacity-60 mb-3 tracking-[0.18em]">Retail Experience Desk</p>
+    <h1 class="text-5xl md:text-7xl font-black tracking-tighter leading-none">In-Store Activation</h1>
+    <p class="mono text-xs mt-4 opacity-70 max-w-3xl mx-auto leading-relaxed">
+      // Built for retail floors, flagship stores, and category-led takeovers. Use this page to showcase the playbook for each category and the type of activation it needs.
+    </p>
+  </section>
+
+  <section class="border-b brutalist-border px-8 py-8">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
+      {activationCategories.map((deck) => (
+        <article class="border brutalist-border p-6 flex flex-col gap-5">
+          <div>
+            <p class="mono text-[10px] uppercase opacity-55">[ Category ]</p>
+            <h2 class="text-3xl font-black tracking-tight uppercase mt-2">{deck.category}</h2>
+          </div>
+
+          <p class="mono text-xs uppercase opacity-75 leading-relaxed">{deck.summary}</p>
+
+          <div class="flex flex-wrap gap-2">
+            {deck.focus.map((item) => (
+              <span class="border brutalist-border px-3 py-1 mono text-[10px] uppercase tracking-[0.12em]">
+                {item}
+              </span>
+            ))}
+          </div>
+
+          {deck.href ? (
+            <a
+              href={deck.href}
+              target="_blank"
+              rel="noreferrer"
+              class="mt-auto inline-flex items-center justify-center border brutalist-border px-5 py-2.5 mono text-xs uppercase hover:bg-white hover:text-black"
+            >
+              Open {deck.deckLabel}
+            </a>
+          ) : (
+            <div class="mt-auto border border-dashed border-white/30 px-5 py-2.5 mono text-xs uppercase opacity-50 text-center">
+              {deck.deckLabel} Placeholder
+            </div>
+          )}
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="px-8 py-10">
+    <div class="max-w-6xl mx-auto border brutalist-border p-6 md:p-8">
+      <div class="mb-7 uppercase text-center max-w-3xl mx-auto">
+        <p class="mono text-[10px] opacity-55 tracking-[0.2em]">[ Activation Philosophy ]</p>
+        <h2 class="text-3xl md:text-4xl font-black tracking-tighter mt-2">In-Store Activation Philosophy</h2>
+        <p class="mono text-xs opacity-70 mt-3 leading-relaxed">
+          Every store plan should start with the category's point of view, then move into fitment, customer motion, and the business outcome the floor is meant to unlock.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <article class="border brutalist-border p-5">
+          <p class="mono text-[10px] uppercase opacity-55">01</p>
+          <h3 class="text-xl font-black uppercase mt-2">Category story first</h3>
+          <p class="mono text-xs uppercase opacity-70 mt-3 leading-relaxed">
+            Begin with what the category stands for, the emotion it should project, and the retail behavior it wants to trigger.
+          </p>
+        </article>
+        <article class="border brutalist-border p-5">
+          <p class="mono text-[10px] uppercase opacity-55">02</p>
+          <h3 class="text-xl font-black uppercase mt-2">Category fitment</h3>
+          <p class="mono text-xs uppercase opacity-70 mt-3 leading-relaxed">
+            Match the activation format to the store type, audience profile, city context, and the level of category heat already in the room.
+          </p>
+        </article>
+        <article class="border brutalist-border p-5">
+          <p class="mono text-[10px] uppercase opacity-55">03</p>
+          <h3 class="text-xl font-black uppercase mt-2">Recall and activation</h3>
+          <p class="mono text-xs uppercase opacity-70 mt-3 leading-relaxed">
+            Build moments that are easy to remember, easy to photograph, and easy to talk about after the visit.
+          </p>
+        </article>
+        <article class="border brutalist-border p-5">
+          <p class="mono text-[10px] uppercase opacity-55">04</p>
+          <h3 class="text-xl font-black uppercase mt-2">Seamless retail integration</h3>
+          <p class="mono text-xs uppercase opacity-70 mt-3 leading-relaxed">
+            Make the activation feel native to the store - from merchandise flow and staff coordination to signage, queues, and operational rhythm.
+          </p>
+        </article>
+        <article class="border brutalist-border p-5">
+          <p class="mono text-[10px] uppercase opacity-55">05</p>
+          <h3 class="text-xl font-black uppercase mt-2">Footfall and conversion</h3>
+          <p class="mono text-xs uppercase opacity-70 mt-3 leading-relaxed">
+            Design for attention that turns into store visits, longer dwell time, stronger interaction, and healthier sales momentum.
+          </p>
+        </article>
+        <article class="border brutalist-border p-5">
+          <p class="mono text-[10px] uppercase opacity-55">06</p>
+          <h3 class="text-xl font-black uppercase mt-2">Scale the learning</h3>
+          <p class="mono text-xs uppercase opacity-70 mt-3 leading-relaxed">
+            Capture what worked so the next city, store, or category chapter can repeat the strongest parts with less friction.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+</Layout>

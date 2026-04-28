@@ -13,6 +13,8 @@ Astro app for browsing experiential events with brutalist monochrome styling and
 	- `PUBLIC_RARE_CLUB_DECK_URL`
 	- `PUBLIC_RARE_CLUB_WEBSITE_URL`
 - Each link button is shown only when that specific URL is set.
+- `/seeding` now covers seeding, amplification, and long-term creator collaboration briefs.
+- `/in-store-activation` is a dedicated showcase page for retail activation decks and store takeover concepts.
 - You can use either a normal Google Sheets viewer/edit link or a direct CSV link.
 - Run `npm run dev`.
 
@@ -22,6 +24,7 @@ Astro app for browsing experiential events with brutalist monochrome styling and
 	- `Attend`: attendee name, people count, travel origin, preferred update channel, contact detail.
 	- `Associate`: brand details, brand category, contact details, deliverable mandate, approximate budget range, and notes.
 - `/seeding` includes a dedicated lead form for seeding, amplification, and influencer marketing briefs.
+- `/in-store-activation` is a showcase route for A|X, WhiteCrow, Diesel, and future retail activation decks.
 - Forms submit JSON via `POST` to `PUBLIC_INTEREST_APPS_SCRIPT_URL`.
 - Recommended Apps Script setup:
 	- Publish as Web App with access allowed for anonymous submissions (or your desired auth model).
