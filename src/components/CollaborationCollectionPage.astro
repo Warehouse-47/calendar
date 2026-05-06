@@ -1,0 +1,331 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { buildCollectionPageStructuredData, buildItemListStructuredData } from '../lib/seo';
+
+interface CollaborationEntry {
+  slug: string;
+  title: string;
+  summary?: string;
+  category?: string;
+  location?: string;
+  status?: string;
+  tags?: string[];
+  links?: string[];
+  primaryLink?: string;
+  secondaryLink?: string;
+  instagramFollower?: string;
+  instagramLink?: string;
+  otherLink?: string;
+  deckLink?: string;
+  brandLink?: string;
+  previousBrandCollaboration?: string;
+  sheetName?: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  eyebrow: string;
+  intro: string;
+  path: string;
+  sheetName: string;
+  entries: CollaborationEntry[];
+}
+
+const { title, description, eyebrow, intro, path, sheetName, entries } = Astro.props as Props;
+
+function uniqueSorted(values: Array<string | undefined>) {
+  return [...new Set(values.map((value) => String(value ?? '').trim()).filter((value) => value.length > 0))].sort((a, b) => a.localeCompare(b));
+}
+
+const collaborationStructuredData = [
+  buildCollectionPageStructuredData({
+    path,
+    name: title,
+    description,
+  }),
+  ...(entries.length > 0
+    ? [
+        buildItemListStructuredData({
+          path,
+          name: `${title} entries`,
+          items: entries.map((entry) => ({
+            name: entry.title,
+            url: entry.primaryLink || path,
+          })),
+        }),
+      ]
+    : []),
+];
+
+const categoryValues = uniqueSorted(entries.map((entry) => entry.category));
+const locationValues = uniqueSorted(entries.map((entry) => entry.location));
+const statusValues = uniqueSorted(entries.map((entry) => entry.status));
+const categoryFilterOptions = ['ALL', ...categoryValues];
+---
+
+<Layout title={title} description={description} structuredData={collaborationStructuredData}>
+  <header class="p-8 border-b brutalist-border flex flex-col md:flex-row md:justify-between md:items-end gap-4">
+    <a href="/" class="mono text-xs opacity-60 hover:opacity-100">[ &lt;- BACK_TO_MANIFEST ]</a>
+    <div class="text-left md:text-right mono text-[10px] opacity-50 tracking-[0.2em] uppercase">
+      [ COLLABORATION_TRACK ]<br />
+      [ SHEET: {sheetName.toUpperCase()} ]
+    </div>
+  </header>
+
+  <section class="border-b brutalist-border px-8 py-12 uppercase text-center">
+    <p class="mono text-xs opacity-60 mb-3 tracking-[0.18em]">{eyebrow}</p>
+    <h1 class="text-5xl md:text-7xl font-black tracking-tighter leading-none">{title}</h1>
+    <p class="mono text-xs mt-4 opacity-70 max-w-3xl mx-auto leading-relaxed">{intro}</p>
+  </section>
+
+  <section class="border-b brutalist-border px-8 py-8 bg-white/5">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-6xl mx-auto mono text-xs uppercase">
+      <article class="border brutalist-border p-5">
+        <p class="opacity-50 tracking-widest">[Records]</p>
+        <p class="text-3xl font-black mt-2">{entries.length.toString().padStart(2, '0')}</p>
+      </article>
+      <article class="border brutalist-border p-5">
+        <p class="opacity-50 tracking-widest">[Categories]</p>
+        <p class="text-3xl font-black mt-2">{categoryValues.length.toString().padStart(2, '0')}</p>
+      </article>
+      <article class="border brutalist-border p-5">
+        <p class="opacity-50 tracking-widest">[Locations]</p>
+        <p class="text-3xl font-black mt-2">{locationValues.length.toString().padStart(2, '0')}</p>
+      </article>
+      <article class="border brutalist-border p-5">
+        <p class="opacity-50 tracking-widest">[Status]</p>
+        <p class="text-3xl font-black mt-2">{statusValues[0] || 'OPEN'}</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="border-b brutalist-border bg-white/5 px-8 py-4 mono text-xs uppercase">
+    <div class="flex flex-wrap items-center gap-4 max-w-6xl mx-auto">
+      <span class="opacity-50 tracking-widest">[SOURCE]</span>
+      <span>{sheetName} sheet-backed feed</span>
+      <span class="opacity-35">// Live data loads from the public spreadsheet when available.</span>
+    </div>
+  </section>
+
+  {categoryFilterOptions.length > 1 && (
+    <section class="border-b brutalist-border bg-white/5 px-8 py-4 mono text-xs uppercase">
+      <div class="category-filter-row w-full max-w-6xl mx-auto">
+        <span class="category-filter-label opacity-50 tracking-widest">[CATEGORY]</span>
+        <div class="category-filter-bar" role="group" aria-label="Category filters">
+          {categoryFilterOptions.map((categoryValue) => (
+            <button
+              type="button"
+              class="category-filter-button"
+              data-category-filter={categoryValue}
+              data-active={categoryValue === 'ALL' ? 'true' : 'false'}
+              aria-pressed={categoryValue === 'ALL' ? 'true' : 'false'}
+            >
+              {categoryValue === 'ALL' ? 'ALL_CATEGORIES' : categoryValue.toUpperCase()}
+            </button>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="min-h-screen">
+    <div class="grid grid-cols-12 px-8 py-4 mono text-[10px] opacity-40 uppercase border-b brutalist-border hidden md:grid">
+      <div class="col-span-2">Status</div>
+      <div class="col-span-3">Category</div>
+      <div class="col-span-4">Entry</div>
+      <div class="col-span-3 text-right">Links</div>
+    </div>
+
+    <div>
+      {entries.map((entry) => (
+        <article
+          class="collaboration-entry group block border-b brutalist-border hover:bg-white transition-none"
+          data-category={entry.category || sheetName}
+        >
+          <div class="grid grid-cols-1 md:grid-cols-12 px-8 py-8 md:py-10 items-start group-hover:text-black transition-none uppercase gap-4 md:gap-0">
+            <div class="md:col-span-2 mono text-sm opacity-60 md:opacity-100">{entry.status || 'Open'}</div>
+            <div class="md:col-span-3 mono text-xs leading-relaxed">
+              <p>{entry.category || sheetName}</p>
+              {entry.location && <p class="opacity-60 mt-1">{entry.location}</p>}
+            </div>
+            <div class={`md:col-span-4 text-3xl md:text-4xl font-black tracking-tighter ${entry.status?.toLowerCase() === 'closed' ? 'line-through decoration-4' : ''}`}>
+              {entry.title}
+            </div>
+            <div class="md:col-span-3 text-left md:text-right mono text-sm italic opacity-70 group-hover:opacity-100 leading-relaxed">
+              {entry.summary || 'No summary shared yet.'}
+            </div>
+          </div>
+
+          <div class="px-8 pb-8 md:pb-10 pt-0 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <div class="flex flex-wrap gap-2">
+              {entry.tags?.map((tag) => (
+                <span class="border brutalist-border px-3 py-1 mono text-[10px] uppercase tracking-[0.12em]">
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            <div class="flex flex-wrap gap-3">
+              {entry.instagramLink && (
+                <a
+                  href={entry.instagramLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  class="inline-flex items-center justify-center border brutalist-border px-5 py-2.5 mono text-xs uppercase hover:bg-black hover:text-white group-hover:border-black"
+                >
+                  Instagram
+                </a>
+              )}
+              {entry.otherLink && (
+                <a
+                  href={entry.otherLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  class="inline-flex items-center justify-center border brutalist-border px-5 py-2.5 mono text-xs uppercase hover:bg-black hover:text-white group-hover:border-black"
+                >
+                  Other
+                </a>
+              )}
+              {entry.deckLink && (
+                <a
+                  href={entry.deckLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  class="inline-flex items-center justify-center border brutalist-border px-5 py-2.5 mono text-xs uppercase hover:bg-black hover:text-white group-hover:border-black"
+                >
+                  Deck
+                </a>
+              )}
+              {entry.brandLink && (
+                <a
+                  href={entry.brandLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  class="inline-flex items-center justify-center border brutalist-border px-5 py-2.5 mono text-xs uppercase hover:bg-black hover:text-white group-hover:border-black"
+                >
+                  Open Link
+                </a>
+              )}
+            </div>
+          </div>
+
+          {(entry.instagramFollower || entry.instagramLink || entry.spotifyLink || entry.previousBrandCollaboration) && (
+            <div class="px-8 pb-8 md:pb-10 mono text-[10px] uppercase opacity-70 grid gap-2 md:grid-cols-4 border-t brutalist-border/60 pt-4">
+              {entry.instagramFollower && <p>Instagram Followers: {entry.instagramFollower}</p>}
+              {entry.instagramLink && <p>Instagram: {entry.instagramLink}</p>}
+              {entry.spotifyLink && <p>Spotify: {entry.spotifyLink}</p>}
+              {entry.previousBrandCollaboration && <p>Previous Brands: {entry.previousBrandCollaboration}</p>}
+            </div>
+          )}
+        </article>
+      ))}
+
+      {entries.length === 0 && (
+        <div class="p-16 text-center mono uppercase text-sm opacity-40 tracking-widest border-b brutalist-border">
+          [ NO_ENTRIES_FOUND ]
+        </div>
+      )}
+    </div>
+  </section>
+
+  <section class="px-8 py-10">
+    <div class="max-w-5xl border brutalist-border p-6 md:p-8 mx-auto text-center">
+      <p class="mono text-[10px] opacity-55 tracking-[0.2em]">[ NEXT STEP ]</p>
+      <h2 class="text-3xl md:text-4xl font-black tracking-tighter mt-2">Need to update the sheet?</h2>
+      <p class="mono text-xs opacity-70 mt-3 leading-relaxed max-w-3xl mx-auto">
+        Edit the public Brand or Artist tab, then run the collaboration sync script to refresh the generated data used by the live pages.
+      </p>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const filterButtons = document.querySelectorAll<HTMLButtonElement>('[data-category-filter]');
+    const entries = document.querySelectorAll<HTMLElement>('.collaboration-entry');
+    let selectedCategory = 'ALL';
+
+    function updateCategoryButtons(activeCategory: string) {
+      filterButtons.forEach((button) => {
+        const isActive = button.getAttribute('data-category-filter') === activeCategory;
+        button.dataset.active = String(isActive);
+        button.setAttribute('aria-pressed', String(isActive));
+      });
+    }
+
+    function filterEntries() {
+      entries.forEach((entry) => {
+        const entryCategory = entry.getAttribute('data-category') || '';
+        const shouldShow = selectedCategory === 'ALL' || entryCategory === selectedCategory;
+        entry.style.display = shouldShow ? '' : 'none';
+      });
+    }
+
+    filterButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const category = button.getAttribute('data-category-filter');
+        if (!category) return;
+
+        selectedCategory = category;
+        updateCategoryButtons(selectedCategory);
+        filterEntries();
+      });
+    });
+  });
+</script>
+
+<style>
+	.category-filter-row {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 1rem;
+		width: 100%;
+		padding-top: 1rem;
+	}
+
+	.category-filter-label {
+		min-width: 4rem;
+	}
+
+	.category-filter-bar {
+		display: flex;
+		flex-wrap: nowrap;
+		gap: 0.5rem;
+		align-items: center;
+		overflow-x: auto;
+		scroll-behavior: smooth;
+		padding-bottom: 0.5rem;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	.category-filter-button {
+		flex: 0 0 auto;
+		border: 0;
+		background: transparent;
+		color: rgba(255, 255, 255, 0.6);
+		cursor: pointer;
+		padding: 0.7rem 1rem;
+		font: inherit;
+		text-transform: uppercase;
+		letter-spacing: 0.18em;
+		white-space: nowrap;
+		transition: none;
+	}
+
+	.category-filter-button[data-active='true'] {
+		background: #ffffff;
+		color: #000000;
+	}
+
+	.category-filter-button:hover {
+		background: rgba(255, 255, 255, 0.12);
+		color: #ffffff;
+	}
+
+	.category-filter-button[data-active='true']:hover {
+		background: #ffffff;
+		color: #000000;
+	}
+</style>

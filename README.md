@@ -6,6 +6,7 @@ Astro app for browsing experiential events with brutalist monochrome styling and
 
 - Copy `.env.example` to `.env`.
 - Set `PUBLIC_GOOGLE_SHEET_CSV_URL` for runtime sheet fetch.
+- Set `PUBLIC_COLLABORATION_SHEET_URL` for the Brand / Artist collaboration pages.
 - Set `PUBLIC_INTEREST_APPS_SCRIPT_URL` to your Google Apps Script Web App URL for interest form submissions.
 - Optional partner links for Seeding page:
 	- `PUBLIC_BARCODE_DECK_URL`
@@ -14,6 +15,7 @@ Astro app for browsing experiential events with brutalist monochrome styling and
 	- `PUBLIC_RARE_CLUB_WEBSITE_URL`
 - Each link button is shown only when that specific URL is set.
 - `/seeding` now covers seeding, amplification, and long-term creator collaboration briefs.
+- `/seeding` also links to dedicated `/collaboration/brands` and `/collaboration/artists` pages.
 - `/in-store-activation` is a dedicated showcase page for retail activation decks and store takeover concepts.
 - You can use either a normal Google Sheets viewer/edit link or a direct CSV link.
 - Run `npm run dev`.
@@ -53,6 +55,19 @@ CSV URL format example:
 
 - `https://docs.google.com/spreadsheets/d/<SHEET_ID>/gviz/tq?tqx=out:csv&sheet=<TAB_NAME>`
 - `https://docs.google.com/spreadsheets/d/<SHEET_ID>/edit?gid=0#gid=0`
+
+## Collaboration sync pipeline
+
+- The Brand and Artist pages read from a public Google Sheet with two tabs: `Brand` and `Artist`.
+- Brand tab columns: `Brand Name`, `Category`, `About Brand`, `Link`.
+- Artist tab columns: `Artist`, `Type`, `Genre`, `About the Artist`, `Instagram Follower`, `Instagram Link`, `Other Link`, `Deck Link`, `Previous Brand Collaboration`.
+- Link buttons on Artist entries will show as: Instagram, Other (if provided), Deck (if provided).
+- Link buttons on Brand entries will show as: Open Link.
+- Run `npm run sync:collaboration:local` to read the URL from `.env` automatically.
+- Run `npm run sync:collaboration` in CI or when env vars are already set.
+- You can also override the URL directly: `node scripts/sync-collaboration.mjs --url "<sheet-link>"`.
+- This writes normalized output to `src/data/collaboration.generated.json`.
+- Runtime falls back to this JSON when live fetch is unavailable.
 
 ## JSON sync pipeline
 

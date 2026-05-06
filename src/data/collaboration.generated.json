@@ -1,0 +1,698 @@
+{
+  "Brand": [
+    {
+      "slug": "brand-armani-exchange-ax",
+      "title": "Armani Exchange (AX)",
+      "summary": "Armani's youthful, accessible label focusing on street-chic culture and modern urban style.",
+      "category": "Fashion / Apparel",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Fashion / Apparel"
+      ],
+      "links": [
+        "https://www.armani.com/en-in/armani-exchange/experience/"
+      ],
+      "primaryLink": "https://www.armani.com/en-in/armani-exchange/experience/",
+      "secondaryLink": "",
+      "instagramFollower": "",
+      "instagramLink": "",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "https://www.armani.com/en-in/armani-exchange/experience/",
+      "previousBrandCollaboration": "",
+      "sheetName": "Brand"
+    },
+    {
+      "slug": "brand-diesel",
+      "title": "Diesel",
+      "summary": "Italian denim and lifestyle brand known for its alternative, edgy, and provocative streetwear.",
+      "category": "Fashion / Apparel",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Fashion / Apparel"
+      ],
+      "links": [
+        "https://dieselindia.com/"
+      ],
+      "primaryLink": "https://dieselindia.com/",
+      "secondaryLink": "",
+      "instagramFollower": "",
+      "instagramLink": "",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "https://dieselindia.com/",
+      "previousBrandCollaboration": "",
+      "sheetName": "Brand"
+    },
+    {
+      "slug": "brand-emporio-armani",
+      "title": "Emporio Armani",
+      "summary": "A premium, modern collection by Giorgio Armani targeting younger adults with ready-to-wear and accessories.",
+      "category": "Luxury Fashion",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Luxury Fashion"
+      ],
+      "links": [
+        "https://www.armani.com/en-in/"
+      ],
+      "primaryLink": "https://www.armani.com/en-in/",
+      "secondaryLink": "",
+      "instagramFollower": "",
+      "instagramLink": "",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "https://www.armani.com/en-in/",
+      "previousBrandCollaboration": "",
+      "sheetName": "Brand"
+    },
+    {
+      "slug": "brand-coach",
+      "title": "Coach",
+      "summary": "Global fashion house founded in New York, known for leather goods, handbags, and modern luxury.",
+      "category": "Luxury Accessories",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Luxury Accessories"
+      ],
+      "links": [
+        "https://www.coach.com/"
+      ],
+      "primaryLink": "https://www.coach.com/",
+      "secondaryLink": "",
+      "instagramFollower": "",
+      "instagramLink": "",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "https://www.coach.com/",
+      "previousBrandCollaboration": "",
+      "sheetName": "Brand"
+    },
+    {
+      "slug": "brand-canali",
+      "title": "Canali",
+      "summary": "Italian luxury menswear brand specializing in tailor-made suits and elegant casual wear.",
+      "category": "Luxury Menswear",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Luxury Menswear"
+      ],
+      "links": [
+        "https://intl.canali.com/"
+      ],
+      "primaryLink": "https://intl.canali.com/",
+      "secondaryLink": "",
+      "instagramFollower": "",
+      "instagramLink": "",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "https://intl.canali.com/",
+      "previousBrandCollaboration": "",
+      "sheetName": "Brand"
+    },
+    {
+      "slug": "brand-ea7",
+      "title": "EA7",
+      "summary": "The sportswear collection of Emporio Armani, blending technical performance with luxury athletic style.",
+      "category": "Activewear",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Activewear"
+      ],
+      "links": [
+        "https://www.armani.com/en-wx/ea7/experience/"
+      ],
+      "primaryLink": "https://www.armani.com/en-wx/ea7/experience/",
+      "secondaryLink": "",
+      "instagramFollower": "",
+      "instagramLink": "",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "https://www.armani.com/en-wx/ea7/experience/",
+      "previousBrandCollaboration": "",
+      "sheetName": "Brand"
+    },
+    {
+      "slug": "brand-allsaints",
+      "title": "AllSaints",
+      "summary": "British fashion retailer recognized for its edgy, rock-n-roll aesthetic and signature leather jackets.",
+      "category": "Fashion / Apparel",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Fashion / Apparel"
+      ],
+      "links": [
+        "https://www.allsaints.com/eu"
+      ],
+      "primaryLink": "https://www.allsaints.com/eu",
+      "secondaryLink": "",
+      "instagramFollower": "",
+      "instagramLink": "",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "https://www.allsaints.com/eu",
+      "previousBrandCollaboration": "",
+      "sheetName": "Brand"
+    },
+    {
+      "slug": "brand-michael-kors",
+      "title": "Michael Kors",
+      "summary": "World-renowned designer of luxury accessories, handbags, and ready-to-wear fashion.",
+      "category": "Luxury Accessories",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Luxury Accessories"
+      ],
+      "links": [
+        "https://www.michaelkors.global/in/en/"
+      ],
+      "primaryLink": "https://www.michaelkors.global/in/en/",
+      "secondaryLink": "",
+      "instagramFollower": "",
+      "instagramLink": "",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "https://www.michaelkors.global/in/en/",
+      "previousBrandCollaboration": "",
+      "sheetName": "Brand"
+    },
+    {
+      "slug": "brand-kate-spade",
+      "title": "Kate Spade",
+      "summary": "American design house known for its colorful, optimistic handbags, jewelry, and accessories.",
+      "category": "Luxury Accessories",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Luxury Accessories"
+      ],
+      "links": [
+        "https://www.katespade.com/"
+      ],
+      "primaryLink": "https://www.katespade.com/",
+      "secondaryLink": "",
+      "instagramFollower": "",
+      "instagramLink": "",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "https://www.katespade.com/",
+      "previousBrandCollaboration": "",
+      "sheetName": "Brand"
+    },
+    {
+      "slug": "brand-tumi",
+      "title": "Tumi",
+      "summary": "Leading international business and travel lifestyle brand celebrated for highly durable, premium luggage.",
+      "category": "Premium Travel",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Premium Travel"
+      ],
+      "links": [
+        "https://tumi.in/"
+      ],
+      "primaryLink": "https://tumi.in/",
+      "secondaryLink": "",
+      "instagramFollower": "",
+      "instagramLink": "",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "https://tumi.in/",
+      "previousBrandCollaboration": "",
+      "sheetName": "Brand"
+    },
+    {
+      "slug": "brand-tory-burch",
+      "title": "Tory Burch",
+      "summary": "American lifestyle brand defined by classic sportswear with an eclectic, global sensibility.",
+      "category": "Luxury Fashion",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Luxury Fashion"
+      ],
+      "links": [
+        "https://www.toryburch.com/en-us/"
+      ],
+      "primaryLink": "https://www.toryburch.com/en-us/",
+      "secondaryLink": "",
+      "instagramFollower": "",
+      "instagramLink": "",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "https://www.toryburch.com/en-us/",
+      "previousBrandCollaboration": "",
+      "sheetName": "Brand"
+    },
+    {
+      "slug": "brand-ferragamo",
+      "title": "Ferragamo",
+      "summary": "Italian luxury goods company specializing in premium shoes, leather goods, apparel, and silk products.",
+      "category": "Luxury Fashion",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Luxury Fashion"
+      ],
+      "links": [
+        "https://www.ferragamo.com/shop/us/en"
+      ],
+      "primaryLink": "https://www.ferragamo.com/shop/us/en",
+      "secondaryLink": "",
+      "instagramFollower": "",
+      "instagramLink": "",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "https://www.ferragamo.com/shop/us/en",
+      "previousBrandCollaboration": "",
+      "sheetName": "Brand"
+    },
+    {
+      "slug": "brand-valentino",
+      "title": "Valentino",
+      "summary": "Italian luxury fashion house known for Haute Couture, ready-to-wear, and a signature romantic, elegant aesthetic.",
+      "category": "Luxury Fashion",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Luxury Fashion"
+      ],
+      "links": [
+        "https://valentino.com"
+      ],
+      "primaryLink": "https://valentino.com",
+      "secondaryLink": "",
+      "instagramFollower": "",
+      "instagramLink": "",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "https://valentino.com",
+      "previousBrandCollaboration": "",
+      "sheetName": "Brand"
+    },
+    {
+      "slug": "brand-cult-gaia",
+      "title": "Cult Gaia",
+      "summary": "Los Angeles-based lifestyle brand known for creating heirloom-quality, sculptural \"Objet d'Art\" pieces.",
+      "category": "Luxury Fashion",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Luxury Fashion"
+      ],
+      "links": [
+        "https://cultgaia.com/"
+      ],
+      "primaryLink": "https://cultgaia.com/",
+      "secondaryLink": "",
+      "instagramFollower": "",
+      "instagramLink": "",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "https://cultgaia.com/",
+      "previousBrandCollaboration": "",
+      "sheetName": "Brand"
+    },
+    {
+      "slug": "brand-stella-mccartney",
+      "title": "Stella McCartney",
+      "summary": "British luxury lifestyle brand renowned for its commitment to sustainable, cruelty-free, and ethical fashion.",
+      "category": "Luxury Fashion",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Luxury Fashion"
+      ],
+      "links": [
+        "https://www.stellamccartney.com/gb/en/"
+      ],
+      "primaryLink": "https://www.stellamccartney.com/gb/en/",
+      "secondaryLink": "",
+      "instagramFollower": "",
+      "instagramLink": "",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "https://www.stellamccartney.com/gb/en/",
+      "previousBrandCollaboration": "",
+      "sheetName": "Brand"
+    },
+    {
+      "slug": "brand-boss",
+      "title": "Boss",
+      "summary": "The core brand of Hugo Boss, offering sophisticated, elevated tailoring and modern elegant casualwear.",
+      "category": "Luxury Fashion",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Luxury Fashion"
+      ],
+      "links": [
+        "https://www.hugoboss.com/in/en/home"
+      ],
+      "primaryLink": "https://www.hugoboss.com/in/en/home",
+      "secondaryLink": "",
+      "instagramFollower": "",
+      "instagramLink": "",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "https://www.hugoboss.com/in/en/home",
+      "previousBrandCollaboration": "",
+      "sheetName": "Brand"
+    },
+    {
+      "slug": "brand-versace",
+      "title": "Versace",
+      "summary": "Iconic Italian luxury fashion enterprise recognized for flashy prints, bold colors, and glamorous designs.",
+      "category": "Luxury Fashion",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Luxury Fashion"
+      ],
+      "links": [
+        "https://www.versace.com/in/en/"
+      ],
+      "primaryLink": "https://www.versace.com/in/en/",
+      "secondaryLink": "",
+      "instagramFollower": "",
+      "instagramLink": "",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "https://www.versace.com/in/en/",
+      "previousBrandCollaboration": "",
+      "sheetName": "Brand"
+    },
+    {
+      "slug": "brand-gas",
+      "title": "Gas",
+      "summary": "Italian premium denim brand focusing on quality, highly functional, and cosmopolitan everyday wear.",
+      "category": "Fashion / Apparel",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Fashion / Apparel"
+      ],
+      "links": [
+        "https://gasjeans.in/"
+      ],
+      "primaryLink": "https://gasjeans.in/",
+      "secondaryLink": "",
+      "instagramFollower": "",
+      "instagramLink": "",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "https://gasjeans.in/",
+      "previousBrandCollaboration": "",
+      "sheetName": "Brand"
+    },
+    {
+      "slug": "brand-superdry",
+      "title": "Superdry",
+      "summary": "British clothing brand combining vintage Americana and Japanese-inspired graphics with British style.",
+      "category": "Fashion / Apparel",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Fashion / Apparel"
+      ],
+      "links": [
+        "https://superdry.in/"
+      ],
+      "primaryLink": "https://superdry.in/",
+      "secondaryLink": "",
+      "instagramFollower": "",
+      "instagramLink": "",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "https://superdry.in/",
+      "previousBrandCollaboration": "",
+      "sheetName": "Brand"
+    },
+    {
+      "slug": "brand-la-martina",
+      "title": "La Martina",
+      "summary": "Argentine brand specializing in polo equipment, luxury apparel, and equestrian-inspired lifestyle clothing.",
+      "category": "Fashion / Sportswear",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Fashion / Sportswear"
+      ],
+      "links": [
+        "https://lamartina.com/en-es"
+      ],
+      "primaryLink": "https://lamartina.com/en-es",
+      "secondaryLink": "",
+      "instagramFollower": "",
+      "instagramLink": "",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "https://lamartina.com/en-es",
+      "previousBrandCollaboration": "",
+      "sheetName": "Brand"
+    },
+    {
+      "slug": "brand-pottery-barn",
+      "title": "Pottery Barn",
+      "summary": "American upscale home furnishing store chain offering premium furniture, bedding, and decor.",
+      "category": "Home Lifestyle",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Home Lifestyle"
+      ],
+      "links": [
+        "https://potterybarn.in/"
+      ],
+      "primaryLink": "https://potterybarn.in/",
+      "secondaryLink": "",
+      "instagramFollower": "",
+      "instagramLink": "",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "https://potterybarn.in/",
+      "previousBrandCollaboration": "",
+      "sheetName": "Brand"
+    },
+    {
+      "slug": "brand-7-for-all-mankind",
+      "title": "7 For All Mankind",
+      "summary": "Premium denim brand from Los Angeles, widely credited with putting luxury denim on the fashion map.",
+      "category": "Fashion / Apparel",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Fashion / Apparel"
+      ],
+      "links": [
+        "https://7forallmankind.com/"
+      ],
+      "primaryLink": "https://7forallmankind.com/",
+      "secondaryLink": "",
+      "instagramFollower": "",
+      "instagramLink": "",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "https://7forallmankind.com/",
+      "previousBrandCollaboration": "",
+      "sheetName": "Brand"
+    },
+    {
+      "slug": "brand-palm-angels",
+      "title": "Palm Angels",
+      "summary": "Italian luxury fashion label inspired by Los Angeles skate culture, mixing high fashion with streetwear.",
+      "category": "Luxury Streetwear",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Luxury Streetwear"
+      ],
+      "links": [
+        "https://www.palmangels.com/en-in/"
+      ],
+      "primaryLink": "https://www.palmangels.com/en-in/",
+      "secondaryLink": "",
+      "instagramFollower": "",
+      "instagramLink": "",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "https://www.palmangels.com/en-in/",
+      "previousBrandCollaboration": "",
+      "sheetName": "Brand"
+    },
+    {
+      "slug": "brand-odd-not-even",
+      "title": "Odd Not Even",
+      "summary": "Brand specializing in contemporary cultural expressions, often involved in influencer seeding and activations.",
+      "category": "Lifestyle / Fashion",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Lifestyle / Fashion"
+      ],
+      "links": [
+        "https://oddnoteven.com/"
+      ],
+      "primaryLink": "https://oddnoteven.com/",
+      "secondaryLink": "",
+      "instagramFollower": "",
+      "instagramLink": "",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "https://oddnoteven.com/",
+      "previousBrandCollaboration": "",
+      "sheetName": "Brand"
+    },
+    {
+      "slug": "brand-noise",
+      "title": "Noise",
+      "summary": "Leading Indian connected lifestyle brand famous for smartwatches, wireless earbuds, and audio accessories.",
+      "category": "Consumer Electronics",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Consumer Electronics"
+      ],
+      "links": [
+        "https://www.gonoise.com/"
+      ],
+      "primaryLink": "https://www.gonoise.com/",
+      "secondaryLink": "",
+      "instagramFollower": "",
+      "instagramLink": "",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "https://www.gonoise.com/",
+      "previousBrandCollaboration": "",
+      "sheetName": "Brand"
+    },
+    {
+      "slug": "brand-mg-select",
+      "title": "MG Select",
+      "summary": "MG Motor's premium channel focusing on luxury, high-end automotive experiences, and \"new energy\" vehicles.",
+      "category": "Automobile",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Automobile"
+      ],
+      "links": [
+        "https://www.mgselect.co.in/"
+      ],
+      "primaryLink": "https://www.mgselect.co.in/",
+      "secondaryLink": "",
+      "instagramFollower": "",
+      "instagramLink": "",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "https://www.mgselect.co.in/",
+      "previousBrandCollaboration": "",
+      "sheetName": "Brand"
+    },
+    {
+      "slug": "brand-porsche",
+      "title": "Porsche",
+      "summary": "German high-performance automobile manufacturer, highly active in luxury lifestyle, apparel, and design collaborations.",
+      "category": "Automobile",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Automobile"
+      ],
+      "links": [
+        "https://www.porsche.com/international/"
+      ],
+      "primaryLink": "https://www.porsche.com/international/",
+      "secondaryLink": "",
+      "instagramFollower": "",
+      "instagramLink": "",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "https://www.porsche.com/international/",
+      "previousBrandCollaboration": "",
+      "sheetName": "Brand"
+    },
+    {
+      "slug": "brand-rimowa",
+      "title": "Rimowa",
+      "summary": "German manufacturer of premium luggage, famous for its grooved aluminum suitcases and high-profile fashion crossovers.",
+      "category": "Premium Travel",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Premium Travel"
+      ],
+      "links": [
+        "https://www.rimowa.com/in/en/home"
+      ],
+      "primaryLink": "https://www.rimowa.com/in/en/home",
+      "secondaryLink": "",
+      "instagramFollower": "",
+      "instagramLink": "",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "https://www.rimowa.com/in/en/home",
+      "previousBrandCollaboration": "",
+      "sheetName": "Brand"
+    }
+  ],
+  "Artist": [
+    {
+      "slug": "artist-dino-james",
+      "title": "Dino James",
+      "summary": "Dino James is one of India's most influential independent artists, storytellers, and the founder of Swaraj Records. His journey has been built on authenticity, self-expression, and connecting deeply with audience values that guide his music and creative collaborations. He is considered a true trailblazer in the Indian music industry, renowned for his raw and authentic lyrics and his ability to seamlessly fuse rap and melodic singing. He has gained widespread acclaim for his unflinching exploration of sensitive and complex issues, from mental health to societal norms, and his music has resonated deeply with fans around the world",
+      "category": "Independent Musician",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Independent Musician"
+      ],
+      "links": [
+        "https://instagram.com/dinojms",
+        "https://open.spotify.com/artist/45PG2L6Fh2XvYL4ONzpdoW"
+      ],
+      "primaryLink": "https://instagram.com/dinojms",
+      "secondaryLink": "https://open.spotify.com/artist/45PG2L6Fh2XvYL4ONzpdoW",
+      "instagramFollower": "1.1M",
+      "instagramLink": "https://instagram.com/dinojms",
+      "otherLink": "https://open.spotify.com/artist/45PG2L6Fh2XvYL4ONzpdoW",
+      "deckLink": "",
+      "brandLink": "",
+      "previousBrandCollaboration": "IPL, JBL, THE 50, Goibibo, Royal Stag, Breezer, Realme, Crocs, Beardo, Pokerstars, MTV Hustle & more",
+      "sheetName": "Artist"
+    },
+    {
+      "slug": "artist-allu-arjun",
+      "title": "Allu Arjun",
+      "summary": "Allu Arjun is one of India's most influential film personalities, known for his massive fan following, strong brand partnerships, and consistent commercial success. A National Award-winning actor, he brings significant cultural and consumer appeal across markets. He started his career in 2003, acting in over 20 films with the industry's highest success ratio. He is also the first South Indian actor to have a wax statue at Madame Tussauds, Dubai, and represented India as Grand Marshal at the Indian Day Parade in New York.",
+      "category": "Indian Actor",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Indian Actor"
+      ],
+      "links": [
+        "https://www.instagram.com/alluarjunonline/",
+        "https://www.youtube.com/channel/UCLiwEQsSEmXe4ShFVJk_hAQ"
+      ],
+      "primaryLink": "https://www.instagram.com/alluarjunonline/",
+      "secondaryLink": "https://www.youtube.com/channel/UCLiwEQsSEmXe4ShFVJk_hAQ",
+      "instagramFollower": "28.2M",
+      "instagramLink": "https://www.instagram.com/alluarjunonline/",
+      "otherLink": "https://www.youtube.com/channel/UCLiwEQsSEmXe4ShFVJk_hAQ",
+      "deckLink": "",
+      "brandLink": "",
+      "previousBrandCollaboration": "Coke, Frooti, Zomato, KFC, 7UP, Hotstar, redBus, Flipkart",
+      "sheetName": "Artist"
+    }
+  ]
+}

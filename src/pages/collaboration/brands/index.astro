@@ -1,0 +1,16 @@
+---
+import CollaborationCollectionPage from '../../../components/CollaborationCollectionPage.astro';
+import { getCollaborationEntries } from '../../../lib/collaboration';
+
+const entries = await getCollaborationEntries('Brand');
+---
+
+<CollaborationCollectionPage
+  title="Brand Collaboration"
+  description="Discover sheet-backed brand collaboration opportunities and live partnership entries from the public Brand tab."
+  eyebrow="Brand Collaboration Desk"
+  intro="A live collection page for brand collaboration briefs, updated from the public Brand sheet and styled like the main manifesto pages."
+  path="/collaboration/brands"
+  sheetName="Brand"
+  entries={entries}
+/>

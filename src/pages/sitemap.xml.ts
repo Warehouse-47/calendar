@@ -26,6 +26,8 @@ export const GET: APIRoute = async () => {
   const staticPaths = [
     '/',
     '/seeding',
+    '/collaboration/brands',
+    '/collaboration/artists',
     '/tayles',
     '/tayles/cabinet-of-tayles',
     '/tayles/advocate-tayles',

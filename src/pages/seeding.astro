@@ -9,9 +9,8 @@ const rareClubDeckUrl = String(
   import.meta.env.PUBLIC_RARE_CLUB_DECK_URL ?? '',
 ).trim();
 const rareClubWebsiteUrl = String(import.meta.env.PUBLIC_RARE_CLUB_WEBSITE_URL ?? '').trim();
-const strategicCollaborationDeckUrl = String(
-  import.meta.env.PUBLIC_STRATEGIC_COLLABORATION_DECK_URL ?? '',
-).trim();
+const brandCollaborationUrl = '/collaboration/brands';
+const artistCollaborationUrl = '/collaboration/artists';
 
 const pageStructuredData = [
   buildCollectionPageStructuredData({
@@ -120,23 +119,23 @@ const pageStructuredData = [
       <article class="border brutalist-border p-6 text-center">
         <p class="mono text-[10px] uppercase opacity-55">Partner</p>
         <h2 class="text-3xl font-black tracking-tight uppercase mt-2">Strategic Collaboration</h2>
-        <p class="mono text-xs uppercase opacity-70 mt-3">Deck-only collaboration profile</p>
-        {strategicCollaborationDeckUrl ? (
-          <div class="partner-link-row mt-5">
-            <a
-              href={strategicCollaborationDeckUrl}
-              target="_blank"
-              rel="noreferrer"
-              class="inline-flex items-center justify-center border brutalist-border px-5 py-2.5 mono text-xs uppercase hover:bg-white hover:text-black"
-            >
-              Open Collaboration Deck
-            </a>
-          </div>
-        ) : (
-          <p class="mono text-xs uppercase opacity-50 mt-5">Deck link not set yet.</p>
-        )}
+        <p class="mono text-xs uppercase opacity-70 mt-3">Dedicated collaboration pages for brand and artist-led briefs</p>
+        <div class="partner-link-row mt-5">
+          <a
+            href={brandCollaborationUrl}
+            class="inline-flex items-center justify-center border brutalist-border px-5 py-2.5 mono text-xs uppercase hover:bg-white hover:text-black"
+          >
+            Brand Collaboration
+          </a>
+          <a
+            href={artistCollaborationUrl}
+            class="inline-flex items-center justify-center border brutalist-border px-5 py-2.5 mono text-xs uppercase hover:bg-white hover:text-black"
+          >
+            Artist
+          </a>
+        </div>
         <p class="mono text-[10px] uppercase opacity-55 mt-4 leading-relaxed max-w-sm mx-auto">
-          A deck-only entry for brands looking at structured, long-term creator or artist collaboration.
+          Live sheet-backed pages for structured, long-term brand and artist collaboration briefs.
         </p>
       </article>
     </div>

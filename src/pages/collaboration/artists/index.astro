@@ -1,0 +1,16 @@
+---
+import CollaborationCollectionPage from '../../../components/CollaborationCollectionPage.astro';
+import { getCollaborationEntries } from '../../../lib/collaboration';
+
+const entries = await getCollaborationEntries('Artist');
+---
+
+<CollaborationCollectionPage
+  title="Artist Collaboration"
+  description="Discover sheet-backed artist collaboration opportunities and live partnership entries from the public Artist tab."
+  eyebrow="Artist Collaboration Desk"
+  intro="A live collection page for artist collaboration briefs, updated from the public Artist sheet and styled like the main manifesto pages."
+  path="/collaboration/artists"
+  sheetName="Artist"
+  entries={entries}
+/>

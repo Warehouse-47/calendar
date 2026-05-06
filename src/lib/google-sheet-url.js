@@ -18,12 +18,25 @@ function cleanEnvValue(value) {
   return String(value).trim().replace(/^"|"$/g, '');
 }
 
-export function toGoogleSheetCsvUrl(rawUrl) {
+function normalizeSheetName(sheetNameOrOptions) {
+  if (!sheetNameOrOptions) {
+    return '';
+  }
+
+  if (typeof sheetNameOrOptions === 'string') {
+    return cleanEnvValue(sheetNameOrOptions);
+  }
+
+  return cleanEnvValue(sheetNameOrOptions.sheetName);
+}
+
+export function toGoogleSheetCsvUrl(rawUrl, sheetNameOrOptions) {
   const input = cleanEnvValue(rawUrl);
   if (!input) {
     return '';
   }
 
+  const sheetName = normalizeSheetName(sheetNameOrOptions);
   let parsed;
   try {
     parsed = new URL(input);
@@ -36,6 +49,12 @@ export function toGoogleSheetCsvUrl(rawUrl) {
   }
 
   if (parsed.searchParams.get('tqx') === 'out:csv') {
+    if (sheetName) {
+      parsed.searchParams.set('sheet', sheetName);
+      parsed.searchParams.delete('gid');
+      return parsed.toString();
+    }
+
     return input;
   }
 
@@ -44,6 +63,14 @@ export function toGoogleSheetCsvUrl(rawUrl) {
     throw new Error('Could not extract Google Sheet ID from URL.');
   }
 
-  const gid = parseGid(input);
-  return `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:csv&gid=${gid}`;
+  const output = new URL(`https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq`);
+  output.searchParams.set('tqx', 'out:csv');
+
+  if (sheetName) {
+    output.searchParams.set('sheet', sheetName);
+  } else {
+    output.searchParams.set('gid', parseGid(input));
+  }
+
+  return output.toString();
 }

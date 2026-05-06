@@ -8,7 +8,9 @@
     "preview": "astro preview",
     "astro": "astro",
     "sync:events": "node scripts/sync-events.mjs",
-    "sync:events:local": "node scripts/sync-events.mjs --env-file .env"
+    "sync:events:local": "node scripts/sync-events.mjs --env-file .env",
+    "sync:collaboration": "node scripts/sync-collaboration.mjs",
+    "sync:collaboration:local": "node scripts/sync-collaboration.mjs --env-file .env"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.8",
