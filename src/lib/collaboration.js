@@ -47,7 +47,10 @@ export async function getCollaborationEntries(sectionName) {
 
   try {
     const liveRows = await fetchSectionRows(normalizedSection);
-    if (liveRows.length > 0 || SHEET_CSV_URL) {
+    // Prefer live rows only when we actually received data. If the sheet URL
+    // is present but fetch returns an empty array, fall back to the
+    // generated JSON so the pages don't render an empty placeholder.
+    if (liveRows.length > 0) {
       collaborationCache.set(normalizedSection, liveRows);
       return liveRows;
     }
