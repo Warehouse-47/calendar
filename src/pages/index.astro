@@ -58,7 +58,6 @@ const homepageStructuredData = [
 	<header class="p-8 border-b brutalist-border flex flex-col md:flex-row md:justify-between md:items-end gap-4">
 		<h1 class="text-6xl font-black tracking-tighter uppercase">Warehouse47</h1>
 		<div class="text-left md:text-right mono text-[10px] opacity-50 tracking-[0.2em] uppercase">
-			[ SYSTEM_VERSION_2.07 ]<br />
 			[ STATUS: ACTIVE ]
 		</div>
 	</header>
@@ -122,7 +121,7 @@ const homepageStructuredData = [
 	</section>
 
 	<section class="min-h-screen">
-		<div class="grid grid-cols-12 px-8 py-4 mono text-[10px] opacity-40 uppercase border-b brutalist-border hidden md:grid">
+		<div class="grid grid-cols-12 px-8 py-4 mono text-[11px] md:text-sm opacity-60 uppercase border-b brutalist-border hidden md:grid tracking-[0.12em]">
 			<div class="col-span-2">Date</div>
 			<div class="col-span-2">Location</div>
 			<div class="col-span-5">Identity</div>
@@ -135,12 +134,12 @@ const homepageStructuredData = [
 				class="group block border-b brutalist-border hover:bg-white transition-none"
 			>
 				<div class="grid grid-cols-1 md:grid-cols-12 px-8 py-8 md:py-12 items-center group-hover:text-black transition-none uppercase gap-4 md:gap-0">
-					<div class="md:col-span-2 mono text-sm opacity-60 md:opacity-100">Always Open</div>
-					<div class="md:col-span-2 mono text-xs">Multi-City / Remote</div>
+					<div class="md:col-span-2 mono text-lg md:text-xl font-medium opacity-80 md:opacity-100 tracking-[0.08em]">Always Open</div>
+					<div class="md:col-span-2 mono text-lg md:text-xl tracking-[0.04em]">Multi-City / Remote</div>
 					<div class="md:col-span-5 text-4xl md:text-5xl font-black tracking-tighter" transition:name="title-seeding-desk">
 						Seeding Desk
 					</div>
-					<div class="md:col-span-3 text-left md:text-right mono text-xs italic opacity-40 group-hover:opacity-100">
+					<div class="md:col-span-3 text-left md:text-right mono text-lg md:text-xl font-medium text-white/90 group-hover:text-white tracking-[0.04em]">
 						//Seeding + Amplification + Influencer
 					</div>
 				</div>
@@ -151,12 +150,12 @@ const homepageStructuredData = [
 				class="group block border-b brutalist-border hover:bg-white transition-none"
 			>
 				<div class="grid grid-cols-1 md:grid-cols-12 px-8 py-8 md:py-12 items-center group-hover:text-black transition-none uppercase gap-4 md:gap-0">
-					<div class="md:col-span-2 mono text-sm opacity-60 md:opacity-100">Always Open</div>
-					<div class="md:col-span-2 mono text-xs">Retail / Flagship</div>
+					<div class="md:col-span-2 mono text-lg md:text-xl font-medium opacity-80 md:opacity-100 tracking-[0.08em]">Always Open</div>
+					<div class="md:col-span-2 mono text-lg md:text-xl tracking-[0.04em]">Retail / Flagship</div>
 					<div class="md:col-span-5 text-4xl md:text-5xl font-black tracking-tighter" transition:name="title-in-store-activation">
 						In-Store Activation
 					</div>
-					<div class="md:col-span-3 text-left md:text-right mono text-xs italic opacity-40 group-hover:opacity-100">
+					<div class="md:col-span-3 text-left md:text-right mono text-lg md:text-xl font-medium text-white/90 group-hover:text-white tracking-[0.04em]">
 						//Retail takeovers + brand decks + store moments
 					</div>
 				</div>
@@ -174,8 +173,8 @@ const homepageStructuredData = [
 					data-venue={event._normalized?.venue || 'Venue TBA'}
 				>
 					<div class="grid grid-cols-1 md:grid-cols-12 px-8 py-8 md:py-12 items-center group-hover:text-black transition-none uppercase gap-4 md:gap-0">
-						<div class="md:col-span-2 mono text-sm opacity-60 md:opacity-100">{event.dateDisplay}</div>
-						<div class="md:col-span-2 mono text-xs">
+						<div class="md:col-span-2 mono text-lg md:text-xl font-medium opacity-80 md:opacity-100 tracking-[0.08em]">{event.dateDisplay}</div>
+						<div class="md:col-span-2 mono text-lg md:text-xl tracking-[0.04em]">
 							{event._normalized?.country
 								? `${event._normalized?.city || 'Location TBA'}, ${event._normalized.country}`
 								: event._normalized?.city || 'Location TBA'}
@@ -183,7 +182,7 @@ const homepageStructuredData = [
 						<div class={`md:col-span-5 text-4xl md:text-5xl font-black tracking-tighter ${event.status === 'sold_out' ? 'line-through decoration-4' : ''}`} transition:name={`title-${event.slug}`}>
 							{event.title}
 						</div>
-						<div class="md:col-span-3 text-left md:text-right mono text-xs italic opacity-40 group-hover:opacity-100">
+						<div class="md:col-span-3 text-left md:text-right mono text-lg md:text-xl font-medium text-white/90 group-hover:text-white tracking-[0.04em]">
 							//{event.category}
 						</div>
 					</div>
@@ -320,12 +319,12 @@ const homepageStructuredData = [
 	.type-filter-bar {
 		display: flex;
 		align-items: stretch;
-		gap: 0.25rem;
+		gap: 0.5rem;
 		flex: 1;
 		overflow-x: auto;
-		padding: 0.25rem;
-		border: 1px solid rgba(255, 255, 255, 0.2);
-		background: rgba(0, 0, 0, 0.95);
+		padding: 0.5rem;
+		border: 1px solid rgba(255, 255, 255, 0.35);
+		background: rgba(0, 0, 0, 0.98);
 	}
 
 	.type-filter-row {
@@ -337,19 +336,24 @@ const homepageStructuredData = [
 
 	.type-filter-label {
 		flex: 0 0 auto;
-		min-width: 4rem;
+		min-width: 4.5rem;
+		font-size: 0.875rem;
+		font-weight: 700;
+		color: rgba(255, 255, 255, 0.7);
 	}
 
 	.type-filter-button {
 		flex: 0 0 auto;
 		border: 0;
 		background: transparent;
-		color: rgba(255, 255, 255, 0.6);
+		color: rgba(255, 255, 255, 0.72);
 		cursor: pointer;
-		padding: 0.7rem 1rem;
+		padding: 0.85rem 1.15rem;
 		font: inherit;
+		font-size: 0.95rem;
+		font-weight: 700;
 		text-transform: uppercase;
-		letter-spacing: 0.18em;
+		letter-spacing: 0.16em;
 		white-space: nowrap;
 		transition: none;
 	}
