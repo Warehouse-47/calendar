@@ -1,7 +1,7 @@
 import slugify from 'slugify';
 import { z } from 'zod';
 
-export const COLLABORATION_SECTIONS = ['Brand', 'Artist'];
+export const COLLABORATION_SECTIONS = ['Brand', 'Artist', 'Playbook'];
 export const COLLABORATION_SCHEMA = {
   Brand: {
     titleKeys: ['Brand Name'],
@@ -16,6 +16,13 @@ export const COLLABORATION_SCHEMA = {
     categoryKeys: ['Type', 'Genre'],
     linkKeys: ['Instagram Link', 'Other Link', 'Deck Link'],
     tagKeys: ['Type', 'Genre', 'Previous Brand Collaboration'],
+  },
+  Playbook: {
+    titleKeys: ['Category'], 
+    summaryKeys: ['Context'],
+    categoryKeys: ['Category'],
+    linkKeys: ['Playbook_URL'],
+    tagKeys: ['Status'],
   },
 };
 
@@ -125,6 +132,7 @@ export function normalizeCollaborationRows(rows, sheetName) {
         deckLink,
         brandLink,
         previousBrandCollaboration: firstValue(parsedRow, ['Previous Brand Collaboration']),
+        executionCount: firstValue(parsedRow, ['Execution_Count', 'Execution Count']),
         sheetName,
       };
     })
