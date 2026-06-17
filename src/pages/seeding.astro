@@ -45,14 +45,17 @@ const pageStructuredData = [
   </section>
 
   <section class="border-b brutalist-border px-8 py-8">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl mx-auto">
-      <article class="border brutalist-border p-6 text-center">
-        <p class="mono text-[10px] uppercase opacity-55">Partner</p>
-        <h2 class="text-3xl font-black tracking-tight uppercase mt-2">Barcode</h2>
-        <p class="mono text-xs uppercase opacity-70 mt-3">Seeding and amplification support</p>
-        <p class="mono text-[10px] uppercase opacity-55 mt-4 leading-relaxed max-w-sm mx-auto">
-          Built for brand launches, creator outreach, and distribution-led amplification that needs a sharper partner network.
-        </p>
+    {/* Switched to a flex wrap layout so orphan cards center automatically */}
+    <div class="flex flex-wrap justify-center gap-4 max-w-6xl mx-auto">
+      <!-- <article class="w-full md:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.67rem)] border brutalist-border p-6 text-center flex flex-col">
+        <div class="flex-grow">
+          <p class="mono text-[10px] uppercase opacity-55">Partner</p>
+          <h2 class="text-3xl font-black tracking-tight uppercase mt-2">Barcode</h2>
+          <p class="mono text-xs uppercase opacity-70 mt-3">Seeding and amplification support</p>
+          <p class="mono text-[10px] uppercase opacity-55 mt-4 leading-relaxed max-w-sm mx-auto">
+            Built for brand launches, creator outreach, and distribution-led amplification that needs a sharper partner network.
+          </p>
+        </div>
         {barcodeDeckUrl || barcodeWebsiteUrl ? (
           <div class="partner-link-row mt-5">
             {barcodeDeckUrl && (
@@ -79,12 +82,17 @@ const pageStructuredData = [
         ) : (
           <p class="mono text-xs uppercase opacity-50 mt-5">Links not set yet.</p>
         )}
-      </article>
+      </article> -->
 
-      <article class="border brutalist-border p-6 text-center">
-        <p class="mono text-[10px] uppercase opacity-55">Partner</p>
-        <h2 class="text-3xl font-black tracking-tight uppercase mt-2">Rare Club</h2>
-        <p class="mono text-xs uppercase opacity-70 mt-3">Seeding and amplification support</p>
+      <article class="w-full md:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.67rem)] border brutalist-border p-6 text-center flex flex-col">
+        <div class="flex-grow">
+          <p class="mono text-[10px] uppercase opacity-55">Partner</p>
+          <h2 class="text-3xl font-black tracking-tight uppercase mt-2">Rare Club</h2>
+          <p class="mono text-xs uppercase opacity-70 mt-3">Seeding and amplification support</p>
+          <p class="mono text-[10px] uppercase opacity-55 mt-4 leading-relaxed max-w-sm mx-auto">
+            Long-term creator and influencer partnership profiles for brands that want a repeatable collaboration system.
+          </p>
+        </div>
         {rareClubDeckUrl || rareClubWebsiteUrl ? (
           <div class="partner-link-row mt-5">
             {rareClubDeckUrl && (
@@ -111,15 +119,17 @@ const pageStructuredData = [
         ) : (
           <p class="mono text-xs uppercase opacity-50 mt-5">Links not set yet.</p>
         )}
-        <p class="mono text-[10px] uppercase opacity-55 mt-4 leading-relaxed max-w-sm mx-auto">
-          Long-term creator and influencer partnership profiles for brands that want a repeatable collaboration system.
-        </p>
       </article>
 
-      <article class="border brutalist-border p-6 text-center">
-        <p class="mono text-[10px] uppercase opacity-55">Partner</p>
-        <h2 class="text-3xl font-black tracking-tight uppercase mt-2">Strategic Collaboration</h2>
-        <p class="mono text-xs uppercase opacity-70 mt-3">Dedicated collaboration pages for brand and artist-led briefs</p>
+      <article class="w-full md:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.67rem)] border brutalist-border p-6 text-center flex flex-col">
+        <div class="flex-grow">
+          <p class="mono text-[10px] uppercase opacity-55">Partner</p>
+          <h2 class="text-3xl font-black tracking-tight uppercase mt-2">Strategic Collaboration</h2>
+          <p class="mono text-xs uppercase opacity-70 mt-3">Dedicated collaboration pages for brand and artist-led briefs</p>
+          <p class="mono text-[10px] uppercase opacity-55 mt-4 leading-relaxed max-w-sm mx-auto">
+            Live sheet-backed pages for structured, long-term brand and artist collaboration briefs.
+          </p>
+        </div>
         <div class="partner-link-row mt-5">
           <a
             href={brandCollaborationUrl}
@@ -134,112 +144,149 @@ const pageStructuredData = [
             Artist
           </a>
         </div>
-        <p class="mono text-[10px] uppercase opacity-55 mt-4 leading-relaxed max-w-sm mx-auto">
-          Live sheet-backed pages for structured, long-term brand and artist collaboration briefs.
-        </p>
       </article>
     </div>
   </section>
 
   <section class="px-8 py-10">
-    <div class="max-w-5xl border brutalist-border p-6 md:p-8 mx-auto">
-      <div class="mb-7 uppercase text-center max-w-3xl mx-auto">
+    <div class="max-w-4xl border brutalist-border p-6 md:p-8 mx-auto">
+      <div class="mb-8 uppercase text-center max-w-3xl mx-auto">
         <p class="mono text-[10px] opacity-55 tracking-[0.2em]">[ Brief Intake ]</p>
-        <h2 class="text-3xl md:text-4xl font-black tracking-tighter mt-2">Share Your Seeding Or Collaboration Brief</h2>
+        <h2 class="text-3xl md:text-4xl font-black tracking-tighter mt-2">Share Your Brief</h2>
         <p class="mono text-xs opacity-70 mt-3 leading-relaxed">
           Give us your campaign context, timeline, and contact details. Fields marked with * are required.
         </p>
+        <p class="mono text-[11px] uppercase mt-4 mb-2 min-h-[1.5rem]" id="seeding-form-status" role="status" aria-live="polite"></p>
       </div>
 
-      <form id="seeding-form" class="seeding-form-grid" data-submit-endpoint={interestWebhookUrl}>
+      <div class="flex justify-center items-center gap-2 md:gap-6 mb-8 mono text-[10px] uppercase tracking-wider" id="form-progress">
+        <span class="step-indicator active" data-step-id="0">[ 1. Brand ]</span>
+        <span class="opacity-30">/</span>
+        <span class="step-indicator opacity-40" data-step-id="1">[ 2. Needs ]</span>
+        <span class="opacity-30">/</span>
+        <span class="step-indicator opacity-40" data-step-id="2">[ 3. Logistics ]</span>
+      </div>
+
+      <form id="seeding-form" data-submit-endpoint={interestWebhookUrl}>
         <input type="hidden" name="interestType" value="seeding" />
 
-        <label>
-          Brand Type *
-          <select name="seedingBrandType" required>
-            <option value="">Select brand type</option>
-            <option value="D2C">D2C</option>
-            <option value="F&B">F&B</option>
-            <option value="Fashion / Beauty">Fashion / Beauty</option>
-            <option value="Beverage">Beverage</option>
-            <option value="Consumer Tech">Consumer Tech</option>
-            <option value="Media / Entertainment">Media / Entertainment</option>
-            <option value="B2B / Services">B2B / Services</option>
-            <option value="Other">Other</option>
-          </select>
-        </label>
+        {/* STEP 1: BRAND DETAILS */}
+        <div class="form-step" data-step="0" style="display: block;">
+          <div class="seeding-form-grid">
+            <label>
+              Brand Type *
+              <select name="seedingBrandType" required>
+                <option value="">Select brand type</option>
+                <option value="D2C">D2C</option>
+                <option value="F&B">F&B</option>
+                <option value="Fashion / Beauty">Fashion / Beauty</option>
+                <option value="Beverage">Beverage</option>
+                <option value="Consumer Tech">Consumer Tech</option>
+                <option value="Media / Entertainment">Media / Entertainment</option>
+                <option value="B2B / Services">B2B / Services</option>
+                <option value="Other">Other</option>
+              </select>
+            </label>
 
-        <label>
-          Brand Name *
-          <input type="text" name="seedingBrandName" required />
-        </label>
+            <label>
+              Brand Name *
+              <input type="text" name="seedingBrandName" required />
+            </label>
 
-        <label>
-          POC Name *
-          <input type="text" name="seedingPocName" autocomplete="name" required />
-        </label>
+            <label>
+              POC Name *
+              <input type="text" name="seedingPocName" autocomplete="name" required />
+            </label>
 
-        <label>
-          POC Email
-          <input type="email" name="seedingPocEmail" autocomplete="email" />
-        </label>
+            <div class="seeding-form-grid__full grid grid-cols-1 md:grid-cols-2 gap-4">
+              <label>
+                POC Email
+                <input type="email" name="seedingPocEmail" autocomplete="email" />
+              </label>
 
-        <label>
-          POC Phone
-          <input type="tel" name="seedingPocPhone" autocomplete="tel" />
-        </label>
-
-        <label>
-          Preferred Partner
-          <select name="seedingPartnerPreference">
-            <option value="">No preference</option>
-            <option value="Barcode">Barcode</option>
-            <option value="Rare Club">Rare Club</option>
-            <option value="Strategic Collaboration">Strategic Collaboration</option>
-            <option value="Open To Recommendation">Open To Recommendation</option>
-          </select>
-        </label>
-
-        <label class="seeding-form-grid__full">
-          Service Requirement *
-          <div class="seeding-checkbox-grid" role="group" aria-label="Service requirement">
-            <label><input type="checkbox" name="seedingServiceNeed" value="Seeding" /> Seeding</label>
-            <label><input type="checkbox" name="seedingServiceNeed" value="Amplification" /> Amplification</label>
-            <label><input type="checkbox" name="seedingServiceNeed" value="Creator Collaboration" /> Creator Collaboration</label>
-            <label><input type="checkbox" name="seedingServiceNeed" value="Influencer Marketing" /> Influencer Marketing</label>
+              <label>
+                POC Phone
+                <input type="tel" name="seedingPocPhone" autocomplete="tel" />
+              </label>
+            </div>
           </div>
-        </label>
+          <div class="flex justify-end border-top-divider mt-6 pt-6">
+            <button type="button" class="btn-next border brutalist-border px-6 py-3 mono text-xs uppercase hover:bg-white hover:text-black">
+              Next Stage -&gt;
+            </button>
+          </div>
+        </div>
 
-        <label class="seeding-form-grid__full">
-          Event / Campaign Context *
-          <textarea
-            name="seedingEventContext"
-            rows="4"
-            required
-            placeholder="Tell us about the event, launch, campaign objective, and target audience."
-          ></textarea>
-        </label>
+        {/* STEP 2: CAMPAIGN CONTEXT */}
+        <div class="form-step" data-step="1" style="display: none;">
+          <div class="seeding-form-grid">
+            <label class="seeding-form-grid__full">
+              Preferred Partner
+              <select name="seedingPartnerPreference">
+                <option value="">No preference</option>
+                <option value="Barcode">Barcode</option>
+                <option value="Rare Club">Rare Club</option>
+                <option value="Strategic Collaboration">Strategic Collaboration</option>
+                <option value="Open To Recommendation">Open To Recommendation</option>
+              </select>
+            </label>
 
-        <label>
-          Tentative Dates *
-          <input type="text" name="seedingTentativeDates" required placeholder="Example: 10-20 May 2026" />
-        </label>
+            <label class="seeding-form-grid__full">
+              Service Requirement *
+              <div class="seeding-checkbox-grid" role="group" aria-label="Service requirement">
+                <label><input type="checkbox" name="seedingServiceNeed" value="Seeding" /> Seeding</label>
+                <label><input type="checkbox" name="seedingServiceNeed" value="Amplification" /> Amplification</label>
+                <label><input type="checkbox" name="seedingServiceNeed" value="Creator Collaboration" /> Creator Collaboration</label>
+                <label><input type="checkbox" name="seedingServiceNeed" value="Influencer Marketing" /> Influencer Marketing</label>
+              </div>
+            </label>
 
-        <label>
-          Market / City Focus
-          <input type="text" name="seedingMarket" placeholder="Example: Mumbai, Delhi NCR" />
-        </label>
+            <label class="seeding-form-grid__full">
+              Event / Campaign Context *
+              <textarea
+                name="seedingEventContext"
+                rows="4"
+                required
+                placeholder="Tell us about the event, launch, campaign objective, and target audience."
+              ></textarea>
+            </label>
+          </div>
+          <div class="flex justify-between border-top-divider mt-6 pt-6">
+            <button type="button" class="btn-prev border border-dashed border-white/30 px-6 py-3 mono text-xs uppercase hover:bg-white/10">
+              &lt;- Back
+            </button>
+            <button type="button" class="btn-next border brutalist-border px-6 py-3 mono text-xs uppercase hover:bg-white hover:text-black">
+              Next Stage -&gt;
+            </button>
+          </div>
+        </div>
 
-        <label class="seeding-form-grid__full">
-          Additional Notes
-          <textarea name="seedingNotes" rows="3"></textarea>
-        </label>
+        {/* STEP 3: LOGISTICS & SUBMIT */}
+        <div class="form-step" data-step="2" style="display: none;">
+          <div class="seeding-form-grid">
+            <label>
+              Tentative Dates *
+              <input type="text" name="seedingTentativeDates" required placeholder="Example: 10-20 May 2026" />
+            </label>
 
-        <div class="seeding-form-grid__full seeding-actions">
-          <p class="mono text-[11px] uppercase" id="seeding-form-status" role="status" aria-live="polite"></p>
-          <button type="submit" id="seeding-submit" class="border brutalist-border px-6 py-3 mono text-xs uppercase hover:bg-white hover:text-black">
-            Submit Seeding Brief
-          </button>
+            <label>
+              Market / City Focus
+              <input type="text" name="seedingMarket" placeholder="Example: Mumbai, Delhi NCR" />
+            </label>
+
+            <label class="seeding-form-grid__full">
+              Additional Notes
+              <textarea name="seedingNotes" rows="3"></textarea>
+            </label>
+          </div>
+          <div class="flex flex-col md:flex-row justify-between items-center gap-4 border-top-divider mt-6 pt-6">
+            <button type="button" class="btn-prev border border-dashed border-white/30 px-6 py-3 mono text-xs uppercase w-full md:w-auto hover:bg-white/10">
+              &lt;- Back
+            </button>
+            <button type="submit" id="seeding-submit" class="border brutalist-border px-8 py-3 mono text-xs uppercase w-full md:w-auto hover:bg-white hover:text-black font-bold">
+              Submit Brief
+            </button>
+          </div>
         </div>
       </form>
     </div>
@@ -252,17 +299,95 @@ const pageStructuredData = [
     const submit = document.getElementById('seeding-submit') as HTMLButtonElement | null;
     const status = document.getElementById('seeding-form-status') as HTMLParagraphElement | null;
 
-    if (!(form instanceof HTMLFormElement) || !(submit instanceof HTMLButtonElement) || !(status instanceof HTMLParagraphElement)) {
-      return;
+    if (!form || !submit || !status) return;
+
+    // Form Navigation Logic
+    const steps = Array.from(form.querySelectorAll('.form-step')) as HTMLElement[];
+    const indicators = Array.from(document.querySelectorAll('.step-indicator')) as HTMLElement[];
+    let currentStepIndex = 0;
+
+    function updateStepUI() {
+      steps.forEach((step, index) => {
+        step.style.display = index === currentStepIndex ? 'block' : 'none';
+      });
+      indicators.forEach((ind, index) => {
+        if (index === currentStepIndex) {
+          ind.classList.remove('opacity-40');
+          ind.classList.add('active');
+          ind.style.fontWeight = 'bold';
+        } else {
+          ind.classList.add('opacity-40');
+          ind.classList.remove('active');
+          ind.style.fontWeight = 'normal';
+        }
+      });
+      status.textContent = ''; // clear status on nav
+      status.classList.remove('seeding-status-error');
     }
 
+    function validateCurrentStep(): boolean {
+      const step = steps[currentStepIndex];
+      const inputs = Array.from(step.querySelectorAll('input, select, textarea')) as HTMLInputElement[];
+      
+      // Check native HTML5 validity first (required fields)
+      const firstInvalid = inputs.find(input => !input.checkValidity());
+      if (firstInvalid) {
+        firstInvalid.reportValidity();
+        return false;
+      }
+
+      // Step 1 Custom check: Need either Email or Phone
+      if (currentStepIndex === 0) {
+        const email = (form.querySelector('[name="seedingPocEmail"]') as HTMLInputElement).value.trim();
+        const phone = (form.querySelector('[name="seedingPocPhone"]') as HTMLInputElement).value.trim();
+        if (!email && !phone) {
+          status.textContent = '[ ERROR: Add at least one contact detail - email or phone. ]';
+          status.classList.add('seeding-status-error');
+          return false;
+        }
+      }
+
+      // Step 2 Custom check: Need at least one service checkbox
+      if (currentStepIndex === 1) {
+        const checkedNeeds = step.querySelectorAll('input[name="seedingServiceNeed"]:checked');
+        if (checkedNeeds.length === 0) {
+          status.textContent = '[ ERROR: Select at least one service requirement. ]';
+          status.classList.add('seeding-status-error');
+          return false;
+        }
+      }
+
+      return true;
+    }
+
+    // Attach Next/Prev Button Listeners
+    form.querySelectorAll('.btn-next').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (validateCurrentStep()) {
+          currentStepIndex++;
+          updateStepUI();
+        }
+      });
+    });
+
+    form.querySelectorAll('.btn-prev').forEach(btn => {
+      btn.addEventListener('click', () => {
+        currentStepIndex--;
+        updateStepUI();
+      });
+    });
+
+
+    // Submission Logic
     const endpoint = String(form.dataset.submitEndpoint || '').trim();
 
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
 
+      if (!validateCurrentStep()) return;
+
       if (!endpoint) {
-        status.textContent = 'Submission endpoint is not configured yet.';
+        status.textContent = '[ ERROR: Submission endpoint is not configured. ]';
         status.classList.add('seeding-status-error');
         return;
       }
@@ -272,12 +397,6 @@ const pageStructuredData = [
       )
         .map((input) => input.value.trim())
         .filter(Boolean);
-
-      if (selectedNeeds.length === 0) {
-        status.textContent = 'Select at least one service requirement.';
-        status.classList.add('seeding-status-error');
-        return;
-      }
 
       const formData = new FormData(form);
       const payload = {
@@ -295,15 +414,10 @@ const pageStructuredData = [
         seedingNotes: String(formData.get('seedingNotes') || '').trim(),
       };
 
-      if (!payload.seedingPocEmail && !payload.seedingPocPhone) {
-        status.textContent = 'Add at least one contact detail: email or phone.';
-        status.classList.add('seeding-status-error');
-        return;
-      }
-
       submit.disabled = true;
+      submit.textContent = 'Transmitting...';
       status.classList.remove('seeding-status-error');
-      status.textContent = 'Submitting...';
+      status.textContent = '[ STATUS: Transmitting brief to server... ]';
 
       try {
         const response = await fetch(endpoint, {
@@ -331,14 +445,20 @@ const pageStructuredData = [
           throw new Error(appScriptError || `Request failed with status ${response.status}`);
         }
 
-        status.textContent = 'Brief submitted. Team will reach out shortly.';
+        status.textContent = '[ SUCCESS: Brief submitted. Team will reach out shortly. ]';
         form.reset();
+        
+        // Reset to Step 1 visually
+        currentStepIndex = 0;
+        updateStepUI();
+        
       } catch (error) {
         const message = error instanceof Error ? error.message : 'Could not submit right now. Please try again.';
-        status.textContent = message;
+        status.textContent = `[ ERROR: ${message} ]`;
         status.classList.add('seeding-status-error');
       } finally {
         submit.disabled = false;
+        submit.textContent = 'Submit Brief';
       }
     });
   });
@@ -423,21 +543,8 @@ const pageStructuredData = [
     accent-color: #fff;
   }
 
-  .seeding-actions {
-    display: flex;
-    flex-direction: column;
-    gap: 0.9rem;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    margin-top: 0.3rem;
-    padding-top: 1rem;
-  }
-
-  #seeding-form-status {
-    min-height: 1rem;
-    width: 100%;
+  .border-top-divider {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
   }
 
   .seeding-status-error {
@@ -450,10 +557,6 @@ const pageStructuredData = [
     justify-content: center;
     flex-wrap: wrap;
     gap: 0.6rem;
-  }
-
-  #seeding-submit {
-    min-width: 220px;
   }
 
   #seeding-submit:disabled {

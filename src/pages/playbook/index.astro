@@ -23,7 +23,7 @@ const playbookEntries = collaborationData.Playbook || [];
     </p>
   </section>
 
-  <section class="p-8 min-h-screen bg-white/5">
+  <section class="p-8 min-h-screen bg-white/5 border-b brutalist-border">
     <div class="flex flex-wrap justify-center gap-6 max-w-7xl mx-auto">
       {playbookEntries.map((entry) => (
         <article class="w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] border brutalist-border bg-[#050505] p-6 flex flex-col hover:bg-white/5 transition-colors">
@@ -71,6 +71,63 @@ const playbookEntries = collaborationData.Playbook || [];
           [ NO_PLAYBOOKS_DECRYPTED_YET ]
         </div>
       )}
+    </div>
+  </section>
+
+  <section class="px-8 py-10">
+    <div class="max-w-6xl mx-auto border brutalist-border p-6 md:p-8">
+      <div class="mb-7 uppercase text-center max-w-3xl mx-auto">
+        <p class="mono text-[10px] opacity-55 tracking-[0.2em]">[ Activation Philosophy ]</p>
+        <h2 class="text-3xl md:text-4xl font-black tracking-tighter mt-2">In-Store Activation Philosophy</h2>
+        <p class="mono text-xs opacity-70 mt-3 leading-relaxed">
+          Every store plan must align with the category's point of view, fitment, customer motion, and the business outcome it is meant to unlock.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <article class="border brutalist-border p-5">
+          <p class="mono text-[10px] uppercase opacity-55">01</p>
+          <h3 class="text-lg font-black uppercase mt-2">Story First</h3>
+          <p class="mono text-[10px] uppercase opacity-70 mt-2 leading-relaxed">
+            Lead with the category's emotion and the specific retail behavior it needs to trigger.
+          </p>
+        </article>
+        <article class="border brutalist-border p-5">
+          <p class="mono text-[10px] uppercase opacity-55">02</p>
+          <h3 class="text-lg font-black uppercase mt-2">Context Fitment</h3>
+          <p class="mono text-[10px] uppercase opacity-70 mt-2 leading-relaxed">
+            Adapt formats to the store type, audience profile, and existing momentum in the room.
+          </p>
+        </article>
+        <article class="border brutalist-border p-5">
+          <p class="mono text-[10px] uppercase opacity-55">03</p>
+          <h3 class="text-lg font-black uppercase mt-2">Recall</h3>
+          <p class="mono text-[10px] uppercase opacity-70 mt-2 leading-relaxed">
+            Design moments that are instantly memorable, highly shareable, and talk-worthy.
+          </p>
+        </article>
+        <article class="border brutalist-border p-5">
+          <p class="mono text-[10px] uppercase opacity-55">04</p>
+          <h3 class="text-lg font-black uppercase mt-2">Native Integration</h3>
+          <p class="mono text-[10px] uppercase opacity-70 mt-2 leading-relaxed">
+            Blend seamlessly with merchandise flow, staff coordination, and daily operational rhythm.
+          </p>
+        </article>
+        <article class="border brutalist-border p-5">
+          <p class="mono text-[10px] uppercase opacity-55">05</p>
+          <h3 class="text-lg font-black uppercase mt-2">Conversion</h3>
+          <p class="mono text-[10px] uppercase opacity-70 mt-2 leading-relaxed">
+            Drive measurable store visits, longer dwell times, and healthier sales momentum.
+          </p>
+        </article>
+        <article class="border brutalist-border p-5">
+          <p class="mono text-[10px] uppercase opacity-55">06</p>
+          <h3 class="text-lg font-black uppercase mt-2">Scale Learnings</h3>
+          <p class="mono text-[10px] uppercase opacity-70 mt-2 leading-relaxed">
+            Capture and document wins so the next execution repeats the best parts with less friction.
+          </p>
+        </article>
+      </div>
     </div>
   </section>
 </Layout>
