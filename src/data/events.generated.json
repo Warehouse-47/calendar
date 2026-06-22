@@ -489,7 +489,7 @@
     "partnershipCategories": "Alcohol, F&B, Media and Magazines, Book Publication",
     "about": "",
     "remark": "",
-    "eventFlyer": "",
+    "eventFlyer": "https://hub.warehouse47.com/a-x-watches",
     "_normalized": {
       "dateStatus": "Confirmed",
       "cleanType": "Brand Activation",
@@ -514,7 +514,7 @@
     "partnershipCategories": "Alcohol, F&B, Media and Magazines, Book Publication",
     "about": "",
     "remark": "",
-    "eventFlyer": "",
+    "eventFlyer": "https://hub.warehouse47.com/mg-select",
     "_normalized": {
       "dateStatus": "Confirmed",
       "cleanType": "Brand Activation",
@@ -544,6 +544,31 @@
       "dateStatus": "Confirmed",
       "cleanType": "Brand Activation",
       "scaleTier": "Intimate",
+      "city": "Delhi",
+      "country": "India",
+      "venue": "Venue TBA"
+    }
+  },
+  {
+    "slug": "kotak-concepts-tba",
+    "title": "Kotak - Concepts",
+    "category": "Brand Activation",
+    "status": "open",
+    "dateDisplay": "TBA",
+    "dateUpper": "TBA",
+    "locationDisplay": "Delhi, India",
+    "locationUpper": "DELHI, INDIA",
+    "venue": "",
+    "footfall": "100",
+    "format": "",
+    "partnershipCategories": "",
+    "about": "",
+    "remark": "",
+    "eventFlyer": "https://hub.warehouse47.com/kotak-concept",
+    "_normalized": {
+      "dateStatus": "Not Confirmed",
+      "cleanType": "Brand Activation",
+      "scaleTier": "Scale TBA",
       "city": "Delhi",
       "country": "India",
       "venue": "Venue TBA"
