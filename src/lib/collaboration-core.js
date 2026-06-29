@@ -1,7 +1,7 @@
 import slugify from 'slugify';
 import { z } from 'zod';
 
-export const COLLABORATION_SECTIONS = ['Brand', 'Artist', 'Playbook'];
+export const COLLABORATION_SECTIONS = ['Brand', 'Artist', 'Playbook', 'Influencer'];
 export const COLLABORATION_SCHEMA = {
   Brand: {
     titleKeys: ['Brand Name'],
@@ -23,6 +23,13 @@ export const COLLABORATION_SCHEMA = {
     categoryKeys: ['Category'],
     linkKeys: ['Playbook_URL'],
     tagKeys: ['Status'],
+  },
+    Influencer: {
+    titleKeys: ['Influencer Name', 'Handle'], 
+    summaryKeys: ['Niche', 'About'],
+    categoryKeys: ['Category', 'Tier'],
+    linkKeys: ['Instagram Link', 'Portfolio Link'],
+    tagKeys: ['Category', 'Tier', 'Reach'],
   },
 };
 

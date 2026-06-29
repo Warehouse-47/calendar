@@ -1,0 +1,18 @@
+---
+import CollaborationCollectionPage from '../../../components/CollaborationCollectionPage.astro';
+import { getCollaborationEntries } from '../../../lib/collaboration';
+const entries = await getCollaborationEntries('Influencer');
+
+---
+
+<CollaborationCollectionPage
+title="Influencer Collaboration"
+description="Discover sheet-backed influencer opportunities and live partnership entries."
+eyebrow="Influencer Collaboration Desk"
+intro="A live collection page for influencer briefs, updated from the public Influencer sheet."
+path="/collaboration/influencers"
+sheetName="Influencer"
+entries={entries}
+/>
+
+

@@ -149,7 +149,8 @@ const categoryFilterOptions = ['ALL', ...categoryValues];
               <p>{entry.category || sheetName}</p>
               {entry.location && <p class="opacity-60 mt-1">{entry.location}</p>}
             </div>
-            <div class={`md:col-span-4 text-3xl md:text-4xl font-black tracking-tighter ${entry.status?.toLowerCase() === 'closed' ? 'line-through decoration-4' : ''}`}>
+            {/* INCREASED FONT SIZE HERE: from text-3xl/4xl to text-4xl/5xl */}
+            <div class={`md:col-span-4 text-4xl md:text-5xl font-black tracking-tighter ${entry.status?.toLowerCase() === 'closed' ? 'line-through decoration-4' : ''}`}>
               {entry.title}
             </div>
             <div class="md:col-span-3 text-left md:text-right mono text-sm italic opacity-70 group-hover:opacity-100 leading-relaxed">
@@ -172,7 +173,7 @@ const categoryFilterOptions = ['ALL', ...categoryValues];
                   href={entry.instagramLink}
                   target="_blank"
                   rel="noreferrer"
-                  class="inline-flex items-center justify-center border brutalist-border px-5 py-2.5 mono text-xs uppercase hover:bg-black hover:text-white group-hover:border-black"
+                  class="inline-flex items-center justify-center border brutalist-border px-5 py-2.5 mono text-xs uppercase hover:bg-black hover:text-white group-hover:bg-black group-hover:text-white"
                 >
                   Instagram
                 </a>
@@ -182,7 +183,7 @@ const categoryFilterOptions = ['ALL', ...categoryValues];
                   href={entry.otherLink}
                   target="_blank"
                   rel="noreferrer"
-                  class="inline-flex items-center justify-center border brutalist-border px-5 py-2.5 mono text-xs uppercase hover:bg-black hover:text-white group-hover:border-black"
+                  class="inline-flex items-center justify-center border brutalist-border px-5 py-2.5 mono text-xs uppercase hover:bg-black hover:text-white group-hover:bg-black group-hover:text-white"
                 >
                   Other
                 </a>
@@ -192,7 +193,7 @@ const categoryFilterOptions = ['ALL', ...categoryValues];
                   href={entry.deckLink}
                   target="_blank"
                   rel="noreferrer"
-                  class="inline-flex items-center justify-center border brutalist-border px-5 py-2.5 mono text-xs uppercase hover:bg-black hover:text-white group-hover:border-black"
+                  class="inline-flex items-center justify-center border brutalist-border px-5 py-2.5 mono text-xs uppercase hover:bg-black hover:text-white group-hover:bg-black group-hover:text-white"
                 >
                   Deck
                 </a>
@@ -202,7 +203,7 @@ const categoryFilterOptions = ['ALL', ...categoryValues];
                   href={entry.brandLink}
                   target="_blank"
                   rel="noreferrer"
-                  class="inline-flex items-center justify-center border brutalist-border px-5 py-2.5 mono text-xs uppercase hover:bg-black hover:text-white group-hover:border-black"
+                  class="inline-flex items-center justify-center border brutalist-border px-5 py-2.5 mono text-xs uppercase hover:bg-black hover:text-white group-hover:bg-black group-hover:text-white"
                 >
                   Open Link
                 </a>
@@ -267,56 +268,56 @@ const categoryFilterOptions = ['ALL', ...categoryValues];
 </script>
 
 <style>
-	.category-filter-row {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
-		gap: 1rem;
-		width: 100%;
-		padding-top: 1rem;
-	}
+    .category-filter-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+        padding-top: 1rem;
+    }
 
-	.category-filter-label {
-		min-width: 4rem;
-	}
+    .category-filter-label {
+        min-width: 4rem;
+    }
 
-	.category-filter-bar {
-		display: flex;
-		flex-wrap: nowrap;
-		gap: 0.5rem;
-		align-items: center;
-		overflow-x: auto;
-		scroll-behavior: smooth;
-		padding-bottom: 0.5rem;
-		-webkit-overflow-scrolling: touch;
-	}
+    .category-filter-bar {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 0.5rem;
+        align-items: center;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        padding-bottom: 0.5rem;
+        -webkit-overflow-scrolling: touch;
+    }
 
-	.category-filter-button {
-		flex: 0 0 auto;
-		border: 0;
-		background: transparent;
-		color: rgba(255, 255, 255, 0.6);
-		cursor: pointer;
-		padding: 0.7rem 1rem;
-		font: inherit;
-		text-transform: uppercase;
-		letter-spacing: 0.18em;
-		white-space: nowrap;
-		transition: none;
-	}
+    .category-filter-button {
+        flex: 0 0 auto;
+        border: 0;
+        background: transparent;
+        color: rgba(255, 255, 255, 0.6);
+        cursor: pointer;
+        padding: 0.7rem 1rem;
+        font: inherit;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        white-space: nowrap;
+        transition: none;
+    }
 
-	.category-filter-button[data-active='true'] {
-		background: #ffffff;
-		color: #000000;
-	}
+    .category-filter-button[data-active='true'] {
+        background: #ffffff;
+        color: #000000;
+    }
 
-	.category-filter-button:hover {
-		background: rgba(255, 255, 255, 0.12);
-		color: #ffffff;
-	}
+    .category-filter-button:hover {
+        background: rgba(255, 255, 255, 0.12);
+        color: #ffffff;
+    }
 
-	.category-filter-button[data-active='true']:hover {
-		background: #ffffff;
-		color: #000000;
-	}
+    .category-filter-button[data-active='true']:hover {
+        background: #ffffff;
+        color: #000000;
+    }
 </style>

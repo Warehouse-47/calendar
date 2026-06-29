@@ -912,5 +912,32 @@
       "executionCount": "1",
       "sheetName": "Playbook"
     }
+  ],
+  "Influencer": [
+    {
+      "slug": "influencer-akshat-pande",
+      "title": "Akshat Pande",
+      "summary": "Technology",
+      "category": "KOL",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "KOL"
+      ],
+      "links": [
+        "https://www.instagram.com/pandeakshat",
+        "https://pandeakshat.com"
+      ],
+      "primaryLink": "https://www.instagram.com/pandeakshat",
+      "secondaryLink": "https://pandeakshat.com",
+      "instagramFollower": "",
+      "instagramLink": "https://www.instagram.com/pandeakshat",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "",
+      "previousBrandCollaboration": "",
+      "executionCount": "",
+      "sheetName": "Influencer"
+    }
   ]
 }

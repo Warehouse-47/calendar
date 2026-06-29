@@ -1,0 +1,99 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import portfolioData from '../../../data/portfolio.generated.json';
+
+export async function getStaticPaths() {
+  const data = portfolioData.Activation || [];
+  return data.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+---
+<Layout title={`${entry.Title} | Portfolio`} description={entry.About}>
+  <header class="p-8 border-b brutalist-border flex justify-between items-end">
+    <a href="/portfolio" class="mono text-xs opacity-60 hover:opacity-100">[ &lt;- BACK_TO_PORTFOLIO ]</a>
+    <div class="mono text-[10px] opacity-50 uppercase">[ REVIEW_REPORT // {entry.slug} ]</div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="border-b brutalist-border px-8 py-12 uppercase bg-white/[0.02]">
+    <div class="max-w-7xl mx-auto">
+      <p class="mono text-xs opacity-60 mb-3 tracking-widest">{entry.Category} // {entry.Location}</p>
+      <h1 class="text-5xl md:text-8xl font-black tracking-tighter leading-none">{entry.Title}</h1>
+    </div>
+  </section>
+
+  <section class="grid grid-cols-1 md:grid-cols-12 gap-0 min-h-[60vh]">
+    <!-- LEFT SIDEBAR: The "Spec Sheet" -->
+    <div class="md:col-span-4 border-b md:border-b-0 md:border-r brutalist-border p-8 mono text-xs uppercase bg-white/5 flex flex-col gap-8">
+      
+      <div class="space-y-6">
+        <div class="group">
+          <p class="opacity-40 tracking-tighter group-hover:opacity-100 transition-opacity">[ Date ]</p>
+          <p class="text-sm font-bold">{entry.Date || 'TBA'}</p>
+        </div>
+        
+        <div class="group">
+          <p class="opacity-40 tracking-tighter group-hover:opacity-100 transition-opacity">[ Location ]</p>
+          <p class="text-sm font-bold">{entry.Location || 'N/A'}</p>
+        </div>
+
+        <div class="group">
+          <p class="opacity-40 tracking-tighter group-hover:opacity-100 transition-opacity">[ Audience ]</p>
+          <p class="text-sm font-bold">{entry.Audience || 'N/A'}</p>
+        </div>
+
+        <div class="group">
+          <p class="opacity-40 tracking-tighter group-hover:opacity-100 transition-opacity">[ Engagement ]</p>
+          <p class="text-sm font-bold">{entry.Engagement || 'N/A'}</p>
+        </div>
+
+        <div class="group">
+          <p class="opacity-40 tracking-tighter group-hover:opacity-100 transition-opacity">[ Footfall ]</p>
+          <p class="text-sm font-bold">{entry.Footfall || 'TBA'}</p>
+        </div>
+
+        <div class="group">
+          <p class="opacity-40 tracking-tighter group-hover:opacity-100 transition-opacity">[ Result ]</p>
+          <p class="text-sm font-bold">{entry.Result || 'N/A'}</p>
+        </div>
+      </div>
+
+      <!-- BUTTON INTEGRATED INTO SIDEBAR -->
+      <div class="mt-auto pt-8 border-t brutalist-border/40">
+        {entry.PresentationURL ? (
+          <a 
+            href={entry.PresentationURL} 
+            target="_blank" 
+            rel="noreferrer" 
+            class="flex items-center justify-center text-center w-full mono text-[10px] border brutalist-border px-4 py-4 uppercase hover:bg-white hover:text-black transition-all group"
+          >
+            <span class="group-hover:translate-x-1 transition-transform">Open Presentation $\rightarrow$</span>
+          </a>
+        ) : (
+          <div class="flex items-center justify-center text-center w-full mono text-[10px] border border-dashed border-white/30 px-4 py-4 uppercase opacity-50">
+            Presentation Pending
+          </div>
+        )}
+      </div>
+    </div>
+
+    <!-- RIGHT CONTENT: The Narrative -->
+    <div class="md:col-span-8 p-8 md:p-16 flex flex-col">
+      <div class="max-w-3xl">
+        <h3 class="mono text-[10px] uppercase opacity-40 mb-6 tracking-widest">[ Executive_Summary ]</h3>
+        <p class="text-2xl md:text-4xl leading-relaxed uppercase font-black tracking-tighter">
+          {entry.About || 'Detailed summary of the activation is currently being compiled.'}
+        </p>
+      </div>
+      
+      <!-- Optional: Add a "Case Study" footer or brand tag here -->
+      <div class="mt-20 opacity-30 mono text-[10px] uppercase">
+        End of Report // Warehouse47 Archive
+      </div>
+    </div>
+  </section>
+</Layout>

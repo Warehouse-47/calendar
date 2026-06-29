@@ -1,0 +1,58 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import portfolioData from '../../data/portfolio.generated.json';
+
+export async function getStaticPaths() {
+  const categories = portfolioData.Category || [];
+  
+  return categories.map(cat => ({
+    params: { 
+      categorySlug: cat.Category_URL?.replace('/portfolio/', '') || 
+                    cat.Category.toLowerCase().replace(/\s+/g, '-') 
+    },
+    props: { 
+      categoryName: cat.Category 
+    }
+  }));
+}
+
+const { categoryName } = Astro.props;
+const entries = (portfolioData.Activation || []).filter(e => (e.Category || 'General') === categoryName);
+---
+<Layout title={`${categoryName} | Portfolio`} description={`Activations under ${categoryName}`}>
+  <header class="p-8 border-b brutalist-border flex justify-between items-end">
+    <a href="/portfolio" class="mono text-xs opacity-60 hover:opacity-100">[ &lt;- BACK_TO_PORTFOLIO ]</a>
+    <div class="mono text-[10px] opacity-50 uppercase">[ CATEGORY_FEED // {categoryName} ]</div>
+  </header>
+
+  <section class="border-b brutalist-border px-8 py-12 uppercase text-center bg-white/5">
+    <h1 class="text-4xl md:text-6xl font-black tracking-tighter leading-none">{categoryName}</h1>
+    <p class="mono text-xs mt-4 opacity-70 uppercase">Reviewing all documented activations for this format.</p>
+  </section>
+
+  <section class="min-h-screen">
+    <div class="grid grid-cols-12 px-8 py-4 mono text-[10px] opacity-40 uppercase border-b brutalist-border hidden md:grid">
+      <div class="col-span-4">Activation Identity</div>
+      <div class="col-span-2">Location</div>
+      <div class="col-span-2">Type</div>
+      <div class="col-span-2">Engagement / Audience</div>
+      <div class="col-span-2 text-right">Action</div>
+    </div>
+
+    <div>
+      {entries.map((entry) => (
+        <a href={`/portfolio/activation/${entry.slug}`} class="group block border-b brutalist-border hover:bg-white transition-none">
+          <div class="grid grid-cols-1 md:grid-cols-12 px-8 py-8 md:py-10 items-center group-hover:text-black transition-none uppercase gap-4 md:gap-0">
+            <div class="md:col-span-4 text-2xl md:text-3xl font-black tracking-tighter">{entry.Title}</div>
+            <div class="md:col-span-2 mono text-sm opacity-70 group-hover:opacity-100">{entry.Location || 'TBA'}</div>
+            <div class="md:col-span-2 mono text-sm opacity-70 group-hover:opacity-100">{entry.Type || 'General'}</div>
+            <div class="md:col-span-2 mono text-sm opacity-70 group-hover:opacity-100">{entry.Engagement} / {entry.Audience}</div>
+            <div class="md:col-span-2 text-left md:text-right mono text-xs italic opacity-50 group-hover:opacity-100">
+              [ VIEW_REPORT  ]
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,85 @@
+{
+  "Category": [
+    {
+      "Category": "Brand Activation (In-Store)",
+      "Execution_Count": "8",
+      "Context": "Rethinking the retail floor to optimize footfall, dwell time, and conversion. Focuses on spatial flow and sensory integration within existing store environments.",
+      "Category_URL": "/portfolio/brand-activation-in-store",
+      "Status": "LIVE"
+    },
+    {
+      "Category": "Brand Activation (Off-Store)",
+      "Execution_Count": "6",
+      "Context": "High-impact pop-ups and transient installations in non-traditional spaces. Engineered for maximum visibility and rapid consumer acquisition in urban hubs.",
+      "Category_URL": "/portfolio/brand-activation-off-store",
+      "Status": "LIVE"
+    },
+    {
+      "Category": "Experiential Activation (Culinary)",
+      "Execution_Count": "4",
+      "Context": "Multi-sensory gastronomic journeys paired with spatial design. A blend of taste, sound, and sight to create high-recall brand associations.",
+      "Category_URL": "/portfolio/experiential-culinary",
+      "Status": "LIVE"
+    },
+    {
+      "Category": "Experiential Activation (Festival)",
+      "Execution_Count": "5",
+      "Context": "Large-format immersive builds designed for high-density crowds. Focused on cultural amplification and sustained brand visibility in festival circuits.",
+      "Category_URL": "/portfolio/experiential-festival",
+      "Status": "LIVE"
+    },
+    {
+      "Category": "Experiential Activation (Other)",
+      "Execution_Count": "3",
+      "Context": "Bespoke a-typical activations and niche conceptual builds. Custom-engineered experiences for specific brand mandates that defy standard categorization.",
+      "Category_URL": "/portfolio/experiential-other",
+      "Status": "LIVE"
+    },
+    {
+      "Category": "IP Activation (Warehouse47)",
+      "Execution_Count": "7",
+      "Context": "Proprietary architectural formats and curated event IPs. A calibrated balance of exclusivity, high-touch curation, and native brand integration.",
+      "Category_URL": "/portfolio/ip-warehouse47",
+      "Status": "LIVE"
+    },
+    {
+      "Category": "Partner Activation",
+      "Execution_Count": "4",
+      "Context": "Co-branded synergy projects and strategic partner takeovers. Leveraging network equity to amplify reach and validate brand authority through association.",
+      "Category_URL": "/portfolio/partner-activation",
+      "Status": "LIVE"
+    }
+  ],
+  "Activation": [
+    {
+      "Title": "White Crow",
+      "Category": "Brand Activation (In-Store)",
+      "Location": "Jio World Drive, Mumbai",
+      "Date": "06th June 2026",
+      "Type": "In-Store Experiential",
+      "ImageURL": "",
+      "Result": "New Customer Acquisition & Existing Customer Delight",
+      "Cost": "6L",
+      "Engagement": "Whiskey Tasting Experience | F&B | DJ | Social Poker & Roulette ",
+      "Audience": "HNI & KOL",
+      "Footfall": "150",
+      "About": "An in-store activation inclusive of various gamified engagements, reading circle, whiskey tasking experience, trivia and vox-pop interactions, DJ and food experience. \n",
+      "PresentationURL": "https://hub.warehouse47.com/in-store-activation",
+      "": "",
+      "_1": "",
+      "_2": "",
+      "_3": "",
+      "_4": "",
+      "_5": "",
+      "_6": "",
+      "_7": "",
+      "_8": "",
+      "_9": "",
+      "_10": "",
+      "_11": "",
+      "_12": "",
+      "_13": "",
+      "slug": "white-crow"
+    }
+  ]
+}
