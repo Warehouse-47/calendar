@@ -481,30 +481,6 @@
       "sheetName": "Brand"
     },
     {
-      "slug": "brand-pottery-barn",
-      "title": "Pottery Barn",
-      "summary": "American upscale home furnishing store chain offering premium furniture, bedding, and decor.",
-      "category": "Home Lifestyle",
-      "location": "",
-      "status": "Open",
-      "tags": [
-        "Home Lifestyle"
-      ],
-      "links": [
-        "https://potterybarn.in/"
-      ],
-      "primaryLink": "https://potterybarn.in/",
-      "secondaryLink": "",
-      "instagramFollower": "",
-      "instagramLink": "",
-      "otherLink": "",
-      "deckLink": "",
-      "brandLink": "https://potterybarn.in/",
-      "previousBrandCollaboration": "",
-      "executionCount": "",
-      "sheetName": "Brand"
-    },
-    {
       "slug": "brand-7-for-all-mankind",
       "title": "7 For All Mankind",
       "summary": "Premium denim brand from Los Angeles, widely credited with putting luxury denim on the fashion map.",
@@ -668,6 +644,102 @@
       "otherLink": "",
       "deckLink": "",
       "brandLink": "https://www.rimowa.com/in/en/home",
+      "previousBrandCollaboration": "",
+      "executionCount": "",
+      "sheetName": "Brand"
+    },
+    {
+      "slug": "brand-just-in-time",
+      "title": "Just In Time",
+      "summary": "India's leading multi-brand luxury and premium watch retailer, offering timepieces from global brands across fashion, premium, and Swiss luxury segments.",
+      "category": "Retail / Luxury Watches",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Retail / Luxury Watches"
+      ],
+      "links": [
+        "https://justintime.in/"
+      ],
+      "primaryLink": "https://justintime.in/",
+      "secondaryLink": "",
+      "instagramFollower": "",
+      "instagramLink": "",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "https://justintime.in/",
+      "previousBrandCollaboration": "",
+      "executionCount": "",
+      "sheetName": "Brand"
+    },
+    {
+      "slug": "brand-helios-luxe",
+      "title": "Helios Luxe",
+      "summary": "Premium luxury watch retail format by Helios, showcasing high-end Swiss and international watch brands through curated luxury boutiques.",
+      "category": "Luxury Retail / Watches",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Luxury Retail / Watches"
+      ],
+      "links": [
+        "https://www.helioswatchstore.com/"
+      ],
+      "primaryLink": "https://www.helioswatchstore.com/",
+      "secondaryLink": "",
+      "instagramFollower": "",
+      "instagramLink": "",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "https://www.helioswatchstore.com/",
+      "previousBrandCollaboration": "",
+      "executionCount": "",
+      "sheetName": "Brand"
+    },
+    {
+      "slug": "brand-bmw",
+      "title": "BMW",
+      "summary": "German luxury automobile and motorcycle manufacturer renowned for premium performance, innovation, and engineering excellence.",
+      "category": "Automotive / Luxury Vehicles",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Automotive / Luxury Vehicles"
+      ],
+      "links": [
+        "https://www.bmw.com/"
+      ],
+      "primaryLink": "https://www.bmw.com/",
+      "secondaryLink": "",
+      "instagramFollower": "",
+      "instagramLink": "",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "https://www.bmw.com/",
+      "previousBrandCollaboration": "",
+      "executionCount": "",
+      "sheetName": "Brand"
+    },
+    {
+      "slug": "brand-bestseller-jack-and-jones-vero-moda",
+      "title": "BESTSELLER (Jack & Jones, VERO MODA)",
+      "summary": "Global Danish fashion company operating leading international fashion brands, including Jack & Jones and VERO MODA, offering contemporary menswear and womenswear across premium high-street retail.",
+      "category": "Fashion Retail",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Fashion Retail"
+      ],
+      "links": [
+        "https://bestseller.com/"
+      ],
+      "primaryLink": "https://bestseller.com/",
+      "secondaryLink": "",
+      "instagramFollower": "",
+      "instagramLink": "",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "https://bestseller.com/",
       "previousBrandCollaboration": "",
       "executionCount": "",
       "sheetName": "Brand"

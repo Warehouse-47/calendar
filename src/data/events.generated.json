@@ -1,7 +1,7 @@
 [
   {
-    "slug": "medicine-festival-friday-14-august-2026",
-    "title": "Medicine Festival",
+    "slug": "medicine-festival-mice-friday-14-august-2026",
+    "title": "Medicine Festival - MICE",
     "category": "Community Festival",
     "status": "open",
     "dateDisplay": "Friday, 14 August 2026",
@@ -302,7 +302,7 @@
   {
     "slug": "jaipur-polo-tba",
     "title": "Jaipur Polo",
-    "category": "HOS IP",
+    "category": "HOS Experiential",
     "status": "open",
     "dateDisplay": "TBA",
     "dateUpper": "TBA",
@@ -317,7 +317,7 @@
     "eventFlyer": "",
     "_normalized": {
       "dateStatus": "Not Confirmed",
-      "cleanType": "HOS IP",
+      "cleanType": "HOS Experiential",
       "scaleTier": "Community",
       "city": "Jaipur",
       "country": "India",
@@ -327,7 +327,7 @@
   {
     "slug": "udaipur-polo-tba",
     "title": "Udaipur Polo",
-    "category": "HOS IP",
+    "category": "HOS Experiential",
     "status": "open",
     "dateDisplay": "TBA",
     "dateUpper": "TBA",
@@ -342,7 +342,7 @@
     "eventFlyer": "",
     "_normalized": {
       "dateStatus": "Not Confirmed",
-      "cleanType": "HOS IP",
+      "cleanType": "HOS Experiential",
       "scaleTier": "Community",
       "city": "Udaipur",
       "country": "India",
@@ -350,9 +350,9 @@
     }
   },
   {
-    "slug": "farm-is-table-tba",
-    "title": "Farm Is Table",
-    "category": "HOS IP",
+    "slug": "farm-is-table-mice-tba",
+    "title": "Farm Is Table - MICE",
+    "category": "HOS Experiential",
     "status": "open",
     "dateDisplay": "TBA",
     "dateUpper": "TBA",
@@ -367,7 +367,7 @@
     "eventFlyer": "https://castleoodeypore.in/",
     "_normalized": {
       "dateStatus": "Not Confirmed",
-      "cleanType": "HOS IP",
+      "cleanType": "HOS Experiential",
       "scaleTier": "Intimate",
       "city": "Castle Oodeypore",
       "country": "Udaipure",
