@@ -811,9 +811,9 @@
         "LIVE"
       ],
       "links": [
-        "https://hub.warehouse47.com/in-store-activation"
+        "https://hub.warehouse47.com/bestpractice-in-store"
       ],
-      "primaryLink": "https://hub.warehouse47.com/in-store-activation",
+      "primaryLink": "https://hub.warehouse47.com/bestpractice-in-store",
       "secondaryLink": "",
       "instagramFollower": "",
       "instagramLink": "",
@@ -834,8 +834,10 @@
       "tags": [
         "LIVE"
       ],
-      "links": [],
-      "primaryLink": "",
+      "links": [
+        "https://hub.warehouse47.com/bestpractice-bar-takeover"
+      ],
+      "primaryLink": "https://hub.warehouse47.com/bestpractice-bar-takeover",
       "secondaryLink": "",
       "instagramFollower": "",
       "instagramLink": "",

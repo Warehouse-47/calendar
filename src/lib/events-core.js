@@ -5,7 +5,8 @@ export const MONTHS = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', '
 
 const RawEventSchema = z.object({
   Event: z.any().optional(),
-  Type: z.any().optional(),
+  Type: z.any().optional(),       // Column 2: Used for Filtering
+  Category: z.any().optional(),     // Column 3: Used for Display
   Date: z.any().optional(),
   Location: z.any().optional(),
   Venue: z.any().optional(),
@@ -145,19 +146,19 @@ function makeSlug(title, date, index) {
 }
 
 export function normalizeEventRow(rawRow, index) {
-  if (rawRow && typeof rawRow === 'object' && ('title' in rawRow || 'dateDisplay' in rawRow || 'locationDisplay' in rawRow)) {
+  // Handle already normalized data
+  if (rawRow && typeof rawRow === 'object' && ('title' in rawRow || 'dateDisplay' in rawRow)) {
     const row = NormalizedEventSchema.parse(rawRow);
     const title = textOrFallback(row.title, `Untitled Event ${index + 1}`);
     const dateDisplay = textOrFallback(row.dateDisplay, 'TBA');
-    const locationDisplay = textOrFallback(row.locationDisplay, 'TBC');
     const category = textOrFallback(row.category, 'GENERAL');
     const remark = text(row.remark);
-    const status = text(row.status).toLowerCase() === 'sold_out' ? 'sold_out' : normalizeStatus(remark);
+    
     const normalized = buildNormalizedFields({
       date: dateDisplay,
       type: row._normalized?.cleanType ?? category,
       scale: row._normalized?.scaleTier,
-      location: locationDisplay,
+      location: textOrFallback(row.locationDisplay, 'TBC'),
       venue: row._normalized?.venue ?? row.venue,
       remark,
     });
@@ -166,11 +167,11 @@ export function normalizeEventRow(rawRow, index) {
       slug: textOrFallback(row.slug, makeSlug(title, dateDisplay, index)),
       title,
       category,
-      status,
+      status: normalizeStatus(remark),
       dateDisplay,
-      dateUpper: textOrFallback(row.dateUpper, dateDisplay.toUpperCase()),
-      locationDisplay,
-      locationUpper: textOrFallback(row.locationUpper, locationDisplay.toUpperCase()),
+      dateUpper: dateDisplay.toUpperCase(),
+      locationDisplay: textOrFallback(row.locationDisplay, 'TBC'),
+      locationUpper: textOrFallback(row.locationUpper, 'TBC'),
       venue: text(row.venue),
       footfall: text(row.footfall),
       format: text(row.format),
@@ -182,16 +183,24 @@ export function normalizeEventRow(rawRow, index) {
     };
   }
 
+  // PRIMARY FIX: Map based on your provided column order
   const row = RawEventSchema.parse(rawRow);
 
   const title = textOrFallback(row.Event, `Untitled Event ${index + 1}`);
   const dateDisplay = textOrFallback(row.Date, 'TBA');
   const locationDisplay = textOrFallback(row.Location, 'TBC');
-  const category = textOrFallback(row.Type, 'GENERAL');
+  
+  // Column 3 -> Display Category
+  const category = textOrFallback(row.Category, 'GENERAL'); 
+  
+  // Column 2 -> Type (Used for Filtering via cleanType)
+  const eventType = textOrFallback(row.Type, 'Uncategorized');
+  
   const remark = text(row.Remark);
+  
   const normalized = buildNormalizedFields({
     date: row.Date,
-    type: row.Type,
+    type: eventType, // Map "Type" column to the filter logic
     scale: row['Audience Scale'],
     location: row.Location,
     venue: row.Venue,
@@ -201,7 +210,7 @@ export function normalizeEventRow(rawRow, index) {
   return {
     slug: makeSlug(title, dateDisplay, index),
     title,
-    category,
+    category, // Now correctly using "Category" column
     status: normalizeStatus(remark),
     dateDisplay,
     dateUpper: dateDisplay.toUpperCase(),

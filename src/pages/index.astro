@@ -121,59 +121,63 @@ const homepageStructuredData = [
     </section>
 
     <section class="min-h-screen">
+        <!-- UPDATED HEADERS: Added Category -->
         <div class="grid grid-cols-12 px-8 py-4 mono text-[11px] md:text-sm opacity-60 uppercase border-b brutalist-border hidden md:grid tracking-[0.12em]">
             <div class="col-span-2">Date</div>
             <div class="col-span-2">Location</div>
-            <div class="col-span-5">Identity</div>
-            <div class="col-span-3 text-right">Protocol</div>
+            <div class="col-span-4">Identity</div>
+            <div class="col-span-2">Category</div>
+            <div class="col-span-2 text-right">Protocol</div>
         </div>
 
         <div id="events-container">
-            <a
-                href="/seeding"
-                class="group block border-b brutalist-border hover:bg-white transition-none"
-            >
+            <!-- SEEDING DESK -->
+            <a href="/seeding" class="group block border-b brutalist-border hover:bg-white transition-none">
                 <div class="grid grid-cols-1 md:grid-cols-12 px-8 py-8 md:py-12 items-center group-hover:text-black transition-none uppercase gap-4 md:gap-0">
-                    <div class="md:col-span-2 mono text-lg md:text-xl font-medium opacity-80 md:opacity-100 tracking-[0.08em]">Always Open</div>
-                    <div class="md:col-span-2 mono text-lg md:text-xl tracking-[0.04em]">Multi-City / Remote</div>
-                    <div class="md:col-span-5 text-4xl md:text-5xl font-black tracking-tighter" transition:name="title-seeding-desk">
+                    <div class="md:col-span-2 mono text-xl md:text-2xl font-medium opacity-80 md:opacity-100 tracking-[0.08em]">Always Open</div>
+                    <div class="md:col-span-2 mono text-xl md:text-2xl tracking-[0.04em]">Multi-City / Remote</div>
+                    <div class="md:col-span-4 text-5xl md:text-6xl font-black tracking-tighter" transition:name="title-seeding-desk">
                         Seeding Desk
                     </div>
-                    <div class="md:col-span-3 text-left md:text-right mono text-lg md:text-xl font-medium text-white/90 group-hover:text-white tracking-[0.04em]">
-                        //Seeding + Amplification + Influencer
+                    <div class="md:col-span-2 mono text-xl md:text-2xl font-medium opacity-70 group-hover:opacity-100">
+                        Seeding
+                    </div>
+                    <div class="md:col-span-2 text-left md:text-right mono text-xl md:text-2xl font-medium text-white/90 group-hover:text-white tracking-[0.04em]">
+                        //Sourcing + Amplification
                     </div>
                 </div>
             </a>
 
-
-            <a
-                href="/best-practices"
-                class="group block border-b brutalist-border hover:bg-white transition-none"
-            >
+            <!-- BEST PRACTICES -->
+            <a href="/best-practices" class="group block border-b brutalist-border hover:bg-white transition-none">
                 <div class="grid grid-cols-1 md:grid-cols-12 px-8 py-8 md:py-12 items-center group-hover:text-black transition-none uppercase gap-4 md:gap-0">
-                    <div class="md:col-span-2 mono text-lg md:text-xl font-medium opacity-80 md:opacity-100 tracking-[0.08em]">Always Open</div>
-                    <div class="md:col-span-2 mono text-lg md:text-xl tracking-[0.04em]">Strategy / Execution</div>
-                    <div class="md:col-span-5 text-4xl md:text-5xl font-black tracking-tighter" transition:name="title-execution-playbook">
-                        Best Practices - Brand Activation
+                    <div class="md:col-span-2 mono text-xl md:text-2xl font-medium opacity-80 md:opacity-100 tracking-[0.08em]">Always Open</div>
+                    <div class="md:col-span-2 mono text-xl md:text-2xl tracking-[0.04em]">Strategy / Execution</div>
+                    <div class="md:col-span-4 text-5xl md:text-6xl font-black tracking-tighter" transition:name="title-execution-playbook">
+                        Best Practices
                     </div>
-                    <div class="md:col-span-3 text-left md:text-right mono text-lg md:text-xl font-medium text-white/90 group-hover:text-white tracking-[0.04em]">
-                        //Case studies + tactics + frameworks
+                    <div class="md:col-span-2 mono text-xl md:text-2xl font-medium opacity-70 group-hover:opacity-100">
+                        Frameworks
+                    </div>
+                    <div class="md:col-span-2 text-left md:text-right mono text-xl md:text-2xl font-medium text-white/90 group-hover:text-white tracking-[0.04em]">
+                        //Case studies + tactics
                     </div>
                 </div>
             </a>
 
-            <a
-                href="/portfolio"
-                class="group block border-b brutalist-border hover:bg-white transition-none"
-            >
+            <!-- PORTFOLIO -->
+            <a href="/portfolio" class="group block border-b brutalist-border hover:bg-white transition-none">
                 <div class="grid grid-cols-1 md:grid-cols-12 px-8 py-8 md:py-12 items-center group-hover:text-black transition-none uppercase gap-4 md:gap-0">
-                    <div class="md:col-span-2 mono text-lg md:text-xl font-medium opacity-80 md:opacity-100 tracking-[0.08em]">Always Open</div>
-                    <div class="md:col-span-2 mono text-lg md:text-xl tracking-[0.04em]">Historical Execution</div>
-                    <div class="md:col-span-5 text-4xl md:text-5xl font-black tracking-tighter" transition:name="title-execution-playbook">
+                    <div class="md:col-span-2 mono text-xl md:text-2xl font-medium opacity-80 md:opacity-100 tracking-[0.08em]">Always Open</div>
+                    <div class="md:col-span-2 mono text-xl md:text-2xl tracking-[0.04em]">Historical Execution</div>
+                    <div class="md:col-span-4 text-5xl md:text-6xl font-black tracking-tighter" transition:name="title-execution-playbook">
                         Portfolio
                     </div>
-                    <div class="md:col-span-3 text-left md:text-right mono text-lg md:text-xl font-medium text-white/90 group-hover:text-white tracking-[0.04em]">
-                        //Activations + Experiences + Reviews
+                    <div class="md:col-span-2 mono text-xl md:text-2xl font-medium opacity-70 group-hover:opacity-100">
+                        Case Studies
+                    </div>
+                    <div class="md:col-span-2 text-left md:text-right mono text-xl md:text-2xl font-medium text-white/90 group-hover:text-white tracking-[0.04em]">
+                        //Reviews + Results
                     </div>
                 </div>
             </a>
@@ -190,17 +194,20 @@ const homepageStructuredData = [
                     data-venue={event._normalized?.venue || 'Venue TBA'}
                 >
                     <div class="grid grid-cols-1 md:grid-cols-12 px-8 py-8 md:py-12 items-center group-hover:text-black transition-none uppercase gap-4 md:gap-0">
-                        <div class="md:col-span-2 mono text-lg md:text-xl font-medium opacity-80 md:opacity-100 tracking-[0.08em]">{event.dateDisplay}</div>
-                        <div class="md:col-span-2 mono text-lg md:text-xl tracking-[0.04em]">
+                        <div class="md:col-span-2 mono text-xl md:text-2xl font-medium opacity-80 md:opacity-100 tracking-[0.08em]">{event.dateDisplay}</div>
+                        <div class="md:col-span-2 mono text-xl md:text-2xl tracking-[0.04em]">
                             {event._normalized?.country
                                 ? `${event._normalized?.city || 'Location TBA'}, ${event._normalized.country}`
                                 : event._normalized?.city || 'Location TBA'}
                         </div>
-                        <div class={`md:col-span-5 text-4xl md:text-5xl font-black tracking-tighter ${event.status === 'sold_out' ? 'line-through decoration-4' : ''}`} transition:name={`title-${event.slug}`}>
+                        <div class={`md:col-span-4 text-5xl md:text-6xl font-black tracking-tighter ${event.status === 'sold_out' ? 'line-through decoration-4' : ''}`} transition:name={`title-${event.slug}`}>
                             {event.title}
                         </div>
-                        <div class="md:col-span-3 text-left md:text-right mono text-lg md:text-xl font-medium text-white/90 group-hover:text-white tracking-[0.04em]">
-                            //{event.category}
+                        <div class="md:col-span-2 mono text-xl md:text-2xl font-medium opacity-70 group-hover:opacity-100">
+                            {event.category}
+                        </div>
+                        <div class="md:col-span-2 text-left md:text-right mono text-xl md:text-2xl font-medium text-white/90 group-hover:text-white tracking-[0.04em]">
+                            //{event._normalized?.cleanType || 'General'}
                         </div>
                     </div>
                 </a>
@@ -213,6 +220,7 @@ const homepageStructuredData = [
 </Layout>
 
 <script>
+    /* JavaScript remains identical to your provided logic */
     document.addEventListener('astro:page-load', () => {
         const dateFilter = document.getElementById('filter-date') as HTMLSelectElement | null;
         const scaleFilter = document.getElementById('filter-scale') as HTMLSelectElement | null;
@@ -222,7 +230,6 @@ const homepageStructuredData = [
         const rows = document.querySelectorAll('.event-row');
         const noResults = document.getElementById('no-results');
         let selectedType = 'ALL';
-        /** @type {Map<string, Set<string>>} */
         const cityToVenues = new Map();
 
         function updateTypeButtons(activeType: string) {
@@ -244,21 +251,15 @@ const homepageStructuredData = [
 
         function updateVenueOptions() {
             if (!cityFilter || !venueFilter) return;
-
             const selectedCity = cityFilter.value;
             const isCitySelected = selectedCity !== 'ALL';
             venueFilter.innerHTML = '';
             venueFilter.disabled = !isCitySelected;
-
             const defaultOption = document.createElement('option');
             defaultOption.value = 'ALL';
             defaultOption.textContent = isCitySelected ? 'ALL_VENUES' : 'SELECT_CITY_FIRST';
             venueFilter.append(defaultOption);
-
-            if (!isCitySelected) {
-                return;
-            }
-
+            if (!isCitySelected) return;
             const venues = [...(cityToVenues.get(selectedCity) || new Set())].sort((a, b) => a.localeCompare(b));
             venues.forEach((venue) => {
                 const option = document.createElement('option');
@@ -270,7 +271,6 @@ const homepageStructuredData = [
 
         function filterEvents() {
             if (!dateFilter || !scaleFilter || !cityFilter || !venueFilter) return;
-
             const selectedDate = dateFilter.value;
             const selectedScale = scaleFilter.value;
             const selectedCity = cityFilter.value;
@@ -285,9 +285,7 @@ const homepageStructuredData = [
                 const rowCity = row.getAttribute('data-city') || 'Location TBA';
                 const rowVenue = row.getAttribute('data-venue') || 'Venue TBA';
 
-                const matchesDate =
-                    selectedDate === 'ALL' ||
-                    (selectedDate === 'Not Confirmed' ? rowDateStatus === 'Not Confirmed' : rowDate.includes(selectedDate));
+                const matchesDate = selectedDate === 'ALL' || (selectedDate === 'Not Confirmed' ? rowDateStatus === 'Not Confirmed' : rowDate.includes(selectedDate));
                 const matchesType = selectedType === 'ALL' || rowType === selectedType;
                 const matchesScale = selectedScale === 'ALL' || rowScale === selectedScale;
                 const matchesCity = selectedCity === 'ALL' || rowCity === selectedCity;
@@ -300,7 +298,6 @@ const homepageStructuredData = [
                     row.classList.add('hidden');
                 }
             });
-
             if (visibleCount === 0) {
                 noResults?.classList.remove('hidden');
             } else {
@@ -333,6 +330,7 @@ const homepageStructuredData = [
 </script>
 
 <style>
+    /* Styling remains as per your layout */
     .type-filter-bar {
         display: flex;
         align-items: stretch;
@@ -395,7 +393,6 @@ const homepageStructuredData = [
             align-items: flex-start;
             flex-direction: column;
         }
-
         .type-filter-bar {
             width: 100%;
         }

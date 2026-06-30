@@ -2,7 +2,7 @@
   {
     "slug": "medicine-festival-mice-friday-14-august-2026",
     "title": "Medicine Festival - MICE",
-    "category": "Community Festival",
+    "category": "Community,  Travel & Tourism",
     "status": "open",
     "dateDisplay": "Friday, 14 August 2026",
     "dateUpper": "FRIDAY, 14 AUGUST 2026",
@@ -27,7 +27,7 @@
   {
     "slug": "no-art-festival-sunday-15-november-2026",
     "title": "No Art Festival",
-    "category": "Music Festival - Global IP",
+    "category": "Music / Artist",
     "status": "open",
     "dateDisplay": "Sunday, 15 November 2026",
     "dateUpper": "SUNDAY, 15 NOVEMBER 2026",
@@ -52,7 +52,7 @@
   {
     "slug": "hotsheets-tba",
     "title": "HotSheets",
-    "category": "Warehouse 47 - IP",
+    "category": "Community",
     "status": "open",
     "dateDisplay": "TBA",
     "dateUpper": "TBA",
@@ -77,7 +77,7 @@
   {
     "slug": "cercle-sunday-29-november-2026",
     "title": "Cercle",
-    "category": "Music Festival - Global IP",
+    "category": "Music / Artist",
     "status": "open",
     "dateDisplay": "Sunday, 29 November 2026",
     "dateUpper": "SUNDAY, 29 NOVEMBER 2026",
@@ -102,7 +102,7 @@
   {
     "slug": "circus-december-2026",
     "title": "Circus",
-    "category": "Music Festival - Global IP",
+    "category": "Music / Artist",
     "status": "open",
     "dateDisplay": "December 2026",
     "dateUpper": "DECEMBER 2026",
@@ -127,7 +127,7 @@
   {
     "slug": "anyma-november-2026",
     "title": "Anyma",
-    "category": "Music Festival - Global IP",
+    "category": "Music / Artist",
     "status": "open",
     "dateDisplay": "November 2026",
     "dateUpper": "NOVEMBER 2026",
@@ -152,7 +152,7 @@
   {
     "slug": "awakenings-tba",
     "title": "Awakenings",
-    "category": "Music Festival - Global IP",
+    "category": "Music / Artist",
     "status": "open",
     "dateDisplay": "TBA",
     "dateUpper": "TBA",
@@ -177,7 +177,7 @@
   {
     "slug": "rolling-loud-november-2026",
     "title": "Rolling Loud",
-    "category": "Music Festival - Global IP",
+    "category": "Music / Artist",
     "status": "open",
     "dateDisplay": "November 2026",
     "dateUpper": "NOVEMBER 2026",
@@ -202,7 +202,7 @@
   {
     "slug": "time-and-tequila-tba",
     "title": "Time & Tequila",
-    "category": "Warehouse 47 - IP",
+    "category": "Luxury",
     "status": "open",
     "dateDisplay": "TBA",
     "dateUpper": "TBA",
@@ -227,7 +227,7 @@
   {
     "slug": "uc47-tba",
     "title": "UC47",
-    "category": "Warehouse 47 - IP",
+    "category": "Community, Music / Artist",
     "status": "open",
     "dateDisplay": "TBA",
     "dateUpper": "TBA",
@@ -252,7 +252,7 @@
   {
     "slug": "house-47-immersive-dining-tba",
     "title": "House 47 - Immersive Dining",
-    "category": "Warehouse 47 - IP",
+    "category": "Culinary Experience",
     "status": "open",
     "dateDisplay": "TBA",
     "dateUpper": "TBA",
@@ -277,7 +277,7 @@
   {
     "slug": "third-space-sanctuary-tba",
     "title": "Third Space Sanctuary",
-    "category": "Warehouse 47 - IP",
+    "category": "Culinary Experience, Community",
     "status": "open",
     "dateDisplay": "TBA",
     "dateUpper": "TBA",
@@ -302,7 +302,7 @@
   {
     "slug": "jaipur-polo-tba",
     "title": "Jaipur Polo",
-    "category": "HOS Experiential",
+    "category": "Sports",
     "status": "open",
     "dateDisplay": "TBA",
     "dateUpper": "TBA",
@@ -327,7 +327,7 @@
   {
     "slug": "udaipur-polo-tba",
     "title": "Udaipur Polo",
-    "category": "HOS Experiential",
+    "category": "Sports",
     "status": "open",
     "dateDisplay": "TBA",
     "dateUpper": "TBA",
@@ -352,7 +352,7 @@
   {
     "slug": "farm-is-table-mice-tba",
     "title": "Farm Is Table - MICE",
-    "category": "HOS Experiential",
+    "category": "Culinary Experience",
     "status": "open",
     "dateDisplay": "TBA",
     "dateUpper": "TBA",
@@ -377,7 +377,7 @@
   {
     "slug": "white-crow-in-store-activation-june-2026",
     "title": "White Crow - In Store Activation",
-    "category": "Brand Activation",
+    "category": "Community, Brand",
     "status": "open",
     "dateDisplay": "June 2026",
     "dateUpper": "JUNE 2026",
@@ -402,7 +402,7 @@
   {
     "slug": "aorx-in-store-activation-june-2026",
     "title": "A|X - In Store Activation",
-    "category": "Brand Activation",
+    "category": "Community, Brand",
     "status": "open",
     "dateDisplay": "June 2026",
     "dateUpper": "JUNE 2026",
@@ -427,7 +427,7 @@
   {
     "slug": "diesel-bar-takeover-july-2026",
     "title": "Diesel - Bar Takeover",
-    "category": "Brand Activation",
+    "category": "Community, Brand",
     "status": "open",
     "dateDisplay": "July 2026",
     "dateUpper": "JULY 2026",
@@ -452,7 +452,7 @@
   {
     "slug": "aorx-watches-bar-takeover-july-2026",
     "title": "A|X (Watches) - Bar Takeover",
-    "category": "Brand Activation",
+    "category": "Community, Brand",
     "status": "open",
     "dateDisplay": "July 2026",
     "dateUpper": "JULY 2026",
@@ -477,7 +477,7 @@
   {
     "slug": "mg-select-in-store-activation-july-2026",
     "title": "MG Select - In Store Activation",
-    "category": "Brand Activation",
+    "category": "Community, Brand",
     "status": "open",
     "dateDisplay": "July 2026",
     "dateUpper": "JULY 2026",
@@ -502,7 +502,7 @@
   {
     "slug": "helios-luxe-in-store-activation-may-2026",
     "title": "Helios Luxe - In Store Activation",
-    "category": "Brand Activation",
+    "category": "Community, Brand",
     "status": "open",
     "dateDisplay": "May 2026",
     "dateUpper": "MAY 2026",
@@ -527,7 +527,7 @@
   {
     "slug": "kotak-concepts-tba",
     "title": "Kotak - Concepts",
-    "category": "Brand Activation",
+    "category": "Community, Brand",
     "status": "open",
     "dateDisplay": "TBA",
     "dateUpper": "TBA",

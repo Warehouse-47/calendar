@@ -11,6 +11,7 @@ const rareClubDeckUrl = String(
 const rareClubWebsiteUrl = String(import.meta.env.PUBLIC_RARE_CLUB_WEBSITE_URL ?? '').trim();
 const brandCollaborationUrl = '/collaboration/brands';
 const artistCollaborationUrl = '/collaboration/artists';
+const influencerCollaborationUrl = '/collaboration/influencers';
 
 const pageStructuredData = [
   buildCollectionPageStructuredData({
@@ -45,44 +46,23 @@ const pageStructuredData = [
   </section>
 
   <section class="border-b brutalist-border px-8 py-8">
-    {/* Switched to a flex wrap layout so orphan cards center automatically */}
     <div class="flex flex-wrap justify-center gap-4 max-w-6xl mx-auto">
-      <!-- <article class="w-full md:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.67rem)] border brutalist-border p-6 text-center flex flex-col">
+      <!-- NEW: Influencer Card -->
+      <article class="w-full md:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.67rem)] border brutalist-border p-6 text-center flex flex-col">
         <div class="flex-grow">
-          <p class="mono text-[10px] uppercase opacity-55">Partner</p>
-          <h2 class="text-3xl font-black tracking-tight uppercase mt-2">Barcode</h2>
-          <p class="mono text-xs uppercase opacity-70 mt-3">Seeding and amplification support</p>
+          <p class="mono text-[10px] uppercase opacity-55">Specialization</p>
+          <h2 class="text-3xl font-black tracking-tight uppercase mt-2">Influencer Desk</h2>
+          <p class="mono text-xs uppercase opacity-70 mt-3">Sourcing & Outreach</p>
           <p class="mono text-[10px] uppercase opacity-55 mt-4 leading-relaxed max-w-sm mx-auto">
-            Built for brand launches, creator outreach, and distribution-led amplification that needs a sharper partner network.
+            Direct access to vetted creator networks. Optimized for niche targeting, a-list amplification, and genuine brand alignment.
           </p>
         </div>
-        {barcodeDeckUrl || barcodeWebsiteUrl ? (
-          <div class="partner-link-row mt-5">
-            {barcodeDeckUrl && (
-              <a
-                href={barcodeDeckUrl}
-                target="_blank"
-                rel="noreferrer"
-                class="inline-flex items-center justify-center border brutalist-border px-5 py-2.5 mono text-xs uppercase hover:bg-white hover:text-black"
-              >
-                Open Deck
-              </a>
-            )}
-            {barcodeWebsiteUrl && (
-              <a
-                href={barcodeWebsiteUrl}
-                target="_blank"
-                rel="noreferrer"
-                class="inline-flex items-center justify-center border brutalist-border px-5 py-2.5 mono text-xs uppercase hover:bg-white hover:text-black"
-              >
-                Open Website
-              </a>
-            )}
-          </div>
-        ) : (
-          <p class="mono text-xs uppercase opacity-50 mt-5">Links not set yet.</p>
-        )}
-      </article> -->
+        <div class="partner-link-row mt-5">
+          <a href={influencerCollaborationUrl} class="inline-flex items-center justify-center border brutalist-border px-5 py-2.5 mono text-xs uppercase hover:bg-white hover:text-black">
+            Influence Brief 
+          </a>
+        </div>
+      </article>
 
       <article class="w-full md:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.67rem)] border brutalist-border p-6 text-center flex flex-col">
         <div class="flex-grow">
@@ -96,22 +76,12 @@ const pageStructuredData = [
         {rareClubDeckUrl || rareClubWebsiteUrl ? (
           <div class="partner-link-row mt-5">
             {rareClubDeckUrl && (
-              <a
-                href={rareClubDeckUrl}
-                target="_blank"
-                rel="noreferrer"
-                class="inline-flex items-center justify-center border brutalist-border px-5 py-2.5 mono text-xs uppercase hover:bg-white hover:text-black"
-              >
+              <a href={rareClubDeckUrl} target="_blank" rel="noreferrer" class="inline-flex items-center justify-center border brutalist-border px-5 py-2.5 mono text-xs uppercase hover:bg-white hover:text-black">
                 Open Collaboration Deck
               </a>
             )}
             {rareClubWebsiteUrl && (
-              <a
-                href={rareClubWebsiteUrl}
-                target="_blank"
-                rel="noreferrer"
-                class="inline-flex items-center justify-center border brutalist-border px-5 py-2.5 mono text-xs uppercase hover:bg-white hover:text-black"
-              >
+              <a href={rareClubWebsiteUrl} target="_blank" rel="noreferrer" class="inline-flex items-center justify-center border brutalist-border px-5 py-2.5 mono text-xs uppercase hover:bg-white hover:text-black">
                 Open Website
               </a>
             )}
@@ -131,16 +101,10 @@ const pageStructuredData = [
           </p>
         </div>
         <div class="partner-link-row mt-5">
-          <a
-            href={brandCollaborationUrl}
-            class="inline-flex items-center justify-center border brutalist-border px-5 py-2.5 mono text-xs uppercase hover:bg-white hover:text-black"
-          >
+          <a href={brandCollaborationUrl} class="inline-flex items-center justify-center border brutalist-border px-5 py-2.5 mono text-xs uppercase hover:bg-white hover:text-black">
             Brand Collaboration
           </a>
-          <a
-            href={artistCollaborationUrl}
-            class="inline-flex items-center justify-center border brutalist-border px-5 py-2.5 mono text-xs uppercase hover:bg-white hover:text-black"
-          >
+          <a href={artistCollaborationUrl} class="inline-flex items-center justify-center border brutalist-border px-5 py-2.5 mono text-xs uppercase hover:bg-white hover:text-black">
             Artist
           </a>
         </div>
@@ -173,6 +137,15 @@ const pageStructuredData = [
         {/* STEP 1: BRAND DETAILS */}
         <div class="form-step" data-step="0" style="display: block;">
           <div class="seeding-form-grid">
+            <label>
+              Brief Type *
+              <select name="briefType" required>
+                <option value="General">General Seeding</option>
+                <option value="Influencer">Influencer/Creator Specific</option>
+                <option value="Strategic">Strategic Partnership</option>
+              </select>
+            </label>
+
             <label>
               Brand Type *
               <select name="seedingBrandType" required>
@@ -242,6 +215,11 @@ const pageStructuredData = [
             </label>
 
             <label class="seeding-form-grid__full">
+              Influencer Niche / Target Profile
+              <input type="text" name="seedingInfluencerNiche" placeholder="e.g. Luxury Lifestyle, Tech-Reviewers, Vegan Culinary" />
+            </label>
+
+            <label class="seeding-form-grid__full">
               Event / Campaign Context *
               <textarea
                 name="seedingEventContext"
@@ -301,7 +279,6 @@ const pageStructuredData = [
 
     if (!form || !submit || !status) return;
 
-    // Form Navigation Logic
     const steps = Array.from(form.querySelectorAll('.form-step')) as HTMLElement[];
     const indicators = Array.from(document.querySelectorAll('.step-indicator')) as HTMLElement[];
     let currentStepIndex = 0;
@@ -321,22 +298,18 @@ const pageStructuredData = [
           ind.style.fontWeight = 'normal';
         }
       });
-      status.textContent = ''; // clear status on nav
+      status.textContent = '';
       status.classList.remove('seeding-status-error');
     }
 
     function validateCurrentStep(): boolean {
       const step = steps[currentStepIndex];
       const inputs = Array.from(step.querySelectorAll('input, select, textarea')) as HTMLInputElement[];
-      
-      // Check native HTML5 validity first (required fields)
       const firstInvalid = inputs.find(input => !input.checkValidity());
       if (firstInvalid) {
         firstInvalid.reportValidity();
         return false;
       }
-
-      // Step 1 Custom check: Need either Email or Phone
       if (currentStepIndex === 0) {
         const email = (form.querySelector('[name="seedingPocEmail"]') as HTMLInputElement).value.trim();
         const phone = (form.querySelector('[name="seedingPocPhone"]') as HTMLInputElement).value.trim();
@@ -346,8 +319,6 @@ const pageStructuredData = [
           return false;
         }
       }
-
-      // Step 2 Custom check: Need at least one service checkbox
       if (currentStepIndex === 1) {
         const checkedNeeds = step.querySelectorAll('input[name="seedingServiceNeed"]:checked');
         if (checkedNeeds.length === 0) {
@@ -356,11 +327,9 @@ const pageStructuredData = [
           return false;
         }
       }
-
       return true;
     }
 
-    // Attach Next/Prev Button Listeners
     form.querySelectorAll('.btn-next').forEach(btn => {
       btn.addEventListener('click', () => {
         if (validateCurrentStep()) {
@@ -377,15 +346,11 @@ const pageStructuredData = [
       });
     });
 
-
-    // Submission Logic
     const endpoint = String(form.dataset.submitEndpoint || '').trim();
 
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
-
       if (!validateCurrentStep()) return;
-
       if (!endpoint) {
         status.textContent = '[ ERROR: Submission endpoint is not configured. ]';
         status.classList.add('seeding-status-error');
@@ -394,13 +359,12 @@ const pageStructuredData = [
 
       const selectedNeeds = Array.from(
         form.querySelectorAll<HTMLInputElement>('input[name="seedingServiceNeed"]:checked'),
-      )
-        .map((input) => input.value.trim())
-        .filter(Boolean);
+      ).map((input) => input.value.trim()).filter(Boolean);
 
       const formData = new FormData(form);
       const payload = {
         interestType: 'seeding',
+        briefType: String(formData.get('briefType') || '').trim(),
         seedingBrandType: String(formData.get('seedingBrandType') || '').trim(),
         seedingBrandName: String(formData.get('seedingBrandName') || '').trim(),
         seedingPocName: String(formData.get('seedingPocName') || '').trim(),
@@ -408,6 +372,7 @@ const pageStructuredData = [
         seedingPocPhone: String(formData.get('seedingPocPhone') || '').trim(),
         seedingServiceNeeds: selectedNeeds.join(', '),
         seedingPartnerPreference: String(formData.get('seedingPartnerPreference') || '').trim(),
+        seedingInfluencerNiche: String(formData.get('seedingInfluencerNiche') || '').trim(),
         seedingEventContext: String(formData.get('seedingEventContext') || '').trim(),
         seedingTentativeDates: String(formData.get('seedingTentativeDates') || '').trim(),
         seedingMarket: String(formData.get('seedingMarket') || '').trim(),
@@ -416,45 +381,23 @@ const pageStructuredData = [
 
       submit.disabled = true;
       submit.textContent = 'Transmitting...';
-      status.classList.remove('seeding-status-error');
       status.textContent = '[ STATUS: Transmitting brief to server... ]';
 
       try {
         const response = await fetch(endpoint, {
           method: 'POST',
-          headers: {
-            'Content-Type': 'text/plain;charset=utf-8',
-          },
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
           body: JSON.stringify(payload),
         });
 
-        const raw = await response.text();
-        let parsed = null;
-
-        try {
-          parsed = raw ? JSON.parse(raw) : null;
-        } catch {
-          parsed = null;
-        }
-
-        const appScriptError = parsed && typeof parsed === 'object' && parsed.ok === false
-          ? String(parsed.error || 'Submission rejected by Apps Script.')
-          : '';
-
-        if (!response.ok || appScriptError) {
-          throw new Error(appScriptError || `Request failed with status ${response.status}`);
-        }
+        if (!response.ok) throw new Error(`Request failed with status ${response.status}`);
 
         status.textContent = '[ SUCCESS: Brief submitted. Team will reach out shortly. ]';
         form.reset();
-        
-        // Reset to Step 1 visually
         currentStepIndex = 0;
         updateStepUI();
-        
       } catch (error) {
-        const message = error instanceof Error ? error.message : 'Could not submit right now. Please try again.';
-        status.textContent = `[ ERROR: ${message} ]`;
+        status.textContent = `[ ERROR: ${error instanceof Error ? error.message : 'Submission failed.'} ]`;
         status.classList.add('seeding-status-error');
       } finally {
         submit.disabled = false;
