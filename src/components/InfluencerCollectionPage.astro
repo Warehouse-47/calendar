@@ -1,0 +1,197 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { buildCollectionPageStructuredData, buildItemListStructuredData } from '../lib/seo';
+
+interface InfluencerEntry {
+  title: string;       // Influencer Name
+  handle: string;      // @handle
+  niche: string;        // Niche
+  about: string;        // About
+  category: string;     // Category
+  tier: string;         // Tier
+  instagramLink: string; 
+  portfolioLink: string; 
+  reach: string;        // Reach/Followers
+  status: string;
+  slug: string;
+  sheetName: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  eyebrow: string;
+  intro: string;
+  path: string;
+  sheetName: string;
+  entries: InfluencerEntry[];
+  deckUrl: string;
+}
+
+const { title, description, eyebrow, intro, path, sheetName, entries, deckUrl } = Astro.props as Props;
+
+function uniqueSorted(values: Array<string | undefined>) {
+  return [...new Set(values.map((value) => String(value ?? '').trim()).filter((value) => value.length > 0))].sort((a, b) => a.localeCompare(b));
+}
+
+// Unique counts for the stats bar
+const categoryValues = uniqueSorted(entries.map((e) => e.category));
+const nicheValues = uniqueSorted(entries.map((e) => e.niche));
+const tierValues = uniqueSorted(entries.map((e) => e.tier));
+const filterOptions = ['ALL', ...categoryValues];
+
+const collaborationStructuredData = [
+  buildCollectionPageStructuredData({ path, name: title, description }),
+  ...(entries.length > 0 ? [
+    buildItemListStructuredData({
+      path,
+      name: `${title} entries`,
+      items: entries.map((entry) => ({ name: entry.title, url: entry.instagramLink || path })),
+    }),
+  ] : []),
+];
+---
+
+<Layout title={title} description={description} structuredData={collaborationStructuredData}>
+  <header class="p-8 border-b brutalist-border flex flex-col md:flex-row md:justify-between md:items-end gap-4">
+    <a href="/" class="mono text-xs opacity-60 hover:opacity-100">[ &lt;- BACK_TO_MANIFEST ]</a>
+    <div class="text-left md:text-right mono text-[10px] opacity-50 tracking-[0.2em] uppercase">
+      [ INFLUENCER_DESK ]<br />
+      [ SHEET: {sheetName.toUpperCase()} ]
+    </div>
+  </header>
+
+  <section class="border-b brutalist-border px-8 py-12 uppercase text-center">
+    <p class="mono text-xs opacity-60 mb-3 tracking-[0.18em]">{eyebrow}</p>
+    <h1 class="text-5xl md:text-7xl font-black tracking-tighter leading-none">{title}</h1>
+    <p class="mono text-xs mt-4 opacity-70 max-w-3xl mx-auto leading-relaxed">{intro}</p>
+    
+    <div class="mt-8">
+      <a href="https://hub.warehouse47.com/influencers" target="_blank" rel="noreferrer" class="inline-flex items-center justify-center border brutalist-border px-8 py-4 mono text-xs uppercase hover:bg-white hover:text-black transition-all font-bold">
+        Open Influencer Deck 
+      </a>
+    </div>
+  </section>
+
+  <!-- STATS BAR: Unique Counts -->
+  <section class="border-b brutalist-border px-8 py-8 bg-white/5">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto mono text-xs uppercase">
+      <article class="border brutalist-border p-4">
+        <p class="opacity-50 tracking-widest text-[10px]">[Total_Records]</p>
+        <p class="text-2xl font-black mt-1">{entries.length.toString().padStart(2, '0')}</p>
+      </article>
+      <article class="border brutalist-border p-4">
+        <p class="opacity-50 tracking-widest text-[10px]">[Unique_Categories]</p>
+        <p class="text-2xl font-black mt-1">{categoryValues.length.toString().padStart(2, '0')}</p>
+      </article>
+      <article class="border brutalist-border p-4">
+        <p class="opacity-50 tracking-widest text-[10px]">[Unique_Niches]</p>
+        <p class="text-2xl font-black mt-1">{nicheValues.length.toString().padStart(2, '0')}</p>
+      </article>
+      <article class="border brutalist-border p-4">
+        <p class="opacity-50 tracking-widest text-[10px]">[Unique_Tiers]</p>
+        <p class="text-2xl font-black mt-1">{tierValues.length.toString().padStart(2, '0')}</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- FILTER BAR -->
+  {filterOptions.length > 1 && (
+    <section class="border-b brutalist-border bg-white/5 px-8 py-4 mono text-xs uppercase">
+      <div class="category-filter-row w-full max-w-6xl mx-auto">
+        <span class="category-filter-label opacity-50 tracking-widest">[FILTER_CATEGORY]</span>
+        <div class="category-filter-bar" role="group">
+          {filterOptions.map((val) => (
+            <button type="button" class="category-filter-button" data-filter={val} data-active={val === 'ALL' ? 'true' : 'false'}>
+              {val === 'ALL' ? 'ALL_FILTERS' : val.toUpperCase()}
+            </button>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- COMPACT LIST LAYOUT -->
+  <section class="min-h-screen">
+    <div class="grid grid-cols-12 px-8 py-4 mono text-[10px] opacity-40 uppercase border-b brutalist-border hidden md:grid tracking-widest">
+      <div class="col-span-5">Influencer Details</div>
+      <div class="col-span-3">Reach / Scale</div>
+      <div class="col-span-4 text-right">Action</div>
+    </div>
+
+    <div id="influencer-list">
+      {entries.map((entry) => (
+        <article
+          class="influencer-row group block border-b brutalist-border hover:bg-white transition-none"
+          data-category={entry.category || sheetName}
+        >
+          <div class="grid grid-cols-1 md:grid-cols-12 px-8 py-8 items-center group-hover:text-black transition-none uppercase gap-4 md:gap-0">
+            <!-- Name, Handle, Niche, Category, Tier -->
+            <div class="md:col-span-5">
+              <div class="flex items-baseline gap-2">
+                <h2 class="text-2xl md:text-3xl font-black tracking-tighter group-hover:text-black">{entry.title}</h2>
+                <span class="mono text-xs opacity-60 group-hover:opacity-100">{entry.handle}</span>
+              </div>
+              <div class="flex flex-wrap gap-x-3 gap-y-1 mt-1 mono text-[10px] opacity-60 group-hover:opacity-100 uppercase">
+                <span>{entry.niche}</span>
+                <span class="opacity-30">/</span>
+                <span>{entry.category}</span>
+                <span class="opacity-30">/</span>
+                <span class="font-bold">{entry.tier}</span>
+              </div>
+            </div>
+
+            <!-- Reach -->
+            <div class="md:col-span-3 mono text-sm opacity-60 group-hover:opacity-100">
+              <span class="text-[9px] opacity-40 block">REACH</span>
+              <span class="font-bold">{entry.reach || 'N/A'}</span>
+            </div>
+
+            <!-- Buttons -->
+            <div class="md:col-span-4 flex flex-wrap justify-end gap-2">
+              <a href={entry.instagramLink} target="_blank" rel="noreferrer" class="border brutalist-border px-4 py-2 mono text-[10px] uppercase hover:bg-black hover:text-white group-hover:bg-black group-hover:text-white transition-all">
+                Instagram
+              </a>
+              {entry.portfolioLink && (
+                <a href={entry.portfolioLink} target="_blank" rel="noreferrer" class="border brutalist-border px-4 py-2 mono text-[10px] uppercase hover:bg-black hover:text-white group-hover:bg-black group-hover:text-white transition-all">
+                  Portfolio
+                </a>
+              )}
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+</Layout>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const buttons = document.querySelectorAll<HTMLButtonElement>('[data-filter]');
+    const rows = document.querySelectorAll<HTMLElement>('.influencer-row');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
+        buttons.forEach(b => b.dataset.active = b === btn ? 'true' : 'false');
+        rows.forEach(row => {
+          const cat = row.getAttribute('data-category');
+          row.style.display = (filter === 'ALL' || cat === filter) ? 'block' : 'none';
+        });
+      });
+    });
+  });
+</script>
+
+<style>
+    .category-filter-row { display: flex; align-items: center; gap: 1rem; width: 100%; }
+    .category-filter-label { min-width: 4rem; }
+    .category-filter-bar { display: flex; gap: 0.5rem; overflow-x: auto; padding-bottom: 0.5rem; }
+    .category-filter-button {
+        flex: 0 0 auto; border: 0; background: transparent; color: rgba(255,255,255,0.6);
+        cursor: pointer; padding: 0.6rem 1rem; font-family: inherit; text-transform: uppercase;
+        letter-spacing: 0.1em; white-space: nowrap; transition: none;
+    }
+    .category-filter-button[data-active='true'] { background: #fff; color: #000; }
+    .category-filter-button:hover { background: rgba(255,255,255,0.1); color: #fff; }
+</style>

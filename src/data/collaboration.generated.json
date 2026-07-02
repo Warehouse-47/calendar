@@ -919,12 +919,12 @@
     {
       "slug": "influencer-akshat-pande",
       "title": "Akshat Pande",
-      "summary": "Technology",
+      "summary": "Placeholder",
       "category": "KOL",
       "location": "",
       "status": "Open",
       "tags": [
-        "KOL"
+        "Technology"
       ],
       "links": [
         "https://www.instagram.com/pandeakshat",
@@ -932,14 +932,18 @@
       ],
       "primaryLink": "https://www.instagram.com/pandeakshat",
       "secondaryLink": "https://pandeakshat.com",
-      "instagramFollower": "",
+      "instagramFollower": "32",
       "instagramLink": "https://www.instagram.com/pandeakshat",
-      "otherLink": "",
+      "otherLink": "https://pandeakshat.com",
       "deckLink": "",
       "brandLink": "",
       "previousBrandCollaboration": "",
       "executionCount": "",
-      "sheetName": "Influencer"
+      "sheetName": "Influencer",
+      "handle": "pandeakshat",
+      "reach": "32",
+      "niche": "Technology",
+      "tier": "0"
     }
   ]
 }

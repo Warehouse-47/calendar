@@ -1,18 +1,17 @@
 ---
-import CollaborationCollectionPage from '../../../components/CollaborationCollectionPage.astro';
+import InfluencerCollectionPage from '../../../components/InfluencerCollectionPage.astro';
 import { getCollaborationEntries } from '../../../lib/collaboration';
-const entries = await getCollaborationEntries('Influencer');
 
+const entries = await getCollaborationEntries('Influencer');
 ---
 
-<CollaborationCollectionPage
-title="Influencer Collaboration"
-description="Discover sheet-backed influencer opportunities and live partnership entries."
-eyebrow="Influencer Collaboration Desk"
-intro=" "
-path="/collaboration/influencers"
-sheetName="Influencer"
-entries={entries}
+<InfluencerCollectionPage
+  title="Influencer Collaboration"
+  description="Discover a vetted network of creators and influencers."
+  eyebrow="Influence & Outreach Desk"
+  intro="Direct access to creator networks. Optimized for niche targeting and brand alignment."
+  path="/collaboration/influencers"
+  sheetName="Influencer"
+  entries={entries}
+  deckUrl="https://your-influencer-deck-url.com" 
 />
-
-

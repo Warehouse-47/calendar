@@ -24,12 +24,12 @@ export const COLLABORATION_SCHEMA = {
     linkKeys: ['Playbook_URL'],
     tagKeys: ['Status'],
   },
-    Influencer: {
-    titleKeys: ['Influencer Name', 'Handle'], 
-    summaryKeys: ['Niche', 'About'],
-    categoryKeys: ['Category', 'Tier'],
+  Influencer: {
+    titleKeys: ['Influencer Name'],
+    summaryKeys: ['About'],
+    categoryKeys: ['Category'],
     linkKeys: ['Instagram Link', 'Portfolio Link'],
-    tagKeys: ['Category', 'Tier', 'Reach'],
+    tagKeys: ['Niche', 'Tier', 'Category'], 
   },
 };
 
@@ -111,18 +111,24 @@ export function normalizeCollaborationRows(rows, sheetName) {
       const category = textOrFallback(firstValue(parsedRow, schema.categoryKeys), sheetName);
       const location = firstValue(parsedRow, ['City', 'Location', 'Market', 'Region', 'Base']);
       const status = textOrFallback(firstValue(parsedRow, ['Status', 'Availability', 'Stage']), 'Open');
+      
+      // Logic for tags: capture Niche, Tier, and Category specifically for Influencers
       const tags = [
         ...splitList(firstValue(parsedRow, schema.tagKeys)),
         ...splitList(firstValue(parsedRow, ['Tags', 'Keywords', 'Themes', 'Focus'])),
         ...splitList(firstValue(parsedRow, ['Service', 'Services', 'Deliverables'])),
       ];
+
       const links = collectLinks(parsedRow, [...schema.linkKeys, 'URL', 'Website', 'Deck', 'Portfolio', 'Profile', 'Reference']);
+      
+      // BASIC MAPPINGS
       const instagramLink = firstValue(parsedRow, ['Instagram Link']);
       const otherLink = firstValue(parsedRow, ['Other Link']);
       const deckLink = firstValue(parsedRow, ['Deck Link']);
       const brandLink = firstValue(parsedRow, ['Link']);
 
-      return {
+      // --- INFLUENCER SPECIFIC OVERRIDES ---
+      let finalData = {
         slug: buildSlug(title, sheetName, index),
         title,
         summary,
@@ -142,20 +148,30 @@ export function normalizeCollaborationRows(rows, sheetName) {
         executionCount: firstValue(parsedRow, ['Execution_Count', 'Execution Count']),
         sheetName,
       };
+
+      if (sheetName === 'Influencer') {
+        finalData.handle = firstValue(parsedRow, ['Handle']);
+        finalData.reach = firstValue(parsedRow, ['Reach']);
+        finalData.niche = firstValue(parsedRow, ['Niche']);
+        finalData.tier = firstValue(parsedRow, ['Tier']);
+        // Ensure Reach is also stored in instagramFollower for backward compatibility
+        finalData.instagramFollower = finalData.reach || finalData.instagramFollower;
+        // Ensure Portfolio Link is mapped
+        finalData.otherLink = firstValue(parsedRow, ['Portfolio Link']) || finalData.otherLink;
+      }
+      // -------------------------------------
+
+      return finalData;
     })
     .filter((row) => row.title.length > 0);
 
+  // ... (keep the slug deduplication logic at the end of the function as it was)
   const seen = new Map();
-
   return normalizedRows.map((row, index) => {
     const baseSlug = slugify(text(row.slug), { lower: true, strict: true, trim: true }) || buildSlug(row.title, sheetName, index);
     const currentCount = seen.get(baseSlug) ?? 0;
     seen.set(baseSlug, currentCount + 1);
-
-    if (currentCount === 0) {
-      return { ...row, slug: baseSlug };
-    }
-
+    if (currentCount === 0) return { ...row, slug: baseSlug };
     return { ...row, slug: `${baseSlug}-${currentCount + 1}` };
   });
 }
