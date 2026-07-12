@@ -917,33 +917,1124 @@
   ],
   "Influencer": [
     {
-      "slug": "influencer-akshat-pande",
-      "title": "Akshat Pande",
-      "summary": "Placeholder",
-      "category": "KOL",
+      "slug": "influencer-gurfateh-pirzada",
+      "title": "Gurfateh Pirzada",
+      "summary": "Indian actor known for Netflix's Guilty, Class, and Call Me Bae; also works as a model. Sister Mehreen Pirzada is also an actress.",
+      "category": "Actor / Model",
       "location": "",
       "status": "Open",
       "tags": [
-        "Technology"
+        "Acting / Entertainment"
       ],
       "links": [
-        "https://www.instagram.com/pandeakshat",
-        "https://pandeakshat.com"
+        "https://www.instagram.com/gurfatehpirzada/"
       ],
-      "primaryLink": "https://www.instagram.com/pandeakshat",
-      "secondaryLink": "https://pandeakshat.com",
-      "instagramFollower": "32",
-      "instagramLink": "https://www.instagram.com/pandeakshat",
-      "otherLink": "https://pandeakshat.com",
+      "primaryLink": "https://www.instagram.com/gurfatehpirzada/",
+      "secondaryLink": "",
+      "instagramFollower": "120K",
+      "instagramLink": "https://www.instagram.com/gurfatehpirzada/",
+      "otherLink": "",
       "deckLink": "",
       "brandLink": "",
       "previousBrandCollaboration": "",
       "executionCount": "",
       "sheetName": "Influencer",
-      "handle": "pandeakshat",
-      "reach": "32",
-      "niche": "Technology",
-      "tier": "0"
+      "handle": "@gurfatehpirzada",
+      "reach": "120K",
+      "niche": "Acting / Entertainment",
+      "tier": "Mid-Tier (100K–500K)"
+    },
+    {
+      "slug": "influencer-nirvaan-birla",
+      "title": "Nirvaan Birla",
+      "summary": "Founder & MD of Birla Open Minds and Birla Brainiacs (edtech); also a singer. Son of businessman Yashovardhan Birla.",
+      "category": "Entrepreneur",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Business / Education"
+      ],
+      "links": [
+        "https://www.instagram.com/nirvaanbirla/"
+      ],
+      "primaryLink": "https://www.instagram.com/nirvaanbirla/",
+      "secondaryLink": "",
+      "instagramFollower": "46.1K",
+      "instagramLink": "https://www.instagram.com/nirvaanbirla/",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "",
+      "previousBrandCollaboration": "",
+      "executionCount": "",
+      "sheetName": "Influencer",
+      "handle": "@nirvaanbirla",
+      "reach": "46.1K",
+      "niche": "Business / Education",
+      "tier": "Micro (10K–100K)"
+    },
+    {
+      "slug": "influencer-fateh-randhawa",
+      "title": "Fateh Randhawa",
+      "summary": "Co-founder of FRST Foundation (disability inclusion & road safety initiative); Asian champion in Silambam martial arts. Grandson of Dara Singh.",
+      "category": "Social Entrepreneur / Athlete",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Social Impact / Fitness"
+      ],
+      "links": [
+        "https://www.instagram.com/fateh.farha/"
+      ],
+      "primaryLink": "https://www.instagram.com/fateh.farha/",
+      "secondaryLink": "",
+      "instagramFollower": "34.3K",
+      "instagramLink": "https://www.instagram.com/fateh.farha/",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "",
+      "previousBrandCollaboration": "",
+      "executionCount": "",
+      "sheetName": "Influencer",
+      "handle": "@fateh.farha",
+      "reach": "34.3K",
+      "niche": "Social Impact / Fitness",
+      "tier": "Micro (10K–100K)"
+    },
+    {
+      "slug": "influencer-shaan-groverr",
+      "title": "Shaan Groverr",
+      "summary": "Indian actor across TV, web series and film (Dus June Kii Raat, Noblemen, Saiyaara).",
+      "category": "Actor",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Acting / Entertainment"
+      ],
+      "links": [
+        "https://www.instagram.com/shaangroverr/"
+      ],
+      "primaryLink": "https://www.instagram.com/shaangroverr/",
+      "secondaryLink": "",
+      "instagramFollower": "129K",
+      "instagramLink": "https://www.instagram.com/shaangroverr/",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "",
+      "previousBrandCollaboration": "",
+      "executionCount": "",
+      "sheetName": "Influencer",
+      "handle": "@shaangroverr",
+      "reach": "129K",
+      "niche": "Acting / Entertainment",
+      "tier": "Mid-Tier (100K–500K)"
+    },
+    {
+      "slug": "influencer-lakshya-raj-anand",
+      "title": "Lakshya Raj Anand",
+      "summary": "Public bio not listed on profile; content centers on sports (cricket) and lifestyle moments. Details unverified beyond Instagram activity.",
+      "category": "Content Creator (unverified niche)",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Lifestyle / Sports"
+      ],
+      "links": [
+        "https://www.instagram.com/lakshyarajanand/"
+      ],
+      "primaryLink": "https://www.instagram.com/lakshyarajanand/",
+      "secondaryLink": "",
+      "instagramFollower": "99.8K",
+      "instagramLink": "https://www.instagram.com/lakshyarajanand/",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "",
+      "previousBrandCollaboration": "",
+      "executionCount": "",
+      "sheetName": "Influencer",
+      "handle": "@lakshyarajanand",
+      "reach": "99.8K",
+      "niche": "Lifestyle / Sports",
+      "tier": "Micro (10K–100K)"
+    },
+    {
+      "slug": "influencer-arjun-varain-singh",
+      "title": "Arjun Varain Singh",
+      "summary": "Bollywood film director and writer; feature debut Kho Gaye Hum Kahan (2023, Excel Entertainment/Tiger Baby). Assisted Zoya Akhtar on Gully Boy.",
+      "category": "Director / Writer",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Film / Entertainment"
+      ],
+      "links": [
+        "https://www.instagram.com/arjunvarain.singh/"
+      ],
+      "primaryLink": "https://www.instagram.com/arjunvarain.singh/",
+      "secondaryLink": "",
+      "instagramFollower": "37.2K",
+      "instagramLink": "https://www.instagram.com/arjunvarain.singh/",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "",
+      "previousBrandCollaboration": "",
+      "executionCount": "",
+      "sheetName": "Influencer",
+      "handle": "@arjunvarain.singh",
+      "reach": "37.2K",
+      "niche": "Film / Entertainment",
+      "tier": "Micro (10K–100K)"
+    },
+    {
+      "slug": "influencer-mozez-singh",
+      "title": "Mozez Singh",
+      "summary": "Writer-director-producer; directed the Bollywood film Zubaan. Also posts fashion and lifestyle content.",
+      "category": "Writer / Director / Producer",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Film / Entertainment"
+      ],
+      "links": [
+        "https://www.instagram.com/mozezsingh/"
+      ],
+      "primaryLink": "https://www.instagram.com/mozezsingh/",
+      "secondaryLink": "",
+      "instagramFollower": "256K",
+      "instagramLink": "https://www.instagram.com/mozezsingh/",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "",
+      "previousBrandCollaboration": "",
+      "executionCount": "",
+      "sheetName": "Influencer",
+      "handle": "@mozezsingh",
+      "reach": "256K",
+      "niche": "Film / Entertainment",
+      "tier": "Mid-Tier (100K–500K)"
+    },
+    {
+      "slug": "influencer-anmol-thakeria-dhillon",
+      "title": "Anmol Thakeria Dhillon",
+      "summary": "Actor, son of veteran Bollywood actress Poonam Dhillon; film debut Tuesdays & Fridays (2021).",
+      "category": "Actor",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Acting / Entertainment"
+      ],
+      "links": [
+        "https://www.instagram.com/anmolthakeriadhillon/"
+      ],
+      "primaryLink": "https://www.instagram.com/anmolthakeriadhillon/",
+      "secondaryLink": "",
+      "instagramFollower": "69.9K",
+      "instagramLink": "https://www.instagram.com/anmolthakeriadhillon/",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "",
+      "previousBrandCollaboration": "",
+      "executionCount": "",
+      "sheetName": "Influencer",
+      "handle": "@anmolthakeriadhillon",
+      "reach": "69.9K",
+      "niche": "Acting / Entertainment",
+      "tier": "Micro (10K–100K)"
+    },
+    {
+      "slug": "influencer-soboguys",
+      "title": "Soboguys",
+      "summary": "Twin brothers Amaan & Armaan, South Bombay-based fashion, luxury and travel content creators; founders of several lifestyle brands (Feriha Apparel, Sobo Gadgets, Sobo Cosmo).",
+      "category": "Content Creator Duo",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Fashion / Luxury / Travel"
+      ],
+      "links": [
+        "https://www.instagram.com/soboguys/"
+      ],
+      "primaryLink": "https://www.instagram.com/soboguys/",
+      "secondaryLink": "",
+      "instagramFollower": "272K",
+      "instagramLink": "https://www.instagram.com/soboguys/",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "",
+      "previousBrandCollaboration": "",
+      "executionCount": "",
+      "sheetName": "Influencer",
+      "handle": "@soboguys",
+      "reach": "272K",
+      "niche": "Fashion / Luxury / Travel",
+      "tier": "Mid-Tier (100K–500K)"
+    },
+    {
+      "slug": "influencer-karan-hariharan",
+      "title": "Karan Hariharan",
+      "summary": "Actor, singer, writer; also creates fitness and gaming content.",
+      "category": "Actor / Content Creator",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Entertainment / Lifestyle"
+      ],
+      "links": [
+        "https://www.instagram.com/karanhariharan/"
+      ],
+      "primaryLink": "https://www.instagram.com/karanhariharan/",
+      "secondaryLink": "",
+      "instagramFollower": "98.9K",
+      "instagramLink": "https://www.instagram.com/karanhariharan/",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "",
+      "previousBrandCollaboration": "",
+      "executionCount": "",
+      "sheetName": "Influencer",
+      "handle": "@karanhariharan",
+      "reach": "98.9K",
+      "niche": "Entertainment / Lifestyle",
+      "tier": "Micro (10K–100K)"
+    },
+    {
+      "slug": "influencer-karan-tacker",
+      "title": "Karan Tacker",
+      "summary": "Well-known Indian television and OTT actor (Special Ops, Khakee: The Bihar Chapter); co-founder of menswear label Goonda.",
+      "category": "Actor",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Acting / Entertainment"
+      ],
+      "links": [
+        "https://www.instagram.com/karantacker/"
+      ],
+      "primaryLink": "https://www.instagram.com/karantacker/",
+      "secondaryLink": "",
+      "instagramFollower": "1.8M",
+      "instagramLink": "https://www.instagram.com/karantacker/",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "",
+      "previousBrandCollaboration": "",
+      "executionCount": "",
+      "sheetName": "Influencer",
+      "handle": "@karantacker",
+      "reach": "1.8M",
+      "niche": "Acting / Entertainment",
+      "tier": "Mega (1M+)"
+    },
+    {
+      "slug": "influencer-sharic-sequeira",
+      "title": "Sharic Sequeira",
+      "summary": "Director at Quercus Productions; directs music videos and advertising films.",
+      "category": "Director",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Film / Advertising"
+      ],
+      "links": [
+        "https://www.instagram.com/sharicsequeira/"
+      ],
+      "primaryLink": "https://www.instagram.com/sharicsequeira/",
+      "secondaryLink": "",
+      "instagramFollower": "14.1K",
+      "instagramLink": "https://www.instagram.com/sharicsequeira/",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "",
+      "previousBrandCollaboration": "",
+      "executionCount": "",
+      "sheetName": "Influencer",
+      "handle": "@sharicsequeira",
+      "reach": "14.1K",
+      "niche": "Film / Advertising",
+      "tier": "Nano (<10K)"
+    },
+    {
+      "slug": "influencer-rahul-vijay",
+      "title": "Rahul Vijay",
+      "summary": "Menswear stylist and former fashion editor at GQ India, Harper's Bazaar and Elle India; Creative Director at Lakme Fashion Week.",
+      "category": "Fashion Stylist",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Fashion"
+      ],
+      "links": [
+        "https://www.instagram.com/rahulvijay1988/"
+      ],
+      "primaryLink": "https://www.instagram.com/rahulvijay1988/",
+      "secondaryLink": "",
+      "instagramFollower": "42.7K",
+      "instagramLink": "https://www.instagram.com/rahulvijay1988/",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "",
+      "previousBrandCollaboration": "",
+      "executionCount": "",
+      "sheetName": "Influencer",
+      "handle": "@rahulvijay1988",
+      "reach": "42.7K",
+      "niche": "Fashion",
+      "tier": "Micro (10K–100K)"
+    },
+    {
+      "slug": "influencer-vedant-jain",
+      "title": "Vedant Jain",
+      "summary": "Public bio for this specific handle could not be confirmed with confidence (multiple similarly-named accounts exist).",
+      "category": "Content Creator (unverified)",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Unverified"
+      ],
+      "links": [
+        "https://www.instagram.com/vedantjain_11/"
+      ],
+      "primaryLink": "https://www.instagram.com/vedantjain_11/",
+      "secondaryLink": "",
+      "instagramFollower": "49.9K",
+      "instagramLink": "https://www.instagram.com/vedantjain_11/",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "",
+      "previousBrandCollaboration": "",
+      "executionCount": "",
+      "sheetName": "Influencer",
+      "handle": "@vedantjain_11",
+      "reach": "49.9K",
+      "niche": "Unverified",
+      "tier": "Micro (10K–100K)"
+    },
+    {
+      "slug": "influencer-vivek-dhadha",
+      "title": "Vivek Dhadha",
+      "summary": "Mumbai-based luxury lifestyle KOL covering fashion, fitness, cars and watches; also active as an angel investor and diamond merchant.",
+      "category": "KOL / Content Creator",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Luxury / Fashion / Lifestyle"
+      ],
+      "links": [
+        "https://www.instagram.com/vivekdhadha/"
+      ],
+      "primaryLink": "https://www.instagram.com/vivekdhadha/",
+      "secondaryLink": "",
+      "instagramFollower": "702K",
+      "instagramLink": "https://www.instagram.com/vivekdhadha/",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "",
+      "previousBrandCollaboration": "",
+      "executionCount": "",
+      "sheetName": "Influencer",
+      "handle": "@vivekdhadha",
+      "reach": "702K",
+      "niche": "Luxury / Fashion / Lifestyle",
+      "tier": "Macro (500K–1M)"
+    },
+    {
+      "slug": "influencer-jaikaar-dhami",
+      "title": "Jaikaar Dhami",
+      "summary": "Cricketer and model.",
+      "category": "Cricketer / Model",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Sports / Modeling"
+      ],
+      "links": [
+        "https://www.instagram.com/jaikaardhami/"
+      ],
+      "primaryLink": "https://www.instagram.com/jaikaardhami/",
+      "secondaryLink": "",
+      "instagramFollower": "3K",
+      "instagramLink": "https://www.instagram.com/jaikaardhami/",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "",
+      "previousBrandCollaboration": "",
+      "executionCount": "",
+      "sheetName": "Influencer",
+      "handle": "@jaikaardhami",
+      "reach": "3K",
+      "niche": "Sports / Modeling",
+      "tier": "Nano (<10K)"
+    },
+    {
+      "slug": "influencer-nahum-bhavnani",
+      "title": "Nahum Bhavnani",
+      "summary": "Public bio could not be confirmed; content appears personal/lifestyle in nature.",
+      "category": "Content Creator (unverified)",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Unverified"
+      ],
+      "links": [
+        "https://www.instagram.com/nahumbhavnani/"
+      ],
+      "primaryLink": "https://www.instagram.com/nahumbhavnani/",
+      "secondaryLink": "",
+      "instagramFollower": "16.4K",
+      "instagramLink": "https://www.instagram.com/nahumbhavnani/",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "",
+      "previousBrandCollaboration": "",
+      "executionCount": "",
+      "sheetName": "Influencer",
+      "handle": "@nahumbhavnani",
+      "reach": "16.4K",
+      "niche": "Unverified",
+      "tier": "Micro (10K–100K)"
+    },
+    {
+      "slug": "influencer-karan-raj-kohli",
+      "title": "Karan Raj Kohli",
+      "summary": "Founder of wellness brand Order Salt; also appears in fashion editorial content (Elle India BTS).",
+      "category": "Founder / Entrepreneur",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Wellness / Fashion"
+      ],
+      "links": [
+        "https://www.instagram.com/karanrajkohli/"
+      ],
+      "primaryLink": "https://www.instagram.com/karanrajkohli/",
+      "secondaryLink": "",
+      "instagramFollower": "51.3K",
+      "instagramLink": "https://www.instagram.com/karanrajkohli/",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "",
+      "previousBrandCollaboration": "",
+      "executionCount": "",
+      "sheetName": "Influencer",
+      "handle": "@karanrajkohli",
+      "reach": "51.3K",
+      "niche": "Wellness / Fashion",
+      "tier": "Micro (10K–100K)"
+    },
+    {
+      "slug": "influencer-viraj-kapur",
+      "title": "Viraj Kapur",
+      "summary": "Founder of wellness brand Order Salt (same venture as Karan Raj Kohli); lifestyle content.",
+      "category": "Founder / Entrepreneur",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Wellness"
+      ],
+      "links": [
+        "https://www.instagram.com/virajkapur/"
+      ],
+      "primaryLink": "https://www.instagram.com/virajkapur/",
+      "secondaryLink": "",
+      "instagramFollower": "30.9K",
+      "instagramLink": "https://www.instagram.com/virajkapur/",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "",
+      "previousBrandCollaboration": "",
+      "executionCount": "",
+      "sheetName": "Influencer",
+      "handle": "@virajkapur",
+      "reach": "30.9K",
+      "niche": "Wellness",
+      "tier": "Micro (10K–100K)"
+    },
+    {
+      "slug": "influencer-krishen-riyat",
+      "title": "Krishen Riyat",
+      "summary": "Fashion, decor, football and art content creator; brand collaborations include Balenciaga, Levi's and Spotify India.",
+      "category": "Content Creator",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Fashion / Lifestyle"
+      ],
+      "links": [
+        "https://www.instagram.com/krishenriyat/"
+      ],
+      "primaryLink": "https://www.instagram.com/krishenriyat/",
+      "secondaryLink": "",
+      "instagramFollower": "56.5K",
+      "instagramLink": "https://www.instagram.com/krishenriyat/",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "",
+      "previousBrandCollaboration": "",
+      "executionCount": "",
+      "sheetName": "Influencer",
+      "handle": "@krishenriyat",
+      "reach": "56.5K",
+      "niche": "Fashion / Lifestyle",
+      "tier": "Micro (10K–100K)"
+    },
+    {
+      "slug": "influencer-neel-raj-dewan",
+      "title": "Neel Raj Dewan",
+      "summary": "Lifestyle content creator associated with the brand @uncool_in; travel-focused posts.",
+      "category": "Content Creator",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Lifestyle"
+      ],
+      "links": [
+        "https://www.instagram.com/neeldewan/"
+      ],
+      "primaryLink": "https://www.instagram.com/neeldewan/",
+      "secondaryLink": "",
+      "instagramFollower": "25.6K",
+      "instagramLink": "https://www.instagram.com/neeldewan/",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "",
+      "previousBrandCollaboration": "",
+      "executionCount": "",
+      "sheetName": "Influencer",
+      "handle": "@neeldewan",
+      "reach": "25.6K",
+      "niche": "Lifestyle",
+      "tier": "Micro (10K–100K)"
+    },
+    {
+      "slug": "influencer-aafreen-akshita-chandwani",
+      "title": "Aafreen (Akshita Chandwani)",
+      "summary": "Fashion, beauty and lifestyle digital creator; content spans style, travel and entertainment.",
+      "category": "Content Creator",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Fashion / Beauty / Lifestyle"
+      ],
+      "links": [
+        "https://www.instagram.com/_aafatorse_/"
+      ],
+      "primaryLink": "https://www.instagram.com/_aafatorse_/",
+      "secondaryLink": "",
+      "instagramFollower": "362K",
+      "instagramLink": "https://www.instagram.com/_aafatorse_/",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "",
+      "previousBrandCollaboration": "",
+      "executionCount": "",
+      "sheetName": "Influencer",
+      "handle": "@aafatorse",
+      "reach": "362K",
+      "niche": "Fashion / Beauty / Lifestyle",
+      "tier": "Mid-Tier (100K–500K)"
+    },
+    {
+      "slug": "influencer-shruti-chauhan",
+      "title": "Shruti Chauhan",
+      "summary": "Mumbai-based freelance lifestyle and fashion content creator.",
+      "category": "Content Creator",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Lifestyle / Fashion"
+      ],
+      "links": [
+        "https://www.instagram.com/callmeshruts/"
+      ],
+      "primaryLink": "https://www.instagram.com/callmeshruts/",
+      "secondaryLink": "",
+      "instagramFollower": "247K",
+      "instagramLink": "https://www.instagram.com/callmeshruts/",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "",
+      "previousBrandCollaboration": "",
+      "executionCount": "",
+      "sheetName": "Influencer",
+      "handle": "@callmeshruts",
+      "reach": "247K",
+      "niche": "Lifestyle / Fashion",
+      "tier": "Mid-Tier (100K–500K)"
+    },
+    {
+      "slug": "influencer-geetika-verma",
+      "title": "Geetika Verma",
+      "summary": "Lifestyle and travel content creator.",
+      "category": "Content Creator",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Lifestyle / Travel"
+      ],
+      "links": [
+        "https://www.instagram.com/geetikavermaofficial/"
+      ],
+      "primaryLink": "https://www.instagram.com/geetikavermaofficial/",
+      "secondaryLink": "",
+      "instagramFollower": "174K",
+      "instagramLink": "https://www.instagram.com/geetikavermaofficial/",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "",
+      "previousBrandCollaboration": "",
+      "executionCount": "",
+      "sheetName": "Influencer",
+      "handle": "@geetikavermaofficial",
+      "reach": "174K",
+      "niche": "Lifestyle / Travel",
+      "tier": "Mid-Tier (100K–500K)"
+    },
+    {
+      "slug": "influencer-nikita-jaisinghani",
+      "title": "Nikita Jaisinghani",
+      "summary": "Celebrity fashion stylist working with Bollywood and South Indian film/sports stars.",
+      "category": "Celebrity Stylist",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Fashion"
+      ],
+      "links": [
+        "https://www.instagram.com/nikitajaisinghani/"
+      ],
+      "primaryLink": "https://www.instagram.com/nikitajaisinghani/",
+      "secondaryLink": "",
+      "instagramFollower": "206K",
+      "instagramLink": "https://www.instagram.com/nikitajaisinghani/",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "",
+      "previousBrandCollaboration": "",
+      "executionCount": "",
+      "sheetName": "Influencer",
+      "handle": "@nikitajaisinghani",
+      "reach": "206K",
+      "niche": "Fashion",
+      "tier": "Mid-Tier (100K–500K)"
+    },
+    {
+      "slug": "influencer-pearl-malik",
+      "title": "Pearl Malik",
+      "summary": "Filmmaker (USC Film & TV Production grad); director/producer of short films, also posts lifestyle content.",
+      "category": "Filmmaker / Content Creator",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Film / Lifestyle"
+      ],
+      "links": [
+        "https://www.instagram.com/pearlmalik22/"
+      ],
+      "primaryLink": "https://www.instagram.com/pearlmalik22/",
+      "secondaryLink": "",
+      "instagramFollower": "21.6K",
+      "instagramLink": "https://www.instagram.com/pearlmalik22/",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "",
+      "previousBrandCollaboration": "",
+      "executionCount": "",
+      "sheetName": "Influencer",
+      "handle": "@pearlmalik22",
+      "reach": "21.6K",
+      "niche": "Film / Lifestyle",
+      "tier": "Micro (10K–100K)"
+    },
+    {
+      "slug": "influencer-ida-ali",
+      "title": "Ida Ali",
+      "summary": "Travel, film and food content creator.",
+      "category": "Content Creator",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Travel"
+      ],
+      "links": [
+        "https://www.instagram.com/idaali11/"
+      ],
+      "primaryLink": "https://www.instagram.com/idaali11/",
+      "secondaryLink": "",
+      "instagramFollower": "68.4K",
+      "instagramLink": "https://www.instagram.com/idaali11/",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "",
+      "previousBrandCollaboration": "",
+      "executionCount": "",
+      "sheetName": "Influencer",
+      "handle": "@idaali11",
+      "reach": "68.4K",
+      "niche": "Travel",
+      "tier": "Micro (10K–100K)"
+    },
+    {
+      "slug": "influencer-sakshi-shivdasani",
+      "title": "Sakshi Shivdasani",
+      "summary": "Comedy/entertainment content creator; co-host of the \"Moment of Silence\" podcast.",
+      "category": "Content Creator / Podcaster",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Comedy / Entertainment"
+      ],
+      "links": [
+        "https://www.instagram.com/sakshishivdasani/"
+      ],
+      "primaryLink": "https://www.instagram.com/sakshishivdasani/",
+      "secondaryLink": "",
+      "instagramFollower": "470K",
+      "instagramLink": "https://www.instagram.com/sakshishivdasani/",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "",
+      "previousBrandCollaboration": "",
+      "executionCount": "",
+      "sheetName": "Influencer",
+      "handle": "@sakshishivdasani",
+      "reach": "470K",
+      "niche": "Comedy / Entertainment",
+      "tier": "Mid-Tier (100K–500K)"
+    },
+    {
+      "slug": "influencer-kareema-barry",
+      "title": "Kareema Barry",
+      "summary": "Comedy and relatable-humor content creator known for viral reels.",
+      "category": "Content Creator",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Comedy"
+      ],
+      "links": [
+        "https://www.instagram.com/kareemabarry/"
+      ],
+      "primaryLink": "https://www.instagram.com/kareemabarry/",
+      "secondaryLink": "",
+      "instagramFollower": "1.1M",
+      "instagramLink": "https://www.instagram.com/kareemabarry/",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "",
+      "previousBrandCollaboration": "",
+      "executionCount": "",
+      "sheetName": "Influencer",
+      "handle": "@kareemabarry",
+      "reach": "1.1M",
+      "niche": "Comedy",
+      "tier": "Mega (1M+)"
+    },
+    {
+      "slug": "influencer-hitaali-charandala",
+      "title": "Hitaali Charandala",
+      "summary": "Mumbai-based digital creator; specific content niche could not be confirmed.",
+      "category": "Content Creator (unverified)",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Unverified"
+      ],
+      "links": [
+        "https://www.instagram.com/hitaalidharamshi/"
+      ],
+      "primaryLink": "https://www.instagram.com/hitaalidharamshi/",
+      "secondaryLink": "",
+      "instagramFollower": "27.8K",
+      "instagramLink": "https://www.instagram.com/hitaalidharamshi/",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "",
+      "previousBrandCollaboration": "",
+      "executionCount": "",
+      "sheetName": "Influencer",
+      "handle": "@hitaali",
+      "reach": "27.8K",
+      "niche": "Unverified",
+      "tier": "Micro (10K–100K)"
+    },
+    {
+      "slug": "influencer-mallaika-chheda",
+      "title": "Mallaika Chheda",
+      "summary": "Fashion stylist and founder of jewelry label Shop Zibano.",
+      "category": "Fashion Stylist / Entrepreneur",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Fashion / Jewelry"
+      ],
+      "links": [
+        "https://www.instagram.com/mallaikaa07/"
+      ],
+      "primaryLink": "https://www.instagram.com/mallaikaa07/",
+      "secondaryLink": "",
+      "instagramFollower": "48K",
+      "instagramLink": "https://www.instagram.com/mallaikaa07/",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "",
+      "previousBrandCollaboration": "",
+      "executionCount": "",
+      "sheetName": "Influencer",
+      "handle": "@mallaikaa07",
+      "reach": "48K",
+      "niche": "Fashion / Jewelry",
+      "tier": "Micro (10K–100K)"
+    },
+    {
+      "slug": "influencer-zaara-gidwani",
+      "title": "Zaara Gidwani",
+      "summary": "Personal lifestyle, travel and fashion content, based between Mumbai and Boston.",
+      "category": "Content Creator",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Lifestyle / Travel"
+      ],
+      "links": [
+        "https://www.instagram.com/zaara.gidwani/"
+      ],
+      "primaryLink": "https://www.instagram.com/zaara.gidwani/",
+      "secondaryLink": "",
+      "instagramFollower": "52.6K",
+      "instagramLink": "https://www.instagram.com/zaara.gidwani/",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "",
+      "previousBrandCollaboration": "",
+      "executionCount": "",
+      "sheetName": "Influencer",
+      "handle": "@zaara.gidwani",
+      "reach": "52.6K",
+      "niche": "Lifestyle / Travel",
+      "tier": "Micro (10K–100K)"
+    },
+    {
+      "slug": "influencer-arhana-dhawann",
+      "title": "Arhana Dhawann",
+      "summary": "Singer/musician.",
+      "category": "Singer",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Music"
+      ],
+      "links": [
+        "https://www.instagram.com/arhanadhawann/"
+      ],
+      "primaryLink": "https://www.instagram.com/arhanadhawann/",
+      "secondaryLink": "",
+      "instagramFollower": "93.2K",
+      "instagramLink": "https://www.instagram.com/arhanadhawann/",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "",
+      "previousBrandCollaboration": "",
+      "executionCount": "",
+      "sheetName": "Influencer",
+      "handle": "@arhanadhawann",
+      "reach": "93.2K",
+      "niche": "Music",
+      "tier": "Micro (10K–100K)"
+    },
+    {
+      "slug": "influencer-trisha-shetty",
+      "title": "Trisha Shetty",
+      "summary": "Miss Universe India 2023 runner-up; model.",
+      "category": "Model",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Beauty Pageant / Modeling"
+      ],
+      "links": [
+        "https://www.instagram.com/trisha___shetty/"
+      ],
+      "primaryLink": "https://www.instagram.com/trisha___shetty/",
+      "secondaryLink": "",
+      "instagramFollower": "133K",
+      "instagramLink": "https://www.instagram.com/trisha___shetty/",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "",
+      "previousBrandCollaboration": "",
+      "executionCount": "",
+      "sheetName": "Influencer",
+      "handle": "@trisha__shetty",
+      "reach": "133K",
+      "niche": "Beauty Pageant / Modeling",
+      "tier": "Mid-Tier (100K–500K)"
+    },
+    {
+      "slug": "influencer-antara-motiwala-marwah",
+      "title": "Antara Motiwala Marwah",
+      "summary": "Former fashion editor and style curator; now shares lifestyle and motherhood content.",
+      "category": "Content Creator",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Fashion / Lifestyle"
+      ],
+      "links": [
+        "https://www.instagram.com/antara_m/"
+      ],
+      "primaryLink": "https://www.instagram.com/antara_m/",
+      "secondaryLink": "",
+      "instagramFollower": "185K",
+      "instagramLink": "https://www.instagram.com/antara_m/",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "",
+      "previousBrandCollaboration": "",
+      "executionCount": "",
+      "sheetName": "Influencer",
+      "handle": "@antara_m",
+      "reach": "185K",
+      "niche": "Fashion / Lifestyle",
+      "tier": "Mid-Tier (100K–500K)"
+    },
+    {
+      "slug": "influencer-saudamini-mattu",
+      "title": "Saudamini Mattu",
+      "summary": "CEO of Indian couture label Abu Jani Sandeep Khosla.",
+      "category": "Fashion Executive",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Fashion"
+      ],
+      "links": [
+        "https://www.instagram.com/saudamini08/"
+      ],
+      "primaryLink": "https://www.instagram.com/saudamini08/",
+      "secondaryLink": "",
+      "instagramFollower": "24.2K",
+      "instagramLink": "https://www.instagram.com/saudamini08/",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "",
+      "previousBrandCollaboration": "",
+      "executionCount": "",
+      "sheetName": "Influencer",
+      "handle": "@saudamini08",
+      "reach": "24.2K",
+      "niche": "Fashion",
+      "tier": "Micro (10K–100K)"
+    },
+    {
+      "slug": "influencer-sampriya-bhandare",
+      "title": "Sampriya Bhandare",
+      "summary": "Fashion designer, Femina Miss India Goa titleholder, and CEO/founder of creative studio almst.",
+      "category": "Designer / Entrepreneur",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Fashion"
+      ],
+      "links": [
+        "https://www.instagram.com/sampriyaa/"
+      ],
+      "primaryLink": "https://www.instagram.com/sampriyaa/",
+      "secondaryLink": "",
+      "instagramFollower": "18K",
+      "instagramLink": "https://www.instagram.com/sampriyaa/",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "",
+      "previousBrandCollaboration": "",
+      "executionCount": "",
+      "sheetName": "Influencer",
+      "handle": "@sampriyaa",
+      "reach": "18K",
+      "niche": "Fashion",
+      "tier": "Micro (10K–100K)"
+    },
+    {
+      "slug": "influencer-eman",
+      "title": "Eman",
+      "summary": "Founder of BTG Studios; lifestyle content creator.",
+      "category": "Founder / Content Creator",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Lifestyle / Production"
+      ],
+      "links": [
+        "https://www.instagram.com/emanbee/"
+      ],
+      "primaryLink": "https://www.instagram.com/emanbee/",
+      "secondaryLink": "",
+      "instagramFollower": "10.3K",
+      "instagramLink": "https://www.instagram.com/emanbee/",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "",
+      "previousBrandCollaboration": "",
+      "executionCount": "",
+      "sheetName": "Influencer",
+      "handle": "@emanbee",
+      "reach": "10.3K",
+      "niche": "Lifestyle / Production",
+      "tier": "Micro (10K–100K)"
+    },
+    {
+      "slug": "influencer-pakhi-gadh",
+      "title": "Pakhi Gadh",
+      "summary": "Beauty, skincare and lifestyle content creator; agency-managed (Inega).",
+      "category": "Content Creator",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Beauty / Lifestyle"
+      ],
+      "links": [
+        "https://www.instagram.com/pakhigadh/"
+      ],
+      "primaryLink": "https://www.instagram.com/pakhigadh/",
+      "secondaryLink": "",
+      "instagramFollower": "201K",
+      "instagramLink": "https://www.instagram.com/pakhigadh/",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "",
+      "previousBrandCollaboration": "",
+      "executionCount": "",
+      "sheetName": "Influencer",
+      "handle": "@pakhigadh",
+      "reach": "201K",
+      "niche": "Beauty / Lifestyle",
+      "tier": "Mid-Tier (100K–500K)"
+    },
+    {
+      "slug": "influencer-ishika-sippy",
+      "title": "Ishika Sippy",
+      "summary": "Mumbai-based lifestyle content creator; connected to the Sippy family (film/production background).",
+      "category": "Content Creator",
+      "location": "",
+      "status": "Open",
+      "tags": [
+        "Lifestyle"
+      ],
+      "links": [
+        "https://www.instagram.com/ishikasippy/"
+      ],
+      "primaryLink": "https://www.instagram.com/ishikasippy/",
+      "secondaryLink": "",
+      "instagramFollower": "55.1K",
+      "instagramLink": "https://www.instagram.com/ishikasippy/",
+      "otherLink": "",
+      "deckLink": "",
+      "brandLink": "",
+      "previousBrandCollaboration": "",
+      "executionCount": "",
+      "sheetName": "Influencer",
+      "handle": "@ishikasippy",
+      "reach": "55.1K",
+      "niche": "Lifestyle",
+      "tier": "Micro (10K–100K)"
     }
   ]
 }
