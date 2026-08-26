@@ -1,30 +1,5 @@
 [
   {
-    "slug": "medicine-festival-mice-friday-14-august-2026",
-    "title": "Medicine Festival - MICE",
-    "category": "Community,  Travel & Tourism",
-    "status": "open",
-    "dateDisplay": "Friday, 14 August 2026",
-    "dateUpper": "FRIDAY, 14 AUGUST 2026",
-    "locationDisplay": "Berkshire, UK",
-    "locationUpper": "BERKSHIRE, UK",
-    "venue": "TBC",
-    "footfall": "500",
-    "format": "Open Air",
-    "partnershipCategories": "Eco-Housing, Outdoor Apparel, Functional Drinks, Ethical Banking, Charities.",
-    "about": "Medicine Festival presents a purpose platform for brands to align with alcohol-free, phone-free, profit-for-purpose radicalism. More than a wellness event, it offers strategic entry into five-day temporary community where functional beverages, outdoor gear, and mental health apps serve genuine transformation narrative. Through curated integrations in Berkshire's open-air setting, brands can drive engagement with conscious consumers committed to ecosystem repair. The format supports ethical fashion, plant medicine, and functional wellness seeking authenticity-proof credibility. Partnering here positions brands as part of the solution, not the consumption.",
-    "remark": "",
-    "eventFlyer": "https://medicinefestival.com/",
-    "_normalized": {
-      "dateStatus": "Confirmed",
-      "cleanType": "Community Festival",
-      "scaleTier": "Community",
-      "city": "Berkshire",
-      "country": "UK",
-      "venue": "Venue TBA"
-    }
-  },
-  {
     "slug": "no-art-festival-sunday-15-november-2026",
     "title": "No Art Festival",
     "category": "Music / Artist",
@@ -50,12 +25,12 @@
     }
   },
   {
-    "slug": "hotsheets-tba",
+    "slug": "hotsheets-december-2026",
     "title": "HotSheets",
     "category": "Community",
     "status": "open",
-    "dateDisplay": "TBA",
-    "dateUpper": "TBA",
+    "dateDisplay": "December 2026",
+    "dateUpper": "DECEMBER 2026",
     "locationDisplay": "Mumbai, India",
     "locationUpper": "MUMBAI, INDIA",
     "venue": "TBC",
@@ -250,6 +225,31 @@
     }
   },
   {
+    "slug": "blaqbutter-september-2026",
+    "title": "BLAQBUTTER",
+    "category": "Luxury",
+    "status": "open",
+    "dateDisplay": "September 2026",
+    "dateUpper": "SEPTEMBER 2026",
+    "locationDisplay": "TBD",
+    "locationUpper": "TBD",
+    "venue": "TBD",
+    "footfall": "",
+    "format": "Brand Activation",
+    "partnershipCategories": "Lifestyle, Fashion",
+    "about": "BLAQBUTTER is a visionary jewelry brand that explores the intersection of culinary art, fashion, and technology, defining its aesthetic as a paradoxical balance between \"BLAQ\" (power) and \"BUTTER\" (indulgence). The brand conceptualizes its pieces as an \"Edible Art Form\" and \"Wearable Emotional Objects\" that are designed to be lived in, treating jewelry as an edible metaphor and \"sculpted desire worn on skin\". Emphasizing tactile luxury and bold craftsmanship, BLAQBUTTER’s product architecture spans fast fashion, wedding collections, tech series, demi-fine sterling silver, and precious stones. To scale this unique philosophy, the brand utilizes a dual network strategy aimed at establishing both national dominance in major Indian cities and a \"Global Halo\" presence across markets like the UK, USA, Europe, and Australia.",
+    "remark": "",
+    "eventFlyer": "https://hub.warehouse47.com/ip-blaqbutter",
+    "_normalized": {
+      "dateStatus": "Confirmed",
+      "cleanType": "Warehouse 47 - IP",
+      "scaleTier": "Intimate",
+      "city": "Location TBA",
+      "country": "",
+      "venue": "TBD"
+    }
+  },
+  {
     "slug": "house-47-immersive-dining-tba",
     "title": "House 47 - Immersive Dining",
     "category": "Culinary Experience",
@@ -400,12 +400,12 @@
     }
   },
   {
-    "slug": "aorx-in-store-activation-june-2026",
+    "slug": "aorx-in-store-activation-july-2026",
     "title": "A|X - In Store Activation",
     "category": "Community, Brand",
     "status": "open",
-    "dateDisplay": "June 2026",
-    "dateUpper": "JUNE 2026",
+    "dateDisplay": "July 2026",
+    "dateUpper": "JULY 2026",
     "locationDisplay": "Mumbai, India",
     "locationUpper": "MUMBAI, INDIA",
     "venue": "Palladium, Mumbai",
@@ -425,12 +425,12 @@
     }
   },
   {
-    "slug": "diesel-bar-takeover-july-2026",
+    "slug": "diesel-bar-takeover-august-2026",
     "title": "Diesel - Bar Takeover",
     "category": "Community, Brand",
     "status": "open",
-    "dateDisplay": "July 2026",
-    "dateUpper": "JULY 2026",
+    "dateDisplay": "August 2026",
+    "dateUpper": "AUGUST 2026",
     "locationDisplay": "Chandigarh, India",
     "locationUpper": "CHANDIGARH, INDIA",
     "venue": "",
@@ -450,12 +450,12 @@
     }
   },
   {
-    "slug": "aorx-watches-bar-takeover-july-2026",
+    "slug": "aorx-watches-bar-takeover-august-2026",
     "title": "A|X (Watches) - Bar Takeover",
     "category": "Community, Brand",
     "status": "open",
-    "dateDisplay": "July 2026",
-    "dateUpper": "JULY 2026",
+    "dateDisplay": "August 2026",
+    "dateUpper": "AUGUST 2026",
     "locationDisplay": "Mumbai, India",
     "locationUpper": "MUMBAI, INDIA",
     "venue": "",
@@ -475,12 +475,12 @@
     }
   },
   {
-    "slug": "mg-select-in-store-activation-july-2026",
+    "slug": "mg-select-in-store-activation-august-2026",
     "title": "MG Select - In Store Activation",
     "category": "Community, Brand",
     "status": "open",
-    "dateDisplay": "July 2026",
-    "dateUpper": "JULY 2026",
+    "dateDisplay": "August 2026",
+    "dateUpper": "AUGUST 2026",
     "locationDisplay": "Delhi, India",
     "locationUpper": "DELHI, INDIA",
     "venue": "",
@@ -500,12 +500,12 @@
     }
   },
   {
-    "slug": "helios-luxe-in-store-activation-may-2026",
+    "slug": "helios-luxe-in-store-activation-august-2026",
     "title": "Helios Luxe - In Store Activation",
     "category": "Community, Brand",
     "status": "open",
-    "dateDisplay": "May 2026",
-    "dateUpper": "MAY 2026",
+    "dateDisplay": "August 2026",
+    "dateUpper": "AUGUST 2026",
     "locationDisplay": "Delhi, India",
     "locationUpper": "DELHI, INDIA",
     "venue": "",
