@@ -356,8 +356,8 @@
     "status": "open",
     "dateDisplay": "TBA",
     "dateUpper": "TBA",
-    "locationDisplay": "Castle Oodeypore, Udaipure",
-    "locationUpper": "CASTLE OODEYPORE, UDAIPURE",
+    "locationDisplay": "Castle Oodeypore, Udaipur",
+    "locationUpper": "CASTLE OODEYPORE, UDAIPUR",
     "venue": "Castle Oodeypore",
     "footfall": "",
     "format": "Farm Experience",
@@ -370,7 +370,7 @@
       "cleanType": "HOS Experiential",
       "scaleTier": "Intimate",
       "city": "Castle Oodeypore",
-      "country": "Udaipure",
+      "country": "Udaipur",
       "venue": "Castle Oodeypore"
     }
   },
@@ -647,6 +647,81 @@
       "city": "Pune",
       "country": "India",
       "venue": "Phoenix Avenue of the Stars"
+    }
+  },
+  {
+    "slug": "bundi-palace-mice-october-2026",
+    "title": "Bundi Palace Mice",
+    "category": "Luxury",
+    "status": "open",
+    "dateDisplay": "October 2026",
+    "dateUpper": "OCTOBER 2026",
+    "locationDisplay": "Jaipur, India",
+    "locationUpper": "JAIPUR, INDIA",
+    "venue": "Bundi Palace",
+    "footfall": "",
+    "format": "Customer Delight",
+    "partnershipCategories": "Luxury Brands, Heritage Travellers , Media and Magazines, Chef led brands, Alcohol , Cars, Community Led Brands,",
+    "about": "Bundi offers a highly exclusive heritage and art-led experience, with intricate miniature paintings, murals and royal architecture woven throughout the property. This setting can be curated for a limited group of HNIs, UHNIs and top-tier guests, with experiences such as private jewellery showcases, fashion shows, art galleries, auctions, intimate dinners and cultural performances. The focus would be on creating a truly private, access-led luxury experience rather than a conventional event.",
+    "remark": "",
+    "eventFlyer": "https://www.instagram.com/bundipalace/?hl=en",
+    "_normalized": {
+      "dateStatus": "Confirmed",
+      "cleanType": "HOS Experiential",
+      "scaleTier": "Intimate",
+      "city": "Jaipur",
+      "country": "India",
+      "venue": "Bundi Palace"
+    }
+  },
+  {
+    "slug": "shikar-badi-october-2026",
+    "title": "Shikar Badi",
+    "category": "Luxury",
+    "status": "open",
+    "dateDisplay": "October 2026",
+    "dateUpper": "OCTOBER 2026",
+    "locationDisplay": "Jaipur, India",
+    "locationUpper": "JAIPUR, INDIA",
+    "venue": "Shikar Badi",
+    "footfall": "",
+    "format": "Customer Delight",
+    "partnershipCategories": "Luxury Brands, Heritage Travellers , Media and Magazines, Chef led brands, Alcohol , Cars, Community Led Brands,",
+    "about": "Shikar Badi offers a unique, private wildlife and heritage setting surrounded by expansive forest, making it ideal for intimate luxury experiences. The property can be curated for a limited group of HNIs, UHNIs and premium guests, with experiences such as private dinners, luxury brand showcases, fashion and jewellery presentations, art experiences, curated performances and exclusive wildlife-led experiences. The focus would be on creating an immersive, secluded luxury experience that blends nature, heritage and exclusivity.",
+    "remark": "",
+    "eventFlyer": "https://hrhhotels.com/",
+    "_normalized": {
+      "dateStatus": "Confirmed",
+      "cleanType": "HOS Experiential",
+      "scaleTier": "Intimate",
+      "city": "Jaipur",
+      "country": "India",
+      "venue": "Shikar Badi"
+    }
+  },
+  {
+    "slug": "chunda-shikarbadi-mice-october-2026",
+    "title": "Chunda Shikarbadi MICE",
+    "category": "Luxury",
+    "status": "open",
+    "dateDisplay": "October 2026",
+    "dateUpper": "OCTOBER 2026",
+    "locationDisplay": "Jaipur, India",
+    "locationUpper": "JAIPUR, INDIA",
+    "venue": "Chunda Shikar Badi",
+    "footfall": "",
+    "format": "Customer Delight",
+    "partnershipCategories": "Luxury Brands, Heritage Travellers , Media and Magazines, Chef led brands, Alcohol , Cars, Community Led Brands,",
+    "about": "Chunda Shikarbadi – “Hidden Secret of Udaipur” offers an intimate luxury wildlife experience set across approximately 150 acres of private forest, with just 8 cottages and a rich leopard habitat. The secluded setting can be curated for a limited group of HNIs, UHNIs and premium guests through private dinners, luxury brand showcases, jewellery or fashion experiences, curated performances, wildlife experiences and exclusive gatherings, creating a rare blend of nature, heritage and luxury.",
+    "remark": "",
+    "eventFlyer": "https://www.chundahotels.com/shikar-oudi-udaipur/",
+    "_normalized": {
+      "dateStatus": "Confirmed",
+      "cleanType": "HOS Experiential",
+      "scaleTier": "Intimate",
+      "city": "Jaipur",
+      "country": "India",
+      "venue": "Chunda Shikar Badi"
     }
   }
 ]
