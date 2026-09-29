@@ -13,10 +13,10 @@
     "format": "Large Formal Music Festival",
     "partnershipCategories": "Housing & Co-Living, Vintage Fashion, Music Streaming, Audio Tech, Rideshare, Publishing.",
     "about": "No Arts Festival Mumbai presents an uncompromising platform for brands to align with underground electronic music's purest ethos. More than a large-scale event, it offers strategic entry into Amsterdam-born warehouse culture translated to 15,000-capacity Indian scale. Through curated integrations in strictly no-compromise environment, brands can drive relevance with genre-literate, anti-EDM audiences who research before they rave. The format supports global spirits, underground fashion, and independent publishing seeking authentic subcultural credibility. Partnering here positions brands as understanding that \"No\" is actually an invitation.",
-    "remark": "Venue - TBC",
+    "remark": "Venue - TBD",
     "eventFlyer": "https://www.instagram.com/noartmusic/",
     "_normalized": {
-      "dateStatus": "Not Confirmed",
+      "dateStatus": "Confirmed",
       "cleanType": "Music Festival - Global IP",
       "scaleTier": "Mass Culturual",
       "city": "Mumbai",
@@ -33,20 +33,20 @@
     "dateUpper": "DECEMBER 2026",
     "locationDisplay": "Mumbai, India",
     "locationUpper": "MUMBAI, INDIA",
-    "venue": "TBC",
+    "venue": "TBD",
     "footfall": "25",
     "format": "Hotel",
     "partnershipCategories": "Beauty & Skincare (Sheet Masks/Glow), Sleepwear & Lingerie, RTD Cocktails/Seltzers, FemTech & Period Care, Luxury Chocolate/Snacking, Hair Tools.",
     "about": "India's first luxury slumber party retreat. A 20-hour \"hotel takeover\" dedicated to beauty, bonding, and the \"soft life\" aesthetic. This is a hyper-targeted environment for brands to engage with women in their most relaxed, unguarded state—pajamas on, guards down. Perfect for beauty, sleepwear, and wellness brands seeking deep emotional connection and \"girl gang\" virality.",
-    "remark": "Venue - TBC",
+    "remark": "Venue - TBD",
     "eventFlyer": "https://hub.warehouse47.com/hotsheets",
     "_normalized": {
-      "dateStatus": "Not Confirmed",
+      "dateStatus": "Confirmed",
       "cleanType": "Warehouse 47 - IP",
       "scaleTier": "Intimate",
       "city": "Mumbai",
       "country": "India",
-      "venue": "Venue TBA"
+      "venue": "TBD"
     }
   },
   {
@@ -58,7 +58,7 @@
     "dateUpper": "SUNDAY, 29 NOVEMBER 2026",
     "locationDisplay": "Mumbai, India",
     "locationUpper": "MUMBAI, INDIA",
-    "venue": "TBC",
+    "venue": "TBD",
     "footfall": "10000",
     "format": "Experiential Open Air / Landmark Venue",
     "partnershipCategories": "Luxury Travel Cards, Premium Spirits, Audio Hardware, Luxury Fashion, Smartphones, Automotive, Hospitality",
@@ -71,7 +71,7 @@
       "scaleTier": "Mass Culturual",
       "city": "Mumbai",
       "country": "India",
-      "venue": "Venue TBA"
+      "venue": "TBD"
     }
   },
   {
@@ -81,9 +81,9 @@
     "status": "open",
     "dateDisplay": "December 2026",
     "dateUpper": "DECEMBER 2026",
-    "locationDisplay": "TBC",
-    "locationUpper": "TBC",
-    "venue": "TBC",
+    "locationDisplay": "TBD",
+    "locationUpper": "TBD",
+    "venue": "TBD",
     "footfall": "10000",
     "format": "Multi-Day Festival / Arena",
     "partnershipCategories": "Global Spirits, Streetwear, Sneakers, Energy Drinks, Gaming, Neo-Banking, Ride-Hailing, Audio Streaming",
@@ -96,7 +96,7 @@
       "scaleTier": "Mass Culturual",
       "city": "Location TBA",
       "country": "",
-      "venue": "Venue TBA"
+      "venue": "TBD"
     }
   },
   {
@@ -106,9 +106,9 @@
     "status": "open",
     "dateDisplay": "November 2026",
     "dateUpper": "NOVEMBER 2026",
-    "locationDisplay": "TBC",
-    "locationUpper": "TBC",
-    "venue": "TBC",
+    "locationDisplay": "TBD",
+    "locationUpper": "TBD",
+    "venue": "TBD",
     "footfall": "10000",
     "format": "Multi-Day Festival / Arena",
     "partnershipCategories": "Smartphones, Gaming Hardware, Audio Technology, Luxury Fashion, Automotive, Visual Technology, Premium Spirits, Wearable Tech",
@@ -121,7 +121,7 @@
       "scaleTier": "Mass Culturual",
       "city": "Location TBA",
       "country": "",
-      "venue": "Venue TBA"
+      "venue": "TBD"
     }
   },
   {
@@ -131,9 +131,9 @@
     "status": "open",
     "dateDisplay": "TBA",
     "dateUpper": "TBA",
-    "locationDisplay": "TBC",
-    "locationUpper": "TBC",
-    "venue": "TBC",
+    "locationDisplay": "TBD",
+    "locationUpper": "TBD",
+    "venue": "TBD",
     "footfall": "10000",
     "format": "Multi-Day Festival / Arena",
     "partnershipCategories": "Global Spirits, Streetwear, Audio Streaming, Travel Cards, Sneakers, Energy Drinks, Telecommunications, Premium Apparel",
@@ -146,7 +146,7 @@
       "scaleTier": "Mass Culturual",
       "city": "Location TBA",
       "country": "",
-      "venue": "Venue TBA"
+      "venue": "TBD"
     }
   },
   {
@@ -156,9 +156,9 @@
     "status": "open",
     "dateDisplay": "November 2026",
     "dateUpper": "NOVEMBER 2026",
-    "locationDisplay": "TBC",
-    "locationUpper": "TBC",
-    "venue": "TBC",
+    "locationDisplay": "TBD",
+    "locationUpper": "TBD",
+    "venue": "TBD",
     "footfall": "10000",
     "format": "Multi-Day Festival / Arena",
     "partnershipCategories": "Sneakers, Streetwear, Smartphones, Quick Commerce, Energy Drinks, Gaming, Telecom, QSR, Financial Services",
@@ -171,7 +171,7 @@
       "scaleTier": "Mass Culturual",
       "city": "Location TBA",
       "country": "",
-      "venue": "Venue TBA"
+      "venue": "TBD"
     }
   },
   {
@@ -183,7 +183,7 @@
     "dateUpper": "TBA",
     "locationDisplay": "Mumbai, India",
     "locationUpper": "MUMBAI, INDIA",
-    "venue": "TBC",
+    "venue": "TBD",
     "footfall": "200",
     "format": "Lounge / Hall",
     "partnershipCategories": "Wealth Management, Apparel, Aviation, Golf Clubs, High-End Audio.",
@@ -196,7 +196,7 @@
       "scaleTier": "Intimate",
       "city": "Mumbai",
       "country": "India",
-      "venue": "Venue TBA"
+      "venue": "TBD"
     }
   },
   {
@@ -208,12 +208,12 @@
     "dateUpper": "TBA",
     "locationDisplay": "Mumbai, India",
     "locationUpper": "MUMBAI, INDIA",
-    "venue": "TBC",
+    "venue": "TBD",
     "footfall": "500",
-    "format": "TBC",
+    "format": "TBD",
     "partnershipCategories": "Crypto & Web3, Sneaker Apparel, Auto Clubs, Gaming & Esports, Energy Drinks, Grooming.",
     "about": "UC47 presents a movement platform for brands to engage with Mumbai's experience-collecting, drop-chasing generation. More than an underground event, it offers strategic entry through three-tier membership—Ignition, Turbo, Nitro—where supercar showcases, sneaker auctions, and no-rules music create password-protected culture. Through curated tiered integrations and Warehouse47 ecosystem access, brands can drive adoption among those who trade in limited releases and unforgettable nights. The format supports performance vehicles, streetwear, energy drinks, and membership platforms seeking subcultural ownership. Partnering here positions brands as the key to the basement everyone wants to access.",
-    "remark": "Venue & Date - TBC",
+    "remark": "Venue & Date - TBD",
     "eventFlyer": "https://hub.warehouse47.com/uc47",
     "_normalized": {
       "dateStatus": "Not Confirmed",
@@ -221,7 +221,7 @@
       "scaleTier": "Community",
       "city": "Mumbai",
       "country": "India",
-      "venue": "Venue TBA"
+      "venue": "TBD"
     }
   },
   {
@@ -258,12 +258,12 @@
     "dateUpper": "TBA",
     "locationDisplay": "Mumbai, India",
     "locationUpper": "MUMBAI, INDIA",
-    "venue": "TBC",
+    "venue": "TBD",
     "footfall": "",
     "format": "",
     "partnershipCategories": "Dining Credit Cards, Smart Kitchen Tech, Homeware, AR/VR, Interior Design.",
     "about": "House 47 presents a spectacle platform for brands to access Mumbai's most FOMO-generating dining experience. More than a restaurant, it offers strategic entry into 40-seat, 90-minute, ₹20,000 cinematic performance where projection mapping and dry-ice theatrics transform cuisine into flex. Through curated immersive technology and surprise architecture, brands can drive visibility among crypto-affluent, culturally omnivorous audiences who pay for documentation-worthy moments. The format supports luxury spirits, tech/AV innovation, and experiential design seeking waitlist-creating credibility. Partnering here positions brands as the password and the patience required to access tomorrow's dinner conversation.",
-    "remark": "Date - TBC",
+    "remark": "Date - TBD",
     "eventFlyer": "https://hub.warehouse47.com/house47",
     "_normalized": {
       "dateStatus": "Not Confirmed",
@@ -271,7 +271,7 @@
       "scaleTier": "Intimate",
       "city": "Mumbai",
       "country": "India",
-      "venue": "Venue TBA"
+      "venue": "TBD"
     }
   },
   {
@@ -283,12 +283,12 @@
     "dateUpper": "TBA",
     "locationDisplay": "Mumbai, India",
     "locationUpper": "MUMBAI, INDIA",
-    "venue": "TBC",
+    "venue": "TBD",
     "footfall": "",
     "format": "Restaurant + Hall",
     "partnershipCategories": "Men’s Grooming, Premium Mixers, Leather Goods, Watches, Neo-Banking, Ride-Hailing.",
     "about": "An immersive dining sanctuary designed for genuine connection. We provide a high-engagement, conversation-first alternative to the club scene, specifically engineered for community building. By blending atmosphere with organic content creation, we offer partners a captive audience where the \"night out\" narrative serves as a powerful engine for brand advocacy. This format allows brands to bypass the noise and build lasting consumer loyalty through meaningful, uninterrupted interaction.",
-    "remark": "Venue & Date - TBC",
+    "remark": "Venue & Date - TBD",
     "eventFlyer": "https://hub.warehouse47.com/townhall-1947",
     "_normalized": {
       "dateStatus": "Not Confirmed",
@@ -296,7 +296,7 @@
       "scaleTier": "Intimate",
       "city": "Mumbai",
       "country": "India",
-      "venue": "Venue TBA"
+      "venue": "TBD"
     }
   },
   {
@@ -313,7 +313,7 @@
     "format": "Club",
     "partnershipCategories": "Luxury Brands, Cars, Watches, Apparels , Horse Related Brands",
     "about": "Jaipur Polo presents a legacy platform for brands to claim territory inside India's oldest living sport culture. More than a match, it offers strategic entry into a 200-year-old arena where mallets, maharaja bloodlines, and manicured lawns define the original drop — one that money alone cannot manufacture. Through curated field-side integrations and the Polo Ground ecosystem, brands can anchor themselves among old-money inheritors, new-wealth aspirants, and the diplomatically connected who measure status not in followers but in chukkers played and invitations received.The format supports heritage horology, single malt spirits, bespoke automotive, luxury leather, and private banking seeking the one thing no campaign can buy — the quiet credibility of having always been there. Partnering here positions brands not as a sponsor on a banner, but as a crest on the collar — the kind of association that travels from the stands to the club dining room to the family office without ever raising its voice.",
-    "remark": "Venue & Date - TBC",
+    "remark": "Venue & Date - TBD",
     "eventFlyer": "",
     "_normalized": {
       "dateStatus": "Not Confirmed",
@@ -338,7 +338,7 @@
     "format": "Club",
     "partnershipCategories": "Luxury Brands, Cars, Watches, Apparels , Horse Related Brands",
     "about": "Chunda Polo, Udaipur presents a sovereign platform for brands to embed themselves inside Rajputana's most atmospheric sporting ritual. More than a tournament, it offers strategic entry into a setting where a 15th-century palace watches over the field, heritage bloodstock runs the turf, and the audience arrives by lineage, relationship, and knowing the right name at the right gate.Through field-side integrations and Chunda's captive hospitality ecosystem — suites, dining, and the quiet corridors between — brands can position themselves among India's old-guard elite and the culturally discerning traveller who books destinations the way others book tables: months in advance, without asking the price.The format supports heritage jewellery, aged spirits, private aviation, and resort-luxury seeking the one currency no media buy can generate — the sense of having been woven in, not bolted on. Partnering here positions brands not as a logo on the lawn, but as part of the ceremony itself.",
-    "remark": "Venue & Date - TBC",
+    "remark": "Venue & Date - TBD",
     "eventFlyer": "",
     "_normalized": {
       "dateStatus": "Not Confirmed",
@@ -825,8 +825,158 @@
     }
   },
   {
-    "slug": "untitled-event-34-tba",
-    "title": "Untitled Event 34",
+    "slug": "hugel-india-tour-december-2026",
+    "title": "Hugel - India Tour",
+    "category": "Music / Artist",
+    "status": "open",
+    "dateDisplay": "December 2026",
+    "dateUpper": "DECEMBER 2026",
+    "locationDisplay": "Hyderabad, India",
+    "locationUpper": "HYDERABAD, INDIA",
+    "venue": "Outdoor Open Air",
+    "footfall": "8000",
+    "format": "Music / Artist Concert",
+    "partnershipCategories": "Global Spirits, Streetwear, Audio Streaming, Travel Cards, Sneakers, Energy Drinks, Telecommunications, Premium Apparel",
+    "about": "Hugel is one of the world's most influential house artists. Known for shaping the global Latin house wave, Hugel blends infectious grooves with crossover appeal—bridging underground energy with mainstream success. From chart-topping hits to sold-out shows worldwide, his sound has become a staple across dance floors, beach clubs, and festivals.",
+    "remark": "",
+    "eventFlyer": "https://www.instagram.com/hugelthug/?hl=en",
+    "_normalized": {
+      "dateStatus": "Confirmed",
+      "cleanType": "Music Concert",
+      "scaleTier": "City Takeover",
+      "city": "Hyderabad",
+      "country": "India",
+      "venue": "Outdoor Open Air"
+    }
+  },
+  {
+    "slug": "hugel-india-tour-december-2026-2",
+    "title": "Hugel - India Tour",
+    "category": "Music / Artist",
+    "status": "open",
+    "dateDisplay": "December 2026",
+    "dateUpper": "DECEMBER 2026",
+    "locationDisplay": "Bangalore, India",
+    "locationUpper": "BANGALORE, INDIA",
+    "venue": "District Arena Terraform",
+    "footfall": "10000",
+    "format": "Music / Artist Concert",
+    "partnershipCategories": "Global Spirits, Streetwear, Audio Streaming, Travel Cards, Sneakers, Energy Drinks, Telecommunications, Premium Apparel",
+    "about": "Hugel is one of the world's most influential house artists. Known for shaping the global Latin house wave, Hugel blends infectious grooves with crossover appeal—bridging underground energy with mainstream success. From chart-topping hits to sold-out shows worldwide, his sound has become a staple across dance floors, beach clubs, and festivals.",
+    "remark": "",
+    "eventFlyer": "https://www.instagram.com/hugelthug/?hl=en",
+    "_normalized": {
+      "dateStatus": "Confirmed",
+      "cleanType": "Music Concert",
+      "scaleTier": "City Takeover",
+      "city": "Bangalore",
+      "country": "India",
+      "venue": "District Arena Terraform"
+    }
+  },
+  {
+    "slug": "hugel-india-tour-december-2026-3",
+    "title": "Hugel - India Tour",
+    "category": "Music / Artist",
+    "status": "open",
+    "dateDisplay": "December 2026",
+    "dateUpper": "DECEMBER 2026",
+    "locationDisplay": "Mumbai, India",
+    "locationUpper": "MUMBAI, INDIA",
+    "venue": "MMRDA Grounds Open Air",
+    "footfall": "10000",
+    "format": "Music / Artist Concert",
+    "partnershipCategories": "Global Spirits, Streetwear, Audio Streaming, Travel Cards, Sneakers, Energy Drinks, Telecommunications, Premium Apparel",
+    "about": "Hugel is one of the world's most influential house artists. Known for shaping the global Latin house wave, Hugel blends infectious grooves with crossover appeal—bridging underground energy with mainstream success. From chart-topping hits to sold-out shows worldwide, his sound has become a staple across dance floors, beach clubs, and festivals.",
+    "remark": "",
+    "eventFlyer": "https://www.instagram.com/hugelthug/?hl=en",
+    "_normalized": {
+      "dateStatus": "Confirmed",
+      "cleanType": "Music Concert",
+      "scaleTier": "City Takeover",
+      "city": "Mumbai",
+      "country": "India",
+      "venue": "MMRDA Grounds Open Air"
+    }
+  },
+  {
+    "slug": "hugel-india-tour-december-2026-4",
+    "title": "Hugel - India Tour",
+    "category": "Music / Artist",
+    "status": "open",
+    "dateDisplay": "December 2026",
+    "dateUpper": "DECEMBER 2026",
+    "locationDisplay": "Kolkata, India",
+    "locationUpper": "KOLKATA, INDIA",
+    "venue": "Biswa Bangla Milan Mela",
+    "footfall": "10000",
+    "format": "Music / Artist Concert",
+    "partnershipCategories": "Global Spirits, Streetwear, Audio Streaming, Travel Cards, Sneakers, Energy Drinks, Telecommunications, Premium Apparel",
+    "about": "Hugel is one of the world's most influential house artists. Known for shaping the global Latin house wave, Hugel blends infectious grooves with crossover appeal—bridging underground energy with mainstream success. From chart-topping hits to sold-out shows worldwide, his sound has become a staple across dance floors, beach clubs, and festivals.",
+    "remark": "",
+    "eventFlyer": "https://www.instagram.com/hugelthug/?hl=en",
+    "_normalized": {
+      "dateStatus": "Confirmed",
+      "cleanType": "Music Concert",
+      "scaleTier": "City Takeover",
+      "city": "Kolkata",
+      "country": "India",
+      "venue": "Biswa Bangla Milan Mela"
+    }
+  },
+  {
+    "slug": "hugel-india-tour-december-2026-5",
+    "title": "Hugel - India Tour",
+    "category": "Music / Artist",
+    "status": "open",
+    "dateDisplay": "December 2026",
+    "dateUpper": "DECEMBER 2026",
+    "locationDisplay": "Delhi, India",
+    "locationUpper": "DELHI, INDIA",
+    "venue": "Baansera Musical Garden",
+    "footfall": "15000",
+    "format": "Music / Artist Concert",
+    "partnershipCategories": "Global Spirits, Streetwear, Audio Streaming, Travel Cards, Sneakers, Energy Drinks, Telecommunications, Premium Apparel",
+    "about": "Hugel is one of the world's most influential house artists. Known for shaping the global Latin house wave, Hugel blends infectious grooves with crossover appeal—bridging underground energy with mainstream success. From chart-topping hits to sold-out shows worldwide, his sound has become a staple across dance floors, beach clubs, and festivals.",
+    "remark": "",
+    "eventFlyer": "https://www.instagram.com/hugelthug/?hl=en",
+    "_normalized": {
+      "dateStatus": "Confirmed",
+      "cleanType": "Music Concert",
+      "scaleTier": "City Takeover",
+      "city": "Delhi",
+      "country": "India",
+      "venue": "Baansera Musical Garden"
+    }
+  },
+  {
+    "slug": "hugel-india-tour-december-2026-6",
+    "title": "Hugel - India Tour",
+    "category": "Music / Artist",
+    "status": "open",
+    "dateDisplay": "December 2026",
+    "dateUpper": "DECEMBER 2026",
+    "locationDisplay": "Goa India",
+    "locationUpper": "GOA INDIA",
+    "venue": "TBD",
+    "footfall": "10000",
+    "format": "Music / Artist Concert",
+    "partnershipCategories": "Global Spirits, Streetwear, Audio Streaming, Travel Cards, Sneakers, Energy Drinks, Telecommunications, Premium Apparel",
+    "about": "Hugel is one of the world's most influential house artists. Known for shaping the global Latin house wave, Hugel blends infectious grooves with crossover appeal—bridging underground energy with mainstream success. From chart-topping hits to sold-out shows worldwide, his sound has become a staple across dance floors, beach clubs, and festivals.",
+    "remark": "",
+    "eventFlyer": "https://www.instagram.com/hugelthug/?hl=en",
+    "_normalized": {
+      "dateStatus": "Confirmed",
+      "cleanType": "Music Concert",
+      "scaleTier": "City Takeover",
+      "city": "Goa India",
+      "country": "",
+      "venue": "TBD"
+    }
+  },
+  {
+    "slug": "untitled-event-40-tba",
+    "title": "Untitled Event 40",
     "category": "GENERAL",
     "status": "open",
     "dateDisplay": "TBA",
