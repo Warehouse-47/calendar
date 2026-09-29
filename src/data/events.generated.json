@@ -973,30 +973,5 @@
       "country": "",
       "venue": "TBD"
     }
-  },
-  {
-    "slug": "untitled-event-40-tba",
-    "title": "Untitled Event 40",
-    "category": "GENERAL",
-    "status": "open",
-    "dateDisplay": "TBA",
-    "dateUpper": "TBA",
-    "locationDisplay": "TBC",
-    "locationUpper": "TBC",
-    "venue": "",
-    "footfall": "",
-    "format": "",
-    "partnershipCategories": "N/A",
-    "about": "",
-    "remark": "",
-    "eventFlyer": "",
-    "_normalized": {
-      "dateStatus": "Not Confirmed",
-      "cleanType": "Uncategorized",
-      "scaleTier": "Scale TBA",
-      "city": "Location TBA",
-      "country": "",
-      "venue": "Venue TBA"
-    }
   }
 ]
