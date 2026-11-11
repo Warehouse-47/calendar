@@ -145,6 +145,21 @@ function makeSlug(title, date, index) {
   return `event-${index + 1}`;
 }
 
+// Ghost sheet rows (used-range padding from Google's gviz export) carry no real
+// event data — only stray cell noise like 'N/A'. An event row must have a real
+// Event title or, at minimum, real content beyond TBC/TBD placeholder text.
+function isGhostEventRow(row) {
+  const title = text(row.Event);
+  if (title.length > 0) {
+    return false;
+  }
+
+  return Object.values(row).every((value) => {
+    const cell = text(value).toUpperCase();
+    return cell.length === 0 || cell === 'N/A' || isTbcOrTbd(cell);
+  });
+}
+
 export function normalizeEventRow(rawRow, index) {
   // Handle already normalized data
   if (rawRow && typeof rawRow === 'object' && ('title' in rawRow || 'dateDisplay' in rawRow)) {
@@ -230,6 +245,7 @@ export function normalizeEventRow(rawRow, index) {
 export function normalizeEvents(rows) {
   const normalized = rows
     .filter((row) => row && typeof row === 'object')
+    .filter((row) => !isGhostEventRow(row))
     .map((row, index) => normalizeEventRow(row, index))
     .filter((event) => event.title.length > 0);
 
